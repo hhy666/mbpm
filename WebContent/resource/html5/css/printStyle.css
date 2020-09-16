@@ -1,0 +1,13 @@
+/*---------------table---------------------*/
+.tableLayout{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 0 auto;
+}
+.tdLayout{
+	border: 1px solid #000000;
+    text-align: center;
+    margin: 0;
+    height: 36px;
+	
+}

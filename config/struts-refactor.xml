@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 表单重构 -->
+    <package name="com.matrix.form.admin.refactor.action"  extends="globalPackage" namespace="/refactor">
+ 			<action name="refactorAction_*" class="refactorAction" method="{1}" >
+ 				 <result name="loadRenamePage">/form/admin/catalog/renameCompId.jsp</result>
+ 				 <result name="renamePage_blank">/form/admin/catalog/renameCompId_blank.jsp</result>
+ 				 
+ 			</action>
+ 			
+ 			<action name="html5RefactorAction_*" class="html5RefactorAction" method="{1}" >
+ 				 <result name="loadRenamePage">/form/html5/admin/catalog/renameCompId.jsp</result>
+ 				 <result name="renamePage_blank">/form/html5/admin/catalog/addSuccess1.jsp</result>
+ 				 <result name="backCommonTree">/form/html5/admin/foundation/selectCatalog.jsp</result>
+ 			</action>
+   </package>
+
+	
+
+</struts>

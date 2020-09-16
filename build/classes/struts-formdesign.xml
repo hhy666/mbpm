@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+ 
+	 <package name="com.matrix.form.admin.designer.action"  extends="globalPackage" namespace="/designer">
+	     	<action name="formDesign_*" class="formDesignAction" method="{1}">
+	 			  <result name="getUpdateInnerOper">/form/admin/designer/addFormInnerLogic.jsp</result>
+	 			  <result name="getUpdateCustomOPer">/form/admin/designer/addFormCustomLogic.jsp</result>
+	 			  <result name="addFormInnerLogic">/form/admin/designer/addFormInnerLogic.jsp</result>
+	 			  <result name="addFormCustomLogic">/form/admin/designer/addFormCustomLogic.jsp</result>
+	 		     
+	 			  <result name="getServiceMethods">/form/admin/render/oplist.jsp?page=oplist</result>
+	 			  <result name="loadAjaxEventPage">/form/admin/designer/event/indexAjaxEvent.jsp</result>
+	 			  <result name="loadOperationListPage">/form/admin/designer/listFormOperation.jsp</result>
+	 			  <result name="loadAjaxRelateJSPage">/form/admin/designer/event/relateJS.jsp</result>
+	 			    
+	 			  <result name="loadFormVarListPage">/form/admin/designer/listFormVar.jsp</result>
+	 			  <result name="loadFormVarPage">/form/admin/designer/addFormVar.jsp</result>
+	 			  <result name="loadImportFormModelPage">/form/admin/foundation/importFormModelFile.jsp</result>
+	 			  
+	 			  
+	 			  <!-- 加载表单设计源码视图 -->
+	 			   <result name="loadSourceView">/form/admin/designer/designerSourceView.jsp</result>
+	 			  
+	 			  
+	 		</action>
+	 		
+	 		<action name="formDesignBySource_*" class="formDesignBySourceAction" method="{1}">
+	 			  <result name="getUpdateInnerOper">/form/admin/designer/addFormInnerLogic.jsp</result>
+	 			  <result name="getUpdateCustomOPer">/form/admin/designer/addFormCustomLogic.jsp</result>
+	 			  <result name="addFormInnerLogic">/form/admin/designer/addFormInnerLogic.jsp</result>
+	 			  <result name="addFormCustomLogic">/form/admin/designer/addFormCustomLogic.jsp</result>
+	 		     
+	 			  <result name="getServiceMethods">/form/admin/render/oplist.jsp?page=oplist</result>
+	 			  <result name="loadAjaxEventPage">/form/admin/designer/event/indexAjaxEvent.jsp</result>
+	 			  <result name="loadOperationListPage">/form/admin/designer/listFormOperation.jsp</result>
+	 			  <result name="loadAjaxRelateJSPage">/form/admin/designer/event/relateJS.jsp</result>
+	 			    
+	 			  <result name="loadFormVarListPage">/form/admin/designer/listFormVar.jsp</result>
+	 			  <result name="loadFormVarPage">/form/admin/designer/addFormVar.jsp</result>
+	 			  <result name="loadImportFormModelPage">/form/admin/foundation/importFormModelFile.jsp</result>
+	 			  
+	 			  
+	 			  <!-- 加载表单设计源码视图 -->
+	 			   <result name="loadSourceView">/form/admin/designer/designerSourceView.jsp</result>
+	 			  <result name="loadSourceView2">/form/admin/designer/designerSourceView2.jsp</result>
+	 			  
+	 		</action>
+	 		
+	 		<action name="formValidatorDesign_*" class="formValidatorDesignAction" method="{1}">
+	 			  <result name="loadAddInputValidatorPage">/form/admin/designer/addValidator.jsp</result>
+	 		      <result name="getInputValidators">/form.daction?componentType=validator&amp;command=list&amp;mode=propertyedit</result>
+	 		 
+	 		
+	 		</action>
+	 		<!-- 表单属性代码 去掉-->
+	 		<action name="formProCodeDesign_*" class="formPropertyCodeAction" method="{1}">
+	 			  <result name="loadCssCodePage">/form/admin/designer/property/formProCodeCss.jsp</result>
+	 		      <result name="loadJSCodePage">/form/admin/designer/property/formProCodeJs.jsp</result>
+	 		 	  <result name="loadCompContentPage">/form/admin/designer/property/formProCodeCompContent.jsp</result>
+	 		 	  <result name="loadReferResourcePage">/form/admin/designer/property/formProCodeRefer.jsp</result>
+	 		</action>
+	 		
+	 		<!-- 树组件设计 -->
+	 		<action name="treeCompDesign_*" class="treeCompDesignAction" method="{1}">
+	 			<result name="addStaticTreeNode">/form/admin/designer/tree/refreshNodeTest.jsp</result>
+	 			<result name="addDynamicTreeNode">/form/admin/designer/tree/refreshNodeTest.jsp</result>
+	 			<result name="deleteTreeNode">/form/admin/designer/tree/refreshNodeTest.jsp</result>
+	 			<result name="loadTreeIndexPage">/form/admin/designer/tree/indexTree.jsp</result>
+	 			
+	 		</action>
+	 		
+	 		
+	 		
+	 </package>
+	 
+</struts>

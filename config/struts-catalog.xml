@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+ 
+ 
+	 <package name="com.matrix.form.admin.catalog.action"  extends="globalPackage" namespace="/">
+	     	<action name="catalog_*" class="catalogAction" method="{1}">
+	 			  <result name="updateCatalog">/form/admin/catalog/updateCatalog.jsp</result>
+	 			  <result name="updateModule">/form/admin/catalog/updateModule.jsp</result>
+	 			  <result name="updateRoot">/form/admin/catalog/updateRoot.jsp</result>
+	 			  
+	 			  <result name="addSubCatalogEntrance">/form/admin/catalog/addSubCatalog.jsp</result>
+	 			  <result name="addModuleEntrance">/form/admin/catalog/addModule.jsp</result>
+	 			   <!-- 验证重复跳转--> 
+	 			  <result name="addSubCatalogRepeat">/form/admin/catalog/addSubCatalog.jsp</result>
+	 			  <result name="addModuleRepeat">/form/admin/catalog/addModule.jsp</result>
+	 			  
+	 			  <result name="fail">/form/admin/catalog/deleteSuccess.jsp</result>
+				  <!-- 业务定制阶段 添加表单直接跳转到表单设计器 -->
+	 			  <result name="addFormVersion">/form/admin/designer/designer.jsp</result>
+	 			  <!-- 添加组件入口 -->
+	 			  <result name="addForm">/form/admin/catalog/addForm.jsp</result>
+	 			  <result name="addLogic">/form/admin/catalog/addLogic.jsp</result>
+	 			  <result name="addEntityObj">/form/admin/catalog/addEntityObject.jsp</result>
+	 			  <result name="addQueryObj">/form/admin/catalog/addQueryObject.jsp</result>
+	 			  
+	 			  <result name="addSynFlow">/form/admin/catalog/addSynFlow.jsp</result>
+	 			  <result name="addScene">/form/admin/scene/sceneBasicMsg.jsp</result>
+	 			   <result name="loadSceneEntityProperty">/form/admin/scene/sceneEntityProperty.jsp</result>
+	 			 
+	 			  
+	 			   <!-- 更新时获取组件实体 -->
+	 			   <result name="updateFormPage">/form/admin/catalog/updateFormPage.jsp</result>
+	 			   <result name="updateLogicPage">/form/admin/catalog/updateLogicPage.jsp</result>
+	 			   <result name="updateServObjPage">/form/admin/catalog/updateServiceObjPage.jsp</result>
+	 			   <result name="updateSynFlowPage">/form/admin/catalog/updateSynFlowPage.jsp</result>
+	 			   <result name="updateScenePage">/form/admin/catalog/updateScenePage.jsp</result>
+	 			   <!-- 更新组件、目录根据message动态显示成功 -->
+	 			   
+	 			  <result name="addSuccess">/form/admin/catalog/addSuccess.jsp</result>
+	 		       <result name="updateSuccess">/form/admin/catalog/updateSuccess.jsp</result>
+	 			  <!-- 添加组件成功 -->
+	 			  <result name="deleteSuccess">/form/admin/catalog/deleteSuccess.jsp</result>
+	 			  <!--  
+					 <result name="input">/form/admin/catalog/inputMessage.jsp</result>
+				   -->
+				   
+				   <!-- 创建协同流程成功 
+				  <result name="processList" type="chain">
+				  	<param name="namespace">/process</param>
+				  	<param name="actionName ">process_queryPkgTemplates</param>
+				  </result> -->
+	 			  <result name="processList">/form/admin/process/mainProcess.jsp?processId=${mid}&amp;entityId=${entityId}&amp;processTmplId=${entityId}&amp;parentNodeId=${parentNodeId}&amp;type=${type}</result>
+				  
+	 		</action>
+	 		<action name="html5Catalog_*" class="html5CatalogAction" method="{1}">
+	 			  <result name="updateCatalog">/form/html5/admin/catalog/updateCatalog.jsp</result>
+	 			  <result name="updateModule">/form/html5/admin/catalog/updateModule.jsp</result>
+	 			  <result name="updateRoot">/form/html5/admin/catalog/updateRoot.jsp</result>
+	 			  
+	 			  <result name="addSubCatalogEntrance">/form/html5/admin/catalog/addSubCatalog.jsp</result>
+	 			  <result name="addModuleEntrance">/form/html5/admin/catalog/addmodule.jsp</result>
+	 			   <!-- 验证重复跳转--> 
+	 			  <result name="addSubCatalogRepeat">/form/html5/admin/catalog/addSubCatalog.jsp</result>
+	 			  <result name="addModuleRepeat">/form/html5/admin/catalog/addmodule.jsp</result>
+	 			  
+	 			  <result name="fail">/form/admin/catalog/deleteSuccess.jsp</result>
+				  <!-- 业务定制阶段 添加表单直接跳转到表单设计器 -->
+	 			  <result name="addFormVersion">/form/admin/designer/designer.jsp</result>
+	 			  <!-- 添加组件入口 -->
+	 			  <result name="addForm">/form/html5/admin/catalog/addform.jsp</result>
+	 			  <result name="addLogic">/form/html5/admin/catalog/addlogic.jsp</result>
+	 			  <result name="addEntityObj">/form/html5/admin/catalog/addEntityObj.jsp</result>
+	 			  <result name="addQueryObj">/form/html5/admin/catalog/addQueryObj.jsp</result>
+	 			  
+	 			  <result name="addSynFlow">/form/html5/admin/catalog/addSynFlow.jsp</result>
+	 			  <result name="addScene">/form/admin/scene/sceneBasicMsg.jsp</result>
+	 			  <result name="loadSceneEntityProperty">/form/admin/scene/sceneEntityProperty.jsp</result>
+	 			 
+	 			  
+	 			   <!-- 更新时获取组件实体 -->
+	 			   <result name="updateFormPage">/form/html5/admin/catalog/updateForm.jsp</result>
+	 			   <result name="updateLogicPage">/form/html5/admin/catalog/updateLogicPage.jsp</result>
+	 			   <result name="updateServObjPage">/form/html5/admin/catalog/updateServiceObjPage.jsp</result>
+	 			   <result name="updateSynFlowPage">/form/html5/admin/catalog/updateSynFlowPage.jsp</result>
+	 			   <result name="updateScenePage">/form/html5/admin/catalog/updateScenePage.jsp</result>
+	 			   <!-- 更新组件、目录根据message动态显示成功 -->
+	 			   
+	 			  <result name="addSuccess">/form/html5/admin/catalog/addSuccess1.jsp</result>
+	 			  <result name="addSuccess2">/form/html5/admin/catalog/addSuccess2.jsp</result>
+	 			  <!-- 添加组件成功 -->
+	 			  <!--  
+	 			  <result name="deleteSuccess">/form/html5/admin/catalog/deleteSuccess.jsp</result>
+					 <result name="input">/form/admin/catalog/inputMessage.jsp</result>
+				   -->
+				   
+				   <!-- 创建协同流程成功 
+				  <result name="processList" type="chain">
+				  	<param name="namespace">/process</param>
+				  	<param name="actionName ">process_queryPkgTemplates</param>
+				  </result> -->
+	 			  <result name="processList">/form/admin/process/mainProcess.jsp?processId=${mid}&amp;entityId=${entityId}&amp;processTmplId=${entityId}&amp;parentNodeId=${parentNodeId}&amp;type=${type}</result>
+				  
+	 		</action>
+	 	
+	 </package>
+	 
+</struts>

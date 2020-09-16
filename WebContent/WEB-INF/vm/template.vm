@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>$name</title>
+<script src="${webContextPathAll}/resource/html5/js/jquery.min.js"></script>
+<script src="${webContextPathAll}/resource/html5/js/layer.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+
+.browse_class span {
+	color: blue;
+}
+.xdTableHeader TD {
+	min-height: 10px;
+}
+.radio_com {
+	margin-right: 0px;
+}
+.xdTextBox {
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	min-height: 20px;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	DISPLAY: inline-block;
+	WHITE-SPACE: nowrap;
+	COLOR: windowtext;
+	OVERFLOW: hidden;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+}
+.xdRichTextBox {
+	font-size: 12px;
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	FONT-STYLE: normal;
+	min-height: 20px;
+	display: inline-block;
+	VERTICAL-ALIGN: bottom !important;
+	WORD-WRAP: break-word;
+	COLOR: windowtext;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+	TEXT-DECORATION: none;
+}
+#mainbodyDiv div,#mainbodyDiv input,#mainbodyDiv textarea,#mainbodyDiv p,#mainbodyDiv th,#mainbodyDiv td,#mainbodyDiv ul,#mainbodyDiv li{
+	font-family: inherit;
+}
+
+</style>
+<link href="${webContextPathAll}/monitor/css/templateCss/default.css" rel="stylesheet" type="text/css">
+<link href="${webContextPathAll}/monitor/css/templateCss/default1.css" rel="stylesheet" type="text/css">
+<link href="${webContextPathAll}/monitor/css/templateCss/skin.css" rel="stylesheet" type="text/css">
+<link href="${webContextPathAll}/monitor/css/templateCss/fck_editorarea4Show.css" rel="stylesheet" type="text/css">
+<script src="${webContextPathAll}/office/document/js/WebOffice.js"></script>
+<script>
+$(function(){
+		$('#content > p').has('img').css('text-align','center');
+		$('#content > p > img').css('max-width','100%');
+		
+		//发布人控制
+		var pubN = '${pubCode}';
+		if(pubN == '' || pubN == 'null'){
+			$('#show1').hide();
+			$('#show2').hide();
+		}
+	})
+	function read(mBizId,type){
+		var mBizId = mBizId;
+		var type = type;
+		layer.open({
+			    	id:'layer01',
+					type : 2,
+					
+					title : ['查看阅读信息'],
+					shadeClose: false, //开启遮罩关闭
+					area : [ '20%', '70%' ],
+					content : "${webContextPathAll}/ReadForm.rform?mBizId="+mBizId+"&type="+type+"&iframewindowid=layer01"
+				});		
+	}
+	function print1(){
+		var obj = document.getElementById('content')
+		var docStr = obj.innerHTML;
+		var newWindow=window.open('打印窗口','_blank')
+		newWindow.document.write(docStr)
+		newWindow.print()
+		newWindow.document.close();
+	}
+</script>
+<style type="text/css">
+body{    
+	-moz-user-focus:   ignore;    
+	-moz-user-select:   none;    
+} 
+
+ol{margin: auto;}
+</style>
+
+
+</head>
+<body scroll="yes" style="height:96%;" KGBrowser="KGBrowser金格浏览器[演示版];V5.0S0xGAAEAAAAAAAAAEAAAACIBAAAwAQAALAAAANO//1HF7Tfsb1Y6J6lzIuZtrNNftWFj4sC2hobHxMkBxecv1ZGTWVDYYH61rCFqJmScp2LJi5Qa3JdVg0hlUos4LLzDhnyENjsym+Lec8Kh2uY79bCgPPAZmOmL8CA8BqJVmELfZo/6N03WXihKVjLj7fmzMXKUX5dggxXZOX5ej8UEoBhEFTmqCK/l3WqrI1gaON7a1gNfLuPC/Le2Z/pe2X31g5fellcSMRKUnh3m6vzdMSyzM2QbYDh7knuAJyXAnMxo10+LVKYzg0YdGeCDqJ3eBd4TvIOQQYcKvsM++cZPuv3Qe8qmoWcGd7fUdTFPEJwqEffTjV27iWcHNrjzOBYcKRQQLmPZSin7xunKL6QW5GKyF1xcgEJCUfa4aKLojDokD+//4gmiEgR2qJnYCPXq/DH7E1ACf7GSnJ7H">
+<div class="scrollList" id="mainbodyDiv" style="display: block; visibility: visible;">
+	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">		
+		<tbody>
+			<tr>
+				<td width="100%" height="100%" align="center" class="body-bgcolor" valign="top">
+					<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr height="100%">
+								<td>
+									<table width="100%" height="100%" align="center" class="body-detail margin-auto" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 0px;">
+										<tbody>
+											<tr>
+												<td height="60" colspan="6">
+													<table width="100%" border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+															<tr class="page2-header-line-old">
+																<td width="50%" height="60" colspan="6">
+																<!--头-->
+																	<table width="100%" align="center" class="CollTable" border="0" cellspacing="0" cellpadding="0">
+																		<tbody>
+																			<tr height="60" class="page2-header-line-old">
+																				<td width="80" height="60"><span class="bul_img"></span></td>
+																				<td width="380" class="page2-header-bg-old">公告</td>
+																				<td align="right">&nbsp;</td>
+																				<td align="right" class="padding5">${readInfoLink}&nbsp;&nbsp;${printStr}</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+																
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+							
+											<tr>
+												<td valign="top" colspan="6">
+													<div id="printThis">
+														<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td height="30" colspan="6">
+																	<!--公告标题-->
+																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																			<tbody>
+																				<tr>
+													 								<td width="35">&nbsp;</td>
+																					<td width="90%" align="center" class="view-bulletin-title">${name}</td>
+													  								<td width="35">&nbsp;</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+							
+																<tr>
+																	<td class="padding35" id="paddId" colspan="6">
+																	<!--Fields-->
+																		<table width="100%" height="100%" cellspacing="0" cellpadding="0">
+																			<tbody>
+																				<tr>
+																					<td width="5%" align="" class="font-14px" nowrap="nowrap">公告板块:&nbsp;&nbsp;</td>
+																					<td width="25%" class="font-14px">${columnName}</td>
+																					<td width="5%" align="center" class="font-14px" nowrap="nowrap">发布部门:&nbsp;&nbsp;</td>
+																					<td width="25%" class="font-14px">${pubDep}</td>
+																					<td id = 'show1' width="5%" align="center" class="font-14px" nowrap="nowrap">发布人:&nbsp;&nbsp;</td>
+																					<td id = 'show2' width="25%" class="font-14px">${pubCode}</td>
+																				</tr>
+																
+																				<tr class="padding_t_5">
+																					<td width="5%" align="" class="font-14px" nowrap="nowrap">发布时间:&nbsp;&nbsp;</td>
+																					<td width="25%" class="font-14px">${pubDate}</td>
+																	
+																					<td width="5%" align="" class="font-14px" nowrap="nowrap">发布范围:&nbsp;&nbsp;</td>
+																					<td width="25%" class="font-14px">${area}</td>
+																    
+																					<td align="" width="5%" class="font-14px" nowrap="nowrap">浏览次数:&nbsp;&nbsp;</td>
+																					<td class="font-14px" width="25%">${readTimes}</td>
+																				</tr>
+																				<tr>
+																					<td>&nbsp;</td>
+																				</tr>
+																			</tbody>
+																		</table>																
+																	</td>
+																</tr>
+											
+																<tr>
+																	<td width="100%" height="100%" id="contentTD" valign="top" style="padding-bottom: 6px;" colspan="6">
+										          						<div style="height: 100%;">
+										            						<div style="display: none;">
+																				<input name="bodyType" id="bodyType" type="hidden" value="HTML"></div>
+																				<div id="htmlContentDiv"  style="margin: 0 15%;">
+																					<table align="center" class="body-detail-HTML" id="col-contentTable" border="0" cellspacing="0" cellpadding="0">
+																						<tbody>
+																							<tr>
+																								<td class="padding15">
+																									
+																									<div id="inputPosition" style="width: 0px; height: 0px;"></div>
+																									
+																									<div class="contentText" id="content" style="text-aglin:center;">${content}</div>
+																								</td>
+	  
+																							
+																							</tr>
+																						</tbody>
+																					</table>
+</div>
+
+</div>
+
+</td>
+</tr>
+							
+												
+						
+											<tr id="attachmentTr" style="">
+											  <td height="30" class="paddingLR" colspan="6">
+											   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+													<label style="background-color:#ffffff;width:100%;height:100%;" width="100%" height="100%" ><b>附件：</b></label>
+														<td height="10" valign="" colspan="6" >
+															<hr size="1" class="newsBorder" >
+															
+														</td>
+														
+													</tr>
+												
+												</tbody></table>
+											  </td>
+											</tr>
+											<tr>
+												<td height="30" class="paddingLR" valign="top" colspan="6">
+													${file}
+												</td>
+											</tr>
+											<tr id="attachment2Tr" style="">
+											  <td height="30" class="paddingLR" colspan="6">
+											   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+														<td height="10" valign="" colspan="6">
+															<hr size="1" class="newsBorder">
+														</td>
+													</tr>
+												</tbody></table>
+											  </td>
+											</tr>
+										</tbody></table>
+										
+									</div>
+								</td>
+							</tr>
+						</tbody></table> 
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+</body></html>

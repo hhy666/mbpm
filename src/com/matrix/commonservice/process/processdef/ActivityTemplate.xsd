@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:tns="http://com/matrix/commonservice/process/processdef" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/matrix/commonservice/process/processdef">
+  <xsd:complexType name="ActivityTemplate">
+    <xsd:annotation>
+      <xsd:documentation>活动模板</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="desc" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>描述</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="type" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>类型</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

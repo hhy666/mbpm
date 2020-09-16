@@ -1,0 +1,107 @@
+		.area2{ 
+	 		width:610px; 
+	 		height:240px; 
+	 		border:1px solid #b6b6b6; 
+	 		background:#fdfdfd;  
+	 		margin:0 auto;
+			
+	 	}
+	 	body{
+			padding:0; 
+			width:100%;
+			height:100%;
+			font-size:12px; 
+			color:#000000; 
+		    background-color:#ffffff;
+		    overflow-x:hidden;
+			
+		}
+		#player{ 
+			width:100%; 
+			height:100%; 
+			overflow:hidden; 
+			/**float:left;*/
+			border-radius:5px;
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 
+		}
+		img{
+			border-radius:5px;
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 
+		}
+		
+		#player .Limg{ 
+			position:relative;
+			width:100%;
+			height:100%;
+			margin:0px;
+			padding:0px;
+		}
+		#player .Limg li{
+			position:absolute; 
+			top:2; 
+			left:2; 
+			overflow:hidden; 
+			width:100%;
+			height:100%;
+			margin:0px;
+			padding:0px;
+		}
+		#player .Nubbt{ 
+			position:absolute; 
+			z-index:9;
+			top:68%; 
+			line-height:25px; 
+			margin-left:24%;
+			margin-top:0px; 
+			filter:alpha(opacity:60);
+			opacity:0.6;
+		}
+		#player .Nubbt span{ 
+			background:#000000; 
+			padding:1px 5px; 
+			margin:0 2px; 
+			font-style:normal; 
+			cursor:pointer; 
+			color:#fff;
+		}
+		#player .Nubbt span.on{ 
+			background:#df0000; 
+			color:#fff;
+		}
+		.event{ 
+			width:610px;
+			height:240px;   
+			clear:both;
+		}
+		
+		.pic{
+			float:left;
+			margin:0px;
+			padding:0px;
+			width:49%; 
+			height:100%;
+			float:left;
+		}
+		.title{
+			float:right;
+			margin:0px;
+			width:49%;
+			height:100%;
+		}
+		h3{ 
+			font-size:16px;
+			font-family:'Microsoft JhengHei'; 
+			font-weight:bolder; 
+			color:#444444;
+			margin:0 auto;
+			text-align:center;
+		}
+		p{ 
+			font-size:14px; 
+			font-family:'Microsoft YaHei';
+			color:#666666; 
+			margin-top:4px; 
+			line-height:19px;
+		}

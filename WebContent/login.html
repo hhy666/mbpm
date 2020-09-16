@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>welcome</title>
+				<script src="resource/mobile/mui.min.js"></script>
+		<script src="resource/mobile/app.js"></script>
+		<script src="resource/mobile/matrixmobile.js"></script>
+		<link rel="stylesheet" href="resource/mobile/public.css">
+		<link rel="stylesheet" href="resource/mobile/mui.min.css">
+		<link rel="stylesheet" href="resource/mobile/matrix-base.css" />
+
+		
+    <script type="text/javascript">
+    mui.init();
+//  var readyTask = mui.preload({
+//	    url:"app/task-list-ready.html",
+//	      id:"readyTask",
+//	      subpages: [
+//			{
+//				id: 'list',
+//				url: 'http://192.168.1.102:9080/formclient/test.rform',
+//				styles: {
+//					top: '48px',
+//					bottom: 0,
+//					bounce: 'vertical'
+//				}
+//			}
+//		]
+//		});
+		
+    		var loginFail = function(response) {
+					mui.alert('登陆失败！','警告');
+    		}
+    
+    		var loginSuccess = function(response) {
+//				if (dataType === 'json') {
+//					response = JSON.stringify(response);
+//				} 
+				if(response!=null){
+					if(response.result==true){
+					   //cookie里设置当前ip和端口号
+						window.location.href='mobile/home.jsp';
+					}else{
+						mui.alert(response.message,'警告');
+					}
+				}else{
+					mui.alert('登陆失败！','警告');
+				}
+			};
+    		function login(){
+				 //  var ipValue = document.getElementById("ipValue").value;
+				   //alert("call 222 ipValue:"+ipValue);
+				 //  matrix.setCookie("ipValue",ipValue);
+				   
+//				var mform = document.getElementById("form0");
+				var uname = document.getElementById("userName").value;				
+				var upassword = document.getElementById("password").value;
+				if(uname==null || uname.trim().length==0){
+				    mui.alert('用户名不能为空！','警告',function(){
+				  		//info.innerText = '';
+				    });
+					return false;
+				}
+				if(upassword==null || upassword.trim().length==0){
+					mui.alert('密码不能为空！','警告',function(){
+				  		//info.innerText = '';
+				    });
+					return false;
+				}
+//				var uname = "2001500068";
+//				var upassword = "1";
+				var data = {};
+				data.logonName = uname;
+				data.password = upassword;
+				alert("alert been called!");
+				matrix.sendRequest("mobile/auth_logon.action",data,loginSuccess, loginFail);
+					
+    		}
+    		
+    		function logout(){
+    			plus.runtime.quit();
+    		}	
+    		
+    		
+    </script>
+    
+</head>
+<!--<body class="login-body">-->
+<body style="">	
+     <!-- <img src="resource/mobile/backgroud.png" class="logo" style="width:100%;height:100%;z-index:-10000;"/> -->
+     <div style="width:100%;height:100%;background-image:url(resource/mobile/backgroud.png)">
+       <form id="form0" action="task-list-ready.html">
+       	
+        	<table class="login" style="backgroundcolor:#000;" >
+        		<tr><td>&nbsp;</td></tr>
+        		
+        	 	<tr>
+        			<td class="login-row ">
+					<div class="login-logo">
+					</div>
+        			</td>
+        		</tr>
+       		
+        		<tr>
+        			<td class="login-row">
+        				<div class="login-img"><img style="width:80%;height:50px;" src="resource/mobile/logo.png" /></div>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td class="login-row login-input" >
+        			
+
+        			<div class="mui-input-row" >
+						<input id="userName" style="width:80%;"  class="mui-input-clear" type="text" required="required" placeholder="用户名">
+					</div>
+					<div class="mui-input-row" >
+						<input id="password"  style="width:80%;" type="password" class="mui-input-clear" placeholder="密码">
+					</div>
+        		</td></tr>
+        		
+        		<tr><td style="height:20px;">&nbsp;</td></tr>
+        		<tr>
+        			<td class="login-row" >
+        			<div class="mui-input-row" >
+						<button type="button" style="width:40%;" class="mui-btn mui-btn-primary " onclick="login()">登录</button>
+						<button type="button" style="width:40%;" class="mui-btn mui-btn-primary " onclick="logout()">退出</button>
+					</div>
+        		</td></tr>
+        		<tr><td>&nbsp;</td></tr>
+        	</table>
+			
+        </form>
+       <script>
+       	/*	var ipParam = matrix.getParam("ipValue");
+      		var ipValue = matrix.getCookie('ipValue');
+       		if (ipParam !== 'null' && ipParam !== null || ipParam !== undefined || ipParam !== '') {
+       			document.getElementById('ipValue').value = ipParam;
+       			document.getElementById('ipDiv').style.display="none";
+       		}else
+       		if (ipValue !== 'null' && ipValue !== null || ipValue !== undefined || ipValue !== '') {
+       			document.getElementById('ipValue').value = ipValue;
+       			document.getElementById('ipDiv').style.display="none";
+       		}
+       	*/
+       </script>
+       
+      
+</body>
+</html>

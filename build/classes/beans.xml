@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" 
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+					    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+						http://www.springframework.org/schema/jee
+						http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+						http://cxf.apache.org/jaxws 
+						http://cxf.apache.org/schemas/jaxws.xsd">
+	<!-- scan package location -->
+	<context:component-scan base-package="com.*" />
+
+
+<bean id="propertyConfigurer"
+class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations">
+		<list>
+		<value>classpath:matrix_ds.properties</value>
+		</list>
+	</property>
+</bean>	
+
+<!-- 
+<bean id="workflowDS" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/matrixDS</value>
+		</property>
+	</bean> 
+ -->
+
+	<bean id="workflowDS"
+		class="org.apache.commons.dbcp.BasicDataSource" name="dataSource2"
+		destroy-method="close">
+		<property name="driverClassName" value="${hibernate.connection.driver_class}" />
+		<property name="url"
+			value="${hibernate.connection.url}" />
+		<property name="username" value="${hibernate.connection.username}" />
+		<property name="password" value="${hibernate.connection.password}" />
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="600" />
+		<property name="maxIdle" value="20" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="1800" />
+		<property name="logAbandoned" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="3600000" />
+		<property name="minEvictableIdleTimeMillis" value="1800000" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testWhileIdle" value="true" />
+	</bean>
+
+	
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="workflowDS" />
+
+		<property name="mappingResources">
+			<list>
+				<value>
+					com/matrix/form/admin/flow/model/Calendar.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/flow/model/Department.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/catalog/model/CatalogInfo.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/catalog/model/CatalogAuth.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/entity/model/EntityInfo.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/entity/model/EntityProperty.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/entity/model/EntityContent.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/entity/model/EntityChange.hbm.xml
+				</value>
+
+				<value>
+					com/matrix/form/admin/form/model/FormInfo.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/form/model/FormChanges.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/form/model/FormContent.hbm.xml
+				</value>
+
+				<value>
+					com/matrix/form/admin/logic/model/LogicInfo.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/logic/model/LogicChange.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/logic/model/LogicContent.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/security/model/FormSecurity.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/security/model/FormSecurityOperateSet.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/security/model/FormSecurityScope.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/security/model/FormSecurityScopeItem.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/common/model/MatrixUser.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/refactor/model/FormRefInfo.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/queryset/model/QuerySetInfo.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/queryset/model/Options.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/queryset/model/Auth.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/queryset/model/Catalog.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/form/ReleForm.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/utilization/model/UtilizationTree.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/utilization/model/Utilization.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/utilization/model/UtiliOptions.hbm.xml
+				</value>
+				<value>
+					com/matrix/form/admin/custom/utilization/model/UtiliAuth.hbm.xml
+				</value>
+			</list>
+		</property>
+		
+
+		<property name="hibernateProperties">
+<!-- 				hibernate.dialect=org.hibernate.dialect.MySQL5Dialect org.hibernate.dialect.OracleDialect
+ -->
+			<value>
+				hibernate.dialect=org.hibernate.dialect.OracleDialect
+				hibernate.hbm2ddl.auto=none
+				hibernate.format_sql=false
+				hibernate.show_sql=false
+				hibernate.cache.provider_class=net.sf.ehcache.hibernate.EhCacheProvider
+				hibernate.cache.use_second_level_cache=true
+				hibernate.cache.use_query_cache=true
+
+			</value>
+
+
+		</property>
+
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="dataSource" ref="workflowDS" />
+	</bean>
+
+	<!-- Matrix BPM -->
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+			</props>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>FlowService</value>
+				<value>matrixService</value>
+				<value>matrixSubstitute</value>
+				<value>matrixTemplate</value>
+				<value>matrixCalendar</value>
+				<value>matrixIdentity</value>
+				<value>matrixScheduler</value>
+				<value>matrixHistory</value>
+				<value>matrixAssistant</value>
+				<value>matrixEvent</value>
+				<value>matrixJobExecutor</value>
+				<value>matrixContextHolder</value>
+				<value>DataService</value>
+				<value>matrixFormService</value>
+				<value>ToolMgr</value>
+				<value>HumanTaskMgr</value>
+				<value>ProcessDefMgr</value>
+				<value>ProcessInsMgr</value>
+				<value>matrixAssist</value>
+				<value>formActionExecutor</value>
+				<value>matrixFormStore</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="expressionHelper"
+		class="com.matrix.form.admin.custom.helper.ExpressionHelper"
+		scope="prototype" />
+	<bean id="FlowService"
+		class="com.matrix.flow.service.FlowServiceImpl"
+		scope="prototype" />
+	<bean id="matrixService"
+		class="com.matrix.engine.service.ServiceManagerBean"
+		scope="prototype" />
+	<bean id="matrixSubstitute"
+		class="com.matrix.engine.proxy.MFSubstituteServiceProxy"
+		scope="prototype" />
+	<bean id="matrixTemplate"
+		class="com.matrix.engine.proxy.MFTemplateServiceProxy"
+		scope="prototype" />
+	<bean id="matrixCalendar"
+		class="com.matrix.engine.proxy.BusinessCalendarProxy"
+		scope="prototype" />
+	<bean id="matrixIdentity"
+		class="com.matrix.engine.proxy.MFIndentityServiceProxy"
+		scope="prototype" />
+	<bean id="matrixScheduler"
+		class="com.matrix.engine.proxy.MFSchedulerServiceProxy"
+		scope="prototype" />
+	<bean id="matrixHistory"
+		class="com.matrix.engine.proxy.MFInstanceHistoryServiceProxy"
+		scope="prototype" />
+	<bean id="matrixAssistant"
+		class="com.matrix.engine.proxy.MFInstanceAssistantServiceProxy"
+		scope="prototype" />
+	<bean id="matrixEvent"
+		class="com.matrix.engine.service.event.db.JobStoreCMT"
+		scope="prototype" />
+	<bean id="matrixJobExecutor"
+		class="com.matrix.engine.service.event.MFJobExecutorImpl" />
+	<bean id="matrixAssist" class="com.matrix.engine.proxy.MFInstanceAssistantServiceProxy"  scope="prototype"/>
+	<bean id="matrixContextHolder"
+		class="com.matrix.extention.SpringContextHolder" />
+	
+
+	<bean id="dataListHelper"
+		class="com.matrix.form.engine.datamapping.DataListHelper" />
+	<bean id="dataInMappingConvert"
+		class="com.matrix.form.engine.datamapping.DataInMappingConvert" />
+	<bean id="formSecurityHelper"
+		class="com.matrix.form.render.util.FormSecurityHelper" />
+
+
+	<bean id="formActionExecutor" class="com.matrix.form.engine.FormActionExecutor"  scope="prototype"/>
+	<bean id="matrixFormService"
+		class="com.matrix.form.engine.MFormExecutionImpl" scope="prototype" />
+	<bean id="matrixFormStore"
+		class="com.matrix.form.engine.foundation.FormStoreImpl"
+		scope="prototype" />
+	<bean id="DataService"
+		class="com.matrix.commonservice.data.DataServiceImpl"
+		scope="prototype" />
+	<bean id="ToolMgr" class="com.matrix.commonservice.tool.ToolMgrImpl"
+		scope="prototype" />
+	<bean id="HumanTaskMgr"
+		class="com.matrix.commonservice.process.humantask.HumanTaskMgrImpl" />
+	<bean id="ProcessDefMgr"
+		class="com.matrix.commonservice.process.processdef.ProcessDefMgrImpl" />
+	<bean id="ProcessInsMgr"
+		class="com.matrix.commonservice.process.processinstance.ProcessInstanceMgrImpl" />
+<bean id="errorHandlerInterceptor"   
+        class="com.matrix.msg.ErrorHandlerInterceptor">   
+    </bean>
+    <bean id="OperatorDao" class="com.matrix.form.admin.catalog.foundation.OperatorModuleDao"></bean>
+   <bean id="OperatorContentDao" class="com.matrix.form.admin.catalog.foundation.OperatorContentDao"></bean>
+        <aop:aspectj-autoproxy proxy-target-class="true" />  
+        <aop:config proxy-target-class="true">  
+                <aop:pointcut   id="t_servicePointcut1"
+                        expression="execution(* com.matrix..*(..)) "  
+                        />  
+                <aop:advisor advice-ref="txAdvice" pointcut-ref="t_servicePointcut1" order="1" />        
+                <aop:aspect ref="errorHandlerInterceptor" order="2">
+					<aop:around pointcut-ref="t_servicePointcut1" method="handleError" />
+				</aop:aspect>        
+        </aop:config>  
+  
+        <tx:advice id="txAdvice" transaction-manager="transactionManager">  
+                <tx:attributes>  
+                        <tx:method name="*"/> 
+                         
+</tx:attributes>  
+        </tx:advice>  
+
+	<!--使用基于注解方式配置事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

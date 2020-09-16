@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+<package name="com.matrix.form.admin.flow.action"  extends="globalPackage" namespace="/mobile">
+		<action name="flowEdit_*" class="flowEditAction" method="{1}">
+    		<result name="save">/mobile/saveSuccessPage.jsp</result>
+    		<result name="nodeAuth">/mobile/securityInfoPage.jsp</result>
+    		<result name="activity">/mobile/editActivityPropertyPage.jsp</result>
+    		<result name="result">/editor/editActProMainPage.jsp</result>
+    		<result name="addActivity">/mobile/usersSelectPage.jsp</result>
+    	</action>
+    	<action name="showUser_*" class="showUserAction" method="{1}">
+    		<result name="userInfo">/mobile/userInfoPage.jsp</result>
+    	</action>
+	</package> 
+	<package name="office" namespace="/newsImage" extends="globalPackage">
+
+    	<action name="newsImage_*" class="com.matrix.office.FileAction" method="{1}">
+    		<result name="upload_image">../empty.jsp</result>
+    	</action>
+	</package> 
+	 
+
+	
+	<package name="com.matrix.form.admin.entreflow.action"  extends="globalPackage" namespace="/editor">
+		<action name="unit_*" class="detailEditInfoAction" method="{1}">
+		</action>
+		<action name="process_*" class="editProcessProAction" method="{1}">
+			<result name="processBasic">/editor/flow/processBasicInfo.jsp</result>
+			<result name="editFlowVariable">/editor/common/editFlowVarible.jsp</result>
+			<result name="addNewAdmin">/editor/flow/processAdminList.jsp</result>
+			<result name="processAdminInfo">/editor/flow/processAdminInfo.jsp</result>
+			<result name="advProperty">/editor/flow/advanceExtributtesPage.jsp</result>
+	        <result name="editExpandProperty">/editor/flow/editExpandPropertyPage.jsp</result>
+	    	<result name="lcsx">/editor/flow/processDurationPage.jsp</result>
+    		<!-- 流程提醒 事件  属性页 -->
+    		<result name="remindProperty">/editor/flow/processRemindEventProPage.jsp</result>
+    		<!-- 流程提醒 事件 自定义时间页 -->
+    		<result name="userDefinedTime">/editor/flow/assistEventUserDefinedTime.jsp</result>
+    		<result name="remindTimeDetail">/editor/flow/assistEventUserDefinedTime.jsp</result>
+    		<result name="assistDetail">/editor/flow/assistEventDetailPage.jsp</result>
+    		<result name="assistTimeDetail">/editor/flow/assistEventUserDefinedTime.jsp</result>
+    		<result name="curDeclarations">/editor/flow/interactiveDataBasicInfoPage.jsp?flowType=1</result>
+		    <result name="getDeclarationById">/editor/flow/declarationInfoPage.jsp</result>
+		    <result name="editApplication">/editor/flow/applicationInfoPage.jsp</result>
+		    <result name="editDeclarationChild">/editor/flow/editDeclarationChild.jsp</result>
+		</action>
+		<action name="editor_*" class="editEntreFlowProAction" method="{1}">
+			<result name="toAddMulti">/editor/activity/editMultiActInsPage.jsp</result>
+			<!-- 加载活动连线基本信息 -->
+			<result name="ActivityLine">/editor/activityline/basicInfoPage.jsp</result>
+			<!-- 点击树节点时加载右半部分的信息 -->
+			<result name="logicActivity">/editor/logicactivity/basicInfoPage.jsp</result>
+			<result name="logicActAdvPro">/editor/logicactivity/advanceProInfoPage.jsp</result>
+			<!-- 页面自动加载右半部分的基本信息 -->
+			<result name="StopAct">/editor/logicactivity/basicInfoPage.jsp</result>
+			<result name="ConditionAct">/editor/logicactivity/basicInfoPage.jsp</result>
+			<result name="SplitAct">/editor/logicactivity/basicInfoPage.jsp</result>
+			<result name="JoinAct">/editor/logicactivity/basicInfoPage.jsp</result>
+			
+			<result name="HSwimline">/editor/swimline/basicInfoPage.jsp</result>
+			<result name="VSwimline">/editor/swimline/basicInfoPage.jsp</result>
+			
+    		<result name="jbxx">/editor/activity/basicInfoPage.jsp</result>
+    		<result name="rwfp">/editor/activity/taskAssignmentPage.jsp</result>
+    		<result name="hdsx">/editor/activity/activityDurationPage.jsp</result>
+    		
+    		<result name="condition">/editor/common/conditionEditPage.jsp</result>
+    		<result name="selectflowVar">/editor/common/selectFlowVariablePage.jsp</result>
+    		<result name="assignInfo">/editor/activity/executorPage.jsp</result>
+    		
+    		<result name="assistDetail">/editor/activity/assistEventDetailPage.jsp</result>
+    		<result name="assistTimeDetail">/editor/activity/assistEventUserDefinedTime.jsp</result>
+    		<result name="userDefinedTime">/editor/activity/assistEventUserDefinedTime.jsp</result>
+    		<!-- 任务提醒 事件  属性页 -->
+    		<result name="remindProperty">/editor/activity/taskRemindEventProPage.jsp</result>
+    		<!-- 任务提醒 事件 自定义时间页 -->
+    		<result name="remindTimeDetail">/editor/activity/assistEventUserDefinedTime.jsp</result>
+    		<result name="updateMulti">/editor/activity/editMultiActInsPage.jsp</result>
+    		<result name="editExpandProperty">/editor/activity/editExpandPropertyPage.jsp</result>
+    		<result name="advProperty">/editor/activity/advanceAttributesPage.jsp</result>
+    		<result name="executor">/editor/activity/executorPage.jsp</result>
+    	    <result name="getSubflowTypeDecla">/editor/flow/interactiveDataBasicInfoPage.jsp?flowType=0</result>
+    		<result name="sjbxx">/editor/subflow/subFlowBasicInfo.jsp</result>
+    		<!-- 加载授权范围列表 -->
+    		<result name="getSecurityList">/form/admin/security/listSecEmpower.jsp?page=securityEmpower-list</result>
+    	</action>
+    	
+	</package> 
+	
+
+</struts>

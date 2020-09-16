@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	<!-- 关闭开发模式 -->
+ 	<constant name="struts.devMode" value="false" />
+ 	
+	<!-- 设置开发模式 -->
+    <constant name="struts.action.extension" value="action,do" />
+	<!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+	 <constant name="struts.objectFactory" value="spring" />
+	<!-- 设置应用使用的解析码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	
+	 <!-- 此处用constant元素定义常量 -->
+	<constant name="struts.devMode" value="false"/>
+	<!-- 设置应用使用的上传解析器类型 -->
+	<constant name="struts.multipart.parser" value="jakarta"/>
+	<constant name="struts.convention.action.packages" value=".*?/matrix-console*.*?jar(!/)?"/>
+	
+	<package name="globalPackage" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="excludeParamsStack">
+				<interceptor-ref name="defaultStack">
+					<param name="params.excludeParams">X-*</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="error">/form/admin/foundation/error.jsp</result>
+			<result name="success">/form/admin/foundation/success.jsp</result>
+			<result name="opTreeSuccess">/form/admin/foundation/opTreeSuccess.jsp</result>
+			<result name="formOrEntityError">/form/html5/admin/catalog/formOrEntityError.jsp</result>
+		</global-results>
+		
+		<!-- Utility Start -->
+			<action name="processVersion_*" class="com.matrix.admin.template.action.ProcessTmplVersionAction" method="{1}">
+				<result name="designProcess">/editor/flowdesigner.jsp</result>
+			
+			</action>
+			<action name="roleSelectedAction_*" class="com.matrix.admin.utility.action.RoleSelectedAction" method="{1}">
+				<result name="roleSelTreeView">/utility/RoleSelectedTreePage.jsp</result>
+				<result name="roleList">/utility/RoleSelectedListPage.jsp</result>
+			</action>
+			<action name="userSelectedAction_*" class="com.matrix.admin.utility.action.UserSelectedAction" method="{1}">
+			</action>
+			<action name="depSelectedAction_*" class="com.matrix.admin.utility.action.DepSelectedAction" method="{1}">
+			</action>
+		<!-- Utility End -->
+		
+		
+	</package>
+	<!-- 引入xml -->
+	 <include file="struts-module.xml"/>
+	 <include file="struts-catalog.xml"/>
+	 <include file="struts-formdesign.xml"/>
+	 <include file="struts-security.xml"/>
+	 <include file="struts-process.xml"/>
+	 <include file="struts-develop.xml"/>
+	 <include file="struts-refactor.xml"/>
+	 <include file="struts-common.xml"/>
+	 <include file="struts-flowdesign.xml"/>
+	 <include file="struts-datasource.xml"/>
+	 <include file="struts-dataInMapping.xml"/>
+	 <include file="struts-formula.xml"/>
+	 <include file="struts-common.xml"/>
+	 <include file="struts-queryset.xml"/>
+	  <include file="struts-performance.xml"/>
+	<package name="com.matrix.form.admin.logon.action"  extends="globalPackage" namespace="/logon">
+		<action name="logon_*" class="logonAction" method="{1}" >
+			  <!-- <result name="matrix" type="redirect">/form/admin/logon/matrix/index_client.jsp</result> -->
+			  <result name="index">/index.jsp</result>
+			  <result name="config">/configIndex.jsp</result>
+			 <!-- <result name="matrix" type="redirect">/form/admin/catalog/catalog.jsp</result> -->
+			 <result name="matrix" type="redirect">/form/admin/logon/matrix/index.jsp</result> 
+			  <result name="matrix_error">/form/admin/logon/matrix/logon.jsp</result>
+			  <result name="matrix_logoff" type="redirect">/form/admin/logon/matrix/logon.jsp</result>
+			 <!-- <result name="zr" type="redirect">/form/admin/logon/zr/index.jsp</result> --> 
+			 <result name="zr" type="redirect">/form/admin/logon/zr/index.jsp</result> 
+			  <result name="zr_error">/form/admin/logon/zr/logon.jsp</result>
+			  <result name="zr_logoff" type="redirect">/form/admin/logon/zr/logon.jsp</result>
+			  <result name="catalogH5" type="redirect" >/form/html5/admin/logon/matrix/html5Index.jsp</result>
+			  <!-- mobile -->
+			  <result name="mobileHome" type="redirect">/mobile/home.jsp</result>
+		</action>
+		
+    </package>
+   
+	
+	 <package name="com.matrix.form.admin.foundation.action" extends="globalPackage" namespace="/common">
+	 	<action name="common_*" class="commonTreeAction" method="{1}">
+	 		<result name="loadCommonTreePage">/form/admin/foundation/selectCatalog.jsp</result>
+	    </action>
+	    <action name="html5Common_*" class="html5CommonTreeAction" method="{1}">
+	 		<result name="loadCommonTreePage">/form/html5/admin/foundation/selectCatalog.jsp</result>
+	    </action>
+	 	<action name="formVarTree_*" class="formVarTreeAction" method="{1}">
+	 		<result name="loadFormVarPage">/form/admin/foundation/selectFormVar.jsp</result>
+	    </action>
+	    
+	    <action name="commonProperties_*" class="commonEntityPropertiesAction" method="{1}">
+	 		<result name="getEntityProperties">/form/admin/foundation/selectEntityProperty.jsp?page=property-list</result>
+	    </action>
+	    
+	    <action name="commonCode_*" class="commonCodeAction" method="{1}">
+	    	<result name="loadSelectCodeTreePage">/form/admin/foundation/selectCodeTree.jsp</result>
+	    </action>
+	    <!-- 选角色树 -->
+	    <action name="roleSelected_*" class="roleSelectedAction" method="{1}">
+	    <result name="loadRoleTreePage">/form/admin/foundation/selectRoleTree.jsp</result>
+	    
+	    </action>
+	     <!-- 选部门树 -->
+	    <action name="depSelected_*" class="depSelectedAction" method="{1}">
+	    <result name="loadDepartTreePage">/form/admin/foundation/selectDepTree.jsp</result>
+	    
+	    </action>
+	     <!-- 选用户树 -->
+	     <action name="userSelected_*" class="userSelectedAction" method="{1}">
+	     	<result name="h5LoadUserTreePage">/office/html5/select/SingleSelectPerson.jsp</result>
+	     	<result name="loadUserTreePage">/form/admin/foundation/selectUserTree.jsp</result>
+	    </action>
+	    
+	     <!-- 流程模板 -->
+	     <action name="processTmpl_*" class="processTmplAction" method="{1}">
+	     	<result name="loadProcessTreePage">/form/admin/foundation/selectProcessTree.jsp</result>
+	     	<result name="loadProcessActivitys">/form/admin/foundation/selectProcessActivity.jsp?page=selectProcessActivity-list</result>
+	     
+	    </action>
+	    
+	     <!-- 工程调试 -->
+	     <action name="debugger_*" class="MDebugerAction" method="{1}">
+	    		 <result name="logInfoPage">/form/admin/debug/matrixLog.jsp</result>
+	    </action>
+	    
+	    
+	    
+	    <!-- 系统功能 -->
+	     <action name="menu_*" class="menuAction" method="{1}">
+	    	<!-- client -->
+	    	<!-- 
+	    	<result name="createProcessIns">/StartProcessTask.rform?fdid=Wzsq&amp;pdid=Wzsq&amp;adid=621443131158</result>
+	    	 -->
+	    	<result name="createProcessIns">/Zrs.rform</result>
+	    	<result name="processInses">/StartedProcessInsList.rform</result>
+	    	<result name="readyTasks">/MyTasks2.rform</result>
+	    	<result name="completedTasks">/CompletedTasks.rform</result>
+	    	<result name="formConsole" type="redirect">/form/admin/logon/matrix/index.jsp</result>
+	    	<result name="queryMessages" >/InternalMessageList.rform</result>
+	    	<!-- client end -->
+	    	
+	    	
+	    	<result name="developTree">/form/admin/develop/catalog/dcatalog.jsp</result>
+	    	<result name="catalogTree">/form/admin/catalog/catalog.jsp</result>
+	    	<result name="customize">/form/admin/catalog/catalog.jsp</result>
+	    	
+	    	<result name="customizeH5">/form/html5/admin/logon/matrix/html5Catalog.jsp</result>
+	    	
+	    	<result name="insMgr" type="chain">
+	    		<param name="namespace">/instance</param>
+	    		<param name="actionName">processInstance</param>         
+	    		<param name="method">loadProcessInsMain</param>
+	    	</result>
+	    	<result name="calendarMgr" type="chain">
+	    		<param name="namespace">/calendar</param>
+	    		<param name="actionName">calendarAction</param>         
+	    		<param name="method">getBusinessCalendars</param>
+	    	</result>
+	    	<result name="h5CodeMgr">/form/admin/code/h5CodeTree.jsp</result>
+	    	<result name="codeMgr">/form/admin/code/codeTree.jsp</result>
+	    	<result name="serialNumMgr" type="chain">
+	    		<param name="namespace">/number</param>
+	    		<param name="actionName">serialNumber</param>         
+	    		<param name="method">getSerialNumbers</param>
+	    	</result>
+	    </action>
+	    
+	 </package>
+	 
+	  <!-- 移动端action配置 -->
+	  <package name="mobile" extends="globalPackage" namespace="/mobile">
+	    	<action name="auth_*" class="mobile-AuthenticationAction" method="{1}" >
+			</action>
+	    	<action name="task_*" class="mobile-TaskAction" method="{1}" >
+			</action>
+	    	<action name="comment_*" class="mobile-CommentAction" method="{1}" >
+			</action>
+	    	<action name="apply_*" class="mobile-ApplyAction" method="{1}" >
+	    	   <result name="processList">/mobile/process-list.jsp</result>
+			</action>
+	    	<action name="message_*" class="mobile-MessageAction" method="{1}" >
+			</action>
+	    	<action name="notice_*" class="mobile-NoticeAction" method="{1}" >
+			</action>
+	    	<action name="news_*" class="mobile-NewsAction" method="{1}" >
+			</action>
+	    	<action name="archive_*" class="mobile-ArchiveAction" method="{1}" >
+			</action>
+			<action name="text_*" class="mobile-TextAction" method="{1}" >
+				<result name="createTextPro">StartFlowForm.rform</result>
+			</action>
+	  </package>
+	  
+	  <!-- portal -->
+    <package name="com.matrix.client.foundation.portal.action" extends="globalPackage" namespace="/portal">
+    	<action name="portalAction_*" class="portalAction" method="{1}">
+    		<result name="h5PortalListMain">/foundation/portal/h5PortalListMain.jsp</result>
+    		<result name="h5PortalList">/foundation/portal/h5PortalList.jsp</result>
+    		<result name="portalList">/foundation/portal/portalList.jsp</result>
+    		<result name="h5AddPortal">/foundation/portal/h5AddPortal.jsp</result>
+    		<result name="addPortal">/foundation/portal/addPortal.jsp</result>
+    		<result name="h5SavePortal">/foundation/portal/h5PortalListMain.jsp</result>
+    		<result name="savePortal">/foundation/portal/portalList.jsp</result>
+    		<result name="deletePortal">/foundation/portal/portalList.jsp</result>
+    		<result name="movePortalUp">/foundation/portal/h5PortalListMain.jsp</result>
+    		<result name="movePortalDown">/foundation/portal/h5PortalListMain.jsp</result>
+    		<result name="h5UpdatePortal">/foundation/portal/h5AddPortal.jsp</result>
+    		<result name="updatePortal">/foundation/portal/addPortal.jsp</result>
+    		<result name="h5authList">/foundation/portal/h5AuthList.jsp</result>
+    		<result name="authList">/foundation/portal/authList.jsp</result>
+			 <!--<result name="selectAuth">/foundation/portal/addSecScopeItem.jsp</result>-->
+			<result name="selectAuth">MixSelect.rform</result> 
+			<result name="h5SaveAuth">/foundation/portal/h5AuthList.jsp</result> 
+			<result name="saveAuth">/foundation/portal/authList.jsp</result> 
+			<result name="preview">/foundation/portal/portalPreview.jsp</result>
+			<result name="previewOffice">/foundation/portal/portal.jsp</result>
+			<result name="blank">/form/admin/logon/matrix/welcome.jsp</result>
+    	</action>
+    	
+    	<action name="partsAction_*" class="partsAction" method="{1}">
+    		<result name="h5PartsList">/foundation/portal/h5PartsList.jsp</result>
+    		<result name="partsList">/foundation/portal/partsList.jsp</result>
+    		<result name="addParts">/foundation/portal/h5AddParts.jsp</result>
+    		<result name="deleteParts">/foundation/portal/partsList.jsp</result>
+    		<result name="updateParts">/foundation/portal/h5AddParts.jsp</result>
+			<result name="h5moveContentUp">/foundation/portal/h5SetPortalContentPage.jsp</result>
+			<result name="h5ContentMoveDown">/foundation/portal/h5SetPortalContentPage.jsp</result>
+    		<result name="h5SetPortalContentPage">/foundation/portal/h5SetPortalContentPage.jsp</result>
+    		<result name="setPortalContentPage">/foundation/portal/setPortalContentPage.jsp</result>
+    		<result name="h5EditSelectParts">/foundation/portal/h5EditSelectParts.jsp</result>
+    		<result name="h5SelectParts">/foundation/portal/h5SelectParts.jsp</result>
+    		<result name="selectParts">/foundation/portal/selectParts.jsp</result>
+    	</action>
+    </package>
+     <!-- password -->
+	 <package name="com.matrix.client.foundation.password.action" extends="struts-default" namespace="/password">
+	 	<action name="passwordAction_*" class="passwordAction" method="{1}">
+	 		<result name="pwd">/foundation/password/updatePassword.jsp</result>
+	 	</action>
+	 </package>
+    <!--问题报告-->
+    <package name="com.matrix.client.foundation.problem.action" extends="globalPackage" namespace="/problem">
+   		<action name="problemAction_*" class="problemAction" method="{1}">
+   			<result name="problemList">/foundation/problem/problemList.jsp</result>
+   			<result name="addProblem">/foundation/problem/addProblem.jsp</result>
+   			<result name="readProblemReport">/foundation/problem/addProblem.jsp</result>
+   			<result name="saveProblem">/foundation/problem/problemList.jsp</result>
+   			<result name="replyList">/foundation/problem/replyList.jsp</result>
+   		</action>	
+   		<action name="fileOperatorAction_*" class="fileOperatorAction" method="{1}">
+   			<result name="fileUploadSuccess">/foundation/problem/success.jsp</result>
+   			<result name="loadAddFile">/foundation/problem/addFile.jsp</result>
+   		</action>
+    </package>
+    
+    
+     <!-- code -->
+	 <package name="com.matrix.client.foundation.code.action" extends="globalPackage" namespace="/code">
+	 	<action name="code_*" class="codeAction" method="{1}">
+	 		<result name="saveSubCatalog">/foundation/code/saveSubCatalog.jsp</result>
+	 		<result name="saveCodeType">/foundation/code/saveCodeType.jsp</result>
+	 		<result name="getCodeBasicItem">/foundation/code/basicTypeList.jsp</result>
+	 		<result name="updateCodeType">/foundation/code/updateCodeType.jsp</result>
+	 		<result name="loadUpdateCustomMain">/foundation/code/updateCustomTypeMain.jsp</result>
+	 		<result name="loadUpdateBasicMain">/foundation/code/updateBasicTypeMain.jsp</result>
+	 		<result name="opTreeSuccess">/foundation/common/opTreeSuccess.jsp</result>
+	 		<result name="codeMgr">/foundation/code/codeTree.jsp</result>
+	 		<result name="basicTypeList">/foundation/code/basicTypeList.jsp</result>	
+	 		<result name="loadSaveBasicItemPage">/foundation/code/saveBasicTypeItem.jsp</result>
+	 	</action>
+	 	<action name="customCode_*" class="customCodeAction" method="{1}">
+	 		<result name="loadSavePage">/foundation/code/selfDefinitionType.jsp</result>
+	 	</action>
+	 </package>
+	 
+	 <!-- message --> 
+	<package name="com.matrix.client.foundation.message.action"  extends="globalPackage" namespace="/foundation">
+		<action name="message_*" class="MessageAction" method="{1}">
+    		<result name="messageList">message/listMessage.jsp</result>
+    		<result name="h5MessageList">message/h5ListMessage.jsp</result>
+    		<result name="infoMessage">message/infoMessage.jsp</result>
+    		<result name="addMessage">message/infoMessage.jsp</result>
+    		<result name="saveMessage">message/listMessage.jsp</result>
+    	</action>
+	</package> 
+	
+	<package name="com.matrix.office.attendance.action"  extends="globalPackage" namespace="/attendance">
+		<action name="attendance_*" class="attendanceAction" method="{1}">
+    		
+    	</action>
+    	
+	</package>  
+	<package name="com.matrix.office.investigation.action"  extends="globalPackage" namespace="/investigation">
+		<action name="investigation_*" class="investigationAction" method="{1}">
+    		<result name="success">/office/survery/success.jsp</result>
+    	</action>
+    	
+	</package> 
+	
+	<package name="com.matrix.form.admin.custom.trigger.action" extends="struts-default" namespace="/trigger">
+		<action name="formProcessor_*" class="triggerAction" method="{1}">
+			<result>/form/admin/custom/trigger/editEventInfo.jsp</result>
+			<result name="save">/form/admin/custom/trigger/triggerSet.jsp</result>
+		</action>
+		<action name="checkPoint_*" class="checkPointAction" method="{1}">
+			<result name="getList">/form/admin/custom/trigger/selectCheckPoint.jsp</result>
+		</action>
+		
+		<action name="dataCopy_*" class="dataCopySetAction" method="{1}">
+			<result name="getDataCopyList">/form/admin/custom/trigger/dataCopySet.jsp</result>
+			<result name="error">/form/admin/custom/trigger/error.jsp</result>
+			<result name="editCopyList">/form/admin/custom/trigger/editCopySet.jsp</result>
+			<result name="targetForm">/form/admin/custom/trigger/targetForm.jsp</result>
+			<result name="condition">/form/admin/custom/trigger/tarCondition.jsp</result>
+		</action>
+		
+		<action name="condition_*" class="formDataAction" method="{1}">
+			<result name="condition">/form/admin/custom/trigger/conditionSet.jsp</result>
+			<result name="daySub">/form/admin/custom/trigger/daySub.jsp</result>
+			<result name="getYMDW">/form/admin/custom/trigger/getYMDW.jsp</result>
+			<result name="msgContent">/form/admin/custom/trigger/selectMsgContent.jsp</result>
+			<result name="conditionAssociated">/form/admin/custom/trigger/conditionAssociated.jsp</result>
+			<result name="conditionTemp">/form/admin/custom/trigger/tarCondition.jsp</result>
+		</action>
+		
+		<action name="conditionTrans_*" class="conditionTransAction" method="{1}">
+		</action>
+		
+		<action name="testXML_*" class="testXML" method="{1}">
+			<result name="parse">/form/admin/custom/trigger/triggerSet.jsp</result>
+		</action>
+	</package>
+	<package name="com.matrix.form.admin.custom.utilization.action"  extends="globalPackage" namespace="/utilization">
+	<action name="code_*" class="utilizationTreeAction" method="{1}">
+			<result name="saveSubCatalog">/form/admin/custom/utilization/addCatalogue.jsp</result>
+	 		<result name="saveCodeType">/form/admin/custom/utilization/addUtilation.jsp</result>
+	 		<result name="saveSubCatalogH5">/form/html5/admin/custom/utilization/addUtilizationCatalog.jsp</result>
+	 		<result name="saveCodeTypeH5">/form/html5/admin/custom/utilization/addUtilizationCatalog.jsp</result>
+	 		<result name="updateCodeType">/form/admin/custom/utilization/addUtilation.jsp</result>
+	 		<result name="loadSaveBasicItemPage">/form/admin/custom/utilization/addUtilation.jsp</result>
+	 		<result name="opTreeSuccess">/form/admin/custom/utilization/treeSuccess.jsp</result>
+	 		<result name="TreeSuccess">/form/admin/custom/utilization/treeSuccess_2.jsp</result>
+	 		<result name="TreeSuccessH5">/form/html5/admin/catalog/addSuccess1.jsp</result>
+    	</action>
+    	<action name="form_*" class="utiliFormDataAction" method="{1}">
+    		<result name="Success">/form/admin/custom/queryList/formInfoPage.jsp</result>
+    		<result name="daySub">/form/admin/custom/queryList/daySub.jsp</result>
+    		<result name="getYMDW">/form/admin/custom/queryList/getYMDW.jsp</result>
+    		<result name="condition">/form/admin/custom/queryList/conditionSet.jsp?sign=utili</result>
+    	</action>
+    	<action name="utili_*" class="utilizationAction" method="{1}">
+    		<result name="success">/form/admin/custom/queryList/popupSelectFramePage.jsp</result> 
+    		<result name="error">/form/admin/custom/queryList/error.jsp</result>
+    		<result name="opTreeSuccess">/form/admin/custom/queryList/empty.jsp</result>
+    		<result name="list">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="getList">/form/admin/custom/utilization/utilizationSet.jsp</result>
+    		<result name="updateSucess">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="deleSucess">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="copySucess">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="outData">/form/admin/custom/utilization/outData.jsp</result>
+    		<result name="sort">/form/admin/custom/utilization/sortInfoPage.jsp</result>
+    	</action>
+	</package> 
+	
+   <package name="com.matrix.office.document.action"  extends="globalPackage" namespace="/templet">
+		<action name="tem_*" class="flowTempListAction" method="{1}">
+			<result name="templetList">/office/templet/templateList.jsp</result>
+			<result name="List">/office/templet/tempartList.jsp</result>
+			<result name="addTem">/form/html5/admin/flow/addTemplateList.jsp</result>
+			
+			<result name="openEditPage">/form/admin/composite/composite.jsp</result>
+			<result name="success">/form/html5/admin/catalog/addSuccess1.jsp</result>
+			<result name="copyPage">/form/html5/admin/logon/matrix/html5TemplateCopy.jsp</result>
+			<result name="copyFlowTemPage">/form/html5/admin/logon/matrix/html5FlowTemplateCopy.jsp</result>
+	    </action>
+		<action name="crtPro_*" class="createSynProcessAction" method="{1}">
+			<result name="createSynProcess" type="redirect">/CreateSynProcess.rform?mHtml5Flag=true&amp;formId=${formId}&amp;isInitLoad=1&amp;mBizId=${mBizId}&amp;mFlowBizId=${mFlowBizId}&amp;pdid=${pdid}&amp;type=${type}&amp;adid=${adid}&amp;authId=${authId}&amp;fromportal=${fromportal}&amp;baseCode=${baseCode}&amp;sysType=${sysType}&amp;firstTime=${firstTime}</result>
+			<result name="createFlowTemplate4Id" type="redirect">/flowModelEdit.rform?formId1=${formId1}&amp;parentId1=${parentId1}&amp;formUuid=${formUuid}&amp;tempCls=${tempCls}&amp;startType=${startType}&amp;docType=${docType}&amp;type=${type}&amp;iframewindowid=addTemplateDialog&amp;mBizId=${mBizId}&amp;mFlowBizId=${mFlowBizId}</result>
+			<result name="createProcess" type="redirect">/CreateProcess.rform?mHtml5Flag=true&amp;formId=${formId}&amp;isInitLoad=0&amp;mBizId=${mBizId}&amp;pdid=${pdid}&amp;type=1&amp;subType=${subType}&amp;adid=${adid}&amp;authId=${authId}&amp;mFlowBizId=${mFlowBizId}</result>
+			<result name="editFlowTemplate4Id" type="redirect">/flowModelEdit.rform?mBizId=${mBizId}&amp;mFlowBizId=${mFlowBizId}&amp;flowOrDoc=${flowOrDoc}&amp;formUuid=${formUuid}&amp;iframewindowid=edittheTemplateDialog</result>
+	    </action>
+    </package>
+
+       <package name="com.matrix.office.meet.action.MeetRoomAction"  extends="globalPackage" namespace="/meetingroom">
+	<action name="MeetRoomAction_*" class="MeetRoomAction" method="{1}">
+	
+    </action>
+    </package>
+    <package name="com.matrix.office.html5.SelectAction"  extends="globalPackage" namespace="/select">
+	<action name="SelectAction_*" class="SelectAction" method="{1}">
+	
+    </action>
+    </package>
+    <package name="com.matrix.form.admin.custom.unionpk.action"  extends="globalPackage" namespace="/union">
+	<action name="un_*" class="unionPkAction" method="{1}">
+	<result name="unionpk">/form/admin/custom/unionpk/unionpk.jsp</result>
+	 </action>
+    </package>
+
+    <package name="com.matrix.form.engine.datamapping"  extends="globalPackage" namespace="/selectMapping">
+	<action name="look_*" class="selectMappingAction" method="{1}">
+	
+    </action>
+    </package>
+    
+    <package name="com.matrix.flow.action"  extends="globalPackage" namespace="/selectTransition">
+	<action name="selectTransition_*" class="selectTransitionAction" method="{1}">
+		<result name="selectTransition">/form/html5/admin/flow/selectTransition.jsp</result>
+    </action>
+    </package>
+    
+    <package name="com.matrix.form.admin.template"  extends="globalPackage" namespace="/compositeTemplate">
+	<action name="compositeTemplate_*" class="compositeTemplate" method="{1}">
+    </action>
+    </package>
+</struts>

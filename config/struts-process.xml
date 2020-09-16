@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <package name="com.matrix.form.admin.process.action"  extends="globalPackage" namespace="/process">
+	     	<action name="processTmplAction_*" class="processAction" method="{1}">
+	     		  <result name="processMigration">/form/admin/process/processMigration.jsp</result>
+	     		  <result name="processNewV">/form/admin/process/processNewVersion.jsp</result>
+	     		 <!--  <result name="processNewVR">/form/admin/process/processNewVersionResult.jsp</result> -->
+	 			  <result name="processList">/form/admin/process/listProcess.jsp</result>
+	 			  <result name="designProcess" type="redirect">../editor/flowdesigner.jsp?pdid=${pdid}&amp;ptid=${processType}&amp;containerType=process&amp;containerId=${pdid}&amp;mode=flow&amp;fromDB=true</result>
+	 			  <result name="h5SelectProcess">/form/admin/process/h5SelectProcess.jsp</result>
+	 			  <result name="selectProcess">/form/admin/process/selectProcess.jsp</result>
+	 			  <result name="importBPMN">/form/admin/process/importBPMNCallback.jsp</result>
+	 		</action>
+	     	<action name="ruleAction_*" class="ruleAction" method="{1}">
+				<result name="ruleList">/form/admin/process/listRule.jsp</result>
+				<result name="editRule">/form/admin/process/editRule.jsp</result>
+			</action>
+	 
+	 </package>
+	 
+	 <package name="com.matrix.form.admin.instance.action"  extends="globalPackage" namespace="/instance">
+	     <action name="processInstance_*" class="processInstanceAction" method="{1}">
+	       <result name="h5LoadProcessInsMain">/form/admin/instance/h5MainProcessInstance.jsp</result>
+	       <result name="loadProcessInsMain">/form/admin/instance/mainProcessInstance.jsp</result>
+	     	<result name="h5LoadTabsPage">/form/admin/instance/h5TabsProcessInstance.jsp</result>
+	     	<result name="loadTabsPage">/form/admin/instance/tabsProcessInstance.jsp</result>
+	     	<result name="h5ProcessInsDeepSetPage">/form/admin/instance/h5DeepSetPage.jsp</result>
+	     	<result name="h5LoadProcessInsesPage">/form/admin/instance/h5ListProcessInstance.jsp</result>
+	     	
+	     	<result name="h5processInsPrioritySetPage">/form/admin/instance/h5PrioritySetPage.jsp</result>
+	     	<result name="loadProcessInsesPage">/form/admin/instance/listProcessInstance.jsp</result>
+	     	<!-- 流程实例详细 -->
+	     	<result name="h5LoadProcInsDetailMainPage">/form/admin/instance/h5ProcessInsDetail.jsp</result>
+	     	<result name="loadProcInsDetailMainPage">/form/admin/instance/processInsDetail.jsp</result>
+	     	<result name="h5GetProcessInsMsg">/form/admin/instance/h5ProcessInsDetailMsg.jsp</result>
+	     	<result name="getProcessInsMsg">/form/admin/instance/processInsDetailMsg.jsp</result>
+	     	<result name="h5GetProcessInsVar">/form/admin/instance/h5ProcessInsDetailVar.jsp</result>
+	     	<result name="getProcessInsVar">/form/admin/instance/processInsDetailVar.jsp</result>
+	     	<result name="h5GetActivtityInsesByPiid">/form/admin/instance/h5ProcessInsDetailActivity.jsp</result>
+	     	<result name="getActivtityInsesByPiid">/form/admin/instance/processInsDetailActivity.jsp</result>
+	     	<!-- 流程历史列表 -->
+	        <result name="h5HisProcInsList">/form/admin/instance/h5ListProcessInsHistory.jsp</result>
+	        <result name="hisProcInsList">/form/admin/instance/listProcessInsHistory.jsp</result>
+	     	
+	 	</action>
+	 	
+	 	<action name="activityInsAction_*" class="activityInstanceAction" method="{1}">
+	     	<result name="h5ActInsList">/form/admin/instance/h5ListActivityInstance.jsp</result>
+	     	<result name="actInsList">/form/admin/instance/listActivityInstance.jsp</result>
+	        <result name="h5ForceFinish">/form/admin/instance/h5ActivityForceFinish.jsp</result>
+	        <result name="forceFinish">/form/admin/instance/activityForceFinish.jsp</result>
+	     	<result name="h5TaskList">/form/admin/instance/h5TaskListOfActIns.jsp</result>
+	     	<result name="taskList">/form/admin/instance/taskListOfActIns.jsp</result>
+	     	
+	     	<result name="h5ViewDetail">/form/admin/instance/h5ActivityInsDetail.jsp</result>
+	     	<result name="viewDetail">/form/admin/instance/activityInsDetail.jsp</result>
+	     	<result name="h5GetActivityInsDetailMsg">/form/admin/instance/h5ActivityInsDetailMsg.jsp</result>
+	     	<result name="getActivityInsDetailMsg">/form/admin/instance/activityInsDetailMsg.jsp</result>
+	     	<result name="h5GetActivityInsDetailVar">/form/admin/instance/h5ActivityInsDetailVar.jsp</result>
+	     	<result name="getActivityInsDetailVar">/form/admin/instance/activityInsDetailVar.jsp</result>
+	     	<result name="h5HisActInsList">/form/admin/instance/h5ListActivityInsHistory.jsp</result>
+	     	<result name="hisActInsList">/form/admin/instance/listActivityInsHistory.jsp</result>
+	     	
+	     	
+	     	
+	     	
+	 	</action>
+	 	
+	 
+	 </package>
+	 
+	 <!-- 业务日历 -->
+	  <package name="com.matrix.form.admin.calendar.action"  extends="globalPackage" namespace="/calendar">
+	     	<action name="calendarAction_*" class="calendarAction" method="{1}">
+	     	  	<result name="h5LoadSaveCalendarPage">/form/admin/calendar/h5SaveCalendar.jsp</result>
+	     	  	<result name="loadSaveCalendarPage">/form/admin/calendar/saveCalendar.jsp</result>
+	 			<result name="h5CalendarList">/form/admin/calendar/h5ListCalendar.jsp</result>
+	 			<result name="calendarList">/form/admin/calendar/listCalendar.jsp</result>
+	 			<result name="h5DetailMain">/form/admin/calendar/h5CalendarDetail.jsp</result>
+	 			<result name="detailMain">/form/admin/calendar/calendarDetail.jsp</result>
+	 			
+	 			<result name="h5GetBusyDayOfWeekList">/form/admin/calendar/h5ListBusydayOfWeek.jsp</result>
+	 			<result name="h5GetBusyDayOfDateList">/form/admin/calendar/h5ListBusydayOfDate.jsp</result>
+	 			<result name="h5GetHolidayRangeList">/form/admin/calendar/h5ListHolidayRange.jsp</result>
+	 			<result name="getBusyDayOfWeekList">/form/admin/calendar/listBusydayOfWeek.jsp</result>
+	 			<result name="getBusyDayOfDateList">/form/admin/calendar/listBusydayOfDate.jsp</result>
+	 			<result name="getHolidayRangeList">/form/admin/calendar/listHolidayRange.jsp</result>
+	 			
+	 			<result name="h5SaveBusyDayOfWeek">/form/admin/calendar/h5SaveBusydayOfWeek.jsp</result>
+	 			<result name="h5SaveBusyDayOfDate">/form/admin/calendar/h5SaveBusydayOfDate.jsp</result>
+	 			<result name="h5SaveHolidayRange">/form/admin/calendar/h5SaveHolidayRange.jsp</result>
+	 			<result name="saveBusyDayOfWeek">/form/admin/calendar/saveBusydayOfWeek.jsp</result>
+	 			<result name="saveBusyDayOfDate">/form/admin/calendar/saveBusydayOfDate.jsp</result>
+	 			<result name="saveHolidayRange">/form/admin/calendar/saveHolidayRange.jsp</result>
+	 			
+	 			<result name="previewCalendar">/form/admin/calendar/previewCalendar.jsp</result>
+	 			
+	 		</action>
+	     	
+	 
+	 </package>
+	 
+	 
+	 
+</struts>

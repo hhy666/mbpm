@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+
+body{font-family: 微软雅黑;}
+.box{width: 100%;height:100%;margin: 0 auto;background: url(../img/back.png);background-size:100% 100%;}
+.logo{height: auto;}
+.logo img{margin-left:230px;margin-top:150px;}
+/**.content{position: absolute;width: 415px;height:auto;right:284px;margin-top:68px;}**/
+.content{
+	width:415px;
+	height:auto;
+	position: absolute;
+    left:50%;
+    top:50%;
+    margin-top:-60px;
+    margin-left:120px;
+	
+}
+.title{float: right;}
+.title img{float: left;margin-top:4px;}
+.title p{float: left;font-size: 14px;margin-left: 10px;color:#bbeaff;background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(187, 234, 255, 1)), to(rgba(255, 255, 255, 1)));-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+.content1{width: 413px;height: 245px;background: url(../img/dl.png);margin-top:26px;}
+.content1 div{padding-top:14px;margin-left: 65px;clear: both;}
+.content1 div img{margin-right: 16px;float: left;margin-top:10px;}
+.content1 div input{width: 222px;height: 32px;border: 1px solid #448aca;float: left;color: #cfe1ef;padding-left: 8px;}
+label{color:red;font-size:10px;height:32px;line-height:32px;}
+::-webkit-input-placeholder { /* WebKit*/color: #cfe1ef;} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color: #cfe1ef;} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #cfe1ef;} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */color: #cfe1ef;}
+.content1 button{width: 88px;height: 33px;background: url(../img/button.png);color: #fff;border: none;margin-top: 11px;margin-left: 26px;}

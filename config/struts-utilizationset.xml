@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <!-- 应用设置 -->
+	<package name="com.matrix.form.admin.custom.utilization.action"  extends="globalPackage" namespace="/utilization">
+		<action name="code_*" class="utilizationTreeAction" method="{1}">
+			<result name="saveSubCatalog">/form/admin/custom/utilization/addCatalogue.jsp</result>
+	 		<result name="saveCodeType">/form/admin/custom/utilization/addUtilation.jsp</result>
+	 		<result name="saveSubCatalogH5">/form/html5/admin/custom/utilization/addUtilizationCatalog.jsp</result>
+	 		<result name="saveCodeTypeH5">/form/html5/admin/custom/utilization/addUtilizationCatalog.jsp</result>
+	 		<result name="updateCodeType">/form/admin/custom/utilization/addUtilation.jsp</result>
+	 		<result name="loadSaveBasicItemPage">/form/admin/custom/utilization/addUtilation.jsp</result>
+	 		<result name="opTreeSuccess">/form/admin/custom/utilization/treeSuccess.jsp</result>
+	 		<result name="TreeSuccess">/form/admin/custom/utilization/treeSuccess_2.jsp</result>
+	 		<result name="TreeSuccessH5">/form/html5/admin/catalog/addSuccess1.jsp</result>
+    	</action>
+    	<action name="form_*" class="utiliFormDataAction" method="{1}">
+    		<result name="Success">/form/admin/custom/queryList/formInfoPage.jsp</result>
+    		<result name="daySub">/form/admin/custom/queryList/daySub.jsp</result>
+    		<result name="getYMDW">/form/admin/custom/queryList/getYMDW.jsp</result>
+    		<result name="condition">/form/admin/custom/queryList/conditionSet.jsp?sign=utili</result>
+    	</action>
+    	<action name="utili_*" class="utilizationAction" method="{1}">
+    		<result name="success">/form/admin/custom/queryList/popupSelectFramePage.jsp</result> 
+    		<result name="error">/form/admin/custom/queryList/error.jsp</result>
+    		<result name="opTreeSuccess">/form/admin/custom/queryList/empty.jsp</result>
+    		<result name="list">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="getList">/form/admin/custom/utilization/utilizationSet.jsp</result>
+    		<result name="updateSucess">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="deleSucess">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="copySucess">/form/admin/custom/utilization/utilizationList.jsp</result>
+    		<result name="outData">/form/admin/custom/utilization/outData.jsp</result>
+    		<result name="sort">/form/admin/custom/utilization/sortInfoPage.jsp</result>
+    		
+    		<!-- H5版本 -->
+    		<result name="utilizationSet">/form/admin/custom/utilization/h5UtilizationSet.jsp</result>
+    	</action>
+	</package> 
+</struts>

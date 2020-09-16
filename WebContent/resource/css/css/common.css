@@ -1,0 +1,179 @@
+@charset "UTF-8";
+html { font: "微软雅黑"; }
+
+.layui-btn-disabled { pointer-events: none; }
+
+.jznowith { width: 0px !important; }
+
+table { border-collapse: separate; }
+
+table * { background-clip: padding-box !important; }
+
+table td { border-collapse: collapse; }
+
+.theme_font { color: #2D61CD; }
+
+.theme_bg { background: #2D61CD !important; }
+
+.theme_tableHeader thead th { background: #becff3 !important; }
+
+.bg_f6 { background-color: #f6f6f6; }
+
+.bgwhite { background: #ffffff !important; }
+
+.mr78 { margin-left: 78px !important; }
+
+.lf { float: left; }
+
+.rt { float: right; }
+
+.inblock { display: inline-block !important; width: auto; }
+
+.doubleh { height: 56px; resize: none; }
+
+/* 面包屑导航 */
+.jzCrumb { display: inline-block; vertical-align: top; background: #ffffff; box-shadow: rgba(0, 0, 0, 0.157) 1px 1px 4px; font-weight: 400; font-style: normal; font-size: 16px; padding: 10px; width: 98.65%; }
+
+.jzCrumb .layui-breadcrumb a { font-size: 16px; }
+
+.jzCrumb .layui-breadcrumb a:hover { color: #2D61CD !important; }
+
+/*长度高度
+******************************/
+.w530 { width: 530px !important; }
+
+.w540 { width: 540px !important; }
+
+.w570 { width: 570px !important; }
+
+.h275 { height: 275px !important; }
+
+.textrt { text-align: right !important; }
+
+.textlf { text-align: left !important; }
+
+.textce { text-align: center !important; }
+
+.textover { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.jztable td { display: inline-block; }
+
+.tdhover tbody tr:hover { background: #ffffff; }
+
+.tdhover tbody td:hover { background-color: #f2f2f2; }
+
+/* table */
+.jztable td { display: inline-block; }
+
+.tdhover tbody tr:hover { background: #ffffff; }
+
+.tdhover tbody td:hover { background-color: #f2f2f2; }
+
+.textce th { text-align: center; }
+
+/* table 结束 */
+/*行内input*/
+.jz-form-label { width: 40px; padding: 9px 0px; text-align: left; }
+
+.jz-input-block { margin-left: 0px; }
+
+/*行内input end*/
+/*修改hover状态*/
+.layui-btn-primary:hover { border-color: #2D61CD; }
+
+/*弹出层皮肤*/
+body .layui-jz-blue .layui-layer-btn .layui-layer-btn0 { background: #2D61CD; border-color: #2D61CD; color: #ffffff; }
+
+body .layui-jz-blue .layui-layer-btn .layui-layer-btn1 { background: #2D61CD; border-color: #2D61CD; color: #ffffff; }
+
+body .layui-jz-blue .layui-layer-btn .layui-layer-btn2 { background: #2D61CD; border-color: #2D61CD; color: #ffffff; }
+
+body .layui-jz-blue .layui-layer-btn .layui-layer-btn3 { background: #2D61CD; border-color: #2D61CD; color: #ffffff; }
+
+/*弹出层皮肤*/
+.layui-btn-ok { background: #00cc33; }
+
+/*遮罩层*/
+.isexchanged .shade { display: none; }
+
+.isexchanged.jz-showBh .shade { display: block; }
+
+.shade { background: #000000; background: rgba(0, 0, 0, 0.4); filter: alpha(opacity=40); position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+
+.shade img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: inline-block; width: 100%; height: 100%; }
+
+/*遮罩层*/
+.dateinput { width: auto !important; height: 38px !important; }
+
+.jz-select { width: 100%; padding-left: 10px; text-align: center; height: 38px; line-height: 38px; }
+
+/*弹出皮肤*/
+.popup .title { padding: 0 80px 0 20px; height: 42px; line-height: 42px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; overflow: hidden; background-color: #F8F8F8; border-radius: 2px 2px 0 0; }
+
+.popup .content .btn { width: 96% !important; }
+
+table.nowrap th, table.nowrap td { white-space: nowrap !important; overflow: hidden; text-overflow: ellipsis; }
+
+td { border: 1px solid #E5E5E5; height: 30px; text-align: center; }
+
+.vistorContainer-maintab { width: 600px; position: relative; }
+
+.tt { height: 15px; border-bottom: 1px solid #e6e6e6; }
+
+.td { height: 15px; }
+
+table td { white-space: nowrap; }
+
+.layui-table[lay-even] tr:nth-child(even) td { background-color: #f2f2f2; }
+
+.layui-layer-hui { z-index: 2147483647 !important; }
+
+.tby { width: 49%; display: inline-block; float: left; }
+
+.jz-tbscroll-div { height: 300px; overflow-y: auto; -ms-overflow-style: scrollbar; }
+
+.searchwidth [lay-ignore] { display: inline-block; width: 103px; height: 38px; padding: 9px; line-height: 38px; border: 1px solid #ddd; }
+
+#loading { background: none; }
+
+#loading .content { background: url(../../../base/images/loading/loading-2.gif) no-repeat center; }
+
+table .layui-btn { height: 28px !important; line-height: 28px !important; }
+
+.layui-table[lay-size=sm] tbody td { padding: 2px !important; }
+
+.theme_bg_none { background: none !important; }
+
+.co000 { color: #000000 !important; }
+
+.comUpload { background: #f2f2f2; border: 1px solid #dee3e6; width: 79px !important; height: 59px !important; text-align: center !important; cursor: pointer; vertical-align: middle; overflow: hidden; position: relative; padding: 0 !important; margin: 0 !important; font-size: 12px !important; color: #333 !important; display: table-cell !important; }
+
+.comUpload img.comShowImg { max-width: 90%; max-height: 90%; vertical-align: middle; position: relative; z-index: 1; }
+
+.comUploadAfter img.comShowImg { max-width: 100% !important; }
+
+.comUpload .uploadBtn { width: 79px; height: 59px; position: absolute; left: 0; top: 0; }
+
+.comUploadAfter .imgDelete { width: 24px; height: 24px; display: none; position: absolute; right: 0; top: 0; z-index: 21; background: url("../../../base/images/public-icons.png"); background-position: -43px 0px; }
+
+.comUpload[uploadtype='button'] { line-height: 30px; }
+
+.input_rank { height: 28px; line-height: 28px; text-align: center; padding: 0 !important; }
+
+.tablebgf { background: #ffffff; }
+
+.tablebgf td { background: #ffffff; }
+
+.tablebgf2 { background: #f2f2f2; }
+
+.tablebgf2 td { background: #f2f2f2; }
+
+#employ-table .tby { height: 28px; line-height: 28px; }
+
+.selectie8 { padding: 10px; }
+
+@media screen and (max-width: 1295px) { .layui-btn { font-size: 12px; }
+  #searchBar span { font-size: 12px; }
+  .searchwidth [lay-ignore] { font-size: 12px; width: 85px; } }
+
+#rankLayer-table a p, #pp-layer-table a p { text-decoration: underline !important; }

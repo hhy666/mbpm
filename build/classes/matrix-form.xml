@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<dsName>workflowDS</dsName>
+	<dbType>Oracle</dbType>
+	<ExtDataSources>
+		 <ExtDataSource dbType="HSQL">workflowDS2</ExtDataSource> 
+	</ExtDataSources>
+	<DefinedActions>
+		<DefinedAction id="FunctionAction" impl="com.matrix.client.foundation.function.action.FunctionAction"/>
+		<DefinedAction id="OrgAction" impl="com.matrix.client.foundation.org.action.OrgAction"/>
+		<DefinedAction id="DeptAction" impl="com.matrix.client.foundation.dept.action.DeptAction"/>
+		<DefinedAction id="ArchiveAction" impl="com.matrix.office.archive.action.ArchiveAction"/>
+		<DefinedAction id="SelectArchiveAction" impl="com.matrix.office.archive.action.SelectArchiveAction"/>
+		<DefinedAction id="DocTempTreeMgr" impl="com.matrix.office.document.action.DocTempTreeMgr"/>
+		<DefinedAction id="TempletTreeMgr" impl="com.matrix.office.document.action.TempletTreeMgr"/>
+		<DefinedAction id="FlowTempTreeMgr" impl="com.matrix.office.document.action.FlowTempTreeMgr"/>
+	</DefinedActions>
+	<version>41.761</version>
+
+	<rootSrc>D:/unicode</rootSrc>
+	<fileUploadPath>$D:/upfile</fileUploadPath>
+	<ExComponents>
+			<Component name="流程框架" hover="流程框架" icon="QueryList" type="custom3" 
+			dRender="com.matrix.office.FlowPageDRender" rRender="com.matrix.office.FlowPageRRender">
+		</Component>
+		
+		<Component name="可插入附件" hover="可插入附件" icon="QueryList" type="canEditFile" 
+			dRender="com.matrix.office.CanEditFileDRender" rRender="com.matrix.office.CanEditFileRRender">
+		</Component>
+		<Component name="关联多个文档" hover="关联多个文档" icon="QueryList" type="relativeMoreArchive" 
+			dRender="com.matrix.office.RelatMoreArchiveDRender" rRender="com.matrix.office.RelatMoreArchiveRRender">
+		</Component>
+		
+			<Component name="附件" hover="附件" icon="QueryList" type="custom4" 
+			dRender="com.matrix.office.FileDRender" rRender="com.matrix.office.FileRRender">
+		</Component>
+		<Component name="意见" hover="意见" icon="QueryList" type="flowComment"  isPalletitem="true" 
+			dRender="com.matrix.office.ProcessOpinionDRender" rRender="com.matrix.office.ProcessOpinionRRender">
+		</Component>		
+		<Component name="移动意见" hover="移动意见" icon="QueryList" type="custom6" 
+			dRender="com.matrix.office.MobileOpinionDRender" rRender="com.matrix.office.MobileOpinionRRender">
+		</Component>
+		<Component name="会议信息" hover="会议信息" icon="QueryList" type="custom7" 
+			dRender="com.matrix.office.ReceiptDRender" rRender="com.matrix.office.ReceiptRRender">
+		</Component>
+			<Component name="批处理" hover="批处理" icon="QueryList" type="custom8" 
+			dRender="com.matrix.office.BatchDRender" rRender="com.matrix.office.BatchRRender">
+		</Component>
+		<Component name="单选用户" hover="单选用户" icon="QueryList" type="userSelect" palletItem="true" 
+			dRender="com.matrix.office.custom.component.UserSelectDRender" rRender="com.matrix.office.custom.component.UserSelectRRender">
+		</Component>
+		
+		<Component name="多选用户" hover="多选用户" icon="QueryList" type="usersSelect" palletItem="true"  
+			dRender="com.matrix.office.custom.component.UsersSelectDRender" rRender="com.matrix.office.custom.component.UsersSelectRRender">
+		</Component>
+		<Component name="单选部门" hover="单选部门" icon="QueryList" type="depSelect"  palletItem="true" 
+			dRender="com.matrix.office.custom.component.DepSelectDRender" rRender="com.matrix.office.custom.component.DepSelectRRender">
+		</Component>
+		<Component name="多选部门" hover="多选部门" icon="QueryList" type="depsSelect"  palletItem="true" 
+			dRender="com.matrix.office.custom.component.DepsSelectDRender" rRender="com.matrix.office.custom.component.DepsSelectRRender">
+		</Component>
+		<Component name="单文件上传" hover="单文件上传" icon="QueryList" type="singleFile"  palletItem="true" 
+			dRender="com.matrix.office.custom.component.FileUploadDRender" rRender="com.matrix.office.custom.component.FileUploadRRender">
+		</Component>
+		<Component name="多文件上传" hover="多文件上传" icon="QueryList" type="multiFile"  palletItem="true" 
+			dRender="com.matrix.office.custom.component.MultiFileUploadDRender" rRender="com.matrix.office.custom.component.MultiFileUploadRRender">
+		</Component>
+		<Component name="关联文档" hover="关联文档" icon="QueryList" type="relativeArchive"  palletItem="true" 
+			dRender="com.matrix.office.custom.component.RelatArchiveDRender" rRender="com.matrix.office.custom.component.RelatArchiveRRender">
+		</Component>
+	</ExComponents>
+	<security>
+		<admin></admin>
+		<requirement>requirement</requirement>
+		<development>development</development>
+		<implement>implement</implement>
+		<business>business</business>
+		
+	</security>
+	<errorPage>/error.jsp</errorPage>
+	<localResourceEnable>false</localResourceEnable>
+	<dbResourceEnable>true</dbResourceEnable>
+		<!-- 表单系统多点配置,应用于业务对象修改时同步其它应用表单的工程的缓存,需要配置在设计工程,运行工程不需要配置 -->	
+	<FormNodes>
+		<!-- <FormNode>http://192.168.1.103:8080/moffice</FormNode> -->
+	</FormNodes>
+</root>

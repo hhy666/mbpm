@@ -1,0 +1,104 @@
+html {
+	position:relative;
+	margin:0;
+	padding:0;
+	height:100%;
+}
+body {
+	font-size:13px;
+	margin:auto;
+	height:100%;
+	overflow: hidden;
+	/*color:#666666;*/
+	-webkit-user-select: none;
+	position:relative;
+	display:box;
+	font-family: Arial;
+	-webkit-touch-callout:none;
+	-webkit-box-orient:vertical;
+	-webkit-box-align:stretch;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-ms-touch-action: none;
+}
+html,body {
+	//background-color: #efeff4;
+}
+
+
+/** welcome page*/
+.welcome{
+	position:absolute; 
+	top:0;
+	left: 0;
+	z-index:-1;
+	bottom:0;
+	color:#666;
+}
+.welcome-version 
+{
+	width:100%; 
+	height:100%; 
+	background:url(../images/bg.png);
+	text-align:center;
+}
+.welcome-version img
+{
+	margin-top:40%;
+}
+.welcome-version p{
+	padding-top:30px;
+	font-size:1em;
+	margin:0;
+}
+
+/** welcome page end*/
+
+/** login page*/
+.login{
+	width:100%; 
+	height:100%;
+}
+.login-row{
+	text-align: center;
+}
+.login-logo
+{
+	width:100%; 
+	height:10%;
+	text-align:center;
+	margin-top:50px;
+}
+.login-img
+{
+	text-align:center;
+	margin-top:50px;
+}
+.login-input{
+	padding-top: 10px;
+}
+
+
+/*重写*/
+.mui-bar-nav~ .mui-content{
+	padding-top: 2px;
+}
+
+.login-body {
+	font-size:13px;
+	margin:auto;
+	height:100%;
+	overflow: hidden;
+	/*color:#666666;*/
+	-webkit-user-select: none;
+	position:relative;
+	display:box;
+	font-family: Arial;
+	-webkit-touch-callout:none;
+	-webkit-box-orient:vertical;
+	-webkit-box-align:stretch;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-ms-touch-action: none;
+	background-image:url(../images/loading.png);
+	fixed center center no-repeat;
+	background-size: cover;
+	width: 100%;

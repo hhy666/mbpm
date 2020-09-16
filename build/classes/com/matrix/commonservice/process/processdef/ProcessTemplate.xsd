@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:tns="http://com/matrix/commonservice/process/processdef" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/matrix/commonservice/process/processdef">
+  <xsd:complexType name="ProcessTemplate">
+    <xsd:annotation>
+      <xsd:documentation>流程模板</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="pdid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="desc" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>描述</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="createDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>创建时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="priority" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>优先级</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="validFrom" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>有效期开始时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="validTo" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>有效期截止时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="author" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>作者</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="version" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>版本</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ptid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

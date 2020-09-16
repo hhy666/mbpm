@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 流水号管理配置 -->
+    <package name="com.matrix.form.admin.number.action"  extends="globalPackage" namespace="/number">
+ 			<action name="serialNumber_*" class="serialNumberAction" method="{1}" >
+ 				 <result name="h5SerialNumbers">/form/admin/snumber/h5ListSerialNumber.jsp?page=serialNumber-list</result>
+ 				 <result name="serialNumbers">/form/admin/snumber/listSerialNumber.jsp?page=serialNumber-list</result>
+ 				 <result name="h5LoadSaveSNPage">/form/admin/snumber/h5SaveSerialNumber.jsp?page=serialNumber-save</result>
+ 				 <result name="loadSaveSNPage">/form/admin/snumber/saveSerialNumber.jsp?page=serialNumber-save</result>
+ 				 <result name="saveSuccess">/form/admin/snumber/saveSerialNumber_Blank.jsp?page=serialNumber-save</result>
+ 				 <result name="selectSerialNumbers">/form/admin/snumber/selectSerialNumber.jsp</result>
+ 			</action>
+ 			
+ 		
+   </package>
+
+	<!-- 代码管理配置 -->
+    <package name="com.matrix.form.admin.code.action"  extends="globalPackage" namespace="/code">
+ 			<action name="code_*" class="codeAction" method="{1}" >
+		 		<result name="h5SaveSubCatalogTab">/form/admin/code/h5SaveSubCatalogTab.jsp</result>
+		 		<result name="h5SaveSubCatalog">/form/admin/code/h5SaveSubCatalog.jsp</result>
+ 				 <result name="saveSubCatalog">/form/admin/code/saveSubCatalog.jsp</result>
+ 				 <result name="h5UpdateCodeType">/form/admin/code/h5UpdateCodeType.jsp</result>
+	 			 <result name="h5UpdateCodeTypeTab">/form/admin/code/h5UpdateCodeTypeTab.jsp</result>
+ 				 <result name="updateCodeType">/form/admin/code/updateCodeType.jsp</result>
+ 				 <result name="h5SaveCodeType">/form/admin/code/h5SaveCodeType.jsp</result>
+ 				 <result name="h5SaveCodeTypeTab">/form/admin/code/h5SaveCodeTypeTab.jsp</result>
+ 				 <result name="saveCodeType">/form/admin/code/saveCodeType.jsp</result>
+ 				 <result name="h5GetCodeBasicItem">/form/admin/code/h5ListBasicTypeItem.jsp?page=codeBasicItem-list</result>
+ 				 <result name="getCodeBasicItem">/form/admin/code/listBasicTypeItem.jsp?page=codeBasicItem-list</result>
+ 				 <result name="h5LoadSaveBasicItemPage">/form/admin/code/h5SaveBasicTypeItem.jsp</result>
+ 				 <result name="loadSaveBasicItemPage">/form/admin/code/saveBasicTypeItem.jsp</result>
+ 				  <result name="saveCustomDetailPage">/form/admin/code/saveCustomDetail.jsp</result>
+ 				  
+ 				 <result name="h5LoadUpdateBasicMainTab">/form/admin/code/h5UpdateBasicTypeMainTab.jsp</result>
+ 				 <result name="loadUpdateBasicMain">/form/admin/code/updateBasicTypeMain.jsp</result>
+ 				  <result name="h5LoadUpdateCustomMain">/form/admin/code/h5UpdateCustomTypeMain.jsp</result>
+ 				  <result name="loadUpdateCustomMain">/form/admin/code/updateCustomTypeMain.jsp</result>
+ 				
+ 			</action>
+ 			<action name="customCode_*" class="customCodeAction" method="{1}" >
+ 				  <result name="h5LoadSavePage">/form/admin/code/h5SaveCustomDetail.jsp</result>
+ 				  <result name="loadSavePage">/form/admin/code/saveCustomDetail.jsp</result>
+ 				  
+ 			</action>
+ 		
+   </package>
+
+  <!-- 表单权限配置 -->
+  <package name="com.matrix.form.admin.security.action" extends="globalPackage" namespace="/security">
+    	<action name="formSecScope_*" class="formSecScopeAction" method="{1}" >
+    	  <result name="getSecScopeList">/form/admin/security/listSecScope.jsp?page=securityScope-list</result>
+    	  <result name="loadSecScopeBasicPage">/form/admin/security/addSecScopeBasic.jsp?page=securityScopeBasic-add</result>
+    	  <result name="loadUpdateSecScopeBasic">/form/admin/security/addSecScopeBasic.jsp?page=securityScopeBasic-add</result>
+	    </action>
+	    
+	    <action name="formSecScopeItem_*" class="formSecScopeItemAction" method="{1}" >
+    	 
+    	  <result name="getSecScopeItems">/form/admin/security/listSecScopeItem.jsp?page=securityScopeItem-list</result>
+    	  <result name="loadAddScopeItemPage">/form/admin/security/addSecScopeItem.jsp</result>
+    	  
+	    </action>
+	    
+	    
+	     <action name="formSecurity_*" class="formSecurityAction" method="{1}" >
+    	  <result name="loadSecurityIndex">/form/admin/security/securityIndex.jsp</result>
+    	  <result name="getSecurityList">/form/admin/security/listSecEmpower.jsp?page=securityEmpower-list&amp;scopeName=${scopeName}</result>
+    	<!--  
+    	  <result name="loadAddScopeItemPage">/form/admin/security/addSecScopeItem.jsp</result>
+    	  -->
+    	  <result name="conditionSetPage">/form/admin/security/conditionSet.jsp</result>
+    	  <result name="advancedSetPage">/form/admin/security/controlSet.jsp</result>
+    	  <result name="getYMDW">/form/admin/custom/formula/getYMDW.jsp</result>
+			<result name="daySub">/form/admin/custom/formula/daySub.jsp</result>
+	    </action>
+	    
+	
+  </package>
+
+</struts>

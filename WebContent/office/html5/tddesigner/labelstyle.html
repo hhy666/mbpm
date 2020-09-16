@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>labelstyle.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <link href='../../../resource/html5/css/matrix_runtime.css' rel="stylesheet"></link>
+ <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="bootstrap-colorpicker.min.css">
+     <script src="../../../resource/html5/js/jquery.min.js"></script>
+     <script src="ion.rangeSlider.min.js"></script> 
+ <script src="bootstrap-colorpicker.min.js"></script>
+  </head>
+  
+  <body>
+    <table style="width:100%;">
+    <style>
+.form_label{
+    text-align: center;
+    color: #4A4D4A;
+    background-color: rgb(250, 250, 250);
+    padding: 3px 3px 3px 3px;
+    margin: 0;
+    padding: 0;
+    height: 41px;
+    border: 1px solid #cccccc;
+  /*  font-family: "Microsoft YaHei";
+    font-size: 12px;*/
+}
+.form_input{
+    height: 28px;
+    border: 1px solid #cccccc;
+    text-align: left;
+    padding: 3px 3px 3px 3px;
+}
+.form-control {
+display:inline-block
+}
+.input-group-addon {
+    padding: 8px 12px;
+        display: inline;
+    }
+</style>
+ <tr>
+    <td class="form_label">颜色</td>
+  <td class="form_input">
+  <div class="input-group demo2 colorpicker-element" style="margin-bottom: 6px">
+                            <input type="text" id="label_Color" style="width:220px;" value="#000000" class="form-control">
+                            <span class="input-group-addon"><i style="background-color: rgb(0, 0, 0);"></i></span>
+                          </div>
+                           </td>
+  </tr>
+   <tr>
+  
+    <td class="form_label">字体</td><td class="form_input">
+    <select id="label_Font" class="form-control" style="    border-radius: 0px;width: 340px;"><option>"Times New Roman",Georgia,Serif</option><option>Arial,Verdana,Sans-serif</option></select>
+    </td>
+    </tr>
+    <tr>
+  
+    <td class="form_label">大小</td><td class="form_input"><select id="label_Font_Size" class="form-control" style="    border-radius: 0px;width: 100px;"><option>12px</option><option>14px</option></select>
+    </td>
+    </tr>
+    <tr>
+  <td class="form_label">是否加粗</td>
+  <td class="form_input">
+  
+  <input type="radio" checked="checked" name="isBold" value="1" />是&nbsp;&nbsp;
+  <input type="radio" name="isBold" value="0" />否
+ 
+  </td>
+   </tr>
+ <tr>
+<td class="cmdLayout">
+  <button id="button002" class="x-btn ok-btn " type="button">确定</button>
+    <button style="margin-left:5px;" id="button001" class="x-btn cancel-btn " type="button">取消</button>
+</td>
+
+
+</tr>
+ 
+    </table>
+                <script>
+      $(document).ready(function() {
+       
+        $('.demo2').colorpicker();
+ $("#button002").click(function(){
+
+            var bcolor=$("#label_Color").val();
+        alert(bcolor);
+           var options=$("#label_Font option:selected");  //获取选中的项
+
+            alert(options.val());   
+    
+          var options2=$("#label_Font_Size option:selected");  //获取选中的项
+
+            alert(options2.val());
+             var val=$('input:radio[name="isBold"]:checked').val();
+     alert(val);
+  
+   
+        });
+
+     
+      });
+    </script>
+  </body>
+</html>

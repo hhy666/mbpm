@@ -1,0 +1,183 @@
+@CHARSET "UTF-8";
+
+.monitor_table {
+	width:100%;
+	height:100%;
+	table-layout:fixed;
+	border:0px;
+	cellpadding:0;
+	cellspacing:0;
+}
+
+.monitor_content {
+	width:100%;
+	overflow:auto;
+	vertical-align:top;
+	text-align:center;
+}
+
+.monitor_toolbar {
+	vertical-align:middle;
+	text-align:center;
+	height:30px;
+}
+
+.buttonbg{
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+	-moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.15);
+	background-color:#E4F2FF;
+	background-image:url(../images/button.png);
+	background-position:center top;
+	background-repeat:repeat-x;
+	border:1px solid #769DC0;
+}
+/*link strat*/
+a:link {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	font-size: 12px;
+	/*color: #000000;*/
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 12px;
+	/*color: #CC3300;*/
+	color: #000000;
+	text-decoration: underline;
+}
+/*link end*/
+
+/*活动记录表格样式*/
+.activityRecordDiv{
+	background-color:#FFFFFF;
+	margin:0;
+	padding:0;
+	overflow:auto;
+	position:relative;
+	border:1px solid #BCBCBC;
+}
+.activityRecordDiv table{
+	border-collapse:collapse;
+	width:100%;
+}
+
+/*活动记录表格标题样式*/
+.activityRecordHeader{
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#E5EDF4 url(../images/header_shadow.png) repeat-x scroll center bottom;
+	border:1px solid #E0EEFB;
+	display:block;
+	overflow:hidden;
+	padding:0;
+	text-decoration:none;
+	height:27px;
+	text-align:center;
+}
+
+/*活动记录表格单元格样式*/
+.activityRecordCell {
+	border-color:#EBEADB #D5CDB5 #EBEADB #EBEADB;
+	border-style:solid;
+	border-width:1px;
+	//border-left:0px;
+	overflow:hidden;
+	padding:0px;
+	text-align:center;
+	height:27px;
+}
+
+/*活动记录表格偶数行样式*/
+.activityRecordRow {
+	background-color:#FFFFFF;
+	border:medium none;
+}
+
+/*活动记录表格奇数行样式*/
+.activityRecordRow0dd {
+	background-color:#F4F9FD;
+	border:medium none;
+}
+.activityRecordRow .activityRecordCell, .activityRecordRow .activityRecordCell{
+	border-style:dashed;
+	border-top:0px;
+	text-align:left;
+	height:23px;
+	overflow:hidden;
+}
+
+/* 流程监控层样式*/
+.matrixMonitorLayer {
+	 position: absolute;
+	 top: 15%;
+	 left: 15%;
+	 border: 1px solid #B5BCC7;
+	 background-color: white;
+	 z-index:1002;
+	 height:'90%';
+	 width:'90%';
+	 overflow: auto;
+}
+
+/* 流程监控层head样式*/
+.matrixMonitorLayerHead {
+	border-bottom: 1px solid #B5BCC7;
+	background-image: url(../images/titlebar.png);
+	background-repeat: repeat-x;
+	border-collapse:collapse;
+	border-spacing:0;
+	width:100%;
+	overflow: auto;
+	vertical-align: 50%;
+	background-color:#E6E6E7;
+	height: 25px;
+	text-align:left;
+}
+
+/* 流程监控层title样式*/
+.matrixMonitorLayerTitle {
+	font-size: 14px;
+	color:#131313;
+	height: 25px;
+	text-indent: 15px;
+	letter-spacing: 1px;
+}
+
+/* 流程监控层关闭样式*/
+.matrixMonitorLayerClose {
+	 float:right;
+	 text-align:right;
+}
+
+.matrixMonitorLayerClose a {
+	 text-decoration:none;
+	 font-size:12px;
+	 margin-right:5px;
+}
+
+/* 流程监控层自定义关闭图片样式*/
+.matrixMonitorLayerCloseIcon{
+	border:0px;
+}
+
+/* 流程监控层内容样式*/
+.matrixMonitorLayerContent{
+	width:100%;
+	height:470px;
+	overflow:auto;
+}
+
+/* 流程监控div样式*/
+.matrixMonitorDiv{
+	text-align:center;
+	width:95%;
+	height:95%;	
+}

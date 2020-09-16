@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:tns="http://commonservice/processservice/processinstancemgr" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://commonservice/processservice/processinstancemgr">
+  <xsd:complexType name="ExAttributes">
+    <xsd:annotation>
+      <xsd:documentation>实例扩展属性</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ExAttributeA" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性A</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeB" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性B</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeC" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性C</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeD" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性D</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeE" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性E</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeF" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性F</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeG" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性G</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExAttributeH" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性H</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

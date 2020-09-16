@@ -1,0 +1,205 @@
+@charset "UTF-8";
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+input,button,textarea,a{
+	outline:none;
+}
+.font_size12 {
+    font-size: 12px;
+}
+ul,li{
+	margin:0px;
+}
+.common_button, .form_btn {
+    font-size: 12px;
+    border: 1px solid #CCC;
+    color: #111;
+    background: #EAEAEA;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 91px;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 24px;
+    height: 24px;
+    vertical-align: middle;
+    _vertical-align: baseline;
+    display: inline-block;
+}
+.common_button:hover, .form_btn:hover {
+    color: #111;
+    background: #F6F6F6;
+    border: solid 1px #BFBFBF;
+}
+.common_button_gray {
+    background: #99948c none repeat scroll 0 0;
+    border: 1px solid #99948c;
+    color: #fff;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.margin_l_10 {
+    margin-left: 10px;
+}
+.margin_t_10 {
+    margin-top: 10px;
+}
+.align_left {
+    text-align: left;
+}
+
+.w100b{
+	width:100%;
+	height:100%;
+}
+.arrow_2_b {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -48px 0;
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: block;
+}
+.form_btn span {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    margin-top: 4px;
+    vertical-align: middle;
+}
+.form_btn{
+	color: #3375ca;
+    text-align: center;
+    width:35px;
+    padding:0;
+}
+.common_button *,.form_btn *{
+	font-size:12px;
+}
+.form_btn.w89{
+	width:80px;
+}
+.form_btn.w85{
+	width:85px;
+}
+.form_btn.w75{
+	width:75px;
+}
+.form_btn span.w32{
+	width: 32px;
+}
+.hand {
+    cursor: pointer;
+}
+.arrow_2_t {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -64px 0;
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.common_tabs li {
+    display: inline;
+    float: left;
+}
+li {
+    list-style: outside none none;
+}
+.common_tabs ul {
+    list-style: outside none none;
+    padding: 0 0 0 10px;
+}
+.common_tabs {
+    border-bottom: 2px solid #97d1f0;
+    font-size: 12px;
+    height: 25px;
+}
+
+.common_tabs .current a {
+    background: #57b4e7 url("../images/tab_bg_current.png") no-repeat scroll center bottom;
+    color: #fff;
+}
+.common_tabs a {
+    background-position: left top;
+    color: #8a8a8a;
+    display: inline-block;
+    float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    height: 27px;
+    line-height: 27px;
+    max-width: 81px;
+    min-width: 50px;
+    overflow: hidden;
+    padding: 0 8px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+.plus_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll 0 -240px;
+}
+.minus_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -16px -240px;
+}
+.multiply_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -32px -240px;
+}
+.divide_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -48px -240px;
+}
+.brackl_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -64px -240px;
+}
+.brackr_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -80px -240px;
+}
+.gt_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -96px -240px;
+}
+.gt_eq_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll left -256px;
+}
+.lt_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -112px -240px;
+}
+.lt_eq_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -32px -256px;
+}
+.equal_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -128px -240px;
+}
+.brack_angle_16 {
+    background: rgba(0, 0, 0, 0) url("../images/control_icon.png?v=5_1_6_04") no-repeat scroll -64px -256px;
+}
+
+#footer {
+	width: 100%;
+	height: 40px;
+	position: fixed;
+	bottom: 0; table-cell;
+	background-color: #F2F2F2;
+	text-align: center;
+	line-height: 40px;
+}

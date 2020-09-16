@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../resource/html5/js/jquery.min.js"></script>
+<script src='../../resource/html5/css/bootstrap/dist/js/bootstrap.min.js'></script>
+<link href='../../resource/html5/css/bootstrap/dist/css/bootstrap.min.css' rel="stylesheet"></link>
+<style>
+  .ibox-tools {
+    display: inline-block;
+    float: right;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+  }
+  .label{
+    margin-left: 4px;
+    background-color: #f8ac59;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 3px 8px;
+    text-shadow: none;
+  }
+  .main1{ 
+     border: 0px solid #4343e3;
+     -moz-border-radius: 5px; 
+     -webkit-border-radius: 5px; 
+     border-radius:5px;
+  }
+   .main2{ 
+     border: 0px solid #852abe;
+     -moz-border-radius: 5px; 
+     -webkit-border-radius: 5px; 
+     border-radius:5px;
+  }
+   .main3{ 
+     border: 0px solid #08f1c6;
+     -moz-border-radius: 5px; 
+     -webkit-border-radius: 5px; 
+     border-radius:5px;
+  }
+   .main4{ 
+     border: 0px solid #f5a20b;
+     -moz-border-radius: 5px; 
+     -webkit-border-radius: 5px; 
+     border-radius:5px;
+  }
+  
+</style>
+</head>
+<script>
+	$(function(){
+		$.ajax({
+			 url: "../../portal/portalAction_statisticalIteams.action",
+			 type: "post", 
+	         dataType: "json", 
+	         success: function(data){ 
+			 	if(data!=null){
+					 var param1 = data.param1;
+					 var param2 = data.param2;
+					 var param3 = data.param3;
+					 var param4 = data.param4;
+					 
+					 $("#font1").html(param1);
+					 $("#font2").html(param2);
+					 $("#font3").html(param3);
+					 $("#font4").html(param4);
+			 	}
+			 }
+	    });
+	})
+</script>
+<body>
+	<div class="container" style="height:100px;">
+        <div class="row" style="min-height:100px;padding:15px;">
+            <div class="col-md-3">             
+               <div class="main1" style="width:100%;height:100%;background: white;">
+				<table style="width:100%;height:100%;">
+					<tr style="height:60%;">
+						<td style="text-align:center;">
+						  <font id="font1" style="color:#0808ef;font-weight: bold;font-size: xx-large;"></font>
+						</td>
+					</tr>
+					<tr style="height:40%;">
+						<td style="text-align:center;">
+						  <font>已发数量</font>
+						</td>
+					</tr>
+				</table>
+				</div>     
+            </div>
+            <div class="col-md-3">
+            	<div class="main2" style="width:100%;height:100%;background: white;">
+					<table style="width:100%;height:100%;">
+						<tr style="height:60%;">
+							<td style="text-align:center;">
+							  <font id="font2" style="color:#852abe;font-weight: bold;font-size: xx-large;"></font>
+							</td>
+						</tr>
+						<tr style="height:40%;">
+							<td style="text-align:center;">
+							  <font>已发在办</font>
+							</td>
+						</tr>
+					</table>
+				</div>     
+            </div>
+            <div class="col-md-3">
+            	<div class="main3" style="width:100%;height:100%;background: white;">
+					<table style="width:100%;height:100%;">
+						<tr style="height:60%;">
+							<td style="text-align:center;">
+							  <font id="font3" style="color:#08f1c6;font-weight: bold;font-size: xx-large;"></font>
+							</td>
+						</tr>
+						<tr style="height:40%;">
+							<td style="text-align:center;">
+							  <font>待办事项</font>
+							</td>
+						</tr>
+					</table>
+				</div>     
+            </div>
+            <div class="col-md-3">
+            	<div class="main4" style="width:100%;height:100%;background: white;">
+					<table style="width:100%;height:100%;">
+						<tr style="height:60%;">
+							<td style="text-align:center;">
+							  <font id="font4" style="color:#f5a20b;font-weight: bold;font-size: xx-large;"></font>
+							</td>
+						</tr>
+						<tr style="height:40%;">
+							<td style="text-align:center;">
+							  <font>未读消息</font>
+							</td>
+						</tr>
+					</table>
+				</div>     
+            </div>
+       </div>
+   </div>
+</body>
+</html>

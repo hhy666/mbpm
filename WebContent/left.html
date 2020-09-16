@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>left.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+<script>
+function openAddFlow(){
+ var src = "http://localhost:8080/moffice/CreateSynProcess.rform";   
+ window.open(src);
+}
+function openAddDoc(){
+ var src = "http://localhost:8080/moffice/CreateProcess.rform";   
+ window.open(src);
+}
+</script>
+  <body>
+   <table>
+ 
+  <tr>
+  	 <td><a href="OutUnitList.rform" target="frame2">外部单位列表</a></td>
+  </tr>
+  <tr>
+  	 <td><a href="MecGroupList.rform" target="frame2">机构组列表</a></td>
+  </tr>
+  <tr>
+  	 <td><a href="ModelList.rform" target="frame2">正文模板列表</a></td>
+  </tr>
+  <tr>
+  	 <td><a href="DocumentElementList.rform" target="frame2">公文元素列表</a></td>
+  </tr>
+  <tr>
+  	 <td><a href="SubTermTree.rform" target="frame2">主题词树</a></td>
+  </tr>
+  <tr>
+  	 <td><a href="NodeAuthorityList.rform" target="frame2">节点权限设置列表列表</a></td>
+  </tr>
+  <tr>
+  	<td><a href="DocTemplTree.rform?parentId=fawen&templateClass=1" target="frame2">公文模板树</a></td>
+  </tr>
+  <tr>
+  	<td><a href="TestCheckTemp.rform" target="frame2">测试 流程中查看模板信息</a></td>
+  </tr>
+  <tr>
+  	<td><a href="FlowTempMgrTree.rform" target="frame2">协同流程模板管理树</a></td>
+  </tr>
+  <tr>
+  <td><a href="javascript:openAddFlow()" >新建协同事项</a></td>
+  </tr>
+  <tr>
+  <td><a href="MyCoorUnSendList.rform" target="frame2">待发协同事项</a></td>
+  </tr>
+   <tr>
+  <td><a href="MyCoorSendedList.rform" target="frame2">已发协同事项</a></td>
+  </tr>
+  <tr>
+  <td><a href="MyCoorUndoTasks.rform" target="frame2">待办协同事项</a></td>
+  </tr>
+  <tr>
+  <td><a href="MyCoorCompletedTasks.rform" target="frame2">已办协同事项</a></td>
+  </tr>
+   <tr>
+  <td><a href="javascript:openAddDoc()" >新建公文事项</a></td>
+  </tr>
+  <tr>
+  <td><a href="MyUnSendList.rform" target="frame2">待发公文</a></td>
+  </tr>
+   <tr>
+  <td><a href="MySendedList.rform" target="frame2">已发公文</a></td>
+  </tr>
+  <tr>
+  <td><a href="MyUndoTasks.rform" target="frame2">待办公文列表</a></td>
+  </tr>
+  <tr>
+  <td><a href="MyCompletedTasks.rform" target="frame2">已办公文列表</a></td>
+  </tr>
+</table>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+
+ <head>
+  <title>模板</title>
+  
+ </head>
+  <body>
+   <table border=1 style="width:100%;height:400px;cellspacing:0;">
+	<tr align=center style="height:50px;">
+	  <td colspan="2" style="color:red;font-size:30px;">公告<td>
+	</tr>
+	<tr style="height:50px" align=center>
+	  <td>公告模块：$name</td>
+	  <td>公告格式：$status</td>
+	</tr>
+	<tr height=50px align=center>
+	  <td>发布范围：$pubDep</td>
+	  <td>发布部门：$pubCode</td>
+	</tr>
+	<tr style="height:200px;vertical-align:top">
+	  <td colspan="2">$richText<td>
+	</tr> 
+	<tr style="height:50px">
+	  <td border-right=0>发起人：$deploy</td>
+	  <td border-left=0>日期：$date</td>
+	</tr> 
+    </table>
+
+ </body>
+</html>

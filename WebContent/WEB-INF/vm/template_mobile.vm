@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>$name</title>
+<script src="${webContextPathAll}/resource/html5/js/jquery.min.js"></script>
+<script src="${webContextPathAll}/resource/html5/js/layer.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+
+.browse_class span {
+	color: blue;
+}
+.xdTableHeader TD {
+	min-height: 10px;
+}
+.radio_com {
+	margin-right: 0px;
+}
+.xdTextBox {
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	min-height: 20px;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	DISPLAY: inline-block;
+	WHITE-SPACE: nowrap;
+	COLOR: windowtext;
+	OVERFLOW: hidden;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+}
+.xdRichTextBox {
+	font-size: 12px;
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	FONT-STYLE: normal;
+	min-height: 20px;
+	display: inline-block;
+	VERTICAL-ALIGN: bottom !important;
+	WORD-WRAP: break-word;
+	COLOR: windowtext;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+	TEXT-DECORATION: none;
+}
+#mainbodyDiv div,#mainbodyDiv input,#mainbodyDiv textarea,#mainbodyDiv p,#mainbodyDiv th,#mainbodyDiv td,#mainbodyDiv ul,#mainbodyDiv li{
+	font-family: inherit;
+}
+
+</style>
+<link href="${webContextPathAll}/monitor/css/templateCss/default.css" rel="stylesheet" type="text/css">
+<link href="${webContextPathAll}/monitor/css/templateCss/default1.css" rel="stylesheet" type="text/css">
+<link href="${webContextPathAll}/monitor/css/templateCss/skin.css" rel="stylesheet" type="text/css">
+<link href="${webContextPathAll}/monitor/css/templateCss/fck_editorarea4Show.css" rel="stylesheet" type="text/css">
+<script src="${webContextPathAll}/office/document/js/WebOffice.js"></script>
+<script>
+$(function(){
+		$('#content > p').has('img').css('text-align','center');
+		$('#content > p > img').css('max-width','100%');
+		
+		//发布人控制
+		var pubN = '${pubCode}';
+		if(pubN == '' || pubN == 'null'){
+			$('#show1').hide();
+			$('#show2').hide();
+		}
+	})
+</script>
+<style type="text/css">
+body{    
+	-moz-user-focus:   ignore;    
+	-moz-user-select:   none;    
+} 
+
+ol{margin: auto;}
+</style>
+
+
+</head>
+<body scroll="yes" style="height:96%;" KGBrowser="KGBrowser金格浏览器[演示版];V5.0S0xGAAEAAAAAAAAAEAAAACIBAAAwAQAALAAAANO//1HF7Tfsb1Y6J6lzIuZtrNNftWFj4sC2hobHxMkBxecv1ZGTWVDYYH61rCFqJmScp2LJi5Qa3JdVg0hlUos4LLzDhnyENjsym+Lec8Kh2uY79bCgPPAZmOmL8CA8BqJVmELfZo/6N03WXihKVjLj7fmzMXKUX5dggxXZOX5ej8UEoBhEFTmqCK/l3WqrI1gaON7a1gNfLuPC/Le2Z/pe2X31g5fellcSMRKUnh3m6vzdMSyzM2QbYDh7knuAJyXAnMxo10+LVKYzg0YdGeCDqJ3eBd4TvIOQQYcKvsM++cZPuv3Qe8qmoWcGd7fUdTFPEJwqEffTjV27iWcHNrjzOBYcKRQQLmPZSin7xunKL6QW5GKyF1xcgEJCUfa4aKLojDokD+//4gmiEgR2qJnYCPXq/DH7E1ACf7GSnJ7H">
+<div class="scrollList" id="mainbodyDiv" style="display: block; visibility: visible;">
+	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">		
+		<tbody>
+			<tr>
+				<td width="100%" height="100%" align="center" class="body-bgcolor" valign="top">
+					<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr height="100%">
+								<td>
+									<table width="100%" height="100%" align="center" class="body-detail margin-auto" border="0" cellspacing="0" cellpadding="0">
+										<tbody>						
+											<tr>
+												<td valign="top" >
+													<div id="printThis">
+														<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td height="30" >
+																	<!--公告标题-->
+																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																			<tbody>
+																				<tr>
+													 								<td width="35">&nbsp;</td>
+																					<td width="90%" align="center" style="color:#007aff;" class="view-bulletin-title">${name}</td>
+													  								<td width="35">&nbsp;</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+							
+																<tr>
+																	<td class="padding35" id="paddId" >
+																	<!--Fields-->
+																		<table width="100%" height="100%" cellspacing="0" cellpadding="0">
+																			<tbody>
+																				<tr>
+																					<td width="30%" align="left" style="font-weight: bold;" class="font-12px" nowrap="nowrap">公告板块:&nbsp;&nbsp;</td>
+																					<td width="70%" class="font-12px">${columnName}</td>
+																				</tr>
+																				<tr>
+																					<td width="30%" align="left" style="font-weight: bold;" class="font-12px" nowrap="nowrap">发布部门:&nbsp;&nbsp;</td>
+																					<td width="70%" class="font-12px">${pubDep}</td>
+																				</tr>
+																				<tr>
+																					<td id="show1" width="10%" align="left" style="font-weight: bold;" class="font-12px" nowrap="nowrap">发布人:&nbsp;&nbsp;</td>
+																					<td id="show2" width="70%" class="font-12px">${pubCode}</td>
+																				</tr>
+																				<tr>
+																					<td width="30%" align="left" style="font-weight: bold;" class="font-12px" nowrap="nowrap">发布时间:&nbsp;&nbsp;</td>
+																					<td width="70%" class="font-12px">${pubDate}</td>
+																				</tr>
+																				<tr>
+																					<td width="30%" align="left" style="font-weight: bold;" class="font-12px" nowrap="nowrap">发布范围:&nbsp;&nbsp;</td>
+																					<td width="70%" class="font-12px">${area}</td>
+																				</tr>
+																				<tr>
+																					<td width="30%" align="left" style="font-weight: bold;" class="font-12px" nowrap="nowrap">浏览次数:&nbsp;&nbsp;</td>
+																					<td width="70%" class="font-12px">${readTimes}</td>
+																				</tr>																
+																				<tr>
+																					<td>&nbsp;</td>
+																				</tr>
+																			</tbody>
+																		</table>																
+																	</td>
+																</tr>
+											
+																<tr>
+																	<td width="100%" height="100%" id="contentTD" valign="top" style="padding-bottom: 6px;" >
+										          						<div style="height: 100%;">
+										            						<div style="display: none;">
+																				<input name="bodyType" id="bodyType" type="hidden" value="HTML"></div>
+																				<div id="htmlContentDiv">
+																					<table align="center" class="body-detail-HTML" id="col-contentTable" border="0" cellspacing="0" cellpadding="0">
+																						<tbody>
+																							<tr>
+																								<td class="padding15">
+																									
+																									<div id="inputPosition" style="width: 0px; height: 0px;"></div>
+																									<div class="contentText" id="content" style="text-aglin:center;padding-left: 35px;">${content}</div>
+																								</td>
+	  
+																							
+																							</tr>
+																						</tbody>
+																					</table>
+																					</div>
+																				</div>
+
+																	</td>
+																  </tr>
+							
+												<style>                                            
+                                                    .contentText p, td, UL, LI, div, a, ol, pre{
+														font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+														font-size: 12px;
+														line-height: 1.5;
+														#line-height: 1.5;
+														_line-height: 1.5;
+														word-break:break-all;
+													}
+													.contentText {
+													    padding: 0px;
+													    margin: 0px;
+													    background-color: #FFFFFF;
+													    height: 100%;
+													    font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+													    font-size: 16px;
+													    min-height: 300px;
+													    height: auto !important;
+													    height: 500px;
+													}
+													.body-detail, .body-detail-HTML, .body-detail-form {
+													    background: #FFFFFF;
+													    border: solid 0px #A0BEC8;
+													    width: 100%;
+													    margin-bottom: 0px;
+													    margin-left: auto;
+													    margin-right: auto;
+													}
+													.view-bulletin-title {
+													    padding: 20px 0px 10px 0px;
+													    font-size: 16px;
+													    line-height: 24px;
+													    font-family: 黑体, Arial, Helvetica;
+													}
+                                                    </style>       
+						
+											<tr id="attachmentTr">
+											  <td height="30" class="paddingLR" style="display: none;">
+											   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody>
+													<tr>
+													    <label style="background-color:#ffffff;width:100%;height:100%;" width="100%" height="100%" ><b>附件：</b></label>
+													    <td height="10" valign=""  >
+															<hr size="1" class="newsBorder" >														
+														</td>
+													</tr>												
+												    </tbody>
+												</table>
+											  </td>
+											</tr>
+											<tr>
+												<td height="30" class="paddingLR" valign="top" >
+													${file}
+												</td>
+											</tr>
+											<tr id="attachment2Tr">
+											  <td height="30" class="paddingLR" style="display: none;">
+											   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+														<td height="10" valign="" >
+															<hr size="1" class="newsBorder">
+														</td>
+													</tr>
+												</tbody></table>
+											  </td>
+											</tr>
+										</tbody></table>
+										
+									</div>
+								</td>
+							</tr>
+						</tbody></table> 
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:tns="http://com/matrix/commonservice/process/processdef" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/matrix/commonservice/process/processdef">
+  <xsd:complexType name="ProcessTransition">
+    <xsd:annotation>
+      <xsd:documentation>流程转移</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="tdid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>转移定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="toActDID" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>目标活动定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="toActTID" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>目标活动模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isSelectPotentialOwnersByUser" type="xsd:boolean" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>是否由用户选择执行人员</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isMultiPotentialOwners" type="xsd:boolean" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>是否多选</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

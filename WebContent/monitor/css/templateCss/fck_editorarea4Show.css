@@ -1,0 +1,77 @@
+@charset "utf-8";
+/*
+    The "body" styles should match your editor web site, mainly regarding
+    background color and font family and size.
+*/
+*{
+	margin: auto;
+}
+.contentText  
+{
+	padding: 0px;
+	margin: 0px;
+
+	background-color: #FFFFFF;
+	height: 100%;
+	
+	font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+	font-size: 16px;
+	
+	min-height:500px;
+	height:auto !important;
+	height:500px;
+	
+	/*
+	width: 560px;
+	overflow-x: auto;
+	overflow-y: no;*/
+}
+.contentText p{margin:0;}
+.contentText p, td, UL, LI, div, a, ol, pre
+{
+	font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	#line-height: 1.5;
+	_line-height: 1.5;
+	word-break:break-all;
+}
+.contentText font{
+	/*remove this css by zhangyj */
+	/*line-height: 150%;*/
+}
+.contentText td, UL, LI, div, a, ol, pre, span
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.contentText a
+{
+	color: #0000FF !important;	/* For Firefox... mark as important, otherwise it becomes black */
+}
+
+/*
+    The following are some sample styles used in the "Styles" toolbar command.
+    You should instead remove them, and include the styles used by the site
+    you are using the editor in.
+*/
+
+.contentText .Bold
+{
+	font-weight: bold;
+}
+
+.contentText .Title
+{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.font-12px{
+	font-size: 12px;
+}
+.MsoNormal 
+{
+text-align:justify; 
+text-justify:inter-ideograph; 
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <!-- 查询设置 -->
+	<package name="com.matrix.form.admin.custom.queryset.action"  extends="globalPackage" namespace="/query">
+		<action name="query_*" class="queryAction" method="{1}">
+    		<result name="opTreeSuccess">/form/admin/custom/queryList/empty.jsp</result>
+    		<result name="list">/form/admin/custom/queryList/cataQuery.jsp</result>
+    		<result name="getList">/form/admin/custom/queryList/querySet.jsp</result>
+    		<result name="updateSucess">/form/admin/custom/queryList/queryList.jsp</result>
+    		<result name="deleSucess">/form/admin/custom/queryList/cataQuery.jsp</result>
+    		<result name="copySucess">/form/admin/custom/queryList/cataQuery.jsp</result>
+    		<result name="outData">/form/admin/custom/queryList/outData.jsp</result>
+    		<result name="sort">/form/admin/custom/queryList/sortInfoPage.jsp</result>
+    		<!-- <result name="success">/form/admin/custom/queryList/querySetCommonPage.jsp</result> -->
+    		<result name="success">/form/admin/custom/queryList/popupSelectFramePage.jsp</result> 
+    		<result name="error">/form/admin/custom/queryList/error.jsp</result>
+    	</action>
+    	<action name="form_*" class="queryFormDataAction" method="{1}">
+    		<result name="Success">/form/admin/custom/queryList/formInfoPage.jsp</result>
+    		<result name="daySub">/form/admin/custom/queryList/daySub.jsp</result>
+    		<result name="getYMDW">/form/admin/custom/queryList/getYMDW.jsp</result>
+    		<result name="condition">/form/admin/custom/queryList/conditionSet.jsp</result>
+    	</action>
+    	<action name="test_*" class="testAction" method="{1}">
+    	</action>
+    	<action name="code_*" class="catalogListAction" method="{1}">
+			<result name="saveSubCatalog">/form/admin/custom/queryList/addCatalogue.jsp</result>
+	 		<result name="saveCodeType">/form/admin/custom/queryList/addQuery.jsp</result>
+	 		<result name="saveSubCatalogH5">/form/html5/admin/custom/queryList/addQueryCatalog.jsp</result>
+	 		<result name="saveCodeTypeH5">/form/html5/admin/custom/queryList/addQueryCatalog.jsp</result>
+	 		<result name="updateCodeType">/form/admin/custom/queryList/addQuery.jsp</result>
+	 		<result name="loadSaveBasicItemPage">/form/admin/custom/queryList/addQuery.jsp</result>
+	 		<result name="opTreeSuccess">/form/admin/custom/queryList/treeSuccess.jsp</result>
+	 		<result name="TreeSuccess">/form/admin/custom/queryList/treeSuccess_2.jsp</result>
+	 		<result name="TreeSuccessH5">/form/html5/admin/catalog/addSuccess1.jsp</result>
+    	</action>
+	</package> 
+</struts>

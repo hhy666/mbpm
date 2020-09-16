@@ -1,0 +1,171 @@
+
+.file_unload {
+    position: relative;
+    height: 26px;
+    overflow: hidden;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+    _height: 1px;
+}
+.common_button2, .form_btn {
+    font-size: 12px;
+   /* border: 1px solid #CCC;
+      color: #111;
+      background: #EAEAEA;
+      border-radius: 5px;
+    */
+    color: #ffffff;
+    background: #38f;
+   
+   
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 91px;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 26px;
+    height: 26px;
+    vertical-align: middle;
+    _vertical-align: baseline;
+    display: inline-block;
+}
+.common_button2:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #317ef3;
+   
+}
+.common_button_icon em {
+    margin-top: -3px;
+    margin-right: 5px;
+    margin-left: -5px;
+    
+}
+
+.common_button *, .form_btn * {
+    font-size: 12px;
+}
+
+.ico16 {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    background: url(../image/icon16.png) no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+ 
+}
+.affix_16 {
+    background-position: -64px 0;
+}
+.affix_del_16 {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    background: url(../image/control_icon.png) no-repeat;
+    background-position: -48px -272px;
+    }
+    .file_unload .file_click {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    overflow: visible;
+}
+    .file_click input, .file_click:hover input {
+    width: 100%;
+    height: 26px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    filter: alpha(opacity=0);
+    moz-opacity: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.border_all {
+    border: 1px solid #e3e3e3;
+    border-right: none;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+    _height: 1px;
+}
+.file_select li {
+    height: 24px;
+    line-height: 24px;
+    float: left;
+    white-space: nowrap;
+}
+.margin_r_10 {
+    margin-right: 10px;
+}
+.file_select li span {
+    vertical-align: middle;
+    margin-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+li {
+    list-style: none;
+}
+body, div, dl, dt, dd, pre, code, form, input, button, textarea, p, th, td, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+}
+.border_b {
+    border-bottom: 1px solid #e3e3e3;
+}
+.padding_10 {
+    padding: 10px;
+}
+.font_bold {
+    font-weight: bold;
+}
+.font_size12 {
+    font-size: 12px;
+}
+.page_color, .bg_color {
+    background: #FAFAFA;
+}
+.bg_color_white {
+    background: #FFF;
+}
+/*---------------chongfujie--------------------*/
+	.repeat_ico16 {
+    background: rgba(0, 0, 0, 0) url("../image/icon16.png") no-repeat scroll 0 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    width: 16px;
+   }
+   .operate_reduce_16 {
+    background-position: -192px -16px;
+   }
+
+   .operate_plus_16 {
+    background-position: -176px -16px;
+   }
+.file_select{
+	height: 26px;
+}

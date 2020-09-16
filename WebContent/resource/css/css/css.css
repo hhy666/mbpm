@@ -1,0 +1,2734 @@
+@charset "utf-8";
+
+td,th,div,input,select,textarea,li,ol,dt,dd,h1,h2,h3,h4,h5,h6{font-size:12px; color:#333;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote{padding:0; margin:0;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+li{list-style-type:none;}
+img{border:none;}
+.hidden{display:none;}
+a{ text-decoration:none;}
+#warp1{min-width:1000px; margin:0 auto;}
+#header1{/*width:1000px;*/ margin:0 auto; position:fixed; top:0; width:100%; height:111px; z-index:1000; background:#fff; border-bottom:1px solid #dedede;}
+#header1 .logo{float:left; width:168px; height:58px; margin:14px 0 0 1px; display:inline;}
+#header1 .right{float:right; width:690px;}
+#header1 .top {float:right; margin:12px 1px 0 0; padding-bottom:2px; display:inline;}
+#header1 .top li{float:left; display:inline;}
+#header1 .top .num{font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#0769a7; line-height:23px; margin-right:12px;}
+#header1 .top .wx{padding:0 7px 0 7px; position:relative; z-index:1;}
+#header1 .top .wx a{width:23px; height:23px; background:url(/images/3.png) no-repeat; display:block;}
+#header1 .top .wx:hover a{background:url(/images/3.png) no-repeat;}
+#header1 .top .wx .qcode a{display:block; width:100px; height:100px;}
+#header1 .top .wx .qcode {display: none; height: 100px; left: 50%; top:23px; margin-left: -50px; position: absolute; width: 100px; z-index: 5001;}
+#header1 .top .wx:hover .qcode{ display:block;}
+#header1 .top .wb {width:23px; overflow:hidden;}
+#header1 .top .wb a{width:23px; height:23px; background:url(http://www.authine.com/images/4.png) no-repeat; display:block;}
+#header1 .top .wb a:hover{background:url(http://www.authine.com/images/5.png) no-repeat;}
+
+
+#spritemenu { 
+border-top:1px solid #dedede;
+height: 50px; 
+width: 400px; 
+font-size: 9px; 
+margin:45px 0 0 300px;
+background-image: url(/images/daohang.gif); 
+overflow: hidden; 
+
+} 
+#spritemenu ul li { 
+display: inline; 
+margin: 0px; 
+padding: 0px; 
+} 
+#spritemenu ul li a { 
+display: block; 
+position:relative; 
+height: 50px; 
+} 
+#spritemenu ul li a:hover { 
+background-image: url(/images/daohang.gif); 
+} 
+
+#spritemenu ul { 
+margin: 0px; 
+padding: 0px; 
+list-style-type:none; 
+height: 50px; 
+} 
+
+
+#spritemenu span { 
+display: none; 
+} 
+
+#spritemenu li.buttonB .jquery_out {float:left;line-height:32px;display:block; border-right:1px solid #fff; text-align:center; color:#fff;font:18px/32px "微软雅黑"; background:#062723;}
+#spritemenu li.buttonB .jquery_out .smile {padding-left:1em;}
+#spritemenu li.buttonB .jquery_inner {margin-left:16px;}
+#spritemenu li.buttonB .jquery {margin-right:1px;padding:0 2em;}
+#spritemenu li.buttonB .mainlevel {background:#164C3F; float:left; border-right:1px solid #fff; width:140px;/*IE6 only*/}
+#spritemenu li.buttonB .mainlevel a {color:#ffffff; text-decoration:none; line-height:32px; display:block; padding:0 20px; width:100px;}
+#spritemenu li.buttonB .mainlevel a:hover {color:#fff; text-decoration:none;}
+#spritemenu li.buttonB .mainlevel ul {display:none; position:absolute;}
+#spritemenu li.buttonB .mainlevel li {border-top:1px solid #fff; background:#164C3F; width:140px;/*IE6 only*/}
+
+
+#spritemenu li.buttonA a {top: 0px; left: 0px; width: 59px; background-position: 0px 5px;} 
+#spritemenu li.buttonB a {top: -50px; left: 60px; width: 59px; background-position: -52px 0px;} 
+#spritemenu li.buttonC a {top: -100px; left: 125px; width: 59px; background-position: -125px 0px;} 
+#spritemenu li.buttonD a {top: -150px; left: 180px; width: 59px; background-position: -180px 0px;} 
+#spritemenu li.buttonE a {top: -200px; left: 235px; width: 59px; background-position: -235px 0px;} 
+#spritemenu li.buttonF a {top: -250px; left: 292px; width: 59px; background-position: -292px 0px;} 
+#spritemenu li.buttonG a {top: -300px; left: 345px; width: 59px; background-position: -345px 0px;} 
+
+#spritemenu li.buttonA a:hover {background-position: 0px -48px;} 
+#spritemenu li.buttonB a:hover {background-position: -63px -48px;} 
+#spritemenu li.buttonC a:hover {background-position: -125px -48px;} 
+#spritemenu li.buttonD a:hover {background-position: -180px -48px;} 
+#spritemenu li.buttonE a:hover {background-position: -235px -48px;} 
+#spritemenu li.buttonF a:hover {background-position: -292px -48px;} 
+#spritemenu li.buttonG a:hover {background-position: -345px -48px;} 
+
+#nav1{width:100%; border-top:1px solid #dedede; padding:50px 0 0 50px;height:60px;width:580px;}
+#nav1 .li_1{float:left; margin-right:30px; height:57px;width:43px;}
+#nav1 .a_1{background:url(/images/shouye1.jpg) no-repeat;height:57px;width:43px;}
+#nav1 .a_1:hover{height:57px;background:url(/images/shouye2.jpg) no-repeat;height:57px;width:43px;}
+#nav1 .a_1.on{color:#197ebd;}
+
+.line{border-bottom:1px dashed #ccc; height:1px; overflow:hidden;}
+.border{border:1px solid #ccc;}
+.header{
+	width: 1190px;
+	height: 136px;
+	margin: 0 auto;
+	
+}
+.header .logo{
+	width: 385px;
+	height: 136px;
+	float: left;
+}
+
+.header .logo a{
+	display: block;
+    width: 385px;
+	height: 136px;
+	background: url(/images/logo.png) no-repeat;
+}
+.nav{
+	width:761px;
+	height:105px;
+	float: right;
+	z-index:999;
+	position:relative;
+}
+.nav ul{
+	width:761px;
+	margin:0 auto;
+	height:105px;
+	padding-top:1px;
+	display:block;
+}
+.nav li{
+	position:relative;
+	float:left;
+	width:82px;
+	display:block;
+	height:105px;
+	cursor:pointer;
+	opacity:1;
+}
+.nav li .icon{
+	width:82px;
+	height:105px;
+	position:relative;
+	z-index:999;
+	background: url(/images/nav_icon.png) no-repeat center center;
+	display:block;
+}
+.nav li:hover{
+	background:#F6F6F6;
+}
+#nav_0 .icon{
+	background-position:0px 16px;
+}
+#nav_1 .icon{
+	background-position:-85px 16px;
+}
+#nav_2 .icon{
+	background-position:-160px 16px;
+}
+#nav_3 .icon{
+	background-position:-270px 16px;
+}
+#nav_4 .icon{
+	background-position:-360px 16px;
+}
+#nav_5 .icon{
+	background-position:-450px 16px;
+}
+#nav_6 .icon{
+	background-position:-540px 16px;
+}
+.nav li:hover .nav_sub{
+	display:block;
+}
+.nav_sub{
+	position:absolute;
+	left:0px;
+	top:0px;
+	overflow:hidden;
+	width:82px;
+	overflow: visible;
+	display:none;
+	opacity: 1;
+}
+.nav_sub .text{
+	width:82px;
+	position:absolute;
+	height:30px;
+	line-height:30px;
+	display:block;
+	top:87px;
+	left:0px;
+	text-align:center;
+	font-size:14px;
+	font-family:"微软雅黑","宋体";
+	color:#fff;
+	z-index:999;
+}
+.nav_sub .text .hover{
+	width:100%;
+	height:30px;
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:0;
+}
+.nav_sub dl{
+	left:82px;
+	top:97px;
+	width:192px;
+	display:none;
+	position:absolute;
+	height:0px;
+	opacity:0;
+	z-index: 999;
+}
+.nav_sub dd{
+	width:211px;
+	height:30px;
+	line-height:30px;
+	font-family:"微软雅黑";
+	text-align:center;
+	font-size:14px;
+	color:#333;
+	background:#f6f6f6 url(/images/dl_bg.png);
+}
+.nav_sub dd a{
+	text-decoration: none;
+}
+#nav_0 .text,#nav_2 .text,#nav_4 .text,#nav_6 .text,#nav_8 .text{
+	background:#0187c3;
+}
+#nav_1 .text{
+	background:#0187c3;
+}
+#nav_1 .text a{
+	color:#fff;
+}
+/*#nav_1 dd{
+	color:#646464;
+}*/
+.nav #nav_1 dd:hover,.nav #nav_1 dd.current{
+	background:#0187c3;
+	color:#fff;
+}
+#nav_2 .text{
+	background:#0187c3;
+}
+/*#nav_2 dd{
+	color:#339933;
+}
+#nav_2 dd a{
+	_color:#339933;
+}
+#nav_2 dd a{
+	font:inherit;
+}*/
+.nav #nav_2 dd:hover,.nav #nav_2 dd.current{
+	background:#0187c3;
+	color:#fff;
+}
+#nav_3 .text{
+	background:#0187c3;
+}
+/*#nav_3 dd{
+	color:#0099ff;
+}*/
+.nav #nav_3 dd:hover,.nav #nav_3 dd.current{
+	background:#0187c3;
+	color:#fff;
+}
+#nav_4 .text{
+	background:#0187c3;
+}
+/*#nav_4 dd{
+	color:#d77308;
+}*/
+.nav #nav_4 dd:hover,.nav #nav_4 dd.current{
+	background:#0187c3;
+	color:#fff;
+}
+#nav_5 .text{
+	background:#0187c3;
+}
+/*#nav_5 dd{
+	color:#5e8727;
+}*/
+.nav #nav_5 dd:hover,.nav #nav_5 dd.current{
+	background:#0187c3;
+	color:#fff;
+}
+
+		/*#nav_6 dd{
+			color:#233e5c;
+		}*/
+
+
+.nav_sub dd a{
+	color:inherit;
+	width:100%;
+	height:100%;
+	line-height:30px;
+	font-size:14px;
+	text-align:center;
+	display:block;
+}
+.nav_sub dd a:hover{
+	color:inherit;
+}
+.content{
+	width: 100%;
+padding-top:100px;
+	
+}
+#banner{
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+#banner ul.tu li{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 400px;
+	top:0;
+	left:0;
+	display: none;
+}
+#banner ul.tu li.l1{
+	background: url(/images/1.jpg) no-repeat center top;
+	display: block;
+}
+#banner ul.tu li.l2{
+	background: url(/images/0.jpg) no-repeat center top;
+}
+#banner ul.tu li.l3{
+	background: url(/images/3.jpg) no-repeat center top;
+}
+#banner ul.tu li.l4{
+	background: url(/images/2.jpg) no-repeat center top;
+}
+#banner ul.xiaotubiao{
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	z-index: 5;
+	top:355px;
+	right: 50px;
+	
+}
+#banner ul.xiaotubiao li{
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+	float: left;
+	cursor: pointer;
+	background: url(http://www.gpowersoft.com/images/png24.png) no-repeat -23px -125px;
+}
+#banner ul.xiaotubiao li.cur{
+	background: url(http://www.gpowersoft.com/images/png24.png) no-repeat -9px -125px;
+}
+}
+.content .news{
+	width: 1190px;
+	height: 50px;
+	margin: 0 auto;
+}
+.content .news .hd{
+	width: 1190px;
+	height: 44px;
+	margin: 0 auto;
+	padding-top: 10px;
+	border-bottom: 1px solid #DCDCDC;
+	position: relative;
+}
+.content .news .hd h3 a{
+	text-decoration: none;
+	font:23px/44px "微软雅黑";
+	color: #000000;
+}
+.content .news .hd span{
+	position: absolute;
+	top:27px;
+	left: 53px;
+	font:10px/20px "Arial";
+}
+.content .news ul{
+	width: 1190px;
+	height: 98px;
+	margin: 0 auto;
+	padding-top: 14px;
+}
+.content .news ul li{
+	float: left;
+	width: 270px;
+	height: 79px;
+	background: #F5F5F4;
+	margin-right: 36px;
+}
+.content .news ul li.ls{
+	margin-right: 0px;
+}
+.content .news .time {
+	float: left;
+	width: 96px;
+	height: 79px;
+	position: relative;
+	background: url(http://www.gpowersoft.com/images/jiantou.png) no-repeat 73px top;
+}
+
+.content .news ul li .time .a1{
+	position: absolute;
+	top:15px;
+	left: 17px;
+	color: #474747;
+	font:18px/18px "Constantia";
+	text-decoration: none;
+}
+.content .news ul li .time .a2{
+	position: absolute;
+	top:37px;
+	left: 10px;
+	color: #474747;
+	font:18px/18px "Constantia";
+	text-decoration: none;
+}
+.content .news ul li.l1 .time a{
+	color: #DE2929;
+}
+
+
+.content .news ul li .neirong{
+	float: left;
+	width: 160px;
+	padding-top: 12px;
+}
+.content .news ul li .neirong p{
+	font:14px/24px "微软雅黑";
+	height: 42px;
+	color: #474747;
+}
+.content .news ul li .neirong p a{
+	font:14px/24px "微软雅黑";
+	color: #474747;
+}
+.content .news ul li.l1 .neirong p a{
+	color: #474747;
+}
+.content .news ul li .neirong a{
+	text-decoration: none;
+	font:12px/24px "微软雅黑";
+	color: #474747;
+}
+.content .news ul li.l1 .neirong a{
+	color: #E22F2F;
+}
+.content .product{
+	width: 100%;
+	height: 272px;
+	background: #F5F5F4;
+}
+.content .product .hd{
+	width: 1190px;
+	height: 61px;
+	margin: 0 auto;
+	position: relative;
+}
+.content .product .hd h3 a{
+	text-decoration: none;
+	font:23px/61px "微软雅黑";
+	color: #000000;
+}
+.content .product .hd span{
+	position: absolute;
+	top:27px;
+	left: 53px;
+	font:10px/20px "Arial";
+}
+.content .product ul.u1{
+	width: 1190px;
+	margin: 0 auto;
+}
+.content .product ul li.l1 {
+	width: 388px;
+	height: 177px;
+	margin-right: 20px;
+	float: left;
+	
+}
+.content .product ul li.l1 a{
+	width: 388px;
+	height: 179px;
+	margin-right: 20px;
+	float: left;
+background: url(/images/p1.jpg) no-repeat;
+	
+}
+.content .product ul li.l2 {
+	width: 465px;
+	height: 179px;
+	margin-right: 13px;
+	float: left;
+}
+
+.content .product ul li.l2 ul li.fuli1 a{
+	display: block;
+    width: 465px;
+    height: 84px;
+    margin-bottom: 11px;
+    background: url(/images/p2.jpg) no-repeat;
+}
+.content .product ul li.l2 ul li.fuli2 a{
+	display: block;
+    width: 465px;
+    height: 84px;
+    background: url(/images/p3.jpg) no-repeat;
+    
+}
+
+.content .product ul li.l3 a{
+	width: 293px;
+	height: 179px;
+	margin-left: 10px;
+	float: left;
+	background: url(/images/p4.jpg) no-repeat;
+}
+.content .product ul li.l4 a{
+	display: block;
+	width: 233px;
+	height: 179px;
+	float: left;
+	background: url(/images/p4.jpg) no-repeat;
+}
+.content .service{
+	width: 100%;
+	height: 400px;
+	border-bottom: 0 solid #808080;
+	margin: 0 auto;
+}
+.content .service .hd{
+	width: 1190px;
+	height: 74px;
+	border-bottom: 1px solid #878787;
+	margin: 0 auto;
+	position: relative;
+}
+.content .service .hd h3 a{
+	text-decoration: none;
+	font:23px/74px "微软雅黑";
+	color: #000000;
+}
+.content .service .hd span{
+	position: absolute;
+	top:33px;
+	left: 53px;
+	font:10px/20px "Arial";
+}
+.content .service ul{
+	width: 1190px;
+	margin: 0 auto;
+}
+.content .service ul li.l1 a{
+	float: left;
+	width: 615px;
+	height: 306px;
+	background: url(/images/s1.jpg) no-repeat;
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}
+.content .service ul li.l2 a{
+	float: left;
+	width: 572px;
+	height: 120px;
+	background: url(/images/s2.jpg) no-repeat;
+	border-bottom: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+}
+.content .service ul li.l3 a{
+	float: left;
+	width: 572px;
+	height: 185px;
+	background: url(/images/s3.jpg) no-repeat;
+	border-bottom: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+}
+.content .custome{
+	width: 1190px;
+	height: 408px;
+	margin: 0 auto;
+}
+.content .custome .hd{
+	width: 100%;
+	height: 60px;
+	position: relative;
+}
+.content .custome .hd h3 a{
+	text-decoration: none;
+	font:23px/87px "微软雅黑";
+	color: #000000;
+}
+.content .custome .hd span{
+	position: absolute;
+	top:39px;
+	left: 53px;
+	font:10px/20px "Arial";
+}
+.content .custome .lable{
+    width: 159px;
+    float: left;
+}
+.content .custome .lable ul li{
+	cursor: pointer;
+	height: 39px;
+	margin-bottom: 23px;
+}
+.content .custome .lable ul li a{
+	display: block;
+	width: 104px;
+	height: 39px;
+	font:18px/39px "微软雅黑";
+	text-decoration: none;
+	padding-left: 54px;
+}
+.content .custome .lable ul li.l4 a{
+	width: 119px;
+	padding-left: 39px;
+}
+.content .custome .lable ul li.l1 a{
+	cursor: pointer;
+	color: #C60909;
+	background: url(http://www.gpowersoft.com/images/kuang0.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.l2 a{
+	color: #588DD7;
+	background: url(http://www.gpowersoft.com/images/kuang.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.l3 a{
+	 color: #27C24A;
+	background: url(http://www.gpowersoft.com/images/kuang2.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.l4 a{
+	 color: #6b2282;
+	background: url(http://www.gpowersoft.com/images/kuang4.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.chu1 a{
+	color: white;
+	background: url(http://www.gpowersoft.com/images/hong.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.chu2 a{
+	color: white;
+	background: url(http://www.gpowersoft.com/images/lan.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.chu3 a{
+	color: white;
+	background: url(http://www.gpowersoft.com/images/lv.png) no-repeat 0px 0px;
+}
+.content .custome .lable ul li.chu4 a{
+	color: white;
+	background: url(http://www.gpowersoft.com/images/zi.png) no-repeat 0px 0px;
+}
+.content .custome .list{
+	float: left;
+	width: 1023px;
+	height: 226px;
+	background: #F5F5F4;
+	border-left: 8px solid #FFFFFF;
+	display: none;
+}
+.content .custome .no1{
+	display: block;
+}
+.content .custome .list ul{
+	padding-top: 1px;
+	height: 175px;
+	
+	padding-left: 22px;
+}
+.content .custome .list ul li{
+	width: 143px;
+	height: 30px;
+	float: left;
+	text-align: center;
+}
+.content .custome .list ul li.ls{
+	float: right;
+
+}
+.content .custome .list ul li.ls a{
+	color: #C60909;
+}
+.content .custome .list ul li span{
+	display: block;
+	text-decoration: none;
+	font: 14px/40px "微软雅黑";
+	color: #323232;
+}
+/*           footer开始                  */
+.footer{
+	clear: both;
+	width: 100%;
+	height: 100px;
+	background: #CFCECE;
+}
+.footer .inner{
+	width: 1190px;
+
+	margin: 0 auto;
+position:relative;
+}
+.footer .inner .logo2{
+	width: 120px;
+	height: 70px;
+	float: left;
+padding: 25px 0 0px 15px;
+	background:url(/images/long2.png) no-repeat 0px 0px;
+}
+.footer .inner ul{
+	width: 184px;
+	height: 34px;
+	float: left;
+	padding: 15px 0 2px 0;
+	
+}
+.footer .inner ul li {
+   text-align: center;
+   width: 174px;
+
+   border-right: 1px solid #AAAAAA;
+}
+.footer .inner ul li.ll1{
+	font: 15px/36px "微软雅黑";
+	color: #E61111;
+}
+.footer .inner ul li.ls{
+	height: 40px;
+}
+.footer .inner ul li a{
+	text-decoration: none;
+	color: #2E2D2D;
+	
+	line-height: 24px;
+	font-size:14px;
+	
+	font-family:"微软雅黑" ;
+}
+.footer .inner ul li a:link,.footer .inner ul li a:visited{
+
+}
+.footer .inner ul li a:hover{
+	color: #D81F1F;
+}
+.footer .inner .contact{
+	float: left;
+	width: 158px;
+	padding: 18px 51px 2px 91px;
+}
+.footer .inner .contact a{
+	display: block;
+	padding-left: 38px;
+	height: 28px;
+	background: url(http://www.gpowersoft.com/images/qq.png) no-repeat 0px 5px;
+	text-decoration: none;
+	line-height: 28px;
+	font-size:14px;
+	color: #323232;
+	font-family:"微软雅黑" ;
+}
+.footer .inner .contact a:hover{
+	color: #e13e3e;
+}
+
+.footer .inner .zi{
+	width: 500px;
+	float: right;
+	padding-top:24px; 
+	text-align: right;
+}
+.footer .inner .zi p{
+	font:12px/24px "微软雅黑";
+	color: #333333;
+}
+/*                      content2开始                        */
+.content2{
+	width: 100%;
+padding-top:110px;
+	height: 1298px;
+	position: relative;
+}
+.content2 .banner{
+	width: 100%;
+	height: 251px;
+	background: url(http://www.gpowersoft.com/images/chan.png) no-repeat center top;
+}
+.content2 .banner01{
+	width: 100%;
+	height: 251px;
+	background: url(/images/chanpin.jpg) no-repeat center top;
+}
+.content2 .bplist{
+	width: 100%;
+	height: 251px;
+	background: url(/images/bplist.jpg) no-repeat center top;
+}
+.content2 .buser{
+	width: 100%;
+	height: 251px;
+	background: url(/images/buser.jpg) no-repeat center top;
+}
+
+.content2 .bread{
+	height: 49px;
+	width: 960px;
+	margin: 0 auto;
+	padding-left: 40px;
+	background: url(http://www.gpowersoft.com/images/fangzi.png) no-repeat 0px 0px;
+	font:14px/49px "微软雅黑";
+	color: #878787;
+}
+.content2 .product{
+	width: 1000px;
+	margin: 0 auto;
+}
+.content2 .product .hd{
+	position: relative;
+	width: 1000px;
+	height: 61px;
+	border-bottom: 1px solid #DCDCDC;
+}
+
+.content2 .product .hd h3 a{
+	text-decoration: none;
+	font:23px/74px "微软雅黑";
+	color: #000000;
+}
+.content2 .product .hd span{
+	position: absolute;
+	top:33px;
+	left: 53px;
+	font:10px/20px "Arial";
+}
+.content2 .product ul li{
+	height: 160px;
+	border-bottom: 1px solid #DCDCDC;
+	padding-left:361px;
+	position: relative;
+}
+.content2 .product ul li.l1 .a1tu{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	display: block;
+	width:322px;
+	height: 135px; 
+	background: url(/images/bp1.jpg) no-repeat 0px 9px;
+}
+.content2 .product ul li.l2 .a1tu{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	display: block;
+	width:322px;
+	height: 137px; 
+	background: url(/images/bp2.jpg) no-repeat 0px 9px;
+}
+.content2 .product ul li.l3 .a1tu{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	display: block;
+	width:322px;
+	height: 137px; 
+	background: url(/images/bp3.jpg) no-repeat 0px 9px;
+}
+.content2 .product ul li.l4 .a1tu{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	display: block;
+	width:322px;
+	height: 137px; 
+	background: url(/images/bp4.jpg) no-repeat 0px 9px;
+}
+.content2 .product ul li.l5 .a1tu{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	display: block;
+	width:322px;
+	height: 128px; 
+	background: url(http://www.gpowersoft.com/images/chan5.png) no-repeat 0px 29px;
+}
+.content2 .product ul li p a{
+	text-decoration: none;
+	display: block;
+	font: 18px/24px "微软雅黑";
+	color: #323232;
+	padding-top: 29px;
+	padding-bottom: 23px;
+
+}
+.content2 .product ul li p a:link;.content2 .product ul li p a:visited{
+
+}
+.content2 .product ul li.l1 p a:hover{
+	color:#C60909; 
+}
+.content2 .product ul li.l2 p a:hover{
+	color:#218449; 
+}
+.content2 .product ul li.l3 p a:hover{
+	color:#B99763; 
+}
+.content2 .product ul li.l4 p a:hover{
+	color:#6B2282; 
+}
+.content2 .product ul li.l5 p a:hover{
+	color:#46668C; 
+}
+.content2 .product ul li a.a1{
+	text-decoration: none;
+	font: 15px/24px "微软雅黑";
+	color: #838383;
+}
+/*                      content3开始                          */
+.content3{
+	width: 100%;
+	height: 1298px;
+padding-top:100px;
+	position: relative;
+}
+.content3 .banner{
+	width: 100%;
+	height: 251px;
+	background: url(http://www.gpowersoft.com/images/xin.jpg) no-repeat center top;
+}
+.content3 .bread{
+	height: 49px;
+	width: 960px;
+	margin: 0 auto;
+	padding-left: 40px;
+	background: url(http://www.gpowersoft.com/images/fangzi.png) no-repeat 0px 0px;
+	font:14px/49px "微软雅黑";
+	color: #878787;
+}
+.content3 .product{
+	width: 1000px;
+	margin: 0 auto;
+}
+.content3 .news{
+	width: 1000px;
+	margin: 0 auto;
+}
+.content3 .news .hd{
+	position: relative;
+	height: 61px;
+	border-bottom: 1px solid #DCDCDC;
+}
+
+.content3 .news .hd h3 a{
+	text-decoration: none;
+	font:23px/74px "微软雅黑";
+	color: #000000;
+}
+.content3 .news .hd span{
+	position: absolute;
+	top:33px;
+	left: 53px;
+	font:10px/20px "Arial";
+}
+.content3 .news ul{
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 26px;
+}
+.content3 .news ul li{
+	position: relative;
+	padding-top: 5px;
+	height: 127px;
+	border-bottom: 1px solid #DCDCDC;
+	
+	padding-left: 168px;
+	padding-right: 26px;
+	background: #F5F5F4 url(http://www.gpowersoft.com/images/gg.png) no-repeat 141px 36px ;
+}
+.content3 .news ul li span{
+	position: absolute;
+	top:44px;
+	left: 38px;
+	font: 18px/18px "Constantia";
+	color: #DE2929;
+}
+
+.content3 .news ul li p a{
+	text-decoration: none;
+	font:19px/74px "微软雅黑";
+	color: #323232;
+}
+.content3 .news ul li p.xiang{
+	font:12px/24px "微软雅黑";
+	color: #646464;
+}
+.content3 .news .yema{
+	float: right;
+	width: 244px;
+	padding-top: 17px;
+}
+.content3 .news .yema a{
+	float: left;
+	margin-right: 2px;
+}
+.content3 .news .yema a.a0{
+	width: 27px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/zq.png) no-repeat;
+}
+.content3 .news .yema a.a1{
+	width: 27px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/zuojiantou.png) no-repeat;
+}
+.content3 .news .yema a.a2{
+	width: 20px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/ye1.png) no-repeat;
+	text-decoration: none;
+	font:12px/20px "微软雅黑";
+	text-align: center;
+	color: #aaaaaa;
+}
+.content3 .news .yema a.a6{
+	width: 26px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/youjiantou.png) no-repeat;
+}
+.content3 .news .yema a.a7{
+	width: 27px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/zh.png) no-repeat;
+}
+/*                                       content4开始                         */
+.content4 .banner{
+	width: 100%;
+	height: 300px;
+	background: url(http://www.gpowersoft.com/images/cmbanner.jpg) no-repeat center top;
+}
+.content4 .qie{
+	width: 1050px;
+	margin: 0 auto;
+	position: relative;
+}
+.content4 .qie .inner{
+	width: 1050px;
+	height: 100px;
+	background:#FFFFFF;
+	margin: 0 auto;
+	position: absolute;
+	top:10px;
+}
+.content4 .qie .bread{
+	height: 49px;
+	width: 994px;
+	margin: 0 auto;
+	padding-left: 56px;
+	background: url(http://www.gpowersoft.com/images/fangzi.png) no-repeat 16px 0px;
+	font: 14px/49px "微软雅黑";
+	color: #878787;
+}
+.content4 .qie .tu{
+	width: 357px;
+	height: 120px;
+	background: url(http://www.gpowersoft.com/images/chan1.png) no-repeat 25px 0px;
+}
+.content4 .qie .tab{
+	width: 999px;
+	height: 49px;
+	margin: 0 auto;
+	border-bottom: 1px solid #DCDCDC;
+}
+.content4 .qie .tab ul{
+	float: right;
+	width: 560px;
+}
+.content4 .qie .tab ul li{
+    float: left;
+    padding-right: 7px;
+    width: 103px;
+    height: 49px;
+    text-align: center;
+}
+.content4 .qie .tab ul li a{
+	display: block;
+	text-decoration: none;
+	font:20px/41px "微软雅黑";
+	color: #505050;
+	height: 49px;
+	width: 103px;
+}
+.content4 .qie .tab ul li.cur a{
+	color: #CA1919;
+	background: url(http://www.gpowersoft.com/images/cmjiantou.png) no-repeat 0px 0px;
+}
+.content4 .list{
+	width: 1000px;
+	height: 2114px;
+	background: #FFFFFF;
+	margin: 0 auto;
+	display: none;
+}
+.content4 .gn{
+	display: block;
+padding-top: 50px;
+}
+.content4 .jg {
+	padding-top: 250px;
+
+}
+
+.content4 .jg p{
+	font: 14px/30px "微软雅黑";
+    color: #323232;
+    text-indent: 2em;
+
+}
+.content4 .jg .p1{
+	border-top: 1px dashed #edebeb;
+	font: 26px/36px "微软雅黑";
+    color: #323232;
+}
+.content4 .jg p span{
+    font: 60px/60px "Constantia";
+    color: #E22F2F;
+}
+.content4 .list ul li{
+	height: 300px;
+	padding-top: 100px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.content4 .list ul li.ss1{
+	height: 300px;
+	padding-top: 100px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.content4 .list ul li.ss2{
+	height: 600px;
+	padding-top: 50px;
+background:#DCDCDC;
+	border-bottom: 1px solid #DCDCDC;
+}
+.content4 .list ul li.ss2.description1{
+	float: left;
+	width: 450px;
+}
+.content4 .list ul li.sy1 .description{
+	float: left;
+	width: 450px;
+}
+.content4 .list ul li .description .p1{
+   font:60px/60px "Constantia";
+padding-left:15px;
+   color: #E22F2F;
+}
+.content4 .list ul li .description .p2{
+   font:26px/36px "微软雅黑";
+   color: #323232;
+padding-left:15px;
+}
+.content4 .list ul li .description .p3{
+   font:14px/22px "微软雅黑";
+   color: #8A8A8A;
+padding-left:15px;
+}
+.content4 .list ul li .description .p4,.content4 .list ul li .description .p5,.content4 .list ul li .description .p6,.content4 
+
+.list ul li .description .p7{
+   font:14px/24px "微软雅黑";
+   color: #5B5B5B;
+padding-left:15px;
+}
+.content4 .list ul li .description .p4{
+	padding-top: 20px;
+padding-left:15px;
+}
+.content4 .list ul li.sy1 .pic{
+	float: right;
+	width: 500px;
+	height: 263px;
+	background: url(/images/c1.jpg) no-repeat 0px 21px;
+}
+.content4 .list ul li.sy2 .pic{
+	float: left;
+	width: 493px;
+	height: 285px;
+	background: url(http://www.gpowersoft.com/images/cmpic2.jpg) no-repeat 0px 21px;
+}
+.content4 .list ul li.sy2 .description{
+	float: right;
+	width: 500px;
+	text-align: right;
+}
+.content4 .list ul li.sy3 .pic{
+	background: url(http://www.gpowersoft.com/images/cmpic3.jpg) no-repeat 0px 21px;
+}
+.content4 .list ul li.sy4 .pic{
+	background: url(http://www.gpowersoft.com/images/cmpic4.jpg) no-repeat 0px 21px;
+}
+.content4 .list ul li.sy5 .pic{
+	background: url(http://www.gpowersoft.com/images/cmpic5.jpg) no-repeat 0px 100px;
+}
+.content4 .list ul li.sy5 {
+	height: 256px;
+}
+.content4 .js{
+	display: block;
+padding-top: 50px;
+}
+.content4 .js ul li{
+    width: 1000px;
+    margin: 0 auto;
+    height: auto;
+    padding-top: 300px;
+    overflow: hidden;
+    border-bottom: none;
+}
+
+.content4 .js ul li .left{
+	width: 198px;
+	float: left;
+	padding-top: 10px;
+	border-top: 1px solid #DCDCDC;
+}
+.content4 .js ul li .left h3{
+	color: #323232;
+	font:18px/36px "微软雅黑";
+}
+.content4 .js ul li .right{
+	width: 713px;
+	padding-left: 72px;
+	padding-right: 17px;
+	float: left;
+}
+.content4 .js ul li .right .iner{
+	padding-top: 10px;
+	border-top:1px solid #DCDCDC ;
+}
+.content4 .js ul li .right p{
+	padding-left: 38px;
+	position: relative;
+	font:14px/33px "微软雅黑";
+	color: #323232;
+	width: 675px;
+}
+.content4 .js ul li .right p span{
+	display: block;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	font:14px/33px "微软雅黑";
+	color: #323232;
+
+}
+
+
+.content4 .jq{
+	display: block;
+padding-top: 50px;
+}
+.content4 .jq ul li{
+    width: 1000px;
+    margin: 0 auto;
+    height: auto;
+    padding-top: 300px;
+    overflow: hidden;
+    border-bottom: none;
+}
+
+.content4 .jq ul li .left{
+	width: 198px;
+	float: left;
+	padding-top: 10px;
+	border-top: 1px solid #DCDCDC;
+}
+.content4 .jq ul li .left h3{
+	color: #323232;
+	font:18px/36px "微软雅黑";
+}
+.content4 .jq ul li .right{
+	width: 713px;
+	padding-left: 72px;
+	padding-right: 17px;
+	float: left;
+}
+.content4 .jq ul li .right .iner{
+	padding-top: 10px;
+	border-top:1px solid #DCDCDC ;
+}
+.content4 .jq ul li .right p{
+	padding-left: 38px;
+	position: relative;
+	font:14px/33px "微软雅黑";
+	color: #323232;
+	width: 675px;
+}
+.content4 .jq ul li .right p span{
+	display: block;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	font:14px/33px "微软雅黑";
+	color: #323232;
+
+}
+
+/*                                           */
+.content5 .banner{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/2_p1.jpg) no-repeat center top;
+position:relative;;
+}
+.content5 .banner011{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/2_plist.jpg) no-repeat center top;
+position:relative;;
+}
+.content5 .bannerabout{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	
+	background: url(/images/babout.jpg) no-repeat center top;
+position:relative;;
+}
+
+.content5 .bannerziliao{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/bdata.jpg) no-repeat center top;
+position:relative;;
+}
+
+.content5 .bplist{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/bplist.jpg) no-repeat center top;
+position:relative;;
+}
+
+.content5 .bsolution{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/bsolution.jpg) no-repeat center top;
+position:relative;;
+}
+
+.content5 .buser{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/buser.jpg) no-repeat center top;
+position:relative;;
+}
+
+
+.content5 .b_bpm{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/b_bpm.jpg) no-repeat center top;
+position:relative;;
+}
+.content5 .b_flow{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/b_flow.jpg) no-repeat center top;
+position:relative;;
+}
+.content5 .b_pr{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/b_pf.jpg) no-repeat center top;
+position:relative;;
+}
+
+.content5 .b_form{
+	width: 100%;
+	height: 251px;
+margin-top:110px;
+	background: url(/images/b_form.jpg) no-repeat center top;
+position:relative;;
+}
+
+.content5 .bread{
+	height: 49px;
+	width: 944px;
+	margin: 0 auto;
+	padding-left: 56px;
+	background: url(http://www.gpowersoft.com/images/fangzi.png) no-repeat 16px 0px;
+	font: 14px/49px "微软雅黑";
+	color: #878787;
+}
+.content5  .hd{
+	position: relative;
+	width: 1000px;
+	height: 61px;
+	border-bottom: 1px solid #DCDCDC;
+	margin: 0 auto;
+}
+
+.content5 .hd h3 a{
+	text-decoration: none;
+	font:23px/74px "微软雅黑";
+	color: #000000;
+}
+.content5 .hd span{
+	position: absolute;
+	top:33px;
+	left: 100px;
+	font:10px/20px "Arial";
+}
+.content5 .main{
+    width: 940px;
+    margin: 0 auto;
+    padding: 24px 30px;
+    border-bottom: 1px solid #DCDCDC;
+}
+.content5 .main p{
+	font:14px/24px "微软雅黑";
+	color: #696969;
+	text-indent: 2em;
+	padding-bottom: 22px;
+}
+.content5 .adress{
+	width: 1000px;
+	height: 246px;
+	margin: 0 auto;
+}
+.content5 .adress h3{
+	font:23px/74px "微软雅黑";
+}
+.content5 .adress ul li{
+	float: left;
+}
+.content5 .adress ul li.l1{
+	width: 310px;
+	height: 180px;
+	padding-right: 33px;
+	padding-bottom: 30px;
+}
+.content5 .adress ul li.l1 .ll1{
+	width: 497px;
+	height: 178px;
+	padding-left: 12px;
+}
+.content5 .adress ul li .ll1 h4{
+    font:16px/35px "微软雅黑";
+    color: #c7000a;
+    border-bottom:13px;
+}
+.content5 .adress ul li .ll1 p{
+	font:14px/24px "微软雅黑";
+    color: #282828;
+}
+.content5 .adress ul li.l2{
+	width: 656px;
+	height: 180px;
+	padding-bottom: 30px;
+	background: url(http://www.gpowersoft.com/images/ad2.jpg) no-repeat 0px 0px;
+}
+.content5 .adress ul li.l3{
+	width: 311px;
+	height: 180px;
+	padding-right: 33px;
+	padding-bottom: 30px;
+}
+.content5 .adress ul li.l3 .ll1{
+	width: 297px;
+	height: 178px;
+	padding-left: 12px;
+
+}
+.content5 .adress ul li.l4{
+	width: 310px;
+	height: 180px;
+	padding-right: 33px;
+	padding-bottom: 30px;
+}
+.content5 .adress ul li.l4 .ll1{
+	width: 297px;
+	height: 178px;
+	padding-left: 12px;
+
+}
+.content5 .adress ul li.l5{
+	width: 310px;
+	height: 180px;
+	padding-bottom: 30px;
+}
+.content5 .adress ul li.l5 .ll1{
+	width: 297px;
+	height: 178px;
+	padding-left: 12px;
+	
+}
+.content6{
+	height: 1603px;
+}
+.content6 .banner{
+	background: url(http://www.gpowersoft.com/images/abanner.jpg) no-repeat center top
+}
+.content6 #chuantonglunbo{
+	width: 975px;
+	margin: 0 auto;
+	height: 298px;
+	overflow: hidden;
+	padding-left: 24px;
+	padding-right: 1px;
+	position: relative;
+
+
+}
+.content6 #chuantonglunbo .inner{
+	width: 975px;
+	height: 298px;
+	position: relative;
+	overflow: hidden;
+}
+.content6 #chuantonglunbo .tupian ul{
+	list-style: none;
+	width: 19350px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.content6 #chuantonglunbo .tupian ul li{
+	float: left;
+	width: 261px;
+	height: 261px;
+	background: url(http://www.gpowersoft.com/images/zhi.jpg) no-repeat 0px 0px;
+	margin-right: 24px;
+	padding: 0 20px;
+	border-bottom: none;
+	position: relative;
+}
+.content6 #chuantonglunbo .tupian ul li .tou{
+	width: 261px;
+	height: 84px;
+	text-align: center;
+	padding-top: 11px;
+}
+.content6 #chuantonglunbo .tupian ul li .ds{
+	width: 261px;
+}
+.content6 #chuantonglunbo .tupian ul li p.tee{
+	padding-top: 20px;
+}
+.content6 #chuantonglunbo .tupian ul li .ds p{
+	font:14px/24px "微软雅黑";
+	color:#333333;
+	text-indent: 2em;
+}
+.content6 #chuantonglunbo .tupian ul li .ds p.pte{
+	text-align: center;
+	width: 261px;
+	height: 30px;
+	font:12px/24px "微软雅黑";
+	text-indent: 0;
+	position: absolute;
+	top:75px;
+}
+.content6 #chuantonglunbo .tupian ul li .ds p.ming{
+	text-align: right;
+	text-indent: 0em;
+}
+.content6 #chuantonglunbo .anniu .zuoanniu{
+	position: absolute;
+	display: block;
+	top: 116px;
+	left: 0px;
+	z-index: 99;
+	background: url(http://www.gpowersoft.com/images/zuojiantou.jpg) 0 0 no-repeat;
+	width: 19px;
+	height: 17px;
+	cursor: pointer;
+}
+.content6 #chuantonglunbo .anniu .youanniu{
+	position: absolute;
+	top: 116px;
+	right: 0px;
+	background: url(http://www.gpowersoft.com/images/youjiantou1.png) 0 0 no-repeat;
+	width: 19px;
+	height: 17px;
+	cursor: pointer;
+}
+.content6 .product .hd{
+	margin-bottom: 16px;
+}
+.content6 .school{
+	width: 1190px;
+	height: 330px;
+	border-top: 1px solid #DCDCDC;
+	border-bottom:1px solid #DCDCDC ;
+	margin:  0 auto;
+}
+.content6 .school ul li{
+	float: left;
+}
+.content6 .school ul li.l1{
+	width: 200px;
+	height: 65px;
+padding:8px 18px 15px 18px;
+}
+.content6 .school ul li .name{
+text-align:center; margin:10px 0 18px 0;
+}
+.content6 .school ul li .name a{font-family:"寰蒋闆呴粦"; font-size:14px; color:#0f0f0f;}
+.content6 .school ul li.l2{
+	width: 231px;
+	height: 102px;
+}
+.content6 .school ul li.l3{
+	width: 269px;
+	height: 102px;
+}
+.content6 .school ul li.l4{
+	width: 250px;
+	height: 102px;
+}
+.content6 .school ul li a{
+	display: block;
+	width: 250px;
+	height: 101px;
+}
+.content6 .qie{
+	width: 1000px;
+	height: 472px;
+	border-top: 1px solid #DCDCDC;
+	margin:  0 auto;
+
+}
+.content6 .qie .list{
+	height: 404px;
+	overflow: hidden;
+}
+.content6 .qie .hd{
+	height: 68px;
+	padding-top: 37px;
+	padding-left: 18px;
+	padding-right: 17px;
+}
+.content6 .qie .hd ul li{
+	float: left;
+	width: 151px;
+	height: 51px; 
+	margin-right: 120px;
+	text-align: center;
+}
+.content6 .qie .hd ul li.ll1{
+	background: url(http://www.gpowersoft.com/images/kuang0.png) no-repeat;
+}
+.content6 .qie .hd ul li.ll2{
+	background: url(http://www.gpowersoft.com/images/kuang.png) no-repeat;
+}
+.content6 .qie .hd ul li.ll3{
+	background: url(http://www.gpowersoft.com/images/kuang2.png) no-repeat;
+}
+.content6 .qie .hd ul li.ll4{
+	background: url(http://www.gpowersoft.com/images/kuang4.png) no-repeat;
+}
+.content6 .qie .hd ul li.ll4{
+	margin-right: 0px;
+}
+.content6 .qie .hd ul li.ll1 a{
+	display: block;
+	color: #c60909;
+}
+.content6 .qie .hd ul li.ll2 a{
+	display: block;
+	color: #588dd7;
+}
+.content6 .qie .hd ul li.ll3 a{
+	display: block;
+	color: #39a66c;
+}
+.content6 .qie .hd ul li.ll4 a{
+	display: block;
+	color: #6b2282;
+}
+.content6 .qie .hd ul li.cur1{
+	
+	background: url(http://www.gpowersoft.com/images/hong1.png) no-repeat 0px 0px;
+}
+.content6 .qie .hd ul li.cur1 a{
+	color: white;
+}
+.content6 .qie .hd ul li.cur2 {
+	color: white;
+	background: url(http://www.gpowersoft.com/images/lan1.png) no-repeat 0px 0px;
+}
+.content6 .qie .hd ul li.cur2 a{
+	color: white;
+}
+.content6 .qie .hd ul li.cur3 {
+	color: white;
+	background: url(http://www.gpowersoft.com/images/lv1.png) no-repeat 0px 0px;
+}
+.content6 .qie .hd ul li.cur3 a{
+	color: white;
+
+}
+.content6 .qie .hd ul li.cur4 {
+	color: white;
+	background: url(http://www.gpowersoft.com/images/zi1.png) no-repeat 0px 0px;
+}
+.content6 .qie .hd ul li.cur4 a{
+	color: white;
+	cursor: pointer;
+}
+.content6 .qie .hd ul li a{
+	text-decoration: none;
+	font:18px/39px "微软雅黑";
+	display: block;
+	cursor: pointer;
+}
+a:link,a:visited{
+
+}
+.content6 .qie .list{
+	display: none;
+}
+.content6 .qie .cur{
+	display: block;
+}
+.content6 .qie .list ul li{
+	width: 123px;
+	float: left;
+	padding-left: 18px;
+
+}
+.content6 .qie .list.ll ul li{
+	width: 147px;
+}
+.content6 .qie .list.lll ul li{
+	width: 148px;
+}
+.content6 .qie .list ul li a{
+	text-decoration: none;
+	font:14px/46px "微软雅黑";
+	color: #323232;
+}
+.content6 .qie .list1 ul li a:hover{
+	color:#c60909; 
+}
+.content6 .qie .list2 ul li a:hover{
+	color:#588dd7; 
+}
+.content6 .qie .list3 ul li a:hover{
+	color:#39a66c; 
+}
+.content7{
+	height: 1474px;
+}
+.content7 .banner{
+	background: url(http://www.gpowersoft.com/images/sbanner.jpg) no-repeat center top;
+}
+.content7 .product .hd{
+	height: 70px;
+	border-bottom: none;
+	background: url(http://www.gpowersoft.com/images/hh.png) no-repeat left bottom;
+}
+.content7 .product .bd h4{
+	width: 1000px;
+	height: 76px;
+	background: #FBFBFB;
+	color: #db2430;
+	font:18px/76px "微软雅黑";
+	text-indent: 12px;
+}
+.content7 .product .bd .lf{
+	width: 367px;
+	height: 348px;
+	float: left;
+	padding-left: 10px;
+	padding-right: 12px;
+}
+.content7 .product .bd .lf .top{
+	height: 197px;
+}
+.content7 .product .bd   h4{
+	padding-top: 20px;
+	height: 30px;
+	width: 329px;
+	padding-right: 50px;
+	background: url(http://www.gpowersoft.com/images/serve0913_08.jpg) no-repeat 148px 6px;
+	font:18px/30px "微软雅黑";
+	 color: #505050;
+	 text-indent: 6px;
+}
+.content7 .product .bd   h4 span{
+	color: #db2430;
+}
+.content7 .product .bd   p{
+	font:12px/24px "微软雅黑";
+	color: #3c3c3c;
+}
+
+.content7 .product .bd .lf .bot{
+	height: 161px;
+	text-align: right;
+}
+.content7 .product .bd .lf .bot h4{
+	background: url(http://www.gpowersoft.com/images/serve0913_17.jpg) no-repeat 331px 12px;
+}
+.content7 .product .bd .ct{
+	float: left;
+	width: 300px;
+	height: 348px;
+	background: url(http://www.gpowersoft.com/images/service.jpg) no-repeat 0px 74px;
+}
+.content7 .product .bd .rg{
+	float: left;
+	width: 308px;
+}
+.content7 .product .bd .rg .top{
+	height: 188px;
+}
+.content7 .product .bd .rg .top h4{
+	text-indent: 0px;
+    background: url(http://www.gpowersoft.com/images/serve0913_09.jpg) no-repeat 83px 2px;
+}
+.content7 .product .bd .rg .bot h4{
+	text-indent: 0px;
+    background: url(http://www.gpowersoft.com/images/serve0913_14.jpg) no-repeat 138px 0px;
+}
+.content7 .product .bd h4.wu{
+	background: none;
+}
+.content7 .liu{
+	width: 1000px;
+	margin: 0 auto;
+	clear: both;
+	height: 350px;
+	background: url(http://www.gpowersoft.com/images/hh.png) no-repeat left top;
+}
+.content7 .liu h4{
+	font:18px/58px "微软雅黑";
+	color: #db2430;
+}
+.content7 .liu p{
+	font:12px/77px "微软雅黑";
+	color: #3c3c3c;
+}
+.content7 .liu .fuwu{
+    padding-top: 23px;
+    padding-left: 20px;
+
+}
+.content7 .liu .fuwu ul li{
+	width: 91px;
+	height: 144px;
+	float: left;
+}
+.content7 .liu .fuwu ul li.tutu a.tu{
+	display: block;
+	width: 91px;
+	height: 97px;
+	background: url(http://www.gpowersoft.com/images/serve0913.jpg) no-repeat 0px 0px;
+}
+.content7 .liu .fuwu ul li.l1 a:hover{
+	background-position: 0 -97px;
+}
+.content7 .liu .fuwu ul li.l2 a.tu{
+	background-position: -91px 0px;
+}
+.content7 .liu .fuwu ul li.l2 a:hover{
+	background-position: -91px -97px;
+}
+.content7 .liu .fuwu ul li.l3 a.tu{
+	background-position: -184px 0px;
+}
+.content7 .liu .fuwu ul li.l3 a:hover{
+	background-position: -184px -96px;
+}
+.content7 .liu .fuwu ul li.l4 a.tu{
+	background-position: -275px 0px;
+}
+.content7 .liu .fuwu ul li.l4 a:hover{
+	background-position: -275px -97px;
+}
+.content7 .liu .fuwu ul li.l5 a.tu{
+	background-position: -366px 0px;
+}
+.content7 .liu .fuwu ul li.l5 a:hover{
+	background-position: -366px -97px;
+}
+.content7 .liu .fuwu ul li.l6 a.tu{
+	background-position: -457px 0px;
+}
+.content7 .liu .fuwu ul li.l6 a:hover{
+	background-position: -457px -97px;
+}
+.content7 .liu .fuwu ul li.l7 a.tu{
+	background-position: -548px 0px;
+}
+.content7 .liu .fuwu ul li.l7 a:hover{
+	background-position: -548px -97px;
+}
+.content7 .liu .fuwu ul li.tutu a.zi{
+	text-decoration: none;
+	font:14px/45px "微软雅黑";
+	color: #777777;
+}
+.content7 .liu .fuwu ul li.tutu a:hover{
+	color: #db2430;
+}
+.content7 .liu .fuwu ul li.jiantou{
+	width: 54px;
+	height: 97px;
+	background: url(http://www.gpowersoft.com/images/serve0913_31.jpg) no-repeat center center;
+}
+.content7 .shiyong{
+	width: 992px;
+	margin: 0 auto;
+	padding-left: 8px;
+	height: 367px;
+    background: url(http://www.gpowersoft.com/images/hh.png) no-repeat left top;
+}
+.content7 .shiyong h4{
+	font: 18px/58px "微软雅黑";
+    color: #db2430;
+}
+.content7 .shiyong .lf{
+	float: left;
+	width: 288px;
+	padding-top: 11px;
+
+}
+.content7 .shiyong  .gongsi{
+	height: 87px;
+}
+.content7 .shiyong .gongsi p{
+	font: 14px/46px "微软雅黑";
+	color: #999;
+}
+.content7 .shiyong  .gongsi p input{
+	width:253px;
+	height: 40px;
+	border-color:#DDDDDD;
+	outline:none; 
+	border:0;
+}
+input{
+	outline:none; 
+	border:1px solid #999;
+	width: 180px;
+	height: 21px;
+}
+textarea{
+	outline:none; 
+	border:1px solid #999;
+}
+#nr,#cg,#ld,#js,#ty{
+	padding-top: 2px;
+	width: 14px;
+	height: 14px;
+	border: 0;
+}
+.content7 .xuan p{
+	color: #999;
+}
+form{
+	padding-top: 10px;
+	width: 189px;
+}
+form .in1{
+    width: 94px;
+    height: 20px;
+    float: left;
+    position: relative;
+}
+form .in2{
+	width: 189px;
+}
+form .in1 label{
+	font:14px/14px "微软雅黑";
+	position: absolute;
+	top:-2px;
+	left: 22px;
+	color: #999;
+}
+.content7 .shiyong .lf .xuan{
+	width: 189px;
+}
+.content7 .shiyong .lf .xuan  input{
+	padding-right: 10px;
+}
+body{
+	font: 14px/24px "微软雅黑";
+	color:#282828; 
+}
+.content7 .shiyong .ct{
+	float: left;
+	width: 290px;
+	padding-top: 11px;
+}
+.content7 .shiyong .rg{
+	float: left;
+	width: 408px;
+	position: relative;
+}
+.content7 .shiyong .rg .cl{
+	position: relative;
+	padding-top: 4px;
+	width: 252px;
+	
+}
+.content7 .shiyong .rg .cl a{
+    text-decoration: none;
+    position: absolute;
+    top:7px;
+    right: -84px;
+    font: 14px/14px "微软雅黑";
+    color: #999;
+}
+.content7 .shiyong .rg .anniu input{
+	width: 179px;
+	height: 36px;
+	font: 14px/36px "微软雅黑";
+	color: #999;
+}
+.content7 form{
+	width: 1000px;
+	margin: 0 auto;
+}
+.content7 .shiyong .rg .anniu{
+	padding-top: 5px;
+}
+.content7 .shiyong .rg .cl .input{
+	float: left;
+	width: 151px;
+}
+.content7 .shiyong .rg .cl img{
+   position: absolute;
+   top:3px;
+   left:187px;
+   width: 101px;
+   height: 23px;
+  
+}
+.content8 .banner{
+    width: 100%;
+    height: 500px;
+    background: url(http://www.gpowersoft.com/images/banner8.jpg) no-repeat center top;
+}
+.content8 .banner .iner{
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+.content8 .banner .iner .p1{
+	font:15px/28px "微软雅黑";
+	color: #F0EDED;
+	position: absolute;
+	top:156px;
+	left:-30px;
+	width: 491px;
+	height: 251px;
+}
+.content8 .banner .iner .p2{
+	width: 376px;
+	height: 48px;
+	position: absolute;
+	top:15px;
+	right:-115px;
+}
+.content8 .banner .iner .p3{
+	font:30px/70px "微软雅黑";
+	color: #F0EDED;
+	position: absolute;
+	top:67px;
+	right:0px;
+	width: 304px;
+	height: 31px;
+}
+.content8 .banner .iner .p4{
+	position: absolute;
+	top:143px;
+	right: 106px;
+	font:21px/21px "微软雅黑";
+	color: #DFDEDE;
+}
+.content8 .banner .iner .p5{
+	position: absolute;
+	top:172px;
+	right: -62px;
+	font:21px/21px "微软雅黑";
+	color: #DFDEDE;
+}
+.content8 .banner .iner .p7{
+	position: absolute;
+	top:145px;
+	right: -3px;
+	font:21px/21px "微软雅黑";
+	color: #DFDEDE;
+}
+
+.content8 .banner .iner .pp{
+	top:177px;
+	right: 11px;
+}
+.content8 .banner .iner .p6{
+	position: absolute;
+	top:213px;
+	right: -41px;
+	font:21px/21px "微软雅黑";
+	color: #DFDEDE;
+}
+.content8 .bread{
+	width: 1050px;
+    position: relative;
+	margin: 0 auto;
+}
+.content8 .bread p{
+	width: 983px;
+	height: 79px;
+	position: absolute;
+	padding-left: 67px;
+    background:#fff url(http://www.gpowersoft.com/images/fangzi.png) no-repeat 21px 17px;
+	top:-79px;
+}
+.content8 .bread p a{
+	text-decoration: none;
+	font:18px/79px "微软雅黑";
+	color: #7e7e7e;
+}
+.content8 .bread p a:hover{
+	color: #0d75bc;
+}
+.content8 .main{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0 25px;
+}
+
+.content8 .main ul li.l1 .left {
+	width: 452px;
+	float: left;
+}
+.content8 .main ul li.l1 .yi{
+	height: 300px;
+	padding-top: 144px;
+}
+.content8 .main ul li.l1 .er{
+	height: 300px;
+}
+.content8 .main ul li.l1 .san{
+	height: 350px;
+}
+.content8 .main ul li.l1 .left img{
+	margin-bottom: 30px;
+}
+.content8 .main ul li.l1  h3{
+	width: 410px;
+	height: 81px;
+	border-top: 1px solid #dcdcdc;
+}
+.content8 .main ul li.l1  h3 a{
+	text-decoration: none;
+	font:24px/81px "微软雅黑";
+	color: #218449;
+}
+.content8 .main ul li.l1  h4{
+	font:24px/34px "微软雅黑";
+	color: #323232;
+}
+.content8 .main ul li.l1  p{
+	font:14px/28px "微软雅黑";
+	color: #323232;
+}
+.content8 .main ul li.l1  p.te1{
+	margin-bottom: 30px;
+	width: 421px;
+}
+.content8 .main ul li.l1  p.xian{
+	padding-left: 39px;
+	background: url(http://www.gpowersoft.com/images/xiaox.jpg) no-repeat 4px 15px;
+}
+.content8 .main ul li.l1  p.dian{
+	padding-left: 39px;
+	background: url(http://www.gpowersoft.com/images/dian.jpg) no-repeat 4px 14px;
+}
+.content8 .main ul li.l1  p.kong{
+	padding-bottom: 60px;
+}
+.content8 .main ul li.l1 .left p.xi{
+	width: 320px;
+}
+.content8 .main ul li.l1 .right{
+	float: right;
+	width: 545px;
+	height: 955px;
+	position: relative;
+}
+.content8 .main ul li.l1 .ai{
+   height: 324px;
+}
+.content8 .main ul li h2{
+	font: 60px/60px "Constantia";
+    color: #46668c;
+}
+.content9 .main ul li h4{
+	font: 24px/34px "微软雅黑";
+    color: #323232;
+}
+.content9 .main ul li h5{
+	font: 18px/34px "微软雅黑";
+    color: #323232;
+}
+.content9 .main ul li p{
+	padding-left: 422px;
+	font: 14px/34px "微软雅黑";
+    color: #323232;
+}
+.content8 .main ul li.l1 .right img{
+	padding-bottom: 74px;
+}
+.content8 .main ul li.l1 .right img.leida{
+	position: absolute;
+	top:0px;
+	left: -81px;
+}
+.content8 .main ul li.l1 .right img.yinqing{
+	position: absolute;
+	top:109px;
+	left: -50px;
+}
+.content8 .main ul li.l1 .right h4{
+	font: 24px/34px "微软雅黑";
+    color: #323232;
+    width: 453px;
+    float: right;
+}
+.content8 .main ul li.l1 .right p{
+    font: 14px/28px "微软雅黑";
+    color: #323232;
+    width: 453px;
+    float: right;
+}
+.content8 .main ul li.l1 .right .tu{
+	float: right;
+	padding-top: 37px;
+	position: absolute;
+	top:612px;
+	right: 0px;
+}
+.content8 .main ul li  p.dian{
+	padding-left: 39px;
+	background: url(http://www.gpowersoft.com/images/dian.jpg) no-repeat 4px 10px;
+}
+.content8 .main ul li p.kong {
+padding-bottom: 30px;
+}
+.content8 .main ul li p.zz{
+	font: 14px/28px "微软雅黑";
+    color: #323232;
+    position: absolute;
+    top:79px;
+    left: 0px;
+}
+.content8 .main ul li p.zz1{
+	font: 14px/28px "微软雅黑";
+    color: #323232;
+    position: absolute;
+    top:100px;
+    left: 0px;
+}
+.content8 .main ul li p.xian {
+padding-left: 39px;
+background: url(http://www.gpowersoft.com/images/xiaox.jpg) no-repeat 4px 15px;
+}
+.content8 .main ul li{
+	width: 1000px;
+	clear: both;
+}
+.content8 .main ul li.l2 h3 a{
+    text-decoration: none;
+    font: 24px/81px "微软雅黑";
+    color: #218449
+}
+.content8 .main ul li.l2{
+	border-top: 1px solid #dcdcdc;
+}
+.content8 .main ul li.l2 img{
+	padding-bottom: 40px;
+}
+.content8 .main ul li.l3{
+	position: relative;
+	padding-top: 17px;
+	border-top: 1px solid #dcdcdc;
+}
+.content8 .main ul li.l3 h3 a{
+	text-decoration: none;
+    font: 24px/81px "微软雅黑";
+    color: #218449;
+}
+.content8 .main ul li.l3 h3{
+	float: left;
+}
+.content8 .main ul li.l3 img{
+	float: right;
+	padding-bottom: 37px;
+}
+.content9 .left{
+	float: left;
+	width: 786px;
+	padding-top: 20px;
+	
+}
+.content9 .left .lle{
+	min-height: 640px;
+	height: auto;
+	background: url(http://www.gpowersoft.com/images/wenzhang.jpg) repeat-y 785px top;
+}
+.content9 .left h3{
+	width: 739px;
+	font: 30px/81px "微软雅黑";
+    color: #323232;
+    text-align: center;
+    border-bottom: 1px dashed #c9c9c9;
+  
+}
+.content9 .left .nei{
+	width: 739px;
+}
+.content9 .left .time{
+	width: 703px;
+	text-align: right;
+	padding-right: 36px;
+	background: url(http://www.gpowersoft.com/images/wenjiantou.jpg) no-repeat 710px 3px;
+}
+.content9 .left .time span{
+	font: 18px/41px "Constantia";
+    color: #e22f2f;
+}
+.content9 .left .nei p,.content9 .left .nei a,.content9 .left .nei span,.content9 .left .nei div{
+	color: #282828;
+	padding-top: 23px;
+}
+.content9 .left p{
+	padding-top: 23px;
+	color: #282828;
+	text-indent: 2em;
+}
+.content9 .left p.te{
+	padding-bottom: 60px;
+}
+.content9 .left p a{
+	color: #0187c3;
+	text-decoration: none;
+	
+}
+.content9 .right{
+	padding-top: 19px;
+	float: right;
+	width: 214px;
+	
+}
+.content9 .right .kong{
+	height: 45px;
+	border-top: 2px solid #0187c3;
+	height: 640px;
+}
+.content9 .right .kong .share{
+     padding-left: 20px;
+     padding-right: 50px;
+     font: 14px/45px "微软雅黑";
+}
+.content9 .right .kong .share p{
+	padding-top: 8px;
+	float: right;
+	border-bottom: none;
+	height: 40px;
+}
+.content9 .right .kong .share p a{
+	width: 30px;
+	height: 40px;
+	display: block;
+	
+}
+.content9 .right .kong .share .p1 a{
+	background: url(http://www.gpowersoft.com/images/weibo.jpg) no-repeat 0px 5px;
+}
+.content9 .right .kong .share .p1 a:hover{
+	background: url(http://www.gpowersoft.com/images/weibo1.jpg) no-repeat 0px 5px;
+}
+.content9 .right .kong .share .p2 a{
+	background: url(http://www.gpowersoft.com/images/weixin1.jpg) no-repeat 0px 5px;
+}
+.content9 .right .kong .share .p2 a:hover{
+	background: url(http://www.gpowersoft.com/images/weixin.jpg) no-repeat -1px 5px;
+}
+.content9 .right .kong .share .p3 a{
+	background: url(http://www.gpowersoft.com/images/koukou.jpg) no-repeat 0px 5px;
+}
+.content9 .right .kong .share .p3 a:hover{
+	background: url(http://www.gpowersoft.com/images/koukou1.jpg) no-repeat 0px 5px;
+}
+.content9 .right .link{
+	padding-left: 10px;
+}
+.content9 .right p{
+	height: 59px;
+	padding-top: 10px;
+	border-bottom: 1px solid #e3e3e3;
+
+}
+.content9 .right p.tep{
+	padding-top: 40px;
+	height: 29px;
+	
+}
+.content9 .right p.tep a{
+	font: 14px/24px "微软雅黑";
+}
+.content9 .right p a{
+	text-decoration: none;
+	font: 12px/24px "微软雅黑";
+	color: #505050;
+
+}
+.content9 {
+	height: auto;
+}
+.content10 {
+	height: auto;
+}
+.content10 .banner{
+	background: url(http://www.gpowersoft.com/images/sheji_banner.jpg) no-repeat center top;
+}
+.content10 .design{
+	width: 1000px;
+	margin: 0 auto;
+}
+.content10 .design ul li{
+	height: 280px;
+	padding-top: 44px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.content10 .design ul li a{
+	display: block;
+	width: 327px;
+	height: 280px;
+	float: left;
+}
+.content10 .design ul li .zi{
+	float: left;
+	padding-left: 36px;
+	width: 636px;
+	text-align: left;
+	height: 280px;
+}
+
+.content10 .design ul li .zi h3 a{
+	display: block;
+	width: 100%;
+	height: 18px;
+	font:18px/18px "微软雅黑";
+	color: #333;
+	text-decoration: none;
+}
+.content10 .design ul li .zi h3 a:hover{
+	color: #df3535;
+}
+.content10 .design ul li .zi h4{
+	font:14px/41px "微软雅黑";
+	color: #333;
+	text-align: left;
+	
+}
+.content10 .design ul li .zi p{
+	font:14px/26px "微软雅黑";
+	color: #333;
+	text-indent: 2em;
+	text-align: left;
+	
+}
+.content10 .design ul li .zi p.p1{
+	padding-top: 17px;
+}
+.content10 .serve{
+	width: 1000px;
+	height: 177px;
+	margin: 0 auto;
+	clear: both;
+}
+.content10 .serve h3{
+	font:18px/77px "微软雅黑";
+	color: #333;
+}
+.content10 .serve ul li{
+	float: left;
+	width: 114px;
+	padding-left: 30px;
+	background: url(http://www.gpowersoft.com/images/qi.jpg) no-repeat 7px 11px;
+	font:14px/47px "微软雅黑";
+	color: #333;
+}
+.content10  .yema{
+	width: 1000px;
+	margin: 0 auto;
+}
+.content10  .yema .yiqian{
+	float: right;
+	width: 209px;
+	padding-top: 27px;
+}
+.content10  .yema a{
+	float: left;
+	margin-right: 2px;
+}
+.content10  .yema a.a0{
+	width: 27px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/zq.png) no-repeat;
+}
+.content10  .yema a.a1{
+	width: 27px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/zuojiantou.png) no-repeat;
+}
+.content10  .yema a.a2{
+	width: 20px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/ye1.png) no-repeat;
+	text-decoration: none;
+	font:12px/20px "微软雅黑";
+	text-align: center;
+	color: #aaaaaa;
+}
+.content10  .yema a.a6{
+	width: 26px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/youjiantou.png) no-repeat;
+}
+.content10  .yema a.a7{
+	width: 27px;
+	height: 20px;
+	background: url(http://www.gpowersoft.com/images/zh.png) no-repeat;
+}
+.content11 .main ul li h5{
+	text-indent: 2em;
+	font: 16px/34px "微软雅黑";
+    color: #323232;
+}
+.content11 .main ul li h4 {
+	position: absolute;
+	top:36px;
+	left:83px;
+    font: 24px/34px "微软雅黑";
+    color: #323232;
+}
+.content11 .main ul li.qu{
+	border-top: none;
+}
+.content11 .main ul li p{
+	padding-left: 39px;
+    background: url(http://www.gpowersoft.com/images/dian.jpg) no-repeat 46px 14px;
+    font: 14px/28px "微软雅黑";
+    color: #323232;
+    text-indent: 2em;
+}
+.content11 .main ul li h6{
+	font: 24px/63px "微软雅黑";
+    color: #323232;
+    padding-left: 31px;
+    background: url(http://www.gpowersoft.com/images/zui.jpg) no-repeat 0px 23px;
+}
+.cc .banner{
+	background: url(http://www.gpowersoft.com/images/sheji_banner.jpg) no-repeat center top;
+}
+
+.middle {
+	margin-left:50px;
+	width:100%;
+	min-height:350px
+}
+.m_top {
+	min-height:290px;
+	padding:0px 0px 20px 0px;
+	clear:both;
+}
+.m_top .indlist {
+	width:353px;
+	float:left;
+}
+.m_top .indlist1,.m_top .indlist2{ margin-right:25px;}
+
+.m_top .indlist_img {
+	width:326px;
+	height:144px;
+	background:url(http://dm34.cssop.com/skin/images/indlist_bg.jpg) no-repeat;
+	padding:10px 10px;
+}
+.m_top .indlist h2 {
+	margin-top:15px;
+	margin-bottom:10px;
+	color:#497990;
+	padding-left:10px;
+	font-size:16px;
+}
+.m_top .indlist p {
+	color:#656565;
+	padding:0 0 20px 10px;
+	line-height:180%;
+	font-size:13px
+}
+
+#gzgdbpmldcs{height:450px;background:#f9f9f9; }
+#gzgdbpmldcs .new{height:50px;padding-top:10px; }
+#gzgdbpmldcs .tips{text-align:center; font-family:"寰蒋闆呴粦"; font-size:24px; color:#393939; padding-top:30px; margin-bottom:59px;}
+#gzgdbpmldcs .list {width:1000px; margin:0 auto;}
+#gzgdbpmldcs .list li{float:left; width:210px; margin-right:45px; text-align:center; display:inline;}
+#gzgdbpmldcs .list li .img{width:127px; height:90px; overflow:hidden; margin:0 auto;}
+#gzgdbpmldcs .list li .name{margin:20px 0 10px 0;}
+#gzgdbpmldcs .list li .name a{font-family:"寰蒋闆呴粦"; font-size:20px; color:#333333;text-decoration:none;}
+#gzgdbpmldcs .list li .bief{font-family:"瀹嬩綋"; color:#9f9f9f; text-align:left; line-height:22px; height:44px; overflow:hidden}
+#gzgdbpmldcs .list li:hover .name a{color:#0867a6;}
+#gzgdbpmldcs .list li:hover .bief{color:#4c4c4c;}
+#ad{height:396px; position:relative; overflow:hidden;}
+#ad .warp{ position:absolute;left:50%; margin-left:-960px; z-index:0;}
+#frame1{width:1000px; margin:0 auto;padding-top:400px 0 0 0; z-index:1;}
+#Category{position:absolute; z-index:2; top:-35px; text-align:center; width:1000px;}
+#Category ul{display:inline-block;white-space:nowrap;*display:inline;}
+#Category li{ display:inline-block;vertical-align:top;*display:inline;*zoom:1; *margin-right:6px; width:208px; height:35px; background:#adadad; line-height:35px; }
+#Category li a{font-family:"寰蒋闆呴粦"; font-size:16px; color:#fff;text-decoration:none;}
+#Category li.on{background:#ffffff;}
+#Category li.on a{color:#0293e2;}
+#products_list{/*min-height:477px;*/ padding-top:51px; /*margin-bottom:40px;*/}
+#products_list .tips{line-height:24px; font-family:"寰蒋闆呴粦"; font-size:16px; color:#797979;  overflow:hidden;}
+#products_list .tips .mid{width:1000px; margin:0 auto;}
+#info_list{padding-top:29px;}
+
+#Inpage_Category .left{float:left; font-family:"寰蒋闆呴粦"; font-size:22px; color:#584b4b;}
+#Inpage_Category .right{float:right;}
+#Inpage_Category .right li{display:inline-block; *display:inline; line-height:29px; background: url("/images/19.png") no-repeat scroll right center; margin-right: 11px;}
+#Inpage_Category .right li a{color:#584b4b; font-family:"寰蒋闆呴粦"; padding-right: 15px;}
+#Inpage_Category .right li a:hover{font-weight:bold; color:#3588c2;}
+#Inpage_Category .right li.on a{font-weight:bold; color:#3588c2;}
+
+#frame{width:1220px; margin:0 auto;position:relative; z-index:-1;}
+#client_list{padding-top:20px;}
+#client_list .tips{line-height:30px; margin-bottom:5px;}
+#client_list .list li{float:left; width:234px; height:276px; background:url(/images/21.jpg) repeat-x; position:relative; z-index:1; overflow:hidden; margin:0 21px 84px 0; display:inline; cursor:pointer;}
+#client_list .list li .contents{width:194px; margin:0 auto;}
+#client_list .list .img{width:220px; height:100px; overflow:hidden; margin:0 auto; padding-top:13px; text-align:center;}
+#client_list .list .img a {display: table-cell; height: 100px; overflow: hidden; vertical-align: middle; width: 194px;}
+#client_list .list .name {text-align:center; }
+#client_list .list .name a{font-family:"寰蒋闆呴粦"; font-size:14px; color:#0f0f0f;text-decoration:none;}
+#client_list .list .bief{line-height:20px; height:80px; font-family:"瀹嬩綋"; color:#929292; overflow:hidden;}
+#client_list .list .show_detail{height:30px; background:#3588c2; text-align:center; line-height:30px; position:absolute; z-index:3; width:100%; bottom:0; /*display:none;*/}
+#client_list .list .show_detail a{font-family:"瀹嬩綋"; color:#fff;}
+#client_list .list1 li{float:left; text-align:center; margin:0 15px 0 12px;padding:0 6px 0 6px;display:inline;width:200px;}
+#client_list .list1 li .img{width:180px; height:65px;}
+#client_list .list1 li .img a {display: table-cell; height: 65px; overflow: hidden; vertical-align: middle; width: 200px; cursor:default;}
+#client_list .list1 li .name{height:32px; line-height:32px;margin:0 5px 0 5px;}
+#client_list .list1 li .name a{color:#333; cursor:default;}
+
+.zplistbox { margin-top:10px; width:980px; height:auto; background-repeat:repeat-y; background-image:url(http://www.bjmr.com.cn/img/zpbjlist.jpg); overflow:hidden;}
+.zplistinfo { width:980px; height:auto; overflow:hidden; padding-top:9px;}
+.zplistinfo ul { width:182px; height:290px; margin-top:5px;float:left; overflow:hidden; background-image:url(http://www.bjmr.com.cn/img/zpabj.jpg); background-repeat:no-repeat; background-position:11px 0; padding-left:11px;}
+.zplistinfo .hover {background-image:url(http://www.bjmr.com.cn/img/zpbbj.jpg);}
+.zplistinfo .hover .zplist_text a { color:#FFF;}
+.zplistinfo ul li { float:left; width:176px; text-align:center;overflow:hidden; padding-top:3px; padding-left:3px; height:242px;}
+.zplistinfo ul .zplist_text { height:30px; line-height:30px; padding:0; }
+.zplistinfo ul .zplist_text a { color:#000000;}
+.dizplixt { width:980px; height:26px; overflow:hidden;}
+
+/* layout */
+.style0 .hd .changeBnt i,.picLB .ftBox .name b{background:url() no-repeat ;}
+.layout{margin:40px auto;width:1100px;padding-left:150px;}
+.style0 .hd{height:48px;line-height:36px;position:relative; }
+.style0 .border{display:block;overflow:hidden;height:0px;position:absolute;width:1000px;border-top:1px solid #d3d9df;border-bottom:1px solid #fcfcfc;top:18px;left:0 }
+.style0 .hd h2{position:absolute;background:#f7f7f7;display:inline-block;*display:inline;zoom:1;padding:0 22px;z-index:100;font-size:18px;left:50%;margin-left:-55px;}
+.style0 .hd .changeBnt{width:67px;height:23px;background:#fff;border:1px solid #d8dcdd;position:absolute;top:7px;right:0px;text-indent:25px;line-height:23px;}
+.style0 .hd .changeBnt i{width:18px;height:18px;position:absolute;left:4px;top:2px;background-position:-202px 1px;}
+.style0 .hd .changeBnt:hover{background:#e55656;border:1px solid #e55656;color:#fff;text-decoration:none;}
+.style0 .hd .changeBnt:hover i{background-position:-202px -26px ;}
+/* 影像力 */
+.picLB{margin-left:-5px;}
+.picLB li{width:235px;height:250px;margin:16px 10px 0 5px;overflow:hidden;background:#fff;position:relative;}
+.picLB{overflow:hidden;zoom:1;}
+.picLB li{float:left;display:inline;}
+.picDl{width:1000px;overflow:hidden;zoom:1;;height:350px;position:absolute;top:0;left:0 }
+.picDl dd{float:left;display:inline;width:220px;overflow:hidden; }
+
+.picLB .ftBox{overflow:hidden;zoom:1;}
+.picLB .ftBox .name{float:left;display:inline;height:60px;border-right:1px solid #e5e5e5;margin-right:10px;}
+.picLB .ftBox .name b{width:60px;height:45px;background-position:-87px -5px ;display:block;margin:15px 0 0 10px;text-indent:-999em;}
+.picLB .ftBox .tit1 a{width:220px;text-align:center;}
+.picLB .ftBox .tit{font-family:'微软雅黑','黑体';font-size:14px;line-height:22px;text-align:center;}
+.picLB .ftBox .tit a{text-decoration:none;color:#333;}
+.picLB .ftBox .tit a:hover{text-decoration:none;color:#5aaaff;}
+.picLB .ftBox .text{color:#929292;font-family:'微软雅黑','黑体';width:220px;font-size:12px;margin:5px 0 0 0px;padding-right:10px;}
+.picLB .jilu .ftBox .name b{background-position:-83px -70px;}
+.picLB .tuhua .ftBox .name b{background-position:-83px -135px;}
+.picLB .today .ftBox .name b{background-position:-80px -320px;width:142px;}
+.picLB .yingzhan .ftBox .name b{background-position:-76px -196px;}
+.picLB .jingxuan .ftBox .name b{background-position:-81px -259px;width:96px;}
+/* icon-arr */
+.picLB .icon-arr{border-color:transparent #CFCFCF transparent transparent;border-style:dashed solid dashed none;position:absolute;height:0;overflow:hidden;border-
+
+width:6px;left:-6px;top:50%;margin-top:-6px;}
+.picLB .ftBox{position:relative;height:100px;}
+.picLB .ftBox .qr{position:absolute;right:0;top:0;display:none;width:255px;height:66px;padding:2px;border-left:1px solid #CFCFCF;background-color:#FFF;}
+.picLB .ftBox .qr img.fl{margin-right:12px;}
+.picLB .ftBox .qr .text{margin-top:15px;}
+.picLB .today .ftBox .qr{width:173px;}
+#turn_page{background:#ECE9E0; height:28px; line-height:28px;width:250px;}
+
+.page_list {padding:3px; margin: 3px; text-align:center}
+.page_list a{padding:2px 5px; margin:2px; border:#eee 1px solid; color:#036cb4; text-decoration:none}
+.page_list a:hover {border:#999 1px solid; color:#666;}
+.page_list a:active {border:#999 1px solid; color:#666;}
+.page_list .thisclass {padding:2px 5px; border:#036cb4 1px solid; background-color:#036cb4; font-weight:bold; color:#fff !important; margin:2px}
+.page_list .disabled {border: #eee 1px solid; padding:2px 5px; margin:2px; color:#ddd;}

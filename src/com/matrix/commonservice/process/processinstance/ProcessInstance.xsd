@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:tns="http://com/matrix/commonservice/process/processinstance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/matrix/commonservice/process/processinstance">
+  <xsd:complexType name="ProcessInstance">
+    <xsd:annotation>
+      <xsd:documentation>流程实例</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="pdid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ptid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="piid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="processName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="desc" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>描述</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="creator" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>创建人员编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="starter" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>启动人员编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="priority" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>优先级</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="status" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>状态</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="parentPtid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>父流程模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="parentPiid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>父流程实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="parentProcessName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>父流程名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="createdDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>创建时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="startedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>开始时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="completedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>完成时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="lastModifiedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>最后修改时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="expiredDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>过期时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="topPiid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>顶层流程实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="topPdid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>顶层流程定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="topPtid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>顶层流程模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="topProcessName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>顶层流程名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="workDuration" type="xsd:long" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>工作时间段</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributeA" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性A</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributeB" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性B</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributeC" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性C</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributeD" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性D</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributeE" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性E</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributeH" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>扩展属性H</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

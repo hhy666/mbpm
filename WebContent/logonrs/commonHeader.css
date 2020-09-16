@@ -1,0 +1,31 @@
+.czmyheader { background: #ffffff !important; min-width: 1300px; z-index: 11111; box-shadow: 0px -5px 14px #000000; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); }
+
+.czmyheader .layui-logo { padding: 5px 10px 5px; display: inline-block; }
+
+.czmyheader .logo { width: 422px; height: 45px; }
+
+.czmyheader .layui-nav-item a { color: #2D61CD; font-size: 16px; }
+
+.czmyheader .layui-nav-item a:hover { color: #000000; }
+
+.czmyheader .layui-input { display: inline-block; }
+
+.czmyheader #logout { border: none; color: red; background: none; }
+
+.czmyheader #logout i { font-size: 24px; vertical-align: middle; }
+
+.czmyheader #serverTime { color: #2D61CD; font-size: 16px; background: #EAF6FE; border-radius: 9px; padding: 10px 20px; height: 20px; line-height: 20px; margin-top: 11px; }
+
+.czmyheader .logoutcon { text-align: center; }
+
+@media screen and (max-width: 1414px) { .czmyheader .logo { width: 400px; }
+  .czmyheader .layui-nav-item a { font-size: 14px; }
+  .czmyheader #serverTime { font-size: 14px; } }
+
+@media screen and (max-width: 1315px) { .czmyheader .layui-nav-item a { font-size: 12px; }
+  .czmyheader #serverTime { font-size: 12px; }
+  .layui-btn { font-size: 12px; }
+  #searchBar span { font-size: 12px; }
+  #searchBar input, #searchBar select { width: 102px; font-size: 12px; }
+  #rsSearchBar span { font-size: 12px; }
+  #rsSearchBar input, #rsSearchBar select { width: 50%; font-size: 12px; } }

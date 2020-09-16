@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 文件树 -->
+    <package name="com.matrix.form.admin.develop.catalog.action"  extends="globalPackage" namespace="/dcatalog">
+ 			
+ 			<action name="catalogAction_*" class="catalogInfoAction" method="{1}" >
+ 				  <!-- 表单部分 -->
+ 				  <result name="loadAddFormPage">/form/admin/develop/catalog/addForm.jsp</result>
+ 				  <result name="loadUpdateFormPage">/form/admin/develop/catalog/updateForm.jsp</result>
+ 				  <result name="toDesignPage">/form/admin/develop/catalog/refreshAddFormNode.jsp</result> 
+ 				  <result name="updateInDesignPage">/form/admin/designer/designer.jsp</result> 
+ 				  <result name="deleteSuccess">/form/admin/catalog/deleteSuccess.jsp</result>
+ 				  <!-- 业务逻辑部分 -->
+ 				  <result name="getLogicServiceById">/form/admin/develop/catalog/updateLogic.jsp</result>  
+ 				  
+ 			</action>
+    </package>
+   
+   	<!-- 业务对象 -->
+    <package name="com.matrix.form.admin.develop.entity.action"  extends="globalPackage" namespace="/dentity">
+ 			
+ 			<action name="entityAction_*" class="DEntityInfoAction" method="{1}" >
+ 				  <!-- 业务对象 部分 -->
+ 				  <result name="mainEntityBrowse">/form/admin/develop/entity/mainEntityBrowse.jsp</result> 
+ 				  <result name="mainQueryObjBrowse">/form/admin/develop/entity/mainQueryObjBrowse.jsp</result>
+ 				  <result name="entityBrowse">/form/admin/develop/entity/entityBrowse.jsp</result> 
+ 				  <result name="listEntityPropBrowse">/form/admin/develop/entity/listEntityPropBrowse.jsp</result>
+ 				  <result name="listQueryObjPropBrowse">/form/admin/develop/entity/listQueryObjPropBrowse.jsp</result> 
+ 				  <result name="queryObjContentBrowse">/form/admin/develop/entity/queryObjContentBrowse.jsp</result>
+ 				  <result name="queryObjectBrowse">/form/admin/develop/entity/queryObjectBrowse.jsp</result> 
+ 				   
+ 			</action>
+ 			
+ 			
+ 		
+   </package>
+
+
+</struts>

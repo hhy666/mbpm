@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+<!-- ================================================================= -->
+<!-- a rolling file appender -->
+<!-- ================================================================= -->
+
+<appender name="sqlfile" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_workbench_sql.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="eventfile" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_workbench_event.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="logicfile" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_workbench_logic.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<!-- ================================================================= -->
+<!-- a console appender -->
+<!-- debug can be turned off by setting level of root to "off" -->
+<!-- ================================================================= -->
+
+<appender name="wsota-rc.console.log" class="org.apache.log4j.ConsoleAppender">
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<!-- use this to turn on debug to a rolling file. -->
+
+    <logger name="MatrixLogic" additivity="true">
+         <level value="ERROR" />
+         <appender-ref ref="logicfile" /> 
+    </logger>
+    <logger name="MatrixSQL" additivity="true">
+         <level value="ERROR" />
+         <appender-ref ref="sqlfile" /> 
+    </logger>
+    <logger name="MatrixEvent" additivity="true">
+         <level value="ERROR" />
+         <appender-ref ref="eventfile" /> 
+    </logger>
+<!-- mybatis sql日志 -->
+ <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <!-- 输出内容格式 -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - &lt;%m&gt;%n" />
+        </layout>
+    </appender>
+ 
+    <appender name="File" class="org.apache.log4j.DailyRollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+        <!-- 日志文件位置 -->
+        <param name="File" value="logs/wiCC.log" />
+        <!-- 是否在重新启动服务时，在原有的基础上追加日志 -->
+        <param name="Append" value="true" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <!-- 输出内容格式 -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+        </layout>
+    </appender>
+ 
+    <logger name="org.springframework" additivity="false">
+        <level value="ERROR" />
+        <appender-ref ref="Console" />
+ 
+    </logger>
+ 
+    <logger name="org.apache.ibatis" additivity="false">
+        <level value="ERROR" />
+        <appender-ref ref="Console" />
+ 
+    </logger>
+ 
+    <logger name="java.sql.Connection" additivity="false">
+        <level value="ERROR"/>
+        <appender-ref ref="Console" />
+ 
+    </logger>
+    <logger name="java.sql.Statement" additivity="false">
+        <level value="ERROR" />
+        <appender-ref ref="Console" />
+ 
+    </logger>
+    <logger name="java.sql.PreparedStatement" additivity="false">
+        <level value="ERROR" />
+        <appender-ref ref="Console" />
+ 
+    </logger>
+     
+    <root>
+        <level value="info" />
+        <appender-ref ref="File" />
+    </root>
+</log4j:configuration> 

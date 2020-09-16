@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package Id="TestProcess" Name="test">
+  <PackageHeader>
+    <XPDLVersion>2.0</XPDLVersion>
+    <Vendor>北京华创动力科技有限公司</Vendor>
+    <Created/>
+    <Description/>
+  </PackageHeader>
+  <RedefinableHeader Countrykey="zh_CN" PublicationStatus="UNDER_REVISION">
+    <Author/>
+    <Version/>
+  </RedefinableHeader>
+  <Script Type="Jython" Version="1.0" Grammar=""/>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="TestProcess" Name="test">
+      <ProcessHeader Created="" Description="" Priority="0" ValidFrom="Sat Dec 30 00:00:00 GMT+0800 1899" ValidTo="Sat Dec 30 00:00:00 GMT+0800 1899"/>
+      <RedefinableHeader Countrykey="zh_CN" PublicationStatus="UNDER_REVISION">
+        <Author/>
+        <Version/>
+      </RedefinableHeader>
+      <Administrators>
+        <Administrator Name="管理人员" Type="PROCESSSTARTER" UserValue="" UserType="STATIC"/>
+      </Administrators>
+      <ActualParameters>
+        <ActualParameter Id="mDepId" Type="IN">41610529875</ActualParameter>
+        <ActualParameter Id="mOrgId" Type="IN">41611101016</ActualParameter>
+        <ActualParameter Id="mTitle" Type="IN">41611284287</ActualParameter>
+      </ActualParameters>
+      <DataFields>
+        <DataField Id="41610529875" Name="mDepId" Description="部门编码">
+          <DataType>
+            <BasicType Type="STRING"/>
+          </DataType>
+        </DataField>
+        <DataField Id="41611101016" Name="mOrgId" Description="机构编码">
+          <DataType>
+            <BasicType Type="STRING"/>
+          </DataType>
+        </DataField>
+        <DataField Id="41611284287" Name="mTitle" Description="标题">
+          <DataType>
+            <BasicType Type="STRING"/>
+          </DataType>
+        </DataField>
+      </DataFields>
+      <ActivitySets/>
+      <ActivityTmpls/>
+      <Activities>
+        <Activity Id="16121584557" Name="开始" Description="">
+          <StartMode>Automatic</StartMode>
+          <FinishMode>Automatic</FinishMode>
+          <Icon/>
+          <Priority>0</Priority>
+          <ActualParameters/>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="Xpos" Value="72"/>
+            <ExtendedAttribute Name="Ypos" Value="96"/>
+            <ExtendedAttribute Name="IsInsideBlock" Value="FALSE"/>
+            <ExtendedAttribute Name="RouteType" Value="START"/>
+            <ExtendedAttribute Name="IsStart" Value="true"/>
+          </ExtendedAttributes>
+          <Route/>
+        </Activity>
+        <Activity Id="1612207988" Name="结束" Description="">
+          <StartMode>Automatic</StartMode>
+          <FinishMode>Automatic</FinishMode>
+          <Icon/>
+          <Priority>0</Priority>
+          <ActualParameters/>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="Xpos" Value="382"/>
+            <ExtendedAttribute Name="Ypos" Value="281"/>
+            <ExtendedAttribute Name="IsInsideBlock" Value="FALSE"/>
+            <ExtendedAttribute Name="RouteType" Value="STOP"/>
+            <ExtendedAttribute Name="IsEnd" Value="true"/>
+          </ExtendedAttributes>
+          <Route/>
+        </Activity>
+      </Activities>
+      <Transitions/>
+      <ExtendedAttributes>
+        <ExtendedAttribute Name="InputStructId" Value="452163496228"/>
+        <ExtendedAttribute Name="OutputStructId" Value="EmptyDataStruct"/>
+        <ExtendedAttribute Name="IsIncludeStartNode" Value="true"/>
+        <ExtendedAttribute Name="isKeepWIsAfterCompleted" Value="true"/>
+        <ExtendedAttribute Name="InitialActivityDID" Value="16121584557"/>
+        <ExtendedAttribute Name="DescXpression" Value=""/>
+        <ExtendedAttribute Name="ProcessTID" Value="537de1e1-c9ec-4d7f-bf9e-4c5abec1831e"/>
+        <ExtendedAttribute Name="Owner" Value="admin"/>
+      </ExtendedAttributes>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+  <TypeDeclarations>
+    <TypeDeclaration Id="EmptyDataStruct" Name="空数据对象" Description="不含有成员的空对象">
+      <SchemaType>
+        <XMLSchema>
+          <Element Name="空数据对象">
+            <ComplexType>
+              <Sequence/>
+            </ComplexType>
+          </Element>
+        </XMLSchema>
+      </SchemaType>
+    </TypeDeclaration>
+    <TypeDeclaration Id="452163496228" Name="流程初始信息" Description="流程初始数据信息">
+      <SchemaType>
+        <XMLSchema>
+          <Element Name="流程初始信息">
+            <ComplexType>
+              <Sequence>
+                <Element Name="mDepId" Kind="BasicType" BasicType="STRING"/>
+                <Element Name="mOrgId" Kind="BasicType" BasicType="STRING"/>
+                <Element Name="mTitle" Kind="BasicType" BasicType="STRING"/>
+              </Sequence>
+            </ComplexType>
+          </Element>
+        </XMLSchema>
+      </SchemaType>
+    </TypeDeclaration>
+  </TypeDeclarations>
+  <Participants/>
+  <Applications/>
+  <Calendars/>
+</Package>

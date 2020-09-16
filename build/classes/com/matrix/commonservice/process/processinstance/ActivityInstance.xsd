@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:tns="http://commonservice/processservice/processinstancemgr" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://commonservice/processservice/processinstancemgr">
+  <xsd:include schemaLocation="ExAttributes.xsd"/>
+  <xsd:complexType name="ActivityInstance">
+    <xsd:annotation>
+      <xsd:documentation>活动实例</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="adid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="atid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="aiid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="activityName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="pdid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ptid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="piid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="processName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>流程名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="btid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动集模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="biid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动集实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="blockName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动集名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="desc" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>实例描述</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="insideType" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>所在容器类型</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="activityType" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>活动类型</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="implementationType" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>实现类型</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="routeType" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>路由类型</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="priority" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>优先级</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="starterId" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>提交用户编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="executorId" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>执行用户编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="starterName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>提交用户名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="executorName" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>执行用户名称</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="startedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>开始时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="activedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>激活时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="executedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>执行时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="completedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>完成时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="lastModifiedDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>最后修改时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="expiredDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>过期时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="containerExpiredDate" type="xsd:dateTime" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>容器过期时间</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="status" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>状态</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="subflowTID" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>对应子流程活动模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="subflowIID" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>对应子流程活动实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="subflowPTID" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>对应子流程模板编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="parallelID" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>所在并发活动实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isParallelItem" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>是否为并发活动实例</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isEndActivity" type="xsd:int" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>是否为完成活动</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="workDuration" type="xsd:long" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>花费时间段</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="fromTransitionDid" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>源自转移定义编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="fromActInsId" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>源自活动实例编码</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isGoBack" type="xsd:string" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>是否为返回转移</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="exAttributes" type="tns:ExAttributes" maxOccurs="1" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>实例扩展属性</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

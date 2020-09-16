@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>$name</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport"
+	content="width=device-width, initial-scale=0.5,maximum-scale=1,user-scalable=yes">
+
+		<style type="text/css">
+body {
+	margin: 0;
+}
+
+body,td,th,input,textarea,div,select,p {
+	font-family: "Microsoft YaHei", SimSun, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+strong,b {
+	font-weight: bold;
+}
+
+Inherited from 
+#mainbodyDiv div,#mainbodyDiv input,#mainbodyDiv textarea,#mainbodyDiv p,#mainbodyDiv th,#mainbodyDiv td,#mainbodyDiv ul,#mainbodyDiv li
+	{
+	font-family: inherit;
+}
+
+.font-12px {
+	font-size: 12px;
+}
+
+.body-bgcolor {
+	background-color: #d2d2d2;
+}
+
+.body-detail,.body-detail-HTML,.body-detail-form {
+	background: #FFFFFF;
+	border: solid 0px #A0BEC8;
+	width: 788px;
+	margin-bottom: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.margin-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.margin-auto {
+	margin: auto;
+}
+
+.contentText td,UL,LI,div,a,ol,pre,span {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+input,select {
+	font-size: 12px;
+}
+
+input {
+	vertical-align: middle;
+}
+
+.body-detail-HTML,.body-detail-office {
+	border: solid 0px black;
+}
+
+.body-detail,.body-detail-HTML,.body-detail-form {
+	background: #FFFFFF;
+	border: solid 0px #A0BEC8;
+	width: 788px;
+	margin-bottom: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.padding355 {
+	padding: 35px 35px 35px 35px;
+}
+
+.contentText {
+	padding: 12px;
+}
+
+#content {
+	width: 100%;
+}
+
+.contentText {
+	padding: 0px;
+	margin: 0px;
+	background-color: #FFFFFF;
+	height: 100%;
+	font-family: "Microsoft YaHei", SimSun, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	min-height: 500px;
+	height: auto !important;
+	height: 500px;
+}
+
+.appendInfo {
+	border-bottom-width: 1px;
+	border-bottom-color: #c5cad2;
+}
+
+.appendInfo {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	BORDER-BOTTOM: #c5cad2 1px solid;
+	BORDER-LEFT: #c5cad2 1px solid;
+	BORDER-RIGHT: #c5cad2 1px solid;
+	BORDER-TOP: #c5cad2 1px solid;
+}
+
+#mainbodyDiv div,#mainbodyDiv input,#mainbodyDiv textarea,#mainbodyDiv p,#mainbodyDiv th,#mainbodyDiv td,#mainbodyDiv ul,#mainbodyDiv li
+	{
+	font-family: inherit;
+}
+
+TD.sort {
+	border-bottom: solid 1px #fafafa;
+	word-break: break-all;
+	font-size: 12px;
+	height: 26px;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+
+.rightBorder {
+	BORDER-RIGHT: #c5cad2 1px solid;
+}
+
+.paddingLR {
+	padding: 0 30px;
+}
+
+#attachmentTr {
+	padding-top: 4px;
+}
+
+#mainbodyDiv div,#mainbodyDiv input,#mainbodyDiv textarea,#mainbodyDiv p,#mainbodyDiv th,#mainbodyDiv td,#mainbodyDiv ul,#mainbodyDiv li
+	{
+	font-family: inherit;
+}
+</style>
+
+		<style type="text/css">
+body {
+	-moz-user-focus: ignore;
+	-moz-user-select: none;
+}
+
+ol {
+	margin: auto;
+}
+</style>
+<script>
+	$(function(){
+		$('#content > p').has('img').css('text-align','center');
+		$('#content > p > img').css('max-width','100%');
+	})
+</script>
+	</head>
+	<body scroll="no" style="height: 96%" KGBrowser="KGBrowser金格浏览器[演示版];V5.0S0xGAAEAAAAAAAAAEAAAACIBAAAwAQAALAAAANO//1HF7Tfsb1Y6J6lzIuZtrNNftWFj4sC2hobHxMkBxecv1ZGTWVDYYH61rCFqJmScp2LJi5Qa3JdVg0hlUos4LLzDhnyENjsym+Lec8Kh2uY79bCgPPAZmOmL8CA8BqJVmELfZo/6N03WXihKVjLj7fmzMXKUX5dggxXZOX5ej8UEoBhEFTmqCK/l3WqrI1gaON7a1gNfLuPC/Le2Z/pe2X31g5fellcSMRKUnh3m6vzdMSyzM2QbYDh7knuAJyXAnMxo10+LVKYzg0YdGeCDqJ3eBd4TvIOQQYcKvsM++cZPuv3Qe8qmoWcGd7fUdTFPEJwqEffTjV27iWcHNrjzOBYcKRQQLmPZSin7xunKL6QW5GKyF1xcgEJCUfa4aKLojDokD+//4gmiEgR2qJnYCPXq/DH7E1ACf7GSnJ7H">
+		<div class="scrollList" id="mainbodyDiv"
+			style="display: block; visibility: visible;">
+
+			<table border="0" cellpadding="0" cellspacing="0" width="100%"
+				height="100%" class="body-bgcolor" align="center"
+				style="padding: 0px;">
+				<tbody>
+					<tr>
+						<td class="body-bgcolor" width="100%" height="100%">
+							<table width="100%" height="100%" border="0" cellpadding="0"
+								cellspacing="0" class="body-detail margin-auto" align="center">
+								<tbody>
+									<tr>
+										<td colspan="6" valign="top">
+											<div id="printThis">
+												<table width="100%" height="100%" border="0" cellpadding="0"
+													cellspacing="0">
+													<tbody>
+														<tr>
+															<td width="100%" id="contentTD" height="100%"
+																style="padding-bottom: 6px;" valign="top" colspan="6">
+																<div style="height: 100%">
+
+																	<div id="htmlContentDiv"  style="margin: 0 15%;">
+																		<table align="center" border="0" cellspacing="0"
+																			cellpadding="0" class="body-detail-HTML"
+																			id="col-contentTable">
+																			<tbody>
+																				<tr>
+																					<td class="padding355">
+																						<div style="height: 0px; width: 0px"
+																							id="inputPosition"></div>
+
+																						<div class="contentText" id="content"
+																							style="padding: 12px;text-aglin:center;">
+																							<div
+																								style="LAYOUT-GRID: 15.2pt none; mso-layout-grid-char-alt: -1730"
+																								class="Section1">
+                                                                                                  $content
+																							</div>
+																						</div>
+																					</td>
+																				</tr>
+																				<tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+
+																</div>
+																<style>
+.contentText p {
+	font-size: 16px;
+}
+</style>
+
+															</td>
+														</tr>
+
+
+														<tr>
+															<td align="center">
+															</td>
+														</tr>
+
+
+														<tr id="attachmentTr">
+															<td class="paddingLR" height="30" colspan="6">
+																<table border="0" cellspacing="0" cellpadding="0"
+																	width="100%" height="100%">
+																	<tbody>
+																		<tr style="padding-bottom: 20px;">
+																			<td nowrap="nowrap" width="50" class="font-12px"
+																				valign="top">
+																				<b>附件:&nbsp;</b>
+																			</td>
+																			<td width="100%" class="font-12px">
+
+																				<div style="display: none;">
+${file}
+																				</div>
+
+
+
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+
+														<tr id="attachment2Tr" style="display: none;">
+															<td class="paddingLR" height="30" colspan="6">
+																<table border="0" cellspacing="0" cellpadding="0"
+																	width="100%" height="100%">
+																	<tbody>
+																		<tr style="padding-bottom: 20px;">
+																			<td nowrap="nowrap" width="70" class="font-12px"
+																				valign="top">
+																				关联文档:&nbsp;
+																			</td>
+																			<td width="100%" class="font-12px">
+
+																				<div style="display: none;">
+
+																				</div>
+
+
+
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+
+														<tr>
+															<td colspan="6" class="paddingLR" height="30" id="paddId">
+
+
+
+																<table class="appendInfo" cellspacing="0"
+																	cellpadding="0" width="100%" height="100%">
+																	<tbody>
+																		<tr class="sort">
+																			<td class="font-12px sort rightBorder" title=""
+																				width="50%">
+																				&nbsp;&nbsp; 公告标题:&nbsp;&nbsp; $name
+																			</td>
+
+																			<td class="font-12px sort" title="中认网信息技术有限公司"
+																				width="50%">
+																				&nbsp;&nbsp; 发布范围:&nbsp;&nbsp; $area
+																			</td>
+																		</tr>
+
+																		<tr class="sort">
+																			<td class="font-12px sort rightBorder" width="50%">
+																				&nbsp;&nbsp; 审核人:&nbsp;&nbsp; $auditor
+																			</td>
+																			<td class="font-12px sort" width="50%">
+																				&nbsp;&nbsp; 审核时间:&nbsp;&nbsp; $auditTime
+																			</td>
+																		</tr>
+
+																		<tr class="sort">
+																			<td class="font-12px sort rightBorder" width="50%">
+																				&nbsp;&nbsp; 发布部门:&nbsp;&nbsp; $pubDep
+																			</td>
+																			<td class="font-12px sort" width="50%">
+																				&nbsp;&nbsp; 发布时间:&nbsp;&nbsp; $pubDate
+																			</td>
+																		</tr>
+																		<tr class="sort">
+																			<td class="font-12px sort" width="100%" colspan="2">
+																				&nbsp;&nbsp; 点击数:&nbsp;&nbsp; $readTimes
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+
+
+															</td>
+														</tr>
+
+
+														<tr>
+															<td align="center">
+																&nbsp;${readInfoLink}
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+
+					<tr>
+						<td height="10"></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<input type="hidden" id="subject" name="subject"
+				value="关于贯彻落实《朝阳区高技能人才培训补贴管理办法》通知">
+		</div>
+
+
+	</body>
+</html>

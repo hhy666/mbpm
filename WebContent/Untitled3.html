@@ -1,0 +1,1475 @@
+
+<!DOCTYPE HTML><html><head><meta charset='utf-8'/><SCRIPT>var webContextPath="/mofficeV3";</SCRIPT>
+<SCRIPT>var isomorphicDir="/mofficeV3/matrix/resource/isomorphic/";</SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_Core41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_Foundation41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_Containers41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_Grids41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_Forms41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_DataBinding41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/system/modules/ISC_RichTextEditor41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/matrixSmartClient41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/matrix41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/date41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/common_property41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/formcatalog41.60.js"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/skins/Enterprise/load_skin41.60.js"></SCRIPT>
+<link rel="stylesheet" href="/mofficeV3/matrix/resource/isomorphic/skins/Enterprise/matrix_runtime41.60.css" type="text/css"/>
+<link rel="stylesheet" href="/mofficeV3/matrix/resource/isomorphic/skins/Enterprise/skin_styles41.60.css" type="text/css"/>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/locales/frameworkMessages_zh_CN41.60.properties"></SCRIPT>
+<SCRIPT SRC="/mofficeV3/matrix/resource/isomorphic/locales/matrixMessages_zh_CN41.60.properties"></SCRIPT>
+
+<script type="text/javascript" src="js/office.js"></script> <script src="/mofficeV3/resource/html5/js/jquery.min.js"></script><link href='/mofficeV3/resource/css/default.custom.css' rel='stylesheet' type="text/css"></link>
+<SCRIPT SRC='/mofficeV3/resource/date/laydate.js'></SCRIPT>
+<style>
+
+.arrow_2_l {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  background: url(image/control_icon.png) no-repeat;
+  background-position: -80px 0;
+  cursor:pointer;
+}
+.arrow_2_r {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  background: url(image/control_icon.png) no-repeat;
+  background-position: -96px 0;
+  cursor:pointer;
+}
+.toolStrip{
+border:none;
+  background-image: none;
+background-color:rgb(250,250,250);
+}
+
+</style>
+<script>
+
+
+function isBlank(str){     //字符串是否为空
+if(typeof(str)!="undefined"){
+if(str=="null"||str==""){
+return true;
+}
+for(i=0;i<str.length;i++){
+if(str.substring(i,i+1)!=" "){
+return false;
+break;
+}
+}
+}
+return true;
+
+}
+//校验期限值是不是为正整数
+
+function checkRate()  
+{  
+     var re = /^[0-9]+(.[0-9]{2})?$/;
+     var type = MdateType.getValue();//期限类型
+     var inputValue = Matrix.getFormItemValue('input');//期限值
+if(type=='1'||type=='2'||type=='3'){
+     if(isBlank(inputValue)){
+Matrix.setFormItemValue('input','');
+     return true;
+}
+else{
+     if (!re.test(inputValue))  
+    {  
+      
+       
+        return false;  
+     }  
+}
+}
+return true;
+}  
+function onpopupSelectDialog001DialogClose(data){
+		var userNames ;
+		var userIds;
+		for(var i = 0; i< data.length();i++){
+			userNames += data[i].userName;
+			userIds += data[i].userId;
+			if(i != data.length()-1){
+				userNames += ",";
+				userIds += ",";
+			}
+		}
+		var selectedData =  Matrix.getMatrixComponentById("selectedUserId"); 
+		selectedData.setValue(userIds);
+		Matrix.getMatrixComponentById("popupSelectDialog001").setValue(userNames);
+		
+	}
+ //监控
+function monitor(){  
+      
+          var pdid = document.getElementById('pdid').value;
+    var url = webContextPath+"/form/admin/process/processDiagram.jsp?flowDid="+pdid;
+var name = "monitorWin"; //网页名称，可为空;
+var iWidth = 900; //弹出窗口的宽度;
+var iHeight = 500; //弹出窗口的高度;
+//window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
+var iTop = (window.screen.height-30-iHeight)/2; //获得窗口的垂直位置;
+var iLeft = (window.screen.width-10-iWidth)/2; //获得窗口的水平位置;
+window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+   //window.open(webContextPath+"/form/admin/process/processDiagram.jsp?flowDid="+pdid,"_blank");
+  
+} 
+
+ /*   function onAddFileWinClose(data){
+       
+        //显示附件区域
+       document.getElementById('td004').style.display="";
+          document.getElementById('tr004').style.display="";
+    
+    }
+    function onAddRelatedDocumentWinClose(data){
+	if(data.data=='true'){
+        //显示附件区域
+       document.getElementById('td004').style.display="";
+          document.getElementById('tr004').style.display="";
+   } 
+}
+*/
+   //接受文档中全部痕迹
+	function WebAcceptAllRevisions(){
+	  WebOffice.WebObject.ActiveDocument.Application.ActiveDocument.AcceptAllRevisions();
+	  var mCount = WebOffice.WebObject.ActiveDocument.Application.ActiveDocument.Revisions.Count;
+	  if(mCount>0){
+	    return false;
+	  }else{
+	    return true;
+	  }
+	}
+
+	function redrawForm(){
+		Mform0.redraw();
+		isc.Page.setEvent(isc.EH.RESIZE,function(){
+				isc.Page.setEvent(isc.EH.RESIZE,"Mform0.redraw()",null);
+		},isc.Page.FIRE_ONCE);
+	}
+	function setInitFormStyle(){
+ document.getElementById('trmsg').style.display='none'; 
+				Mform0.redraw();
+       		 //var tempDateType = Matrix.getFormItemValue('tempDateType');
+					//var dateType = MdateType.getValue();
+					///if(dateType==null || dateType==''||dateType=='null'||dateType=='undefined'){
+					//	Matrix.setFormItemValue('dateType',dateType);
+					//}
+            //设置期限类型
+           setDateValue();
+        	  //初始表单时给期限值复制
+					var tempDateValue = Matrix.getFormItemValue('tempDateValue');
+					if(1=='0'){
+						 Matrix.setFormItemValue('isInitLoad','1');
+					}
+					var isInitLoad =  Matrix.getFormItemValue('isInitLoad');
+					var tempDateType = Matrix.getFormItemValue('tempDateType');
+				   if(tempDateValue!=null &&tempDateValue.length>0 && isInitLoad=='0'){//初始加载时自定义期限类型的时候
+						if(tempDateType=='4'){
+							Matrix.setFormItemValue('inputDate',new Date(tempDateValue));
+						}else{
+							Matrix.setFormItemValue('inputDate',tempDateValue);
+						}
+					}
+
+              var formId =Matrix.getFormItemValue('formId');
+              if(formId=='CkeditorList' || formId=='WordPage'||formId=='EditCkEditor'){
+                document.getElementById('ContainerPanel001_div').style.width="100%";
+                document.getElementById('ContainerPanel001_div').style.overflow="hidden";
+              }
+
+         document.getElementById('fileUpload001').style.display='none';
+         var isImgNews = Matrix.getFormItemValue('isImgNews');//是图片新闻
+          if(isImgNews=='true'){
+         document.getElementById('fileUpload001').style.display=''; 
+          }else{
+         document.getElementById('fileUpload001').style.display='none';  
+          }
+         //设置意见组件的样式
+          setCommentStyle();
+         setStyle();
+          //setDateValue();
+		//提醒时限初始设置
+		//document.getElementById('input_div').style.display='';
+		//document.getElementById('months').style.display='';
+		//document.getElementById('days').style.display='none';
+		//document.getElementById('hours').style.display='none';
+		//document.getElementById('inputDate_div').style.display='none';
+         //document.getElementById('td004').style.display="none";
+       //   document.getElementById('tr004').style.display="none";
+		//查看按钮设置
+		document.getElementById('button002_div').style.display='none';
+		//编辑流程按钮设置
+		//document.getElementById('button005_div').style.display='none';
+		//--以下组件默认显示 start-------------------------------------
+		//发布部门标签
+		document.getElementById('label053').style.display='';
+		//发布部门输入框
+		document.getElementById('syninput003_div').style.display='';
+		//发布人员标签
+		//document.getElementById('label006').style.display='';
+		//发布人员输入框
+		//document.getElementById('input002_div').style.display='';
+		//显示发布人
+		document.getElementById('checkBox001_div').style.display='';
+		//状态
+		//document.getElementById('label015').style.display='';
+		//document.getElementById('comboBox001_div').style.display='';
+		//--以上标签默认显示 end---------------------------------------
+		
+		var isNoticeOrNews = Matrix.getFormItemValue("isNoticeOrNews"); //0:other; 1:news; 2:notice
+		if(isNoticeOrNews=='2'){//公告
+			//input 摘要
+			document.getElementById('inputSummary_div').style.display='none';
+			//label 摘要
+			document.getElementById('summary').style.display='none';
+			//input 关键字
+			document.getElementById('inputKey_div').style.display='none';
+			//label 关键字
+			document.getElementById('key').style.display='none';
+			//图片新闻
+			document.getElementById('checkBox004_div').style.display='none';
+			//发布范围
+			document.getElementById('label004').style.display='';
+			document.getElementById('syninput005_div').style.display='';
+			//记录阅读信息
+			document.getElementById('syncheckBox003_div').style.display='';
+			//打印公告
+			document.getElementById('syncheckBox002_div').style.display='';
+
+
+		}else if(isNoticeOrNews=='1'){//新闻
+			//input 摘要
+			document.getElementById('inputSummary_div').style.display='';
+			//label 摘要
+			document.getElementById('summary').style.display='';
+			//input 关键字
+			document.getElementById('inputKey_div').style.display='';
+			//label 关键字
+			document.getElementById('key').style.display='';
+			//图片新闻
+			document.getElementById('checkBox004_div').style.display='';
+			//发布范围
+			document.getElementById('label004').style.display='none';
+			document.getElementById('syninput005_div').style.display='none';
+			//记录阅读信息
+			document.getElementById('syncheckBox003_div').style.display='';
+			//打印公告
+			document.getElementById('syncheckBox002_div').style.display='none';
+		}else{
+			//其余情况全部隐藏
+			
+			  document.getElementById('td021').style.display='none';
+			  document.getElementById('td022').style.display='none';
+			  document.getElementById('td024').style.display='none';
+			  document.getElementById('td025').style.display='none';
+			  document.getElementById('td027').style.display='none';
+			  document.getElementById('td028').style.display='none';
+			
+			  document.getElementById('td030').style.display='none';
+			
+			  document.getElementById('tdisShowImage').style.display='none';
+			 
+               document.getElementById('tr009').style.display='none';
+		}
+		var initLoad = Matrix.getFormItemValue("isInitLoad");//是否是初始加载
+		var fromportal = Matrix.getFormItemValue('fromportal');///来自门户栏目上发起的协同
+		if(initLoad=='0' && fromportal=='1'){//初始加载 并且 不是 从门户发起的协同  可以修改
+			var dateType = MdateType.getValue();
+			if(dateType=='4'){
+				MinputDate.setDisabled(false);
+				Minput.setDisabled(true);
+			}else{
+				MinputDate.setDisabled(true);
+				Minput.setDisabled(false);
+			}
+			MdateType.setDisabled(false);
+			
+		}else{
+			//其余情况，都不可以修改流程期限
+			MinputDate.setDisabled(true);
+			Minput.setDisabled(true);
+			MdateType.setDisabled(true);
+		}
+		
+	}
+      
+      function getMflowBizId(){
+        var mFlowBizId="";
+        var from=Matrix.getFormItemValue('from');
+        if(from=='resend'){
+            mFlowBizId =  Matrix.getFormItemValue('mFlowBizId2');
+        }else{
+            mFlowBizId =  Matrix.getFormItemValue('mFlowBizId');
+            return mFlowBizId;
+        }
+     }
+     //设置意见区域的样式
+     function setCommentStyle(){
+      document.getElementById('fuyan').style.display='none';
+      document.getElementById('addfuyan').style.display=''; 
+      document.getElementById('subForm').style.width='97%'; 
+    }
+    
+     function setPtid(value){
+            Matrix.setFormItemValue('ptid',value);
+        }
+        function hideDesc(){
+      document.getElementById('fuyan').style.display='none';
+      document.getElementById('addfuyan').style.display=''; 
+      document.getElementById('subForm').style.width='97%'; 
+
+           // document.getElementById('showTd').style.display="none";
+           // document.getElementById('hideTd').style.display="";
+
+          //  document.getElementById('showTd').style.width="0px";
+          //  document.getElementById('hideTd').style.width="5%";
+           // document.getElementById('incFormTd').style.width="95%";
+          //  document.getElementById('table005').style.width="0px";
+           // document.getElementById('table004').style.width="100%";
+       //document.getElementById(activeTd).style.height="100%";
+            
+           
+            
+        }
+
+        function showDesc(){
+      document.getElementById('fuyan').style.display='';
+      document.getElementById('addfuyan').style.display='none'; 
+      document.getElementById('subForm').style.width='85%';
+      MinputTextArea.redraw();
+
+            //document.getElementById('showTd').style.display="";
+           //document.getElementById('hideTd').style.display="none";
+           // document.getElementById('showTd').style.width="15%";
+           // document.getElementById('hideTd').style.width="0px";
+           // document.getElementById('incFormTd').style.width="85%";
+        // document.getElementById(activeTd).style.height="100%";
+          //    document.getElementById('table004').style.width="0px";
+         //   document.getElementById('table005').style.width="100%";
+        
+        }
+
+        //初试事件
+        function setStyle(){
+        //setFormStyle();//设置附言的样式
+              //document.getElementById("mImageBizId").value=document.getElementById('mFlowBizId').value;
+	
+              td0fuyan.onclick=function(){hideDesc();};
+        table007.onclick=function(){showDesc();};
+             //设置标题
+             var title = Matrix.getFormItemValue('oldtitle');
+            
+             if(title !=null&&title .length>0&&title !='undefined'){
+                
+              
+                  document.getElementById('button002_div').style.display="";
+                 //Mbutton002.setDisabled(false);   
+             }else{
+ var title2 = Matrix.getFormItemValue('titleName');
+if(title2!=""&&title2!=null&&title2!='undefined'){
+   var date = new Date();
+                 var formatDate = date .format("yyyy-MM-dd HH:mm"); 
+                 var curUserName = Matrix.getFormItemValue('curUserName');
+                 var newName = title2 +"("+curUserName+"  "+formatDate +")";
+                 Matrix.setFormItemValue('p_title',newName);
+                document.getElementById('button002_div').style.display="none";
+}
+                //Mbutton002.setDisabled(true);
+             }
+               
+            
+            //document.getElementById('inputDate_div').style.display='none';//日期框
+           // document.getElementById('months').style.display='';
+            //document.getElementById('days').style.display='none';
+           // document.getElementById('hours').style.display='none';
+           // document.getElementById('input_div').style.display=''; 
+
+            //document.getElementById('table005').style.width="0px";
+            //document.getElementById('table004').style.width="100%";
+             //document.getElementById('showTd').style.display="none";
+            //document.getElementById('hideTd').style.display="";
+
+            //document.getElementById('showTd').style.width="0px";
+            //document.getElementById('hideTd').style.width="5%";
+            //document.getElementById('incFormTd').style.width="95%";
+            var isContainForm = Matrix.getFormItemValue('isContainForm');
+ var formId = Matrix.getFormItemValue('formId');
+if(formId=='WordPage'||formId=='CkeditorList'){
+
+}else{
+document.getElementById('ContainerPanel010_div').style.overflow="auto";
+document.getElementById('ContainerPanel001_div').style.width="80%";
+document.getElementById('ContainerPanel001_div').style.height="auto";
+
+}
+            if(isContainForm=='1'){
+               
+                if(formId!=null&&formId!=""){
+                    debugger;
+                     //document.getElementById(' innerHtml001').innerHTML="<script src='office/document/js/iWebOffice2015.js'/>";
+                    //document.getElementById('IncludeForm001').formDid=formId+".rform";
+                    Matrix.setFormItemValue('formId',formId);
+		    
+                    //MIncludeForm001.formDid=formId;  
+                }
+            }else{
+                debugger;
+                var wordType =parseInt(Matrix.getFormItemValue('wordType'));
+                if(wordType!='NaN'){
+                switch(wordType){
+                    case 1://word  隐藏工具栏上的正文按钮
+                        
+                         //document.getElementById('IncludeForm001').formDid="WordPage.rform";
+                        Matrix.setFormItemValue('formId','WordPage');
+                        
+                        //加载金格控件
+                        break;
+                    case 2://html 显示工具栏上的正文按钮
+                       
+
+                                  //document.getElementById('IncludeForm001').formDid="CkeditorList.rform";
+
+                        Matrix.setFormItemValue('formId','CkeditorList');
+                        //加载html页面
+                        break;
+                }
+                }//else{
+                 //    Matrix.setFormItemValue('formId','CkeditorList');
+                
+               // }    
+               
+            }
+	    document.getElementById('isc_A').style.display="none";//正文按钮隐藏
+	   document.getElementById('button005_div').style.display="none";
+       var templateUuid=Matrix.getFormItemValue('templateUuid');
+       var isSupportFlow=Matrix.getFormItemValue('isSupportFlow');
+       if(templateUuid==""||templateUuid==null){
+	  
+           Matrix.showWindow('Dialog0'); 
+       }//调用模板窗口
+       var baseCode = Matrix.getFormItemValue("baseCode");
+       var flag = false;
+       if(baseCode!=null && baseCode.contains("33")){
+	  flag = true;
+       }
+       if(templateUuid!=""&&templateUuid!=null&&isSupportFlow==1){ //模板已选且支持自由流，编辑流程按钮可见
+           document.getElementById('button005_div').style.display="block";
+          
+       }
+      }
+        //调用模板返回
+        function onDialog0Close(data){
+var fromportal = Matrix.getFormItemValue('fromportal');
+          if(data!=null&&data!='undefined'){
+      MmimgButton001.setDisabled(false);
+       MtoolBarItem001.setDisabled(false);
+            var uuid = data.uuid;//模板主键
+            var formDid= data.formId;//模板类型
+            var name = data.name;//模板名称
+                     var pdid = data.pdid;//流程定义编码
+            var date = new Date();
+            var formatDate = date .format("yyyy-MM-dd HH:mm"); 
+            var curUserName = Matrix.getFormItemValue('curUserName');
+            var newName = name+"("+curUserName+"  "+formatDate +")";
+            Matrix.setFormItemValue('p_title',newName);
+             
+            Matrix.setFormItemValue('templateUuid',uuid);
+            //Matrix.setFormItemValue('templateType',type);
+            Matrix.setFormItemValue('inputDoc',name);
+            var isInitLoad = Matrix.getFormItemValue('isInitLoad');
+        
+            var type=Matrix.getFormItemValue('type');
+
+            var newData={};
+            newData["plateId"] = uuid;
+            newData["pdid"] = pdid;
+            newData["matrix_user_command"] = 'getStartAdidAndAuthId';
+            var url = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value;
+            Matrix.sendRequest(url,newData,function(data){
+
+              if(data!=null&&data.data!=null){
+                if("error1"==data.data){
+                  Matrix.warn("该模板的所在的流程版本未发布或者不存在！");
+                  return false;
+		            }
+               var returnObj = isc.JSON.decode(data.data);
+               var adid = returnObj.adid;
+               var authId = returnObj.authId;
+               var baseCode = returnObj.baseCode;
+               var formId = returnObj.formId;
+               var sysType = Matrix.getFormItemValue('sysType');
+               window.location.href=webContextPath+"/CreateSynProcess.rform?formId="+formId+"&isInitLoad=1&mBizId="+uuid+"&pdid="+pdid+"&&type="+type+"&adid="+adid+"&authId="+authId+"&fromportal="+fromportal+"&baseCode="+baseCode+"&sysType="+sysType;
+			      }
+      			});
+          }else{
+	
+        MmimgButton001.setDisabled(true);
+        MtoolBarItem001.setDisabled(true);
+     }
+        
+        }
+        //流程期限 onchange事件
+        function setDateValue(){
+           var dateType = MdateType._value; 
+				if(dateType==null ||dateType==''||dateType=='null'){
+					dateType=3;
+				}
+				var type = parseInt(dateType);
+           switch(type){
+                case 1:
+                    document.getElementById('inputDate_div').style.display='none';//日期框
+                    document.getElementById('months').style.display='none';
+                    document.getElementById('days').style.display='none';
+                    document.getElementById('hours').style.display='';
+                    document.getElementById('input_div').style.display='';
+							 MinputDate.setValue(new Date());
+                   break;
+                case 2:
+                    document.getElementById('inputDate_div').style.display='none';//日期框
+                    document.getElementById('months').style.display='none';
+                    document.getElementById('days').style.display='';
+                    document.getElementById('hours').style.display='none';
+                    document.getElementById('input_div').style.display='';
+							MinputDate.setValue(new Date());
+                   break;
+                case 3:
+                    document.getElementById('inputDate_div').style.display='none';//日期框
+                    document.getElementById('months').style.display='';
+                    document.getElementById('days').style.display='none';
+                    document.getElementById('hours').style.display='none';
+                    document.getElementById('input_div').style.display='';
+							MinputDate.setValue(new Date());
+                   break;
+                 case 4:
+                    document.getElementById('inputDate_div').style.display='';//日期框
+                    document.getElementById('months').style.display='none';
+                    document.getElementById('days').style.display='none';
+                    document.getElementById('hours').style.display='none';
+                    document.getElementById('input_div').style.display='none';
+                   break;
+           }
+
+        }
+        //保存文档
+        function saveDocument(){
+				Matrix.showMask();
+                  var flag = true;
+          var type = Matrix.getFormItemValue('type');//判断是否是文档类型   1   公文   2  文档   3 协同
+               var formId = Matrix.getFormItemValue('formId');
+                  if(formId=='CkeditorList'||formId=='EditCkEditor'){
+            var content = CKEDITOR.instances.richText001.getData();
+             Matrix.setFormItemValue('ckeditorContent',content);
+           }
+           var mFlowBizId = Matrix.getFormItemValue('mFlowBizId');
+           var isInitLoad = Matrix.getFormItemValue('isInitLoad');
+            var type = Matrix.getFormItemValue('type'); //1 公文
+            var piid = Matrix.getFormItemValue('piid');
+                if(formId=='WordPage'){
+                    var subType = Matrix.getFormItemValue('subType');//1 发文 2  收文  3 签报
+                    var uuid = Matrix.getFormItemValue('uuid');
+                    WebOffice.Uuid = uuid;
+                    WebOffice.Piid = piid;
+                    WebOffice.Type = type;
+                    WebOffice.SubType = subType;
+                    WebOffice.IsInitLoad =isInitLoad; 
+                    WebOffice.FlowBizId=mFlowBizId;
+                flag = WebOffice.WebSave();
+                }else if(formId=="OfficeEditPage"){//文档
+              
+                    WebOffice.RecordID=mFlowBizId;
+              WebOffice.IsInitLoad =isInitLoad; 
+                    WebOffice.FlowBizId=mFlowBizId;
+              var archiveType = Matrix.getFormItemValue('archiveType');
+             WebOffice.Type = archiveType ;
+           // WebOffice.ArchiveType = archiveType;
+             // WebOffice.WebUrl="http://localhost:"+port+"/"+webContextPath+"/ArchiveWordServlet";
+             flag = WebOffice.WebSave();
+          
+        }
+     
+           return flag; //  true/false
+
+        }
+    //待发
+/*
+    function waitSend(){
+var fromportal = Matrix.getFormItemValue('fromportal');
+
+             MtoolBarItem001.disable();
+             Matrix.showMask();
+             if(!Mform0.validate()){
+              MtoolBarItem001.enable();
+              Matrix.hideMask();
+              return false;
+              }
+        var flag = saveDocument();
+        if(flag){
+            var newData = Matrix.formToObject("form0");
+            newData["matrix_user_command"]='save';
+            var url = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value;
+            Matrix.sendRequest(url,newData,function(data){
+                           if("true"==data.data){
+               Matrix.say("保存成功");  
+var isNoticeOrNews = Matrix.getFormItemValue("isNoticeOrNews"); //0:other; 1:news; 2:notice
+           if(isNoticeOrNews=="1" ||isNoticeOrNews=="2")
+                           window.opener.Matrix.refreshDataGridData('DataGrid001'); 
+if(fromportal!='1')
+  window.opener.Matrix.refreshDataGridData('DataGrid002');
+                         setTimeout("window.close()",1000);
+                          }else{
+                           Matrix.say("保存失败");
+                           MtoolBarItem001.enable();
+                           Matrix.hideMask();
+                           return false;
+                          }
+            });
+        }
+    }
+*/
+    //取 ckeditor的内容
+    function getContent(){
+       var content = CKEDITOR.instances.richText001.getData();
+       Matrix.setFormItemValue('ckeditorContent',content);
+    }
+    //发送
+/*
+    function send(){
+         var _mgr=Matrix.convertDataGridDataOfForm('form0');
+             if(!Mform0.validate()){
+              MmimgButton001.enable();
+              Matrix.hideMask();
+              return false;
+              }
+    MmimgButton001.disable();
+MmimgButton001.setOpacity("9");
+document.getElementById("trmsg").style.display="";
+             Matrix.showMask();
+        var cvalue = McheckBox004.getValue(); 
+        //是图片新闻
+          if(cvalue!=null&&cvalue!=''&& cvalue!='undefined'){
+                var f=document.getElementById("fileUpload001").value;
+                if(f==""){ 
+                Matrix.warn("请上传图片");
+                            MmimgButton001.enable();
+                            Matrix.hideMask();
+                return false;
+             }else{
+                    if(!/\.(jpg)$/.test(f)){
+                        Matrix.warn("只支持jpg格式图片文件!");
+                                   MmimgButton001.enable();
+                                   Matrix.hideMask();
+                        return false;
+                    }
+                }
+          }
+        var formId = Matrix.getFormItemValue('formId');
+        if(formId=='CkeditorList'||formId==''||formId=='EditCkEditor'){
+            getContent();
+        }
+        var adid = Matrix.getFormItemValue('adid');
+        var newData = "{'matrix_user_command':'isSelectTransition'}";
+        var url = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value;
+        var synJson = isc.JSON.decode(newData);
+
+     //   Mbutton001.setDisabled(true);
+        Matrix.sendRequest(url,synJson,function(data){
+           if("true"==data.data){   //选步骤弹出
+			     
+             Matrix.showWindow('SelectTransitionWin');
+              }else{                  //保存
+              if(formId=='WordPage'||formId=='OfficeEditPage'){
+                 saveDocument();
+
+              }
+                var data = Matrix.formToObject("form0");
+               var value = McheckBox004.getValue(); 
+              var url2 = "";
+             data.matrix_user_command='startProcess';
+              url2 = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value;
+             
+              Matrix.sendRequest(url2,data,function(data){
+                if(data!=null && data.data!=''){
+                  
+          if("error1"==data.data){
+            MmimgButton001.setOpacity("100");
+            document.getElementById("trmsg").style.display="none";
+            isc.warn("该模板的所在的流程版本未发布或者不存在");
+            MmimgButton001.enable();
+            Matrix.hideMask();
+            return false;
+          }
+
+          if("true"==data.data){
+
+		    if(cvalue!=null&&cvalue!=''&& cvalue!='undefined'){
+ 					document.getElementById("form0").action="newsImage/newsImage_uploadImage.action";  
+     
+	        	document.getElementById("form0").submit();  
+				}
+
+ 			var isNoticeOrNews = Matrix.getFormItemValue("isNoticeOrNews"); //0:other; 1:news; 2:notice
+           if(isNoticeOrNews=="1" ||isNoticeOrNews=="2")
+              window.opener.Matrix.refreshDataGridData('DataGrid002');
+					document.getElementById("trmsg").style.display="none";
+           Matrix.say("发送成功");   
+              setTimeout("closeWindow()",1000);
+          }if("false"==data.data){
+               MmimgButton001.setOpacity("100");
+              document.getElementById("trmsg").style.display="none";
+              Matrix.say("发送失败");  
+              MmimgButton001.enable();
+              Matrix.hideMask();
+              return false; 
+           }
+        }else{
+             MmimgButton001.setOpacity("100");
+            document.getElementById("trmsg").style.display="none";
+            Matrix.say("发送失败");
+              MmimgButton001.enable();
+             Matrix.hideMask();
+             return false; 
+			}
+               });
+           }
+        });
+
+    }
+*/
+
+ function submitFormJS(){
+			//校验表单联合校验
+      var formId='form0';
+		var validInfo = document.getElementById("m_isFormValidate");
+		if(validInfo){ //该表单有联合校验
+			//转换表单中表格数			
+			Matrix.convertDataGridDataOfForm(formId);
+			var newData = Matrix.formToObject(formId);
+			var url = webContextPath+'/matrix.rform?m_isFormValidate=true&validateFlag=true';
+			Matrix.sendRequest(url,newData,function(data){
+		   	if("true"==data.data){
+                            send();  
+				
+		 	    return true;
+		   	}else{
+            
+				Matrix.hideMask();
+				Matrix.say(data.data);
+				return false;
+		   	}	   
+			});
+
+                }else{
+                        send();  
+			return true;
+                }
+   } 
+
+function waitSend(){
+        var formId = Matrix.getFormItemValue('formId');
+        if(formId=='CkeditorList'||formId==''||formId=='EditCkEditor'){
+            getContent();
+        }
+        var flag = saveDocument();
+        return flag;
+}
+function send(){
+             var _mgr=Matrix.convertDataGridDataOfForm('form0');
+             if(!Mform0.validate()){
+              MmimgButton001.enable();
+              Matrix.hideMask();
+              return false;
+              }
+    MmimgButton001.disable();
+MmimgButton001.setOpacity("9");
+document.getElementById("trmsg").style.display="";
+             Matrix.showMask();
+        var cvalue = McheckBox004.getValue(); 
+        //是图片新闻
+          if(cvalue!=null&&cvalue!=''&& cvalue!='undefined'){
+                var f=document.getElementById("fileUpload001").value;
+                if(f==""){ 
+                Matrix.warn("请上传图片");
+                            MmimgButton001.enable();
+                            Matrix.hideMask();
+                return false;
+             }else{
+                    if(!/\.(jpg)$/.test(f)){
+                        Matrix.warn("只支持jpg格式图片文件!");
+                                   MmimgButton001.enable();
+                                   Matrix.hideMask();
+                        return false;
+                    }
+                }
+          }
+        var formId = Matrix.getFormItemValue('formId');
+        if(formId=='CkeditorList'||formId==''||formId=='EditCkEditor'){
+            getContent();
+        }
+var flag = saveDocument();
+MMSbutton0012.click();
+}
+    function closeWindow(){
+        window.close();
+    }
+        function showDocumentWindow(){
+            Matrix.showWindow('WordDialog');   
+        }
+    var data = null;
+        function checkTitle(){ 
+            //showDocumentWindow();
+      var uuid = Matrix.getFormItemValue('templateUuid');
+      var flowNodeId = Matrix.getFormItemValue('flowNodeId');
+      var type = Matrix.getFormItemValue('type');
+        var flowBizId = Matrix.getFormItemValue('mFlowBizId');
+      var isInitLoad = Matrix.getFormItemValue('isInitLoad');
+      data = Matrix.formToObject('form0');
+      var forwardUrl=webContextPath+'/WordEditPage.rform?uuid='+uuid+'&flowNodeId='+flowNodeId+'&type='+type+'&flowBizId='+flowBizId+'&isInitLoad='+isInitLoad+"&isNew=true";
+      openCtpWindow({'url':forwardUrl});
+        }
+
+//选步骤选人回调
+/*
+function onSelectTransitionWinClose(data){
+if(data!=null){
+   saveDocument();
+var transitions = data.transitions;//流转
+var potentialOwners = data.potentialOwners;//执行人
+Matrix.setFormItemValue('transitions',transitions);
+Matrix.setFormItemValue('potentialOwners',potentialOwners);
+var data = Matrix.formToObject("form0");
+data["matrix_user_command"]='startProcess';
+var url2 = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value;
+Matrix.sendRequest(url2,data,function(data){
+  if(data!=null && data.data!=''){
+                 if("error1"==data.data){
+MmimgButton001.setOpacity("100");
+document.getElementById("trmsg").style.display="none";
+isc.warn("该模板的所在的流程版本未发布或者不存在");
+MmimgButton001.enable();
+Matrix.hideMask();
+return false;
+}
+                    if("true"==data.data){
+   if(cvalue!=''){
+ document.getElementById("form0").action="newsImage/newsImage_uploadImage.action";  
+     
+        document.getElementById("form0").submit();  
+}
+document.getElementById("trmsg").style.display="none";
+Matrix.say("发送成功");
+
+setTimeout("parent.window.close()",1000);
+}if("false"==data.data){
+MmimgButton001.setOpacity("100");
+document.getElementById("trmsg").style.display="none";
+Matrix.say("发送失败");
+  MmimgButton001.enable();
+                                     Matrix.hideMask();
+                                     return false; 
+}
+}else{
+MmimgButton001.setOpacity("100");
+document.getElementById("trmsg").style.display="none";
+Matrix.say("发送失败");
+  MmimgButton001.enable();
+                                     Matrix.hideMask();
+                                     return false; 
+}
+});
+}
+}
+*/
+function onSelectTransitionWinClose(data){
+  if(data == null){  //点取消
+      MmimgButton001.setOpacity("100");
+		document.getElementById("trmsg").style.display="none";
+      MmimgButton001.enable();
+       MtoolBarItem001.enable();
+     return;
+  }
+
+  if(data!=null){
+
+     saveDocument();
+
+      var transitions = data.transitions;//流转
+      var potentialOwners = data.potentialOwners;//执行人
+      Matrix.setFormItemValue('transitions',transitions);
+      Matrix.setFormItemValue('potentialOwners',potentialOwners);
+      Matrix.setFormItemValue('isSelectTransition','');
+      MMSbutton0012.click();
+Matrix.showMask();
+	}
+}
+
+function printSubFrom(){
+  var formId = Matrix.getFormItemValue("formId");
+  if(formId!=null && formId!=""){
+    if(formId=='CkeditorList'){      //html编辑器
+    var obj = CKEDITOR.instances.richText001.getData();
+    var docStr = obj;
+    var newWindow=window.open("打印窗口","_blank");//打印窗口要换成页面的url
+       newWindow.document.write(docStr);
+      newWindow.document.close();
+       newWindow.print();
+     newWindow.close();
+    }
+    else if(formId=="WordPage"){  //word or excel
+     WebAcceptAllRevisions();//接受文档中全部痕迹
+           // if(!WebOffice.IsInPrintPreview()){//判断不处于打印状态
+    WebOffice.PrintEnabled(true);
+    WebOffice.WebOpenPrint();
+
+                WebOffice.PrintPreview();
+            //    StatusMsg('打印状态');
+           // }
+    }
+    else{
+      var bdhtml = window.document.body.innerHTML;
+      document.getElementById("form0").style.overflow="hidden";
+
+      document.getElementById("tr002").style.display="none";
+      document.getElementById("tr003").style.display="none";
+      document.getElementById("fuyan").style.display="none";
+      document.getElementById("addfuyan").style.display="none";
+
+      window.print();
+      window.document.body.innerHTML=bdhtml;
+    }
+
+
+
+  }
+  else{
+	  alert("出错了");
+  }
+}
+
+//打印  
+function printInfo(){  
+      
+          var mFlowBizId = document.getElementById('mFlowBizId').value;
+    var url = document.getElementById('formId').value;
+if(url!=""&&url!=null){
+   // var win = window.open(url+".rform?mFlowBizId="+mFlowBizId+"&matrix_view_flag=true","_blank");
+    //win.print();
+   window.open("print/print.jsp?fdid="+url+".rform&mFlowBizId="+mFlowBizId+"&matrix_view_flag=true","_blank");
+   }
+} 
+//IE时打印设置
+    function pagesetupIE() {
+         var hkey_root,hkey_path,hkey_key;
+           hkey_root="HKEY_CURRENT_USER";
+         hkey_path="\\Software\\Microsoft\\Internet Explorer\\PageSetup\\";
+        try {
+            var RegWsh = new ActiveXObject("WScript.Shell")
+            hkey_key = "header"
+            RegWsh.RegWrite(hkey_root + hkey_path + hkey_key, "")
+            hkey_key = "footer"
+            RegWsh.RegWrite(hkey_root + hkey_path + hkey_key, "")
+            
+             if (isc.Browser.isIE9) {
+                  hkey_key = "margin_left";
+                    //设置左页边距
+                    //RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0");
+
+                  RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.1");
+                  hkey_key = "margin_right";
+                    //设置右页边距
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0");
+                  hkey_key = "margin_top";
+                    //设置上页边距
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.405");
+                  hkey_key = "margin_bottom";
+                    //设置下页边距   
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.405");
+                }
+                else {
+                  hkey_key = "margin_left";
+                    //设置左页边距
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.25");
+                  hkey_key = "margin_right";
+                    //设置右页边距
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.25");
+                  hkey_key = "margin_top";
+                    //设置上页边距
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.10");
+                  hkey_key = "margin_bottom";
+                    //设置下页边距   
+                    RegWsh.RegWrite(hkey_root +  hkey_path + hkey_key, "0.10");
+                }
+            
+            
+        } catch (e) {}
+    }
+    function pagesetup_default() {
+        try {
+            var RegWsh = new ActiveXObject("WScript.Shell")
+            hkey_key = "header"
+            RegWsh.RegWrite(hkey_root + hkey_path + hkey_key, "&w&b页码，&p/&P")
+            hkey_key = "footer"
+            RegWsh.RegWrite(hkey_root + hkey_path + hkey_key, "&u&b&d")
+        } catch (e) {
+        }
+    }
+  //弹出选择发布范围
+  function showAuthDialog(){
+        var status = Matrix.getFormItemValue('flowStatus');
+        if(status=='1'){//流程还未发起
+            Matrix.showWindow('area');
+            return true;
+        }else{
+            return false;
+        }  
+    }
+    //发布范围回调
+    function onareaClose(data){
+        if(data!=null&&data!=''){
+            var name = data.allNames;
+            var userId = data.allIds;
+            Matrix.setFormItemValue('pubAreaIds',userId);//发布范围编码
+            Matrix.setFormItemValue('syninput005',name);
+        }
+    }
+    //选择部门关闭窗口
+    function onDepDialogClose(data){
+        if(data!=null){
+            var name = data.text;
+            var id = data.entityId;
+            Matrix.setFormItemValue('pubDepId',id);
+            Matrix.setFormItemValue('syninput003',name);
+        }
+    }
+      function clicked(elementId,subType){
+var newData2 = "{'piid':'"+elementId; 
+newData2 += "','subType':'"+subType;
+newData2+="','matrix_user_command':'lookRelatedDoc'";
+newData2+="}";
+var forwardUrl ="";
+var synJson = isc.JSON.decode(newData2);
+var url = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value;
+Matrix.sendRequest(url,synJson,function(data){
+forwardUrl = data.data;
+
+openCtpWindow({'url':forwardUrl});
+
+});
+}
+
+
+    //选择是图片新闻需要上传新闻图片
+     function setFileTrDisplay(){
+       var value = McheckBox004.getValue(); 
+        if(value==''){
+          document.getElementById('fileUpload001').style.display='none';
+            
+           // document.getElementById('td035').style.display='none';
+            
+        }else{
+           document.getElementById('fileUpload001').style.display='';
+           
+            //document.getElementById('td035').style.display='';
+            
+        }
+    }
+    //编辑流程
+   function editFlow(){
+
+         var ptid = Matrix.getFormItemValue('ptid');
+         var pdid = Matrix.getFormItemValue('pdid'); 
+     var adid = Matrix.getFormItemValue('adid');
+     //var url = "form/admin/process/openDesigner.jsp?pdid="+pdid+"&ptid="+ptid+"&adid="+adid;
+       var url = "editor/cusflowdesigner.jsp?pdid="+pdid+"&containerType=process&containerId="+pdid+"&mode=flow&initFlag=true&fromDB=true&ptid="+ptid+"&processType=2";
+      //openCtpWindow({'url':url,'title':'编辑流程'});  
+//     var iTop = (window.screen.availHeight-30-400)/2; //获得窗口的垂直位置;
+//		var iLeft = (window.screen.availWidth-10-500)/2; //获得窗口的水平位置;
+		    var width = screen.availWidth * 0.7;  
+	        var height = screen.availHeight * 0.7;  
+	        var left = parseInt((screen.availWidth/2) - (width/2));//屏幕居中  
+	        var top = parseInt((screen.availHeight/2) - (height/2)); 
+
+	        var windowFeatures = "width=" + width + ",height=" + height + ",status,resizable=no,left=" + left + ",top=" + top + "screenX=" + left + ",screenY=" + top;  
+			window.open(url,'流程设计',windowFeatures);
+			Matrix.hideMask();
+        return falsel;   
+
+		//window.open(url, 'Sample', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=yes,width='+width+',height='+height+',left='+iLeft+',top='+iTop);
+
+   }
+function sendPre(){
+var isSelectTransition = Matrix.getFormItemValue('isSelectTransition');//是否选择步骤
+   if('true'==isSelectTransition){
+    Matrix.showWindow('SelectTransitionWin');
+	 return false;
+    }
+}
+; function blurJSmain2(mainId){var formId = Matrix.getFormItemValue('formId');var ftid = document.getElementById("matrix_form_tid").value;  var url = webContextPath+'/matrix.rform?formId='+formId+'&comId='+mainId+'&matrix_send_request=true&matrix_user_command=getDataMappingAndFormula&matrix_form_tid='+ftid;var _mgr=Matrix.convertDataGridDataOfForm('form0');if(_mgr!=null&&_mgr==false){Matrix.hideMask();return false;}var formdata = Matrix.formToObject('form0'); Matrix.sendRequest(url,formdata, function(data){if(data!=null&&data.data!=null&&data.data!=''){var getResult = isc.JSON.decode(data.data);var expression = getResult.expression;var resultarr = eval(expression);if(resultarr!=null&&resultarr.length>0){for(var k=0;k<resultarr.length;k++){var resultdata = resultarr[k];var result = resultdata.result;var precision = resultdata.precision;var instanceclass = resultdata.instanceclass;var gridId= resultdata.gridId;var setType = resultdata.setType;var isCalulateItem = resultdata.isCalulateItem;var fromId1 = resultdata.id;if("java.lang.Integer"==instanceclass||"java.lang.Float"==instanceclass||"java.math.BigDecimal"==instanceclass)var result2 = eval(result);if(gridId==""){if(result==""){ Matrix.setFormItemValue(fromId1,result);}else{if("java.lang.Integer"==instanceclass)Matrix.setFormItemValue(fromId1,parseInt(result2));else if("java.lang.Float"==instanceclass&&result2!=null&&typeof(result2)!='undefined')Matrix.setFormItemValue(fromId1,parseFloat(result2).toFixed(precision));else if("java.math.BigDecimal"==instanceclass&&result2!=null&&typeof(result2)!='undefined')Matrix.setFormItemValue(fromId1,parseFloat(result2).toFixed(precision));else  Matrix.setFormItemValue(fromId1,result);}var ele = document.getElementsByName(fromId1)[0]; if(ele){  if(isCalulateItem == 'true'){blurJSmain2(fromId1);}}}if(gridId!=""){var gridRows = document.getElementById(gridId+'_rows').value;if(gridRows!=null&&gridRows!=''){var gridArr = gridRows.split(',');for(var j=0;j<gridArr.length;j++){var num = gridArr[j];var propertyId = fromId1+"_"+num;if("java.lang.Integer"==instanceclass)Matrix.setFormItemValue(propertyId,parseInt(result2));else if("java.lang.Float"==instanceclass&&result2!=null&&typeof(result2)!='undefined')Matrix.setFormItemValue(propertyId,parseFloat(result2).toFixed(precision));else if("java.math.BigDecimal"==instanceclass&&result2!=null&&typeof(result2)!='undefined')Matrix.setFormItemValue(propertyId,parseFloat(result2).toFixed(precision));else Matrix.setFormItemValue(propertyId,result2);var ele = document.getElementsByName(propertyId)[0]; if(ele){  var subCom = Matrix.getComponentById(propertyId);if(isCalulateItem == 'true'){var index=propertyId.lastIndexOf('_');var propId=propertyId.substring(0,index);blurJSsub2(propId,gridId,subCom);}}}}}}}} }); }
+</script>
+</head>
+<body>
+<div id='matrixMask' name='matrixMask' class='matrixMask' style='display:none;'> </div>
+<div id='loading' name='loading' class='loading'><script>Matrix.showLoading();</script></div>
+<script>isc.Page.setEvent(isc.EH.LOAD,"setInitFormStyle();redrawForm();",isc.Page.FIRE_ONCE);</script>
+<script> var Mform0=isc.MatrixForm.create({ID:"Mform0",name:"Mform0",position:"absolute",action:"/mofficeV3/matrix.rform",canSelectText: true,fields:[{name:'form0_hidden_text',width:0,height:0,displayId:'form0_hidden_text_div'}]});</script><div style="width:100%;height:100%;overflow:auto;position:relative;margin:0 auto;padding:3px;zoom:1" id="context"><form id="form0" name="form0" eventProxy="Mform0" method="post" action="/mofficeV3/matrix.rform" style="margin:0px;position:relative;overflow:auto;width:100%;height:100%;" enctype="multipart/form-data">
+<input type="hidden" name="form0" value="form0" />
+<input type="hidden" name="is_mobile_request" />
+<input type="hidden" id="matrix_form_tid" name="matrix_form_tid" value="08760119-8d2d-458e-bf9b-e08997c03be5" />
+<input type="hidden" id="matrix_form_datagrid_form0" name="matrix_form_datagrid_form0" value="" />
+<div type="hidden" id="form0_hidden_text_div" name="form0_hidden_text_div" style="position:absolute;width:0;height:0;z-index:-9999999999;top:0;left:0;display:none;"></div>
+<input type="hidden" name="javax.matrix.faces.ViewState" id="javax.matrix.faces.ViewState" value="" />
+<div class="normal matrixInline"  style="width:0px;height:0px;"><OBJECT id="WebBrowser1" height=0 width=0 classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2 name=wb></OBJECT></div><div class="normal matrixInline"  style="width:100%;height:8%;"><div style="width:100%;background-image:url(resource/images/top.png);height:100%;background-size:cover;"></div></div><table id="table001" class="tableLayout" style="width:100%;height:92%;"><tr id="tr001"><td id="td001" class="tdLayout" style="width:100%;height:100%;border:0px;"><table id="table002" class="tableLayout" style="width:100%;height:100%;"><tr id="tr002"><td id="td002" class="tdLayout" colspan="2" style="border: 1px solid #cccccc;width:100%;height:28px;"><script>isc.ToolStripButton.create({ID:"MtoolBarItem001",icon:"/mofficeV3/resource/images/waitsend.png",title: "保存待发",showDisabledIcon:false,showDownIcon:false });MtoolBarItem001.click=function(){Matrix.showMask();var x = eval("waitSend();");if(x!=null && x==false){Matrix.hideMask();return false;}if(!true){Matrix.hideMask();return false;}if(!Mform0.validate()){Matrix.hideMask();return false;}var vituralbuttonHidden = document.getElementById('matrix_command_id');if(vituralbuttonHidden)vituralbuttonHidden.parentNode.removeChild(vituralbuttonHidden);var currentForm = document.getElementById('form0');var buttonHidden = document.createElement('input');buttonHidden.type='hidden';buttonHidden.name='matrix_command_id';buttonHidden.id='matrix_command_id';buttonHidden.value='toolBarItem001';currentForm.appendChild(buttonHidden);var buttonIdHidden = document.createElement('input');buttonIdHidden.type='hidden';buttonIdHidden.name='toolBarItem001';buttonIdHidden.value='toolBarItem001';document.getElementById('form0').appendChild(buttonIdHidden);var _mgr=Matrix.convertDataGridDataOfForm('form0');if(_mgr!=null&&_mgr==false){Matrix.hideMask();return false;}Matrix.convertFormItemValue('form0');document.getElementById('form0').submit();Matrix.hideMask();}</script><script>isc.ToolStripButton.create({ID:"MtoolBarItem002",icon:"/mofficeV3/resource/images/transfertemplate.png",title: "调用模板",showDisabledIcon:false,showDownIcon:false });MtoolBarItem002.click=function(){Matrix.showMask();var x = eval("Matrix.showWindow('Dialog0');");if(x!=null && x==false){Matrix.hideMask();return false;}Matrix.hideMask();}</script><script>isc.ToolStripMenuButton.create({ID:"MtoolBarMenu001",title: "插入",menu: "Mmenu001" });</script><script>isc.ToolStripButton.create({ID:"MtoolBarItem004",icon:"/mofficeV3/resource/images/main.png",title: "正文",showDisabledIcon:false,showDownIcon:false });MtoolBarItem004.click=function(){Matrix.showMask();var x = eval("checkTitle();");if(x!=null && x==false){Matrix.hideMask();return false;}Matrix.hideMask();}</script><script>isc.ToolStripButton.create({ID:"MtoolBarItem006",icon:"/mofficeV3/resource/images/print.png",title: "监控",showDisabledIcon:false,showDownIcon:false });MtoolBarItem006.click=function(){Matrix.showMask();var x = eval("monitor();");if(x!=null && x==false){Matrix.hideMask();return false;}Matrix.hideMask();}</script><script>isc.ToolStripButton.create({ID:"MtoolBarItem005",icon:"/mofficeV3/resource/images/print.png",title: "打印",showDisabledIcon:false,showDownIcon:false });MtoolBarItem005.click=function(){Matrix.showMask();var x = eval("printInfo();");if(x!=null && x==false){Matrix.hideMask();return false;}Matrix.hideMask();}</script><div id="toolBar001_div"  style="width:100%;height:28px;overflow:hidden;"  ><script>isc.ToolStrip.create({ID:"MtoolBar001",displayId:"toolBar001_div",width: "100%",height: "100%",position: "relative",members: [ MtoolBarItem001,MtoolBarItem002,MtoolBarMenu001,MtoolBarItem004,MtoolBarItem006,MtoolBarItem005 ] });isc.Page.setEvent(isc.EH.RESIZE,function(){isc.Page.setEvent(isc.EH.RESIZE,"MtoolBar001.resizeTo(0,0);MtoolBar001.resizeTo('100%','100%');",null);},isc.Page.FIRE_ONCE);</script></div></td>
+</tr>
+<tr id="tr003"><td id="td003" class="maintain_form_label2" rowspan="2" style="width:130px;height:39px;border-right:0px;border-top:0px;border-bottom:0px;background-color:rgb(250,250,250);"><script>isc.ImgButton.create({ID:"MmimgButton001",name:"mimgButton001",showDisabled:false,showDisabledIcon:false,showDown:false,showDownIcon:false,showRollOver:false,showRollOverIcon:false,position:"relative",width:103,height:39,src:"/mofficeV3/image/send.jpg"}); var mimgButton001_flag = false;MmimgButton001.click=function(){Matrix.showMask();var x = eval("submitFormJS();");if(x!=null && x==false){Matrix.hideMask();return false;}}</script></td>
+<td id="td006" class="maintain_form_label2" rowspan="1" style="border-left:0px;width:93%;height:100px;border-bottom: 0px;"><table id="table001" class="tableLayout" style="width:100%;"><tr id="tr001"><td id="td001" class="maintain_form_label2" style="width:8%;border:0px;"><label id="label001" name="label001" id="label001" style="white-space:nowrap;" class="framelabel">
+标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</label></td>
+<td id="td002" class="maintain_form_label2" colspan="5" rowspan="1" style="width:52%;border:0px;text-align:left;"><div id="p_title_div" eventProxy="Mform0" class="matrixInline" style="width:80%;"></div><script> var p_title=isc.TextItem.create({ID:"Mp_title",name:"p_title",editorType:"TextItem",displayId:"p_title_div",position:"relative",autoDraw:false,width:"100%",textBoxStyle:'frametextItem'});Mform0.addField(p_title);</script></td>
+<td id="td007" class="maintain_form_label2" style="width:10%;border:0px;"><div id="button002_div" class="matrixInline" style="padding-left:20px;margin-left:20px;;position:relative;;width:100px;;height:22px;"><script>isc.Button.create({ID:"Mbutton002",name:"button002",title:"查看",displayId:"button002_div",position:"absolute",top:0,left:0,width:"100%",height:"100%",showDisabledIcon:false,showDownIcon:false,showRollOverIcon:false});Mbutton002.click=function(){var x = eval("Matrix.showWindow('Dialog1');");if(x!=null && x==false){Matrix.hideMask();Mbutton002.enable();return false;}};</script></div><div id="MSbutton0012_div" class="matrixInline" style="display:none;;position:relative;;width:100px;;height:22px;"><script>isc.Button.create({ID:"MMSbutton0012",name:"MSbutton0012",title:"按钮",displayId:"MSbutton0012_div",position:"absolute",top:0,left:0,width:"100%",height:"100%",showDisabledIcon:false,showDownIcon:false,showRollOverIcon:false});MMSbutton0012.click=function(){MMSbutton0012.disable();Matrix.showMask();var x = eval("sendPre();");if(x!=null && x==false){Matrix.hideMask();MMSbutton0012.enable();return false;}if(!true){Matrix.hideMask();MMSbutton0012.enable();return false;}if(!Mform0.validate()){Matrix.hideMask();MMSbutton0012.enable();return false;}var vituralbuttonHidden = document.getElementById('matrix_command_id');if(vituralbuttonHidden)vituralbuttonHidden.parentNode.removeChild(vituralbuttonHidden);var currentForm = document.getElementById('form0');var buttonHidden = document.createElement('input');buttonHidden.type='hidden';buttonHidden.name='matrix_command_id';buttonHidden.id='matrix_command_id';buttonHidden.value='MSbutton0012';currentForm.appendChild(buttonHidden);var buttonIdHidden = document.createElement('input');buttonIdHidden.type='hidden';buttonIdHidden.name='MSbutton0012';buttonIdHidden.value='按钮';document.getElementById('form0').appendChild(buttonIdHidden);var _mgr=Matrix.convertDataGridDataOfForm('form0');if(_mgr!=null&&_mgr==false){Matrix.hideMask();return false;}Matrix.convertFormItemValue('form0');document.getElementById('form0').submit();};</script></div></td>
+<td id="td008" class="maintain_form_label2" style="width:10%;border:0px;text-align:right;"><label id="label007" name="label007" id="label007" style="white-space:nowrap;" class="framelabel">
+优先级：</label></td>
+<td id="td009" class="maintain_form_label2" style="width:10%;border:0px;text-align:left;"><div id="emergeDeg_div" eventProxy="Mform0" class="matrixInline" style=""></div><script> var MemergeDeg_VM=[]; var emergeDeg=isc.SelectItem.create({ID:"MemergeDeg",name:"emergeDeg",editorType:"SelectItem",displayId:"emergeDeg_div",autoDraw:false,valueMap:[],value:"1",position:"relative",width:80,textBoxStyle:'frameselectItemText'});Mform0.addField(emergeDeg);MemergeDeg_VM=['1','2','3'];MemergeDeg.displayValueMap={'1':'普通','2':'重要','3':'非常重要'};MemergeDeg.setValueMap(MemergeDeg_VM);MemergeDeg.setValue('1');</script></td>
+<td id="td010" class="maintain_form_label2" style="width:10%;border:0px;">&nbsp;</td>
+</tr>
+<tr id="tr002"><td id="td011" class="maintain_form_label2" style="width:8%;border:0px;"><label id="label002" name="label002" id="label002" style="white-space:nowrap;" class="framelabel">
+流程期限：</label></td>
+<td id="td012" class="maintain_form_label2" colspan="2" rowspan="1" style="width:12%;border:0px;text-align:left;"><div id="dateType_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var MdateType_VM=[]; var dateType=isc.SelectItem.create({ID:"MdateType",name:"dateType",editorType:"SelectItem",displayId:"dateType_div",autoDraw:false,valueMap:[],value:"2",position:"relative",changed:"setDateValue()",textBoxStyle:'frameselectItemText'});Mform0.addField(dateType);MdateType_VM=['1','2','3','4'];MdateType.displayValueMap={'1':'时','2':'天','3':'月','4':'自定义'};MdateType.setValueMap(MdateType_VM);MdateType.setValue('2');</script></td>
+<td id="td014" class="maintain_form_label2" colspan="3" rowspan="1" style="width:32%;border:0px;text-align:left;"><table id="table003" style="width:50%;border:0px;"><tr id="tr006"><td id="td013" style="width:70%;border:0px;"><div id="input_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var input=isc.TextItem.create({ID:"Minput",name:"input",editorType:"TextItem",displayId:"input_div",position:"relative",autoDraw:false,value:"9.00",validators:[{type:"custom",condition:function(item, validator, value, record){return checkRate(item, validator, value, record);},errorMessage:"请输入数值"}],textBoxStyle:'frametextItem'});Mform0.addField(input);</script><div id="inputDate_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var MinputDate_value=null; var inputDate=isc.DateItem.create({ID:"MinputDate",name:"inputDate",value:MinputDate_value,type:"date",displayId:"inputDate_div",paseDateFun:function(value,formatPattern){return Matrix.parseDate(value,formatPattern);},dateFormatter:function(_1){return Matrix.formatDate(this,MinputDate.formatPattern);},formatPattern:"yyyy-MM-dd",autoDraw:false,useTextField:true,enforceDate:true,position:"relative",validators:[{type:"custom",condition:function(item, validator, value, record){return item.validateDateValue(value);},errorMessage:isc.DateItem.getPrototype().invalidDateStringMessage}],startDate:new Date(1900,0,1),endDate:new Date(2050,0,1),textBoxStyle:'frametextItem'});Mform0.addField(inputDate);</script></td>
+<td id="td015" style="width:30%;border:0px;"><label id="months" name="months" id="months" style="white-space:nowrap;" class="framelabel">
+月</label><label id="days" name="days" id="days" style="white-space:nowrap;" class="framelabel">
+天</label><label id="hours" name="hours" id="hours" style="white-space:nowrap;" class="framelabel">
+时</label></td>
+</tr>
+</table>
+</td>
+<td id="td017" class="maintain_form_label2" style="width:10%;border:0px;"><div id="isTrace_div" eventProxy="Mform0" class="matrixInline" style="width:80%;"></div><script> var isTrace=isc.CheckboxItem.create({ID:"MisTrace",name:"isTrace",title:'跟踪',editorType:"CheckboxItem",displayId:"isTrace_div",valueMap:{"":false,"true":true},position:"relative",width:'80%',autoDraw:false,title:"跟踪",textBoxStyle:'framelabelAnchor'});Mform0.addField(isTrace);Mform0.setValue("isTrace","true");</script></td>
+<td id="td018" class="maintain_form_label2" style="width:10%;border:0px;"><div id="button005_div" class="matrixInline" style="position:relative;;width:100px;;height:22px;"><script>isc.Button.create({ID:"Mbutton005",name:"button005",title:"编辑流程",displayId:"button005_div",position:"absolute",top:0,left:0,width:"100%",height:"100%",showDisabledIcon:false,showDownIcon:false,showRollOverIcon:false});Mbutton005.click=function(){var x = eval("editFlow();");if(x!=null && x==false){Matrix.hideMask();Mbutton005.enable();return false;}};</script></div></td>
+<td id="td019" class="maintain_form_label2" style="width:10%;border:0px;">&nbsp;</td>
+<td id="td020" class="maintain_form_label2" style="width:10%;border:0px;">&nbsp;</td>
+</tr>
+<tr id="tr003"><td id="td021" class="maintain_form_label2" style="width:8%;border:0px;"><label id="label053" name="label053" id="label053" style="white-space:nowrap;" class="framelabel">
+发布部门：</label></td>
+<td id="td022" class="maintain_form_label2" colspan="2" rowspan="1" style="width:20%;border:0px;text-align:left;"><div id="syninput003_div" eventProxy="Mform0" class="matrixInline" style="width:85%;"></div><script> var syninput003=isc.TextItem.create({ID:"Msyninput003",name:"syninput003",editorType:"TextItem",displayId:"syninput003_div",position:"relative",autoDraw:false,value:"产品实施组",width:"100%",click:"Matrix.showWindow(\'DepDialog\');",textBoxStyle:'frametextItem'});Mform0.addField(syninput003);</script></td>
+<td id="td024" class="maintain_form_label2" style="width:8%;border:0px;"><label id="summary" name="summary" id="summary" style="white-space:nowrap; font-size:12px">
+摘要：</label><label id="label004" name="label004" id="label004" style="white-space:nowrap;">
+发布范围：</label></td>
+<td id="td025" class="maintain_form_label2" colspan="2" rowspan="1" style="width:20%;border:0px;text-align:left;"><div id="inputSummary_div" eventProxy="Mform0" class="matrixInline" style="width:85%;"></div><script> var inputSummary=isc.TextItem.create({ID:"MinputSummary",name:"inputSummary",editorType:"TextItem",displayId:"inputSummary_div",position:"relative",autoDraw:false,width:"100%",textBoxStyle:'frametextItem'});Mform0.addField(inputSummary);</script><div id="syninput005_div" eventProxy="Mform0" class="matrixInline" style="width:85%;"></div><script> var syninput005=isc.TextItem.create({ID:"Msyninput005",name:"syninput005",editorType:"TextItem",displayId:"syninput005_div",position:"relative",autoDraw:false,width:"100%",hint:"<点击选择发布范围>",showHintInField:true,click:"showAuthDialog();",textBoxStyle:'frametextItem',canEdit:false});Mform0.addField(syninput005);</script></td>
+<td id="td027" class="maintain_form_label2" style="width:10%;border:0px;"><label id="key" name="key" id="key" style="white-space:nowrap;" class="framelabel">
+关键字：</label></td>
+<td id="td028" class="maintain_form_label2" colspan="2" rowspan="1" style="width:20%;border:0px;text-align:left;"><div id="inputKey_div" eventProxy="Mform0" class="matrixInline" style="width:85%;"></div><script> var inputKey=isc.TextItem.create({ID:"MinputKey",name:"inputKey",editorType:"TextItem",displayId:"inputKey_div",position:"relative",autoDraw:false,width:"100%",textBoxStyle:'frametextItem'});Mform0.addField(inputKey);</script></td>
+<td id="td030" class="maintain_form_label2" style="width:10%;border:0px;">&nbsp;</td>
+</tr>
+<tr id="tr009"><td id="td031" class="maintain_form_label2" colspan="5" rowspan="1" style="width:50%;text-align:left;border:0px;padding-left:30px;"><div id="checkBox001_div" eventProxy="Mform0" class="matrixInline" style=""></div><script> var checkBox001=isc.CheckboxItem.create({ID:"McheckBox001",name:"checkBox001",title:'显示发布人',editorType:"CheckboxItem",displayId:"checkBox001_div",valueMap:{"":false,"true":true},position:"relative",width:134,autoDraw:false,title:"显示发布人",textBoxStyle:'framelabelAnchor'});Mform0.addField(checkBox001);Mform0.setValue("checkBox001","");</script><div id="syncheckBox003_div" eventProxy="Mform0" class="matrixInline" style=""></div><script> var syncheckBox003=isc.CheckboxItem.create({ID:"MsyncheckBox003",name:"syncheckBox003",title:'记录阅读信息',editorType:"CheckboxItem",displayId:"syncheckBox003_div",valueMap:{"":false,"true":true},position:"relative",width:134,autoDraw:false,title:"记录阅读信息",textBoxStyle:'framelabelAnchor'});Mform0.addField(syncheckBox003);Mform0.setValue("syncheckBox003","");</script><div id="checkBox004_div" eventProxy="Mform0" class="matrixInline" style=""></div><script> var checkBox004=isc.CheckboxItem.create({ID:"McheckBox004",name:"checkBox004",title:'图片新闻',editorType:"CheckboxItem",displayId:"checkBox004_div",valueMap:{"":false,"true":true},position:"relative",width:134,autoDraw:false,title:"图片新闻",changed:"setFileTrDisplay()",textBoxStyle:'framelabelAnchor'});Mform0.addField(checkBox004);Mform0.setValue("checkBox004","");</script><div id="syncheckBox002_div" eventProxy="Mform0" class="matrixInline" style=""></div><script> var syncheckBox002=isc.CheckboxItem.create({ID:"MsyncheckBox002",name:"syncheckBox002",title:'打印公告',editorType:"CheckboxItem",displayId:"syncheckBox002_div",valueMap:{"":false,"true":true},position:"relative",width:134,autoDraw:false,title:"打印公告",textBoxStyle:'framelabelAnchor'});Mform0.addField(syncheckBox002);Mform0.setValue("syncheckBox002","");</script></td>
+<td id="tdisShowImage" class="maintain_form_label2" colspan="3" rowspan="1" style="width:30%;border:0px;text-align:left;"><script>function fileUpload001delView(rowId,fileId){RPCManager.sendRequest({httpMethod:"POST",actionURL:'/mofficeV3/uploadFileHelperServlet',params:{entity:'office.info.news.ImageFile',name:'fileName',id:'fileUuid',mappingType:'fileType',type:'delete',idValue:fileId,storeType:'file',filePath:'D%3A%2Fupfile%2Fnews%2Fimage%2F'}});var tabObj = document.getElementById("fileUpload001fileBaseViewTab");for(j=0;j<=tabObj.tBodies[0].rows.length;j++){if(tabObj.tBodies[0].rows[j].id==rowId){tabObj.deleteRow(j);break;}}document.getElementById("fileUpload001uploadFileBaseTabTr0").style.cssText="display:block";}function fileUpload001validateUploadFile(target,vId,maxSize){var vObj = document.getElementById(vId);var filePath = vObj.value;fileType = filePath.substring(filePath.lastIndexOf(".")+1);if(!Matrix.validateUploadFileType(vId,'')){fileUpload001restoreUploadFileBase();isc.warn(fileType+'类型的文件不在允许的上传范围内');}}function fileUpload001showMessage(msg){isc.warn(msg);}function fileUpload001restoreUploadFileBase(){document.getElementById('spanfileUpload001').innerHTML="<input type='file' id ='fileUpload001' name ='fileUpload001' onChange='fileUpload001validateUploadFile(this,\"fileUpload001\", 0)'>";}isc.Page.setEvent("load","if(document.getElementById('fileUpload001fileBaseFileTd')&&document.getElementById('fileUpload001fileBaseFileTd').innerHTML==''){document.getElementById('fileUpload001fileBaseFileTd').style.cssText='display:none;border-width:0px;';}",isc.Page.FIRE_ONCE);</script><div style="width:200px;height:23px;"><table border="0" id="fileUpload001uploadFileBaseTab" cellpadding="0" cellspacing="0" style="width:100%"><tbody><tr id="fileUpload001fileBaseFileTr1"><td id="fileUpload001fileBaseFileTd" style="border-width:0px;hight:0px;" align="left"></td></tr><tr id="fileUpload001uploadFileBaseTabTr0"><td style="border-width:0px"><table border="0"><tr><td style="border-width:0px"><span id="spanfileUpload001"><input id="fileUpload001" name="fileUpload001" type="file" onChange="fileUpload001validateUploadFile(this,'fileUpload001',0)" /><span></td></tr></table></td></tr></tbody></table></div></td>
+<td id="td039" class="maintain_form_label2" style="width:10%;border:0px;">&nbsp;</td>
+<td id="td040" class="maintain_form_label2" style="width:10%;border:0px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="tr004"><td id="td004" class="maintain_form_label2" colspan="1" style="width:100%;height:32px;  border-top: 0px; border-bottom:0px;  border-left: 0px;"><style> .attachmentShowDelete {border: solid 1px #E0E0E0; background: #FFF;}.line_height180 {  line-height: 180%;}.margin_t_5 {  margin-top: 5px;}.margin_r_5 {  margin-right: 5px;}.ico17 {  display: inline-block;vertical-align: middle; height: 16px;  width: 16px;line-height: 16px;  cursor: pointer; _overflow: hidden;}.align_left {  text-align: left;}.align_right {  text-align: right;}.affix_del_16 { display: inline-block;  vertical-align: middle;  height: 16px;  width: 16px;  line-height: 16px;  background: url(resource/images/deletex.png) no-repeat;  cursor:pointer;}.ico18{display: inline-block;vertical-align: middle;height: 16px; width: 16px;line-height: 16px; background: url(image/icon16.png) no-repeat; cursor: pointer;}	.affix_16 {  background: url(resource/images/attach.png) no-repeat;}.clearfix { zoom: 1;display: block;_height: 1px;}.margin_t_10 {margin-top: 10px;}.txt_16 { background: url(resource/images/txt.png) no-repeat;}.xml_16 { background: url(resource/images/xml.png) no-repeat;}.jpg_16{ background: url(resource/images/jpg.png) no-repeat;}.png_16{ background: url(resource/images/png.png) no-repeat;}.gif_16{ background: url(resource/images/gif.png) no-repeat;}.html_16{ background: url(resource/images/html.png) no-repeat;}.ppt_16{ background: url(resource/images/ppt.png) no-repeat;}.file_16 { background: url(resource/images/file.png) no-repeat;}.exe_16{ background: url(resource/images/exe.png) no-repeat;	}.xls_16, .xlsx_16{ background: url(resource/images/execl.png) no-repeat;}.pdf_16{ background: url(resource/images/pdf.png) no-repeat;}.doc_16, .docx_16{ background: url(resource/images/word.png) no-repeat;	}</style> <script>function deleteFile(uuid,fileName){Matrix.confirm("确定要删除"+"\""+fileName+"\""+"吗？",function(value){if(value){var midValue = Matrix.getFormItemValue('mFlowBizId');var newData = "{'idValue':'"+uuid; newData+="','entity':'office.common.attach.FileBO'";newData+=",'name':'fileName'";newData+=",'id':'uuid'";newData+=",'contents':'fileContent'";newData+=",'mappingType':'fileType'";newData+=",'type':'delete'";newData+=",'storeType':'db'";newData+=",'mProperty':'mFlowBizId'";newData+=",'meetType':'null'";newData+=",'mFlowBizId':'"+midValue;newData+="'}";  var url = "/mofficeV3/FileServlet"; var synJson = isc.JSON.decode(newData);  Matrix.sendRequest(url,synJson,function(data){ var arr = data.data; var obj=eval(arr);   if(arr==""){   document.getElementById("attach_div001").innerHTML="";   return;   } if(obj.length>0){ var n = obj.length;   var html = " <table class='line_height180'>"  ; html+="<tr>"; html+="<td valign=\"top\" nowrap=\"nowrap\" class=\"align_right\">"; html+="  <div>   <span class=\"ico18 affix_16\"></span>";html+=" <span id=\"fileCount\">  ("+n+")</span></div></td>"; html+=" <td   vertical-align=\"inherit\" class=\"align_left\">";for(var i=0;i<obj.length;i++){ var name = obj[i].fileName;var uuid = obj[i].uuid;var type = obj[i].fileType;var size = obj[i].fileSize;html+="<div class='attachmentShowDelete' style=\"float: left;  height: 26px;  line-height: 26px;\" nowrap>"; if("xml"==type||"doc"==type||"pdf"==type||"docx"==type||"exe"==type||"png"==type||"jpg"==type||"gif"==type||"html"==type||"ppt"==type||"xls"==type||"xlsx"==type||"txt"==type){html+="<span class=\"ico18 "+type+"_16 margin_r_5\"></span>";}else{html+="<span class=\"ico18 file_16 margin_r_5\"></span>";}html+=" <span>  <a style=\"font-size:12px;color:#757575;text-decoration:none;\" href=\"javascript:download('"+uuid+"')\">"+name+"("+size+")B)</a></span>"; html+="<span class=\"affix_del_16\" onclick=\"deleteFile('"+uuid+"','"+name+"')\">";  html+=" </span> </div>  ";} html+=" </td>   </tr>   </table>"; document.getElementById("attach_div001").innerHTML=html;  }else{document.getElementById("attach_div001").innerHTML="";}  });  }})   }  function download(uuid){ window.location.href = "/mofficeV3/uploadFileHelperServlet?filePath=D://upfile//flow//&entity=office.common.attach.FileBO&name=fileName&mappingType=fileType&contents=fileContent&id=uuid&idValue="+uuid+"&type=downLoad&storeType=file"; } function deleteDocFile(uuid,title){Matrix.confirm("您确定不再关联"+"\""+title+"\""+"吗？",function(value){if(value){var midValue = Matrix.getFormItemValue('mFlowBizId');var url = webContextPath+'/matrix.rform?matrix_send_request=true&matrix_form_tid='+document.getElementById("matrix_form_tid").value; var newData = "{'uuid':'"+uuid+"','entityName':'office.common.attach.FileBO','mFlowBizId':'"+midValue+"','matrix_user_command':'deleteDocFileById'}";var synJson = isc.JSON.decode(newData);Matrix.sendRequest(url,synJson,function(data){count = data.data;if(count==0)document.getElementById("doc_div001").innerHTML="";else{document.getElementById('docFileCount').innerHTML="("+count+")"; elId="doc_"+uuid;document.getElementById("doctd").removeChild(document.getElementById(elId)); }  });  }});}function lookRelatedDoc(piid,subType){clicked(piid,subType);}</script><table border="0" cellspacing="0" cellpadding="0" width="100%" ><tr><td> <div id="attach_div001"></div></td></tr><tr><td> <div id="doc_div001"></div></td></tr></table></td>
+</tr>
+<tr id="trmsg"><td id="tdmsg" class="tdLayout" colspan="2" rowspan="1" style="border: 1px solid #cccccc;width:100%;background-color:rgb(250,250,250);text-align:center;border-top:none;height:2px;"><label id="labelmsg" name="labelmsg" id="labelmsg" style="white-space:nowrap; color:#42b3e5;" class="framelabel">
+正在发送,请稍后...........................................................</label></td>
+</tr>
+<tr id="tr005"><td id="td005" class="tdLayout" colspan="2" style="border: 1px solid #cccccc;width:100%;height:75%;"><table id="table004" class="tableLayout" style="width:100%;height:100%;"><tr id="tr008"><td id="subForm" class="tdLayout" style="border: 1px solid #cccccc;width:80%;height:100%;background-color:#fff;"><div id="ContainerPanel010_div" style="position:relative;width:100%;height:100%;overflow:auto;background-color: #fff;"><div id="ContainerPanel001_div" style="position:relative;width:100%;height:100%;background:#fff;margin:0 auto;"><table id="table001" class="tableLayout" style="width:750px;margin:0 auto;"><tr id="tr001"><td id="td001" class="tdLayout" colspan="9" rowspan="1" style="border:none;height:25px;text-align:left;vertical-align:top;background-color:rgb(255, 255, 255)"><img id="Mimage001" class="" src="/mofficeV3/resource/images/form/designer/component/cube_blue.png" ></td>
+</tr>
+<tr id="tr002"><td id="td010" class="tdLayout" colspan="9" rowspan="1" style="border:none;height:25px;text-align:center;vertical-align:middle;"><label id="label001" name="label001" id="label001" style="white-space:nowrap; color:#000000;font-family:&#23435;&#20307;; font-size:x-large; font-weight:bold">
+印务申请表</label></td>
+</tr>
+<tr id="tr003"><td id="td019" class="tdLayout" colspan="9" rowspan="1" style="border:none;height:25px;text-align:right;vertical-align:top;"><label id="label002" name="label002" id="label002" style="white-space:nowrap; color:#000000;font-family:&#23435;&#20307;; font-weight:bold">
+编号：CAIT/JL7.5.5-06</label></td>
+</tr>
+<tr id="tr026"><td id="td002" class="tdLayout" colspan="9" rowspan="1" style="width:100%;height:20px;text-align:center;vertical-align:middle;background-color:#D3D3D3;"><label id="label033" name="label033" id="label033" style="white-space:nowrap; color:#000000; font-weight:bold">
+申请人需求</label></td>
+</tr>
+<tr id="tr027"><td id="td012" class="subtableCellStyle" colspan="9" rowspan="1" style="width:100%;;vertical-align:top;"><table id="yinwushenqing0EditList-table" class="subtableStyle"><tr style="width:100%;height: 40px;"><td class="subtableHeadStyle" style=";height:35px;width:16.666666666666664%;"><label id="j_id4" name="j_id4" style="white-space:nowrap; ;text-align:center;white-space: normal;">
+原件类型</label></td>
+<td class="subtableHeadStyle" style=";height:35px;width:16.666666666666664%;"><label id="j_id6" name="j_id6" style="white-space:nowrap; ;text-align:center;white-space: normal;">
+复印纸张</label></td>
+<td class="subtableHeadStyle" style=";height:35px;width:16.666666666666664%;"><label id="j_id8" name="j_id8" style="white-space:nowrap; ;text-align:center;white-space: normal;">
+复印效果</label></td>
+<td class="subtableHeadStyle" style=";height:35px;width:16.666666666666664%;"><label id="j_id10" name="j_id10" style="white-space:nowrap; ;text-align:center;white-space: normal;">
+单面印刷页数</label></td>
+<td class="subtableHeadStyle" style=";height:35px;width:16.666666666666664%;"><label id="j_id12" name="j_id12" style="white-space:nowrap; ;text-align:center;white-space: normal;">
+双面印刷页数</label></td>
+<td class="subtableHeadStyle" style=";height:35px;width:16.666666666666664%;"><label id="j_id14" name="j_id14" style="white-space:nowrap; ;text-align:center;white-space: normal;">
+制作份数</label></td>
+</tr>
+<div class="" style="position: absolute; width: 16px; visibility: hidden; height: auto;" id="img" name="img"><div id="addDiv" style="height: auto;"><span id="addImg" class="repeat_ico16 operate_plus_16" title="增加一行" style="display: block;"></span></div><div id="delDiv" style="height: auto;"><span id="delImg" class="repeat_ico16 operate_reduce_16" title="删除此行" style="display: block;"></span></div></div><input type="hidden" id="clickRowIndex" name="clickRowIndex"><input type="hidden" id="clickDataGrid" name="clickDataGrid"><tr><td class="subtableCellStyle" align="left" click="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');" style=";height:35px;width:16.666666666666664%" onclick="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');"><div id="syinwushenqingfield3_0_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var Msyinwushenqingfield3_0_VM=[]; var syinwushenqingfield3_0=isc.SelectItem.create({ID:"Msyinwushenqingfield3_0",name:"syinwushenqingfield3_0",editorType:"SelectItem",displayId:"syinwushenqingfield3_0_div",autoDraw:false,valueMap:[],position:"relative",width:"100%"});Mform0.addField(syinwushenqingfield3_0);Msyinwushenqingfield3_0_VM=['0','1'];Msyinwushenqingfield3_0.displayValueMap={'0':'书籍','1':'纸张'};Msyinwushenqingfield3_0.setValueMap(Msyinwushenqingfield3_0_VM);Msyinwushenqingfield3_0.setValue(null);</script></td>
+<td class="subtableCellStyle" align="left" click="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');" style=";height:35px;width:16.666666666666664%" onclick="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');"><div id="syinwushenqingfield1_0_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var Msyinwushenqingfield1_0_VM=[]; var syinwushenqingfield1_0=isc.SelectItem.create({ID:"Msyinwushenqingfield1_0",name:"syinwushenqingfield1_0",editorType:"SelectItem",displayId:"syinwushenqingfield1_0_div",autoDraw:false,valueMap:[],position:"relative",width:"100%"});Mform0.addField(syinwushenqingfield1_0);Msyinwushenqingfield1_0_VM=['0','1','2','3'];Msyinwushenqingfield1_0.displayValueMap={'0':'A4','1':'A3','2':'封面纸','3':'特种纸'};Msyinwushenqingfield1_0.setValueMap(Msyinwushenqingfield1_0_VM);Msyinwushenqingfield1_0.setValue(null);</script></td>
+<td class="subtableCellStyle" align="left" click="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');" style=";height:35px;width:16.666666666666664%" onclick="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');"><div id="syinwushenqingfield2_0_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var Msyinwushenqingfield2_0_VM=[]; var syinwushenqingfield2_0=isc.SelectItem.create({ID:"Msyinwushenqingfield2_0",name:"syinwushenqingfield2_0",editorType:"SelectItem",displayId:"syinwushenqingfield2_0_div",autoDraw:false,valueMap:[],position:"relative",width:"100%"});Mform0.addField(syinwushenqingfield2_0);Msyinwushenqingfield2_0_VM=['0','1'];Msyinwushenqingfield2_0.displayValueMap={'0':'黑白','1':'彩色'};Msyinwushenqingfield2_0.setValueMap(Msyinwushenqingfield2_0_VM);Msyinwushenqingfield2_0.setValue(null);</script></td>
+<td class="subtableCellStyle" align="left" click="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');" style=";height:35px;width:16.666666666666664%" onclick="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');"><div id="syinwushenqingfield4_0_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var syinwushenqingfield4_0=isc.SpinnerItem.create({ID:"Msyinwushenqingfield4_0",name:"syinwushenqingfield4_0",editorType:"SpinnerItem",displayId:"syinwushenqingfield4_0_div",position:"relative",autoDraw:false,width:"100%"});Mform0.addField(syinwushenqingfield4_0);</script></td>
+<td class="subtableCellStyle" align="left" click="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');" style=";height:35px;width:16.666666666666664%" onclick="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');"><div id="syinwushenqingfield5_0_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var syinwushenqingfield5_0=isc.SpinnerItem.create({ID:"Msyinwushenqingfield5_0",name:"syinwushenqingfield5_0",editorType:"SpinnerItem",displayId:"syinwushenqingfield5_0_div",position:"relative",autoDraw:false,width:"100%"});Mform0.addField(syinwushenqingfield5_0);</script></td>
+<td class="subtableCellStyle" align="left" click="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');" style=";height:35px;width:16.666666666666664%" onclick="showPlusAndReduceButton(this,'yinwushenqing0EditListD','0','yinwushenqing0AllListV');"><div id="syinwushenqingfield6_0_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var syinwushenqingfield6_0=isc.SpinnerItem.create({ID:"Msyinwushenqingfield6_0",name:"syinwushenqingfield6_0",editorType:"SpinnerItem",displayId:"syinwushenqingfield6_0_div",position:"relative",autoDraw:false,width:"100%"});Mform0.addField(syinwushenqingfield6_0);</script></td>
+<input id="uuid_0" type="hidden" name="uuid_0" /><input id="rBizId_0" type="hidden" name="rBizId_0" /><input id="cOrder_0" type="hidden" name="cOrder_0" /><input id="yinwushenqing0EditListD_uuid_0" type="hidden" name="yinwushenqing0EditListD_uuid_0" value="e583598d-af9d-41cf-9546-6f1e413bfd61" /></tr>
+</div><input type ='hidden' id='yinwushenqing0EditListD_rowCount' name='yinwushenqing0EditListD_rowCount' value='1'/><input type ='hidden' id='yinwushenqing0EditListD_rows' name='yinwushenqing0EditListD_rows' value='0'/><input type ='hidden' id='yinwushenqing0EditListD_delrows' name='yinwushenqing0EditListD_delrows' value=''/><input type ='hidden' id='yinwushenqing0EditListD_newrows' name='yinwushenqing0EditListD_newrows' value=''/><input type ='hidden' id='yinwushenqing0EditListD_firstrow' name='yinwushenqing0EditListD_firstrow' value='true'/></table>
+
+</td>
+</tr>
+<tr id="tr028"><td id="td003" class="tdLayout" colspan="9" style="width:100%;height:20px;text-align:center;vertical-align:middle;background-color:#D3D3D3;"><label id="label034" name="label034" id="label034" style="white-space:nowrap; color:#000000; font-weight:bold">
+印务人员确认信息</label></td>
+</tr>
+<tr id="tr004"><td id="td028" class="tdLayout" style="width:11%;height:25px;"><label id="label003" name="label003" id="label003" style="white-space:nowrap;">
+项目</label></td>
+<td id="td029" class="tdLayout" style="width:11%;height:25px;"><label id="label004" name="label004" id="label004" style="white-space:nowrap;">
+名称</label></td>
+<td id="td030" class="tdLayout" style="width:11%;height:25px;"><label id="label005" name="label005" id="label005" style="white-space:nowrap;">
+数量/小时</label></td>
+<td id="td031" class="tdLayout" style="width:11%;height:25px;"><label id="label006" name="label006" id="label006" style="white-space:nowrap;">
+价格（元）</label></td>
+<td id="td032" class="tdLayout" style="width:11%;height:25px;"><label id="label007" name="label007" id="label007" style="white-space:nowrap;">
+数量</label></td>
+<td id="td033" class="tdLayout" style="width:11%;height:25px;"><label id="label008" name="label008" id="label008" style="white-space:nowrap;">
+单项价格</label></td>
+<td id="td034" class="tdLayout" colspan="1" rowspan="1" style="width:11%;height:25px;"><label id="myinwushenqingfield33Label" name="myinwushenqingfield33Label" id="myinwushenqingfield33Label" style="white-space:nowrap;" class="label">
+制作份数</label></td>
+<td id="td035" class="tdLayout" style="width:11%;height:25px;"><label id="myinwushenqingfield34Label" name="myinwushenqingfield34Label" id="myinwushenqingfield34Label" style="white-space:nowrap;" class="label">
+总价格</label></td>
+<td id="td036" class="tdLayout" style="width:12%;height:25px;"><label id="myinwushenqingfield35Label" name="myinwushenqingfield35Label" id="myinwushenqingfield35Label" style="white-space:nowrap;" class="label">
+平均每份价格</label></td>
+</tr>
+<tr id="tr005"><td id="td037" class="tdLayout" colspan="1" rowspan="4" style="width:11%;"><label id="label017" name="label017" id="label017" style="white-space:nowrap;">
+纸张</label></td>
+<td id="td038" class="tdLayout" style="width:11%;height:25px;"><label id="label009" name="label009" id="label009" style="white-space:nowrap;">
+A4</label></td>
+<td id="td039" class="tdLayout" style="width:11%;height:25px;"><label id="label013" name="label013" id="label013" style="white-space:nowrap;">
+1</label></td>
+<td id="td040" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield13_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield13=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield13",name:"myinwushenqingfield13",editorType:"SpinnerItem",displayId:"myinwushenqingfield13_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield13\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield13\');}"});Mform0.addField(myinwushenqingfield13);Mmyinwushenqingfield13.setCanEdit(false);</script></td>
+<td id="td041" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield3_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield3=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield3",name:"myinwushenqingfield3",editorType:"SpinnerItem",displayId:"myinwushenqingfield3_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield3\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield3\');}"});Mform0.addField(myinwushenqingfield3);Mmyinwushenqingfield3.setCanEdit(false);</script></td>
+<td id="td042" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield23_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield23=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield23",name:"myinwushenqingfield23",editorType:"SpinnerItem",displayId:"myinwushenqingfield23_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield23\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield23\');}"});Mform0.addField(myinwushenqingfield23);Mmyinwushenqingfield23.setCanEdit(false);</script></td>
+<td id="td044" class="tdLayout" colspan="1" rowspan="10" style="width:11%;"><div id="myinwushenqingfield33_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield33=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield33",name:"myinwushenqingfield33",editorType:"SpinnerItem",displayId:"myinwushenqingfield33_div",position:"relative",autoDraw:false,width:"100%",height:40,blur:"blurJSmain2(\'myinwushenqingfield33\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield33\');}"});Mform0.addField(myinwushenqingfield33);Mmyinwushenqingfield33.setCanEdit(false);</script></td>
+<td id="td004" class="tdLayout" colspan="1" rowspan="10" style="width:11%;"><div id="myinwushenqingfield34_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield34=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield34",name:"myinwushenqingfield34",editorType:"SpinnerItem",displayId:"myinwushenqingfield34_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:40});Mform0.addField(myinwushenqingfield34);Mmyinwushenqingfield34.setCanEdit(false);</script></td>
+<td id="td045" class="tdLayout" colspan="1" rowspan="10" style="width:12%;"><div id="myinwushenqingfield35_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield35=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield35",name:"myinwushenqingfield35",editorType:"SpinnerItem",displayId:"myinwushenqingfield35_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:40});Mform0.addField(myinwushenqingfield35);Mmyinwushenqingfield35.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr006"><td id="td047" class="tdLayout" style="width:11%;height:25px;"><label id="label010" name="label010" id="label010" style="white-space:nowrap;">
+A3</label></td>
+<td id="td048" class="tdLayout" style="width:11%;height:25px;"><label id="label014" name="label014" id="label014" style="white-space:nowrap;">
+1</label></td>
+<td id="td049" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield14_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield14=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield14",name:"myinwushenqingfield14",editorType:"SpinnerItem",displayId:"myinwushenqingfield14_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield14\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield14\');}"});Mform0.addField(myinwushenqingfield14);Mmyinwushenqingfield14.setCanEdit(false);</script></td>
+<td id="td050" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield4_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield4=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield4",name:"myinwushenqingfield4",editorType:"SpinnerItem",displayId:"myinwushenqingfield4_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield4\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield4\');}"});Mform0.addField(myinwushenqingfield4);Mmyinwushenqingfield4.setCanEdit(false);</script></td>
+<td id="td051" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield24_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield24=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield24",name:"myinwushenqingfield24",editorType:"SpinnerItem",displayId:"myinwushenqingfield24_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield24\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield24\');}"});Mform0.addField(myinwushenqingfield24);Mmyinwushenqingfield24.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr007"><td id="td056" class="tdLayout" style="width:11%;height:25px;"><label id="label011" name="label011" id="label011" style="white-space:nowrap;">
+封面纸</label></td>
+<td id="td057" class="tdLayout" style="width:11%;height:25px;"><label id="label015" name="label015" id="label015" style="white-space:nowrap;">
+1</label></td>
+<td id="td058" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield15_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield15=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield15",name:"myinwushenqingfield15",editorType:"SpinnerItem",displayId:"myinwushenqingfield15_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield15\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield15\');}"});Mform0.addField(myinwushenqingfield15);Mmyinwushenqingfield15.setCanEdit(false);</script></td>
+<td id="td059" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield5_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield5=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield5",name:"myinwushenqingfield5",editorType:"SpinnerItem",displayId:"myinwushenqingfield5_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield5\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield5\');}"});Mform0.addField(myinwushenqingfield5);Mmyinwushenqingfield5.setCanEdit(false);</script></td>
+<td id="td060" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield25_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield25=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield25",name:"myinwushenqingfield25",editorType:"SpinnerItem",displayId:"myinwushenqingfield25_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield25\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield25\');}"});Mform0.addField(myinwushenqingfield25);Mmyinwushenqingfield25.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr008"><td id="td065" class="tdLayout" style="width:11%;height:25px;"><label id="label012" name="label012" id="label012" style="white-space:nowrap;">
+特种纸</label></td>
+<td id="td066" class="tdLayout" style="width:11%;height:25px;"><label id="label016" name="label016" id="label016" style="white-space:nowrap;">
+1</label></td>
+<td id="td067" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield16_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield16=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield16",name:"myinwushenqingfield16",editorType:"SpinnerItem",displayId:"myinwushenqingfield16_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield16\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield16\');}"});Mform0.addField(myinwushenqingfield16);Mmyinwushenqingfield16.setCanEdit(false);</script></td>
+<td id="td068" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield6_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield6=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield6",name:"myinwushenqingfield6",editorType:"SpinnerItem",displayId:"myinwushenqingfield6_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield6\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield6\');}"});Mform0.addField(myinwushenqingfield6);Mmyinwushenqingfield6.setCanEdit(false);</script></td>
+<td id="td069" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield26_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield26=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield26",name:"myinwushenqingfield26",editorType:"SpinnerItem",displayId:"myinwushenqingfield26_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield26\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield26\');}"});Mform0.addField(myinwushenqingfield26);Mmyinwushenqingfield26.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr009"><td id="td073" class="tdLayout" colspan="1" rowspan="3" style="width:11%;"><label id="label024" name="label024" id="label024" style="white-space:nowrap;">
+复印机</label></td>
+<td id="td074" class="tdLayout" style="width:11%;height:25px;"><label id="label018" name="label018" id="label018" style="white-space:nowrap;">
+黑色</label></td>
+<td id="td075" class="tdLayout" style="width:11%;height:25px;"><label id="label021" name="label021" id="label021" style="white-space:nowrap;">
+1</label></td>
+<td id="td076" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield17_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield17=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield17",name:"myinwushenqingfield17",editorType:"SpinnerItem",displayId:"myinwushenqingfield17_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield17\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield17\');}"});Mform0.addField(myinwushenqingfield17);Mmyinwushenqingfield17.setCanEdit(false);</script></td>
+<td id="td077" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield7_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield7=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield7",name:"myinwushenqingfield7",editorType:"SpinnerItem",displayId:"myinwushenqingfield7_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield7\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield7\');}"});Mform0.addField(myinwushenqingfield7);Mmyinwushenqingfield7.setCanEdit(false);</script></td>
+<td id="td078" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield27_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield27=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield27",name:"myinwushenqingfield27",editorType:"SpinnerItem",displayId:"myinwushenqingfield27_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield27\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield27\');}"});Mform0.addField(myinwushenqingfield27);Mmyinwushenqingfield27.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr010"><td id="td083" class="tdLayout" style="width:11%;height:25px;"><label id="label019" name="label019" id="label019" style="white-space:nowrap;">
+彩色</label></td>
+<td id="td084" class="tdLayout" style="width:11%;height:25px;"><label id="label022" name="label022" id="label022" style="white-space:nowrap;">
+1</label></td>
+<td id="td085" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield18_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield18=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield18",name:"myinwushenqingfield18",editorType:"SpinnerItem",displayId:"myinwushenqingfield18_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield18\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield18\');}"});Mform0.addField(myinwushenqingfield18);Mmyinwushenqingfield18.setCanEdit(false);</script></td>
+<td id="td086" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield8_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield8=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield8",name:"myinwushenqingfield8",editorType:"SpinnerItem",displayId:"myinwushenqingfield8_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield8\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield8\');}"});Mform0.addField(myinwushenqingfield8);Mmyinwushenqingfield8.setCanEdit(false);</script></td>
+<td id="td087" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield28_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield28=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield28",name:"myinwushenqingfield28",editorType:"SpinnerItem",displayId:"myinwushenqingfield28_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield28\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield28\');}"});Mform0.addField(myinwushenqingfield28);Mmyinwushenqingfield28.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr011"><td id="td092" class="tdLayout" style="width:11%;height:25px;"><label id="label020" name="label020" id="label020" style="white-space:nowrap;">
+使用时长</label></td>
+<td id="td093" class="tdLayout" style="width:11%;height:25px;"><label id="label023" name="label023" id="label023" style="white-space:nowrap;">
+1</label></td>
+<td id="td094" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield19_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield19=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield19",name:"myinwushenqingfield19",editorType:"SpinnerItem",displayId:"myinwushenqingfield19_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield19\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield19\');}"});Mform0.addField(myinwushenqingfield19);Mmyinwushenqingfield19.setCanEdit(false);</script></td>
+<td id="td095" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield9_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield9=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield9",name:"myinwushenqingfield9",editorType:"SpinnerItem",displayId:"myinwushenqingfield9_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield9\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield9\');}"});Mform0.addField(myinwushenqingfield9);Mmyinwushenqingfield9.setCanEdit(false);</script></td>
+<td id="td096" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield29_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield29=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield29",name:"myinwushenqingfield29",editorType:"SpinnerItem",displayId:"myinwushenqingfield29_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield29\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield29\');}"});Mform0.addField(myinwushenqingfield29);Mmyinwushenqingfield29.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr012"><td id="td100" class="tdLayout" colspan="1" rowspan="2" style="width:11%;"><label id="label025" name="label025" id="label025" style="white-space:nowrap;">
+覆膜</label></td>
+<td id="td101" class="tdLayout" style="width:11%;height:25px;"><label id="label026" name="label026" id="label026" style="white-space:nowrap;">
+亮光膜</label></td>
+<td id="td102" class="tdLayout" style="width:11%;height:25px;"><label id="label028" name="label028" id="label028" style="white-space:nowrap;">
+1</label></td>
+<td id="td103" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield20_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield20=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield20",name:"myinwushenqingfield20",editorType:"SpinnerItem",displayId:"myinwushenqingfield20_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield20\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield20\');}"});Mform0.addField(myinwushenqingfield20);Mmyinwushenqingfield20.setCanEdit(false);</script></td>
+<td id="td104" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield10_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield10=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield10",name:"myinwushenqingfield10",editorType:"SpinnerItem",displayId:"myinwushenqingfield10_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield10\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield10\');}"});Mform0.addField(myinwushenqingfield10);Mmyinwushenqingfield10.setCanEdit(false);</script></td>
+<td id="td105" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield30_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield30=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield30",name:"myinwushenqingfield30",editorType:"SpinnerItem",displayId:"myinwushenqingfield30_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield30\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield30\');}"});Mform0.addField(myinwushenqingfield30);Mmyinwushenqingfield30.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr013"><td id="td110" class="tdLayout" style="width:11%;height:25px;"><label id="label027" name="label027" id="label027" style="white-space:nowrap;">
+亚光膜</label></td>
+<td id="td111" class="tdLayout" style="width:11%;height:25px;"><label id="label029" name="label029" id="label029" style="white-space:nowrap;">
+1</label></td>
+<td id="td112" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield21_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield21=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield21",name:"myinwushenqingfield21",editorType:"SpinnerItem",displayId:"myinwushenqingfield21_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield21\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield21\');}"});Mform0.addField(myinwushenqingfield21);Mmyinwushenqingfield21.setCanEdit(false);</script></td>
+<td id="td113" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield11_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield11=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield11",name:"myinwushenqingfield11",editorType:"SpinnerItem",displayId:"myinwushenqingfield11_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield11\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield11\');}"});Mform0.addField(myinwushenqingfield11);Mmyinwushenqingfield11.setCanEdit(false);</script></td>
+<td id="td114" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield31_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield31=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield31",name:"myinwushenqingfield31",editorType:"SpinnerItem",displayId:"myinwushenqingfield31_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield31\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield31\');}"});Mform0.addField(myinwushenqingfield31);Mmyinwushenqingfield31.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr014"><td id="td118" class="tdLayout" style="width:11%;height:25px;"><label id="label030" name="label030" id="label030" style="white-space:nowrap;">
+胶装</label></td>
+<td id="td119" class="tdLayout" style="width:11%;height:25px;"><label id="label031" name="label031" id="label031" style="white-space:nowrap;">
+使用时长</label></td>
+<td id="td120" class="tdLayout" style="width:11%;height:25px;"><label id="label032" name="label032" id="label032" style="white-space:nowrap;">
+1</label></td>
+<td id="td121" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield22_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield22=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield22",name:"myinwushenqingfield22",editorType:"SpinnerItem",displayId:"myinwushenqingfield22_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield22\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield22\');}"});Mform0.addField(myinwushenqingfield22);Mmyinwushenqingfield22.setCanEdit(false);</script></td>
+<td id="td122" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield12_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield12=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield12",name:"myinwushenqingfield12",editorType:"SpinnerItem",displayId:"myinwushenqingfield12_div",position:"relative",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield12\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield12\');}"});Mform0.addField(myinwushenqingfield12);Mmyinwushenqingfield12.setCanEdit(false);</script></td>
+<td id="td123" class="tdLayout" style="width:11%;height:25px;"><div id="myinwushenqingfield32_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield32=isc.SpinnerItem.create({ID:"Mmyinwushenqingfield32",name:"myinwushenqingfield32",editorType:"SpinnerItem",displayId:"myinwushenqingfield32_div",position:"relative",value:"0",autoDraw:false,width:"100%",height:25,blur:"blurJSmain2(\'myinwushenqingfield32\');",keyPress:"if(event.keyCode==13) {blurJSmain2(\'myinwushenqingfield32\');}"});Mform0.addField(myinwushenqingfield32);Mmyinwushenqingfield32.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr015"><td id="td127" class="tdLayout" colspan="2" rowspan="2" style="width:22%;"><label id="myinwushenqingfield36Label" name="myinwushenqingfield36Label" id="myinwushenqingfield36Label" style="white-space:nowrap;" class="label">
+发起者部门负责人意见</label></td>
+<td id="td129" class="tdLayout" colspan="7" rowspan="1" style="border-bottom-style: none;width:78%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div id="myinwushenqingfield36_div" eventProxy="Mform0" class="matrixInline" style="width:100%;"></div><script> var myinwushenqingfield36=isc.TextAreaItem.create({ID:"Mmyinwushenqingfield36",name:"myinwushenqingfield36",editorType:"TextAreaItem",displayId:"myinwushenqingfield36_div",position:"relative",autoDraw:false,width:'100%',height:75});Mform0.addField(myinwushenqingfield36);Mmyinwushenqingfield36.setCanEdit(false);</script></td>
+</tr>
+<tr id="tr016"><td id="td138" class="tdLayout" colspan="1" rowspan="1" style="width:11%;border:none;height:25px;">&nbsp;</td>
+<td id="td005" class="tdLayout" rowspan="1" style="width:11%;border:none;height:25px;">&nbsp;</td>
+<td id="td006" class="tdLayout" rowspan="1" style="width:11%;border:none;height:25px;">&nbsp;</td>
+<td id="td007" class="tdLayout" colspan="2" rowspan="1" style="width:22%;border:none;height:25px;"><label id="myinwushenqingfield37Label" name="myinwushenqingfield37Label" id="myinwushenqingfield37Label" style="white-space:nowrap;" class="label">
+签字：</label><div id="myinwushenqingfield37_div" eventProxy="Mform0" class="matrixInline" style="width:60%;"></div><script> var myinwushenqingfield37=isc.TextItem.create({ID:"Mmyinwushenqingfield37",name:"myinwushenqingfield37",editorType:"TextItem",displayId:"myinwushenqingfield37_div",position:"relative",autoDraw:false,width:"100%",canEdit:false});Mform0.addField(myinwushenqingfield37);</script></td>
+<td id="td009" class="tdLayout" colspan="2" rowspan="1" style="height:25px;border-style: none solid none none; border-right-width: 1px; border-right-color: rgb(0, 0, 0);width:23%;text-align:left;vertical-align:top;background-color:rgb(255, 255, 255)"><label id="myinwushenqingfield38Label" name="myinwushenqingfield38Label" id="myinwushenqingfield38Label" style="white-space:nowrap;" class="label">
+日期：</label><div id="myinwushenqingfield38_div" class='matrixInline' eventProxy="Mform0" style="width:60%;"><input id='myinwushenqingfield38' name='myinwushenqingfield38' readOnly='true' style='width:99%;height:28px;background-image:url(/mofficeV3/resource/date/skins/default/icon.png);background-position:right;background-repeat:no-repeat;padding:0px;padding-right: 22px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;  box-sizing: border-box;' class='textItem textItemReadOnly ' onClick="if(document.getElementById('myinwushenqingfield38').readOnly==false){laydate({istime:false, format:'YYYY年MM月DD日'})}"/></div></td>
+</tr>
+<tr id="tr017"><td id="td145" class="tdLayout" colspan="9" rowspan="1" style="height:20px;border-bottom-style: none;width:100%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:20px;">以上为成本费，不包括设备磨损维修费，人员费用等。</div></td>
+</tr>
+<tr id="tr018"><td id="td154" class="tdLayout" colspan="9" rowspan="1" style="border-bottom-style: none; border-top-style: none;width:100%;height:45px;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:45px;">填写说明：数量只需填写绿色格内的项目，其他项目由印务填写，没有的项目无需填写，制作份数为必填，不填写无法显示总价和平均价格。</div></td>
+</tr>
+<tr id="tr019"><td id="td163" class="tdLayout" colspan="9" rowspan="1" style="border-top-style: none; border-bottom-style: none;width:100%;text-align:center;vertical-align:middle;background-color:rgb(255, 255, 255)"><label id="label035" name="label035" id="label035" style="white-space:nowrap;">
+印务价目表</label></td>
+</tr>
+<tr id="tr020"><td id="td172" class="tdLayout" style="width:11%;height:25px;"><label id="label036" name="label036" id="label036" style="white-space:nowrap;">
+项目</label></td>
+<td id="td173" class="tdLayout" style="width:11%;height:25px;"><label id="label037" name="label037" id="label037" style="white-space:nowrap;">
+名称</label></td>
+<td id="td174" class="tdLayout" style="width:11%;height:25px;"><label id="label038" name="label038" id="label038" style="white-space:nowrap;">
+数量/小时</label></td>
+<td id="td175" class="tdLayout" style="width:11%;height:25px;"><label id="label040" name="label040" id="label040" style="white-space:nowrap;">
+价格/元</label></td>
+<td id="td176" class="tdLayout" colspan="5" rowspan="1" style="width:56%;height:25px;"><label id="label045" name="label045" id="label045" style="white-space:nowrap;">
+说明</label></td>
+</tr>
+<tr id="tr021"><td id="td181" class="tdLayout" colspan="1" rowspan="4" style="width:11%;"><label id="label041" name="label041" id="label041" style="white-space:nowrap;">
+纸张</label></td>
+<td id="td182" class="tdLayout" style="width:11%;height:25px;"><label id="label046" name="label046" id="label046" style="white-space:nowrap;">
+A4</label></td>
+<td id="td183" class="tdLayout" style="width:11%;height:25px;"><label id="label055" name="label055" id="label055" style="white-space:nowrap;">
+1</label></td>
+<td id="td184" class="tdLayout" style="width:11%;height:25px;"><label id="label064" name="label064" id="label064" style="white-space:nowrap;">
+0.04</label></td>
+<td id="td185" class="tdLayout" colspan="5" rowspan="1" style="height:25px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:20px;">每包纸500张，价格20元，每张0.04元</div></td>
+</tr>
+<tr id="tr022"><td id="td191" class="tdLayout" style="width:11%;height:25px;"><label id="label047" name="label047" id="label047" style="white-space:nowrap;">
+A3</label></td>
+<td id="td192" class="tdLayout" style="width:11%;height:25px;"><label id="label056" name="label056" id="label056" style="white-space:nowrap;">
+1</label></td>
+<td id="td193" class="tdLayout" style="width:11%;height:25px;"><label id="label065" name="label065" id="label065" style="white-space:nowrap;">
+0.08</label></td>
+<td id="td194" class="tdLayout" colspan="5" rowspan="1" style="height:25px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:20px;">每包纸500张，价格40元，每张0.08元</div></td>
+</tr>
+<tr id="tr023"><td id="td200" class="tdLayout" style="width:11%;height:25px;"><label id="label048" name="label048" id="label048" style="white-space:nowrap;">
+封面纸</label></td>
+<td id="td201" class="tdLayout" style="width:11%;height:25px;"><label id="label057" name="label057" id="label057" style="white-space:nowrap;">
+1</label></td>
+<td id="td202" class="tdLayout" style="width:11%;height:25px;"><label id="label066" name="label066" id="label066" style="white-space:nowrap;">
+1</label></td>
+<td id="td203" class="tdLayout" colspan="5" rowspan="1" style="height:25px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:20px;">每包纸00张，价格100元，每张1元</div></td>
+</tr>
+<tr id="tr024"><td id="td209" class="tdLayout" style="width:11%;height:25px;"><label id="label049" name="label049" id="label049" style="white-space:nowrap;">
+特种纸</label></td>
+<td id="td210" class="tdLayout" style="width:11%;height:25px;"><label id="label058" name="label058" id="label058" style="white-space:nowrap;">
+1</label></td>
+<td id="td211" class="tdLayout" style="width:11%;height:25px;"><label id="label067" name="label067" id="label067" style="white-space:nowrap;">
+0.8</label></td>
+<td id="td212" class="tdLayout" colspan="5" rowspan="1" style="height:25px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:20px;">每包纸100张，价格80元，每张0.8元</div></td>
+</tr>
+<tr id="tr025"><td id="td217" class="tdLayout" colspan="1" rowspan="3" style="width:11%;"><label id="label042" name="label042" id="label042" style="white-space:nowrap;">
+复印机</label></td>
+<td id="td218" class="tdLayout" style="width:11%;height:25px;"><label id="label050" name="label050" id="label050" style="white-space:nowrap;">
+黑色</label></td>
+<td id="td219" class="tdLayout" style="width:11%;height:25px;"><label id="label059" name="label059" id="label059" style="white-space:nowrap;">
+1</label></td>
+<td id="td220" class="tdLayout" style="width:11%;height:25px;"><label id="label068" name="label068" id="label068" style="white-space:nowrap;">
+0.04</label></td>
+<td id="td221" class="tdLayout" colspan="5" rowspan="1" style="height:20px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:20px;">墨粉价格每只955元，按照10%覆盖率计算可印2万张，单张价格约0.04元</div></td>
+</tr>
+<tr id="tr031"><td id="td053" class="tdLayout" colspan="1" style="width:11%;"><label id="label051" name="label051" id="label051" style="white-space:nowrap;">
+彩色</label></td>
+<td id="td054" class="tdLayout" colspan="1" style="width:11%;"><label id="label060" name="label060" id="label060" style="white-space:nowrap;">
+1</label></td>
+<td id="td055" class="tdLayout" colspan="1" style="width:11%;"><label id="label069" name="label069" id="label069" style="white-space:nowrap;">
+0.15</label></td>
+<td id="td061" class="tdLayout" colspan="5" rowspan="1" style="height:50px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:50px;">彩色粉价格每只1290元，共三只，总价3270元，按照10%覆盖率计算每只可印1万张，三只共3万张。单张价格0.11元，加上黑色印价0.04元，共计：0.15元每张</div></td>
+</tr>
+<tr id="tr030"><td id="td022" class="tdLayout" colspan="1" style="width:11%;"><label id="label052" name="label052" id="label052" style="white-space:nowrap;">
+使用时长</label></td>
+<td id="td023" class="tdLayout" colspan="1" style="width:11%;"><label id="label061" name="label061" id="label061" style="white-space:nowrap;">
+1</label></td>
+<td id="td024" class="tdLayout" colspan="1" style="width:11%;"><label id="label070" name="label070" id="label070" style="white-space:nowrap;">
+2</label></td>
+<td id="td025" class="tdLayout" colspan="5" rowspan="1" style="height:35px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height35px;">指电费，机器功率是2000瓦，使用1小时的耗电量是2度，工业用电价格是0.989元/度</div></td>
+</tr>
+<tr id="tr029"><td id="td008" class="tdLayout" colspan="1" rowspan="2" style="width:11%;"><label id="label043" name="label043" id="label043" style="white-space:nowrap;">
+覆膜</label></td>
+<td id="td011" class="tdLayout" colspan="1" style="width:11%;"><label id="label053" name="label053" id="label053" style="white-space:nowrap;">
+光亮膜</label></td>
+<td id="td013" class="tdLayout" colspan="1" style="width:11%;"><label id="label062" name="label062" id="label062" style="white-space:nowrap;">
+1</label></td>
+<td id="td014" class="tdLayout" colspan="1" style="width:11%;"><label id="label071" name="label071" id="label071" style="white-space:nowrap;">
+0.7</label></td>
+<td id="td015" class="tdLayout" colspan="5" rowspan="1" style="height:35px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height:35px;">膜的价格是80元每卷，1卷长度是50米，封面纸的长度是0.44米，每卷可以覆膜113张，每张价格0.71元</div></td>
+</tr>
+<tr id="tr033"><td id="td090" class="tdLayout" colspan="1" style="width:11%;"><label id="label054" name="label054" id="label054" style="white-space:nowrap;">
+亚光膜</label></td>
+<td id="td091" class="tdLayout" colspan="1" style="width:11%;"><label id="label063" name="label063" id="label063" style="white-space:nowrap;">
+1</label></td>
+<td id="td097" class="tdLayout" colspan="1" style="width:11%;"><label id="label072" name="label072" id="label072" style="white-space:nowrap;">
+1.33</label></td>
+<td id="td098" class="tdLayout" colspan="5" rowspan="1" style="height35px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height35px;">膜的价格是150元每卷，1卷长度是50米，封面纸的长度是0.44米，每卷可以覆膜113张，每张价格1.327元元</div></td>
+</tr>
+<tr id="tr032"><td id="td021" class="tdLayout" colspan="1" style="width:11%;"><label id="label044" name="label044" id="label044" style="white-space:nowrap;">
+胶装</label></td>
+<td id="td052" class="tdLayout" colspan="1" style="width:11%;"><label id="label073" name="label073" id="label073" style="white-space:nowrap;">
+使用时长</label></td>
+<td id="td071" class="tdLayout" colspan="1" style="width:11%;"><label id="label074" name="label074" id="label074" style="white-space:nowrap;">
+1</label></td>
+<td id="td072" class="tdLayout" colspan="1" style="width:11%;"><label id="label075" name="label075" id="label075" style="white-space:nowrap;">
+2</label></td>
+<td id="td079" class="tdLayout" colspan="5" rowspan="1" style="height35px;width:56%;text-align:left;vertical-align:middle;background-color:rgb(255, 255, 255)"><div class="normal matrixInline"  style="width:95%;height35px;">指电费，机器功率是2000瓦，使用1小时的耗电量是2度，工业用电价格是0.989元/度。胶的价格忽略没记</div></td>
+</tr>
+<tr id="tr034"><td id="td089" class="tdLayout" colspan="9" rowspan="1" style="width:100%;height:20px;border:none;">&nbsp;</td>
+</tr>
+</table>
+<input id="mBizId" type="hidden" name="mBizId" value="206463c6-729d-4fef-9c0d-12282b067628" /></div></div></td>
+<td id="fuyan" class="tdLayout" style="border: 1px solid #cccccc;width:15%;height:99%;"><table id="table005" class="tableLayout" style="width:100%;height:100%;"><tr id="tr011"><td id="td0fuyan" class="maintain_form_label2" style="width:100%;height:10%;text-align:left;valign:middle;"><div class="normal matrixInline"><div class="arrow_2_r"></div></div><label id="label005" name="label005" id="label005" style="white-space:nowrap;" class="framelabel">
+附言(500个字以内)</label></td>
+</tr>
+<tr id="tr013"><td id="td020" class="maintain_form_label2" style="width:100%;height:90%;"><div id="inputTextArea_div" eventProxy="Mform0" class="matrixInline" style="width:100%;height:100%;"></div><script> var inputTextArea=isc.TextAreaItem.create({ID:"MinputTextArea",name:"inputTextArea",editorType:"TextAreaItem",displayId:"inputTextArea_div",position:"relative",autoDraw:false,width:'100%',height:'100%',showHintInField:true,validators:[{type:"custom",condition:function(item, validator, value, record){return Matrix.validateLength(0,500, value);},errorMessage:"附言最多不能超过500个字符!"}],textBoxStyle:'frametextItem'});Mform0.addField(inputTextArea);</script></td>
+</tr>
+</table>
+</td>
+<td id="addfuyan" class="tdLayout" style="border: 1px solid #cccccc;width:5%;height:99%;"><table id="table007" class="tableLayout" style="width:100%;height:100%;"><tr id="tr018"><td id="td017" class="maintain_form_label2" style="width:100%;valign:middle;text-align:center;"><div class="normal matrixInline"><div class="arrow_2_l"></div></div><label id="label009" name="label009" id="label009" style="white-space:nowrap;" class="framelabel">
+<br></label><label id="label010" name="label010" id="label010" style="white-space:nowrap;" class="framelabel">
+附<br>言</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<script>function getParamsForDepDialog(){var params='&';var value;return params;}isc.Window.create({ID:"MDepDialog",id:"DepDialog",name:"DepDialog",autoCenter: true,position:"absolute",height: "50%",width: "50%",title: "请选择部门",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","closeButton"],getParamsFun:getParamsForDepDialog,initSrc:"/mofficeV3/DepSelectPage.rform",src:"/mofficeV3/DepSelectPage.rform",showFooter: false });</script><script>MDepDialog.hide();</script><script>function getParamsForarea(){var params='&';var value;return params;}isc.Window.create({ID:"Marea",id:"area",name:"area",autoCenter: true,position:"absolute",height: "80%",width: "80%",title: "发布范围选择",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","closeButton"],getParamsFun:getParamsForarea,initSrc:"/mofficeV3/MixSelect.rform",src:"/mofficeV3/MixSelect.rform",showFooter: false });</script><script>Marea.hide();</script><script>function getParamsForAddFileWin(){var params='&';var value;value=null;try{value=eval("getMflowBizId();");}catch(error){value="getMflowBizId();"}if(value!=null){value="mFlowBizId="+value;params+=value;}return params;}isc.Window.create({ID:"MAddFileWin",id:"AddFileWin",name:"AddFileWin",autoCenter: true,position:"absolute",height: "50%",width: "30%",title: "上传本地文件",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","closeButton"],getParamsFun:getParamsForAddFileWin,initSrc:"/mofficeV3/AddFilesForm.rform",src:"/mofficeV3/AddFilesForm.rform",showFooter: false });</script><script>MAddFileWin.hide();</script><script>function getParamsForDialog0(){var params='&';var value;value=null;try{value=eval("Matrix.getFormItemValue('sysType')");}catch(error){value="Matrix.getFormItemValue('sysType')"}if(value!=null){value="sysType="+value;params+=value;}return params;}isc.Window.create({ID:"MDialog0",id:"Dialog0",name:"Dialog0",autoCenter: true,position:"absolute",height: "80%",width: "65%",title: "调用模板",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","closeButton"],getParamsFun:getParamsForDialog0,initSrc:"/mofficeV3/SelectFlow.rform",src:"/mofficeV3/SelectFlow.rform",showFooter: false });</script><script>MDialog0.hide();</script><script>function getParamsForDialog1(){var params='&';var value;value=null;try{value=eval("Matrix.getFormItemValue('formId')");}catch(error){value="Matrix.getFormItemValue('formId')"}if(value!=null){value="formDid="+value;params+=value;}value=null;params+='&';try{value=eval("Matrix.getFormItemValue('flowId');");}catch(error){value="Matrix.getFormItemValue('flowId');"}if(value!=null){value="flowDid="+value;params+=value;}value=null;params+='&';try{value=eval("Matrix.getFormItemValue('desc')");}catch(error){value="Matrix.getFormItemValue('desc')"}if(value!=null){value="templateDesc="+value;params+=value;}value=null;params+='&';try{value=eval("read");}catch(error){value="read"}if(value!=null){value="auth="+value;params+=value;}return params;}isc.Window.create({ID:"MDialog1",id:"Dialog1",name:"Dialog1",autoCenter: true,position:"absolute",height: "80%",width: "65%",title: "查看流程",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","closeButton"],getParamsFun:getParamsForDialog1,initSrc:"/mofficeV3/FlowTempTabPage.rform",src:"/mofficeV3/FlowTempTabPage.rform",showFooter: false });</script><script>MDialog1.hide();</script><script>function getParamsForWordDialog(){var params='&';var value;value=null;try{value=eval("Matrix.getFormItemValue('templateUuid')");}catch(error){value="Matrix.getFormItemValue('templateUuid')"}if(value!=null){value="uuid="+value;params+=value;}value=null;params+='&';try{value=eval("Matrix.getFormItemValue('flowNodeId')");}catch(error){value="Matrix.getFormItemValue('flowNodeId')"}if(value!=null){value="flowNodeId="+value;params+=value;}value=null;params+='&';try{value=eval("Matrix.getFormItemValue('type')");}catch(error){value="Matrix.getFormItemValue('type')"}if(value!=null){value="type="+value;params+=value;}value=null;params+='&';try{value=eval("Matrix.getFormItemValue('mFlowBizId')");}catch(error){value="Matrix.getFormItemValue('mFlowBizId')"}if(value!=null){value="flowBizId="+value;params+=value;}value=null;params+='&';try{value=eval("Matrix.getFormItemValue('isInitLoad')");}catch(error){value="Matrix.getFormItemValue('isInitLoad')"}if(value!=null){value="isInitLoad="+value;params+=value;}return params;}isc.Window.create({ID:"MWordDialog",id:"WordDialog",name:"WordDialog",autoCenter: true,position:"absolute",height: "80%",width: "65%",title: "正文信息",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:true,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","minimizeButton","maximizeButton","closeButton"],getParamsFun:getParamsForWordDialog,initSrc:"/mofficeV3/WordEditPage.rform",src:"/mofficeV3/WordEditPage.rform",showFooter: false });</script><script>MWordDialog.hide();</script><script>function getParamsForSelectTransitionWin(){var params='&';var value;value=null;try{value=eval("Matrix.getFormItemValue('flowId');");}catch(error){value="Matrix.getFormItemValue('flowId');"}if(value!=null){value="pdid="+value;params+=value;}return params;}isc.Window.create({ID:"MSelectTransitionWin",id:"SelectTransitionWin",name:"SelectTransitionWin",autoCenter: true,position:"absolute",height: "50%",width: "50%",title: "选择流转",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:false,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel"],getParamsFun:getParamsForSelectTransitionWin,initSrc:"/mofficeV3/form/admin/process/flowRoute.jsp",src:"/mofficeV3/form/admin/process/flowRoute.jsp",showFooter: false });</script><script>MSelectTransitionWin.hide();</script><script>function getParamsForOpenDesignWin(){var params='&';var value;value=null;try{value=eval("Matrix.getFormItemValue('pdid');");}catch(error){value="Matrix.getFormItemValue('pdid');"}if(value!=null){value="pdid="+value;params+=value;}value=null;params+='&';try{value=eval("82932263458");}catch(error){value="82932263458"}if(value!=null){value="adid="+value;params+=value;}return params;}isc.Window.create({ID:"MOpenDesignWin",id:"OpenDesignWin",name:"OpenDesignWin",autoCenter: true,position:"absolute",height: "90%",width: "85%",title: "编辑流程",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:true,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","minimizeButton","maximizeButton","closeButton"],getParamsFun:getParamsForOpenDesignWin,initSrc:"/mofficeV3/form/admin/process/openDesigner.jsp",src:"/mofficeV3/form/admin/process/openDesigner.jsp",showFooter: false });</script><script>MOpenDesignWin.hide();</script><script>function getParamsForRelativeFile(){var params='&';var value;return params;}isc.Window.create({ID:"MRelativeFile",id:"RelativeFile",name:"RelativeFile",autoCenter: true,position:"absolute",height: "70%",width: "50%",title: "选择关联文档",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:false,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","closeButton"],getParamsFun:getParamsForRelativeFile,initSrc:"/mofficeV3/RelatedDocumentsForm.rform",src:"/mofficeV3/RelatedDocumentsForm.rform",showFooter: false });</script><script>MRelativeFile.hide();</script><script>function getParamsForAddRelatedDocumentWin(){var params='&';var value;value=null;try{value=eval("getMflowBizId();");}catch(error){value="getMflowBizId();"}if(value!=null){value="mFlowBizId="+value;params+=value;}return params;}isc.Window.create({ID:"MAddRelatedDocumentWin",id:"AddRelatedDocumentWin",name:"AddRelatedDocumentWin",autoCenter: true,position:"absolute",height: "100%",width: "70%",title: "上传关联文档",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:true,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","minimizeButton","maximizeButton","closeButton"],getParamsFun:getParamsForAddRelatedDocumentWin,initSrc:"/mofficeV3/RelatedDocumentsForm.rform",src:"/mofficeV3/RelatedDocumentsForm.rform",showFooter: false });</script><script>MAddRelatedDocumentWin.hide();</script><script>function getParamsForuserSelectDialog(){var params='&';var value;return params;}isc.Window.create({ID:"MuserSelectDialog",id:"userSelectDialog",name:"userSelectDialog",autoCenter: true,position:"absolute",height: "80%",width: "80%",title: "选择人员",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:true,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","minimizeButton","maximizeButton","closeButton"],showFooter: false });</script><script>MuserSelectDialog.hide();</script><script>function getParamsForusersSelectDialog(){var params='&';var value;return params;}isc.Window.create({ID:"MusersSelectDialog",id:"usersSelectDialog",name:"usersSelectDialog",autoCenter: true,position:"absolute",height: "80%",width: "80%",title: "选择人员",canDragReposition: false,showMinimizeButton:true,showMaximizeButton:true,showCloseButton:true,showModalMask: false,modalMaskOpacity:0,isModal:true,autoDraw: false,headerControls:["headerIcon","headerLabel","minimizeButton","maximizeButton","closeButton"],showFooter: false });</script><script>MusersSelectDialog.hide();</script><script>isc.Menu.create({ID:"Mmenu001",autoDraw:false,showShadow:true,shadowDepth:10,data: [ {title:"本地文件",click:"Matrix.showWindow('AddFileWin');",icon:"/mofficeV3/resource/images/attach.png"},{title:"关联文档",click:"Matrix.showWindow('AddRelatedDocumentWin');",icon:"/mofficeV3/resource/images/archivefile.png"} ] });</script><input id="isNoticeOrNews" type="hidden" name="isNoticeOrNews" /><input id="mFlowBizId" type="hidden" name="mFlowBizId" value="a9db3100-52f8-4a7f-99e4-23c1b9e1910a" /><input id="templateUuid" type="hidden" name="templateUuid" value="27fee867-bc2d-41c1-8fb8-da6a07390665" /><input id="templateType" type="hidden" name="templateType" value="3" /><input id="trace" type="hidden" name="trace" /><input id="isContainForm" type="hidden" name="isContainForm" value="1" /><input id="wordType" type="hidden" name="wordType" value="4" /><input id="formId" type="hidden" name="formId" value="yinwushenqing" /><input id="flowId" type="hidden" name="flowId" value="yinwushenqing" /><input id="plateId" type="hidden" name="plateId" /><input id="piid" type="hidden" name="piid" /><input id="completedFlag" type="hidden" name="completedFlag" value="0" /><input id="type" type="hidden" name="type" value="3" /><input id="starterId" type="hidden" name="starterId" value="40288ce1596743aa0159685d35860058" /><input id="starterDepId" type="hidden" name="starterDepId" value="4028849f5d0b11b5015d1bb3a04000c7" /><input id="flowNodeId" type="hidden" name="flowNodeId" /><input id="wordTemp" type="hidden" name="wordTemp" /><input id="vbaTemp" type="hidden" name="vbaTemp" /><input id="isInitLoad" type="hidden" name="isInitLoad" value="0" /><input id="createdDate" type="hidden" name="createdDate" value="2017-10-17 10:21:45" /><input id="uuid" type="hidden" name="uuid" /><input id="curUserName" type="hidden" name="curUserName" value="&#33539;&#26126;&#26126;" /><input id="titleName" type="hidden" name="titleName" value="&#21360;&#21153;&#30003;&#35831;&#34920;" /><input id="desc" type="hidden" name="desc" /><input id="oldtitle" type="hidden" name="oldtitle" /><input id="flowStatus" type="hidden" name="flowStatus" value="1" /><input id="from" type="hidden" name="from" /><input id="transitions" type="hidden" name="transitions" /><input id="potentialOwners" type="hidden" name="potentialOwners" /><input id="pdid" type="hidden" name="pdid" value="yinwushenqing" /><input id="adid" type="hidden" name="adid" value="432375828421" /><input id="ptid" type="hidden" name="ptid" /><input id="port" type="hidden" name="port" value="http://localhost:8080/mofficeV3" /><input id="isSupportFlow" type="hidden" name="isSupportFlow" value="1" /><input id="parentId" type="hidden" name="parentId" /><input id="subType" type="hidden" name="subType" /><input id="mFlowBizId2" type="hidden" name="mFlowBizId2" value="3c7164cf-cd66-4730-8aa3-64946ac5a346" /><input id="pubAreaIds" type="hidden" name="pubAreaIds" /><input id="pubDepId" type="hidden" name="pubDepId" value="4028849f5d0b11b5015d1bb3a04000c7" /><input id="content" type="hidden" name="content" /><input id="fromportal" type="hidden" name="fromportal" /><input id="isImgNews" type="hidden" name="isImgNews" /><input id="tempDateType" type="hidden" name="tempDateType" value="2" /><input id="tempDateValue" type="hidden" name="tempDateValue" value="9.00" /><input id="sysType" type="hidden" name="sysType" value="2" /><input id="baseCode" type="hidden" name="baseCode" value="undefined" /><input id="isSelectTransition" type="hidden" name="isSelectTransition" value="true" />
+</form></div><script>Mform0.initComplete=true;Mform0.redraw();isc.Page.setEvent(isc.EH.RESIZE,function(){isc.Page.setEvent(isc.EH.RESIZE,"Mform0.redraw()",null);},isc.Page.FIRE_ONCE);</script></body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <!-- 数据代入 -->
+	<package name="com.matrix.form.admin.custom.datainmapping.action"  extends="globalPackage" namespace="/mapping">
+		<action name="dataMapping_*" class="dataInMappingAction" method="{1}">
+    		<result name="getDataCopyList">/form/admin/custom/dataInMapping/DataInMappingSet.jsp</result>
+    		<result name="DataInMappingList">/form/admin/custom/dataInMapping/DataInMappingList.jsp</result>
+    		<result name="getList">/form/admin/custom/dataInMapping/DataInMappingSet.jsp</result>
+    		<!-- 测试用 -->
+    		<result name="test">/testLoad.jsp</result>
+    	</action>
+    	
+	</package> 	 
+</struts>

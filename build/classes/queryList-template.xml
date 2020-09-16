@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+<RelativeLayout style="">
+	<dialog id="NewDialog" title="添加" src="/fordesigner.daction?command=create" style="width:500px;height:480px">
+		<openDialog>
+			<openParam name="componentType" value="getComponentType();"/>
+			<openParam name="level" value="getLevel();"/>
+		</openDialog>
+	</dialog>
+	<dialog id="UpdateDialog" title="修改" src="/fordesigner.daction?command=edit">
+		<openDialog>
+			<openParam name="componentType" value="getComponentType();"/>
+			<openParam name="rowNum" value="getCurRowNum();"/>
+			<openParam name="level" value="getLevel();"/>
+		</openDialog>
+	</dialog>
+	<QueryList id="QueryList1" pageEnable="false" tableStyle="width:100%;height:100%;overflow:hidden;cellpadding:collapse;cellspacing:0px" 
+	actionStyle="border-style:none;width:100%;height:25;overflow:hidden;"
+	queryContainerType="toolbar">
+		<QueryForm id="DataGrid0_QF"
+				 type="javabean" dataProcessor="com.matrix.test.MethodsDataProvider"
+				noDuplicationResult="false" count="false" pagination="true"  hiddenItem="true"
+				perPageCount="10" dataSortType="">
+			</QueryForm>
+
+	<DataGrid style="width:100%;height:100%;" id="DataGrid0" autoFetchData="true" showSortArrow="false" canSort="false" showHeaderContextMenu="false"
+									canEdit="false" freezeColumnCount="0" selectionType="single" type="javabean" value="#{requestScope.data}"
+									showLineNumber="true" initData="true"  >
+									<DataRow>
+										<DataCell canDragResize="true" formatStyle="normal"
+											canEdit="false" canSort="false" required="false" editor="Text" 
+											statistic="false" title="编码" displayType="text_type"
+											propertyName="id" isProperty="true"
+											propertyType="string"></DataCell>
+										<DataCell canDragResize="true" formatStyle="normal"
+											canEdit="false" canSort="false" required="false" editor="Text" 
+											statistic="false" title="标题" displayType="text_type"
+											propertyName="title" isProperty="true"
+											propertyType="string"></DataCell>
+									</DataRow>
+									<HiddenCells></HiddenCells>
+								</DataGrid>
+			<ActionButtons>
+				<toolBarItem id="ToolBarItem0" value="添加"
+						customIcon="/resource/images/matrix/Add.png"  buttonType="button" onclick="Matrix.showWindow('NewDialog');">
+				</toolBarItem>
+				<toolBarItem id="ToolBarItemu" value="修改"
+						customIcon="/resource/images/matrix/Add.png"  buttonType="button" onclick="Matrix.showWindow('UpdateDialog');">
+				</toolBarItem>
+				<toolBarItem id="ToolBarItemd" value="删除" buttonType="button" onclick="exeOperation('delete')"
+						customIcon="/resource/images/matrix/Save1.png"></toolBarItem>
+				<toolBarItem id="ToolBarItem1" value="上移" buttonType="button" onclick="exeOperation('up')"
+						customIcon="/resource/images/matrix/Save1.png"></toolBarItem>
+				<toolBarItem id="ToolBarItem2" value="下移" buttonType="button" onclick="exeOperation('down')"
+						customIcon="/resource/images/matrix/Save1.png"></toolBarItem>
+			</ActionButtons>
+		</QueryList>
+</RelativeLayout>
+</view>

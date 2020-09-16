@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <!-- 计算公式 -->
+	<package name="com.matrix.form.admin.custom.formula.action"  extends="globalPackage" namespace="/formula">
+		<action name="formula_*" class="formulaAction" method="{1}">
+    		<result name="list">/form/admin/custom/formula/formulaList.jsp</result>
+    		<result name="test">/loadTest.jsp</result>
+    		<result name="getYMDW">/form/admin/custom/formula/getYMDW.jsp</result>
+			<result name="getDaySub">/form/admin/custom/formula/daySub.jsp</result>
+			<result name="normalSetPage">/form/admin/custom/formula/normalSet.jsp</result>
+			<result name="advancedSetPage">/form/admin/custom/formula/advancedSet.jsp</result>
+			<result name="conditionSetPage">/form/admin/custom/formula/conditionSet.jsp</result>
+			<result name="getDivider">/form/admin/custom/formula/getMod.jsp</result>
+    	</action>
+    	
+	</package> 
+</struts>

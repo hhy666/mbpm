@@ -1,0 +1,31 @@
+html { height: 100%; }
+
+html body { height: 100%; }
+
+html body .loginbg { no-repeat center; background-size: cover; height: 74%; width: 100%; min-height: 419px; }
+/* background: url(../../../../base/images/loginbg/loginbg.jpg) */
+html body .loginbg .loginBox { border-width: 0px; position: absolute; z-index: 2; padding-top: 23px; left: 70%; top: 55px; width: 300px; height: 246px; border: none; border-radius: 5px; -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6); -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6); filter: alpha(opacity=40); background: #000000; background: rgba(0, 0, 0, 0.4); box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6); filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc'); }
+
+html body .loginbg .loginBox h2 { margin: 10px auto; font-weight: 700; font-style: normal; font-size: 24px; color: white; text-align: center; }
+
+html body .loginbg .loginBox div.layui-input-block { margin: 20px auto; width: 235px; height: 30px; line-height: 30px; }
+
+html body .loginbg .loginBox div.layui-input-block input { width: 160px; height: 30px; background: inherit; background-color: rgba(255, 255, 255, 0.8); background: #ffffff; filter: alpha(opacity=80); }
+
+html body .loginbg .loginBox div.layui-input-block button[lay-filter="login"], html body .loginbg .loginBox div.layui-input-block input { border-radius: 5px; }
+
+html body .loginbg .loginBox div.layui-input-block button[lay-filter="login"] { background-color: #2d61cd; height: 30px; line-height: 30px; }
+
+html body .loginbg .loginBox div.layui-input-block .layui-form-checkbox[lay-skin=primary] span { color: #ffffff; }
+
+html body .loginbg .loginBox div.layui-input-block .layui-form-checked[lay-skin=primary] i { border-color: #2d61cd; background-color: #2d61cd; }
+
+html body .loginbg .loginBox div.layui-form-item:last-child { margin: 0 auto; }
+
+html body .loginbg .loginBox a, html body .loginbg .loginBox label { color: #ffffff; }
+
+html body .loginbg .loginBox label { margin-right: 0px; margin-left: 0px; }
+
+html body .loginbg .loginBox .layui-input { display: inline-block; }
+
+html body .loginbg i { display: inline-block; color: #ffffff; margin-right: 16px; font-size: 20px; vertical-align: middle; }

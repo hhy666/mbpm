@@ -1,0 +1,106 @@
+body, td, th, input, textarea, div, select, p {
+    font-family: "Microsoft YaHei",SimSun, Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+ body {
+    margin: 0;
+}
+ .border-right {
+    border-right: 1px #cdcdcd solid;
+}
+.border-top {
+    border-top: 1px #cdcdcd solid;
+}
+.precss-scroll-bg {
+    background: #ededed;
+    vertical-align: top;
+    padding-left: 10px;
+}
+.margin_t_10 {
+	margin-top : 10px;
+}
+.margin_t_5 {
+	margin-top : 5px;
+}
+.border-left {
+    border-left: 1px #cdcdcd solid;
+}
+.sign-button-M-sel {
+    float: left;
+    height: 23px;
+    line-height: 23px;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #ffffff;
+    border: 1px #bababa solid;
+    border-left: 0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.ico16 {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    background: url(../image/icon16.png) no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+ 
+}
+
+.participate_16 {
+    background-position: -144px -112px;
+}
+
+.unviewed_16 {
+    background-position: -112px -112px;
+} 
+
+.viewed_16 {
+    background-position: -128px -112px;
+}
+
+.unparticipate_16 {
+    background-position: -160px -112px;
+}
+
+.determined_16 {
+    background-position: -176px -112px;
+}
+.associated_document_16 {
+    background-position: -160px -96px;
+}
+.affix_16 {
+    background-position: -64px 0;
+}
+.button-default_emphasize {
+    display: inline-block;
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px #42b3e5 solid;
+    background: #42b3e5;
+    color: #ffffff;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.sign-button-M {
+    float: left;
+    height: 23px;
+    line-height: 23px;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: url(../image/btnbg.gif) repeat-x;
+    border: 1px #bababa solid;
+    border-left: 0;
+    cursor: pointer;
+}

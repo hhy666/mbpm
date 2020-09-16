@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+<!-- ================================================================= -->
+<!-- a rolling file appender -->
+<!-- ================================================================= -->
+<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">  
+  <layout class="org.apache.log4j.PatternLayout">  
+   <param name="ConversionPattern"  
+    value="%d - %c -%-4r [%t] %-5p %x - %m%n" />  
+  </layout>  
+</appender>
+
+<appender name="sqlfile" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_client_sql.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="eventfile" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_client_event.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="logicfile" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_client_logic.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="ProcessInfo" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_ProcessInfo.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="ProcessDetailInfo" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_ProcessDetailInfo.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="ProcessService" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_ProcessService.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="PageFlow" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_PageFlow.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="PageView" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_PageView.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="DASService" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_das.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="ConfigInfo" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_config.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<appender name="FLOWLOG" class="org.apache.log4j.RollingFileAppender">
+<param name="File" value="matrix_formLog.log" />
+<param name="Append" value="false" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<!-- ================================================================= -->
+<!-- a console appender -->
+<!-- debug can be turned off by setting level of root to "off" -->
+<!-- ================================================================= -->
+
+<appender name="wsota-rc.console.log" class="org.apache.log4j.ConsoleAppender">
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+</layout>
+</appender>
+
+<!-- use this to turn on debug to a rolling file. -->
+
+    <logger name="MatrixLogic" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="logicfile" /> 
+    </logger>
+    <logger name="MatrixSQL" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="sqlfile" /> 
+    </logger>
+    <logger name="MatrixEvent" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="eventfile" /> 
+    </logger>
+    <logger name="ProcessInfo" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="ProcessInfo" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+    <logger name="ProcessDetailInfo" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="ProcessDetailInfo" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+    <logger name="ProcessService" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="ProcessService" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+    <logger name="PageFlow" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="PageFlow" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+    <logger name="PageView" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="PageView" /> 
+    </logger>
+
+    <logger name="DASService" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="DASService" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+    <logger name="ConfigInfo" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="ConfigInfo" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+    <logger name="FLOWLOG" additivity="true">
+         <level value="DEBUG" />
+         <appender-ref ref="FLOWLOG" /> 
+         <appender-ref ref="CONSOLE" /> 
+    </logger>
+
+</log4j:configuration> 

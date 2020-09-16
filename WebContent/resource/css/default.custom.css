@@ -1,0 +1,329 @@
+label {
+    font-family: "Microsoft YaHei";
+  /*  font-size: medium;*/
+  }
+
+/*表单的标题头  页面的大标题*/
+
+
+/*编号  流水号的标签上设置样式*/
+.seqNumStyle{
+    font-family: "Microsoft YaHei";
+    font-weight:bold;
+    font-size: 10pt;
+}
+.tdLayout{
+  //  border: 1px solid #000000;
+	-moz-height:auto;
+	text-align:center;
+	//padding:2px;
+	 border: 1px solid #cccccc;
+	 
+	     margin: 0;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+}
+
+.tdValLayout{
+    border: 1px solid #000000;
+	-moz-height:auto;
+	padding:2px;
+}
+
+/*表单的输入框下拉框的文字字体和大小的样式，覆盖style_css*/
+.tableTitle, .tableTitleFocused, .tableTitleDisabled, .formCellError, .tableTitleError, .formHint, .headerItem, .headerItemDisabled, .headerItemError, .staticTextItem, .staticTextItemDisabled, .staticTextItemError, .textItem, .textItemFocused, .textItemDisabled, .textItemDisabledHint, .textItemError, .textItemHint, .selectItemControl, .selectItemControlError, .selectItemControlFocused, .selectItemText, .selectItemTextError, .selectItemTextDisabled, .selectItemTextFocused, .selectItemTextHint, .selectItemTextDisabledHint, .comboBoxItemPendingText,
+.labelAnchor, .labelAnchorDisabled, .labelAnchorError, .labelAnchorFocused {
+    font-family: "Microsoft YaHei";
+    border: 1px solid #678fc2;
+      /*  font-size: medium;*/
+}
+
+
+.tableTitle, .tableTitleFocused, .tableTitleDisabled, .formCellError, .tableTitleError {
+	 border: none;
+}
+.selectItemControl, .selectItemControlError, .selectItemControlFocused{
+	 border: none;
+	}
+	.labelAnchor, .labelAnchorDisabled, .labelAnchorError, .labelAnchorFocused{
+	 border: none;
+	}
+.tableTitle,.tableTitleFocused, .tableTitleDisabled{
+    font-family: 微软雅黑;
+    font-size: x-large;
+    font-weight:bold;
+    color: #000000;
+}
+/*下拉选项的样式类*/
+.pickListCell, .pickListCellSelected, .pickListCellDisabled, .pickListCellDark, .pickListCellSelectedDark, .pickListCellDisabledDark, .tallPickListCell, .tallPickListCellSelected, .tallPickListCellDisabled, .tallPickListCellDark, .tallPickListCellSelectedDark, .tallPickListCellDisabledDark{
+	font-size:12px;
+	}
+/*重复表的table样式*/
+.subtableStyle{
+	BORDER-TOP-STYLE: none;
+    WORD-WRAP: break-word;
+    BORDER-COLLAPSE: collapse;
+    TABLE-LAYOUT: fixed;
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    WIDTH: 100%;
+	}
+	
+/*重复表序号样式*/
+td.subtableNumberStyle{
+	     border: 1px solid #cccccc;
+//    BORDER-TOP: #000000 1pt solid;
+//    BORDER-RIGHT: #000000 1pt solid;
+    VERTICAL-ALIGN: middle;
+//    BORDER-BOTTOM: #000000 1pt solid;
+    PADDING-BOTTOM: 1px;
+    PADDING-TOP: 1px;
+    PADDING-LEFT: 1px;
+//    BORDER-LEFT: #000000 1pt solid;
+    PADDING-RIGHT: 1px;
+    TEXT-ALIGN: center;
+    BACKGROUND-COLOR: #f2f2f2;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    font-size:12px;
+    /*  font-size: medium;*/
+}
+	
+/*重复表标题样式 在td 的 headButton 上设置样式类 或者追加 都可*/
+td.subtableHeadStyle{
+//    BORDER-TOP: #000000 1pt solid;
+//    BORDER-RIGHT: #000000 1pt solid;
+     border: 1px solid #cccccc;
+    VERTICAL-ALIGN: middle;
+//    BORDER-BOTTOM: #000000 1pt solid;
+    PADDING-BOTTOM: 1px;
+    PADDING-TOP: 1px;
+    PADDING-LEFT: 1px;
+//    BORDER-LEFT: #000000 1pt solid;
+    PADDING-RIGHT: 1px;
+    TEXT-ALIGN: center;
+    BACKGROUND-COLOR: #f2f2f2;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    font-size:12px;
+    /*  font-size: medium;*/
+}
+/*重复表的tdcell样式*/
+td.subtableCellStyle{
+ border: 1px solid #cccccc;
+ //	BORDER-TOP: #000000 1pt solid;
+ //   BORDER-RIGHT: #000000 1pt solid;
+    VERTICAL-ALIGN: middle;
+ //   BORDER-BOTTOM: #000000 1pt solid;
+    PADDING-BOTTOM: 1px;
+    PADDING-TOP: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-RIGTH: 1px;
+ //   BORDER-LEFT: #000000 1pt solid;
+    TEXT-ALIGN: center;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+	}
+	
+/*重复表大标题样式  在td上设置样式类子表的标题*/ 
+.subTitleStyle{
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(165, 165, 165);
+    BACKGROUND-COLOR: #f2f2f2;
+    font-weight: bold;
+   /*  font-size: medium;*/
+}
+ .formTitleDisabled, .formCellError, .formTitleError, .headerItemDisabled, .headerItemError, .staticTextItemDisabled, .staticTextItemError,
+ .textItemDisabled, .textItemDisabledHint, .textItemError,.selectItemControlError, .selectItemTextError,
+ .selectItemTextDisabled, .selectItemTextDisabledHint, .labelAnchorDisabled, .labelAnchorError {
+    border: 1px solid #e5e6e7;
+  }
+/*框架页面的样式*/
+.framelabel {
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+  }
+/*输入框下拉框*/
+.frametextItem,
+.frametextItemFocused,
+.frametextItemDisabled,
+.frametextItemDisabledHint,
+.frametextItemError,
+.frametextItemHint,
+.framecomboBoxItemPendingText,
+.frameselectItemText,
+.frameselectItemTextError,
+.frameselectItemTextFocused,
+.frameselectItemTextDisabled,
+.frameselectItemTextHint,
+.frameselectItemTextDisabledHint {
+  background: white;
+ /* border: 1px solid #ababab;*/
+  border:  1px solid #678fc2;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: black;
+  padding: 4px 2px 4px 2px;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-appearance: none;
+  font-family: "Microsoft YaHei";
+  font-size:12px;
+}
+.frametextItemFocused,
+.frameselectItemTextFocused {
+  color: black;
+  border-bottom: 1px solid #c0d8ec;
+  border-left: 1px solid #b8cfef;
+  border-right: 1px solid #b3c6db;
+  border-top: 1px solid #587aad;
+  -moz-outline-offset: -1;
+  font-family: "Microsoft YaHei";
+  font-size:12px;
+}
+.frameselectItemText,
+.frameselectItemTextError,
+.frameselectItemTextFocused,
+.frameselectItemTextDisabled,
+.frameselectItemTextHint,
+.frameselectItemTextDisabledHint {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-right: 0;
+  font-family: "Microsoft YaHei";
+  font-size:12px;
+}
+.framelabelAnchor, 
+.framelabelAnchorDisabled,
+.framelabelAnchorError, 
+.framelabelAnchorFocused {
+    color: black;
+    font-family: "Microsoft YaHei";
+    text-decoration: none;
+    font-size:12px;
+}
+.framelabelAnchorDisabled {
+  color: #ababab;
+  font-family: "Microsoft YaHei";
+}
+/*******必填项样式******/
+.required{
+	background-color: rgb(253, 253, 219) !important;
+}
+
+/***不可编辑样式*********/
+.textItemReadOnly{
+	background-color: #F0F0F0;
+}
+
+
+.viewItem{
+    text-align: "center";
+}
+
+.selectItemTextReadOnly{
+	background-color: #F0F0F0; 
+}
+
+.textItemEdit{
+    background-color: white;
+}
+
+.comboStyle{
+   border: 1px solid #678fc2;	
+   line-height: 30px;
+}
+
+.tdLabelCls{
+//	backgroud-color:#f2f2f2;
+	text-align:center;
+//    border: 1px solid #000000;
+	-moz-height:auto;
+    margin: 0;
+    height: 36px;
+    
+    color: #4A4D4A;
+    background-color: rgb(250, 250, 250);
+  //  padding: 2px 2px 2px 10px;
+    margin: 0;
+    border: 1px solid #cccccc;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+
+    
+}
+
+.tdValueCls{
+//	text-align:left;
+	text-align:center;
+//    border: 1px solid #000000;
+	-moz-height:auto;
+    margin: 0;
+    height: 36px;
+    
+//     padding: 2px 2px 2px 2px;
+    border: 1px solid #cccccc;
+    
+      margin: 0;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+ }
+ 
+ 
+ 
+.mTdLabelCls{
+//	backgroud-color:#f2f2f2;
+	text-align:center;
+//    border: 1px solid #000000;
+	-moz-height:auto;
+    margin: 0;
+    width: 30%;
+    height: 36px;
+    
+    color: #4A4D4A;
+    background-color: rgb(250, 250, 250);
+  //  padding: 2px 2px 2px 10px;
+    margin: 0;
+    border: 1px solid #cccccc;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+
+    
+}
+
+.mTdValueCls{
+	text-align:left;
+//    border: 1px solid #000000;
+	-moz-height:auto;
+    margin: 0;
+    width: 70%;
+    height: 36px;
+    
+//     padding: 2px 2px 2px 2px;
+    border: 1px solid #cccccc;
+    
+    margin: 0;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+    
+ }
+ 
+ 
+.strCls{
+
+    margin: 0;
+    FONT-WEIGHT: normal;
+    FONT-FAMILY: 微软雅黑;
+    FONT-SIZE: 12px;
+    
+ }

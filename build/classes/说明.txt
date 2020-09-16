@@ -1,0 +1,14 @@
+﻿config:
+struts.xml
+properties目录
+beans.xml中<context:component-scan base-package="com.matrix.*" />
+
+src:
+com.matrix.admin目录
+com.matrix.client目录
+com.matrix.engine目录
+com.matrix.form.admin.foundation.action.MenuAction.java 
+com.matrix.form.admin.logon目录
+
+web:
+form/admin/logon目录
