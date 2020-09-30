@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+  <!-- 移动端action配置 -->
+  <package name="mobile" extends="globalPackage" namespace="/mobile">
+    	<action name="auth_*" class="mobile-AuthenticationAction" method="{1}" >
+		</action>
+    	<action name="task_*" class="mobile-TaskAction" method="{1}" >
+		</action>
+    	<action name="notice_*" class="mobile-NoticeAction" method="{1}" >
+		</action>
+    	<action name="comment_*" class="mobile-CommentAction" method="{1}" >
+		</action>
+    	<action name="apply_*" class="mobile-ApplyAction" method="{1}" >
+		</action>
+    	<action name="message_*" class="mobile-MessageAction" method="{1}" >
+		</action>
+  </package>
+</struts>

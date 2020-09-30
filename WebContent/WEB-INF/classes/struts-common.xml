@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <package name="com.matrix.office.common.action"  extends="globalPackage" namespace="/select">
+	 	<action name="user_*" class="userSelectAction"  method="{1}">
+	 		<result name="success">/common/userInfoPage.jsp</result>
+	 	</action>
+	 	<action name="dept_*" class="deptSelectAction"  method="{1}">
+	 		<result name="success">/common/deptSelect.jsp</result>
+	 	</action>
+	 	
+	 </package>
+	 
+	 
+</struts>

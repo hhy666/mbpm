@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <!-- 计算公式 -->
+	<package name="com.matrix.office.performance.action"  extends="globalPackage" namespace="/performance">
+	<action name="code_*" class="performanceTreeAction" method="{1}">
+    	</action>
+   <action name="per_*" class="statisticsAction" method="{1}">
+			<result name="h5IssuedList">/office/performance/h5IssuedList.jsp</result>
+			<result name="issuedList">/office/performance/issuedList.jsp</result>
+	 		<result name="issuedChart">/office/performance/issuedChart.jsp</result>
+	 		<result name="h5OverdueList">/office/performance/h5OverdueList.jsp</result>
+	 		<result name="overdueList">/office/performance/overdueList.jsp</result>
+	 		<result name="overdueChart">/office/performance/overdueChart.jsp</result>
+	 		<result name="h5NodeList">/office/performance/h5NodeList.jsp</result>
+	 		<result name="nodeList">/office/performance/nodeList.jsp</result>
+	 		<result name="nodeChart">/office/performance/nodeChart.jsp</result>
+	 		<result name="h5OverTimeList">/office/performance/h5OverTimeList.jsp</result>
+	 		<result name="overTimeList">/office/performance/overTimeList.jsp</result>
+	 		<result name="overTimeChart">/office/performance/overTimeChart.jsp</result>
+	 		<result name="h5EfficiList">/office/performance/h5EfficiencyList.jsp</result>
+	 		<result name="efficiList">/office/performance/efficiencyList.jsp</result>
+	 		<result name="efficiChart">/office/performance/efficiencyChart.jsp</result>
+	 		<result name="h5ComprehensiveList">/office/performance/h5ComprehensiveList.jsp</result>
+	 		<result name="comprehensiveList">/office/performance/comprehensiveList.jsp</result>
+	 		<result name="comprehensiveChart">/office/performance/comprehensiveChart.jsp</result>
+	 		<result name="h5ImproveList">/office/performance/h5ImproveList.jsp</result>
+	 		<result name="improveList">/office/performance/improveList.jsp</result>
+	 		<result name="improveChart">/office/performance/improveChart.jsp</result>
+	 		<result name="h5FlowList">/office/performance/h5FlowList.jsp</result>
+	 		<result name="flowList">/office/performance/flowList.jsp</result>
+	 		<result name="flowChart">/office/performance/flowChart.jsp</result>
+    	</action>
+    	<action name="mee_*" class="coutMeetingAction" method="{1}">
+			<result name="meetingRole">/office/countMeeting/meetingRoleList.jsp</result>
+			<result name="meetingRoleChart">/office/countMeeting/meetingRoleChart.jsp</result>
+	 		<result name="meetingJoin">/office/countMeeting/meetingJoinList.jsp</result>
+	 		<result name="meetingJoinChart">/office/countMeeting/meetingJoinChart.jsp</result>
+    	</action>
+    	<action name="dou_*" class="countDoucumentAction" method="{1}">
+			<result name="h5InscreaseList">/office/performance/h5InscreaseList.jsp</result>
+			<result name="inscreaseList">/office/performance/inscreaseList.jsp</result>
+			<result name="inscreaseChart">/office/performance/inscreaseChart.jsp</result>
+	 		<result name="h5VitalityList">/office/performance/h5VitalityList.jsp</result>
+	 		<result name="vitalityList">/office/performance/vitalityList.jsp</result>
+	 		<result name="vitalityChart">/office/performance/vitalityChart.jsp</result>
+    	</action>
+    	<action name="cha_*" class="countCharacterAction" method="{1}">
+			<result name="h5OnlineList">/office/performance/h5OnlineList.jsp</result>
+			<result name="onlineList">/office/performance/onlineList.jsp</result>
+			<result name="onlineChart">/office/performance/onlineChart.jsp</result>
+	 		<result name="matterList">/office/performance/matterList.jsp</result>
+	 		<result name="matterChart">/office/performance/matterChart.jsp</result>
+    	</action>
+    	<action name="pri_*" class="printAction" method="{1}">
+			<result name="issuedPrint">/office/performance/printIssuedList.jsp</result>
+	 		<result name="issuedChart">/office/performance/printIssuedChart.jsp</result>
+	 		<result name="overduePrint">/office/performance/printOverdueList.jsp</result>
+	 		<result name="overdueChart">/office/performance/overdueChart.jsp</result>
+	 		<result name="nodePrint">/office/performance/printNodeList.jsp</result>
+	 		<result name="nodeChart">/office/performance/nodeChart.jsp</result>
+	 		<result name="overTimePrint">/office/performance/printOverTimeList.jsp</result>
+	 		<result name="overTimeChart">/office/performance/overTimeChart.jsp</result>
+	 		<result name="efficiPrint">/office/performance/printEfficiencyList.jsp</result>
+	 		<result name="efficiChart">/office/performance/efficiencyChart.jsp</result>
+	 		<result name="comprehensivePrint">/office/performance/printComprehensiveList.jsp</result>
+	 		<result name="comprehensiveChart">/office/performance/comprehensiveChart.jsp</result>
+	 		<result name="improvePrint">/office/performance/printImproveList.jsp</result>
+	 		<result name="vitalityPrint">/office/performance/printVitalityList.jsp</result>
+	 		<result name="flowPrint">/office/performance/printFlowList.jsp</result>
+	 		<result name="inscreasePrint">/office/performance/printInscreaseList.jsp</result>
+	 		<result name="matterPrint">/office/performance/printMatterList.jsp</result>
+	 		<result name="onlinePrint">/office/performance/printOnlineList.jsp</result>
+	 		<result name="printMeetingRole">/office/countMeeting/printMeetingRoleList.jsp</result>
+	 		<result name="printMeetingJoin">/office/countMeeting/printMeetingJoinList.jsp</result>
+    	</action>
+    	<action name="tem_*" class="perTemplateAction" method="{1}">
+    	<result name="perTemplateList">/office/performance/perTemplateList.jsp</result>
+	 		<result name="perTemplateTree">/PerforTempletTree.rform</result>
+    	</action>
+    	<action name="pen_*" class="penetrationQueryAction" method="{1}">
+			<result name="h5List">/office/performance/h5Penetrationquery.jsp</result>
+			<result name="List">/office/performance/penetrationquery.jsp</result>
+			<result name="h5PenList">/office/performance/h5Penetrationnode.jsp</result>
+			<result name="penList">/office/performance/penetrationnode.jsp</result>
+			<result name="h5Efficiencynode">/office/performance/h5Efficiencynode.jsp</result>
+			<result name="efficiencynode">/office/performance/efficiencynode.jsp</result>
+			<result name="priEfficiency">/office/performance/printEfficiencynode.jsp</result>
+			<result name="priList">/office/performance/printPenComprehensiveList.jsp</result>
+			<result name="priPenComprehensive">/office/performance/printComprehensiveNode.jsp</result>
+			<result name="h5PenOverTime">/office/performance/h5Overtimenode.jsp</result>
+			<result name="penOverTime">/office/performance/overtimenode.jsp</result>
+			<result name="priOverTime">/office/performance/printOverTimeNode.jsp</result>
+			<result name="h5PenFlow">/office/performance/h5PeneFlow.jsp</result>
+			<result name="penFlow">/office/performance/peneFlow.jsp</result>
+    	</action>
+    	<action name="cus_*" class="countCustomFlow" method="{1}">
+    		<result name="flowList">/office/performance/customFlowList.jsp</result>
+	 		<result name="flowChart">/office/performance/customFlowChart.jsp</result>
+	 		<result name="flowPrint">/office/performance/printCustomFlowList.jsp</result>
+    	</action>
+   </package> 
+</struts>

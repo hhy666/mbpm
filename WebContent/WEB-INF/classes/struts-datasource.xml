@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 表单数据源配置 -->
+	<package name="com.matrix.office.custom.datasource.action" extends="globalPackage" namespace="/datasource">
+		<action name="formVar_*" class="formVarTreeEditAction" method="{1}">
+			<result name="loadFormVarPage">/form/admin/custom/datasource/editFormVar.jsp</result>
+			<result name="h5loadFormVarPage">/form/admin/custom/datasource/h5EditFormVar.jsp</result>
+			<result name="updateFormVarPage">/form/admin/custom/datasource/updateFormVar.jsp</result>
+			<result name="h5UpdateFormVarPage">/form/admin/custom/datasource/h5UpdateFormVar.jsp</result>
+			<result name="loadCommonTreePage">/form/admin/custom/datasource/selectCatalog.jsp</result>
+		</action>
+		<action name="formVarPro_*" class="formVarPropertyAction" method="{1}">
+			<result name="loadFormVarProInfo">/form/admin/custom/datasource/editFormVarProperty.jsp</result>
+			<result name="h5loadFormVarProInfo">/form/admin/custom/datasource/h5EditFormVarProperty.jsp</result>
+			<result name="h5ControlLoadFormVarProInfo">/form/admin/custom/datasource/editproperty.jsp</result>
+		</action>
+	
+	</package>
+	
+	 
+</struts>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+  <!-- 场景action配置 -->
+  <package name="com.matrix.form.admin.scene.action" extends="globalPackage" namespace="/scene">
+    	<action name="scene_*" class="sceneAction" method="{1}" >
+    	    <result name="loadSceneFormDesigner">/form/admin/scene/sceneFormDesigner.jsp</result>
+		    <result name="loadSceneFlow">/form/admin/scene/sceneFlow.jsp</result>  
+		    <result name="loadSceneAuthorize">/form/admin/scene/sceneAuthorize.jsp</result> 
+		    <result name="preLoadSceneEntity">/form/admin/scene/sceneEntityProperty.jsp</result> 
+		    <result name="preLoadSceneBasicMsg">/form/admin/scene/sceneBasicMsg.jsp</result> 
+			<result name="formOrEntityError">/form/html5/admin/catalog/formOrEntityError.jsp</result>
+		   
+		</action>
+		
+  
+  </package>
+
+  <!-- 逻辑服务action配置 -->
+  <package name="com.matrix.form.admin.logic.action" extends="globalPackage" namespace="/logic">
+    	<action name="logicInfo_*" class="logicInfoAction" method="{1}" >
+    	    <result name="serviceLogicMain">/form/admin/logic/mainServiceLogic.jsp</result>
+		    <result name="scriptLogicMain">/form/admin/logic/mainScriptLogic.jsp</result>  
+		   
+		    <result name="updateServiceLogic">/form/admin/logic/updateServiceLogic.jsp</result>
+		    <result name="updateScriptLogic">/form/admin/logic/updateScriptLogic.jsp</result> 
+		    <result name="loadServiceLogicDesc">/form/admin/logic/updateServiceLogicDesc.jsp?page=logicServiceDesc-list</result>  
+		</action>
+		
+		<action name="logicContent_*" class="logicContentAction" method="{1}">
+			<result name="loadLogicContent">/form/admin/logic/updateScriptContent.jsp</result>
+		
+		</action>
+  
+  </package>
+
+
+
+
+	<!-- 表单模块action配置 -->
+	<package name="com.matrix.form.admin.form.action" extends="globalPackage" namespace="/form">
+		<action name="formInfo_*" class="formInfoAction" method="{1}" >
+		      <result name="formMain">/form/admin/form/mainForm.jsp</result>
+		      <result name="loadFormVersionsPage">/form/admin/form/listFormVersions.jsp</result>
+		      <result name="formBasicMsgPage">/form/admin/form/updateForm.jsp</result>
+		      <result name="html5FormBasicMsgPage">/form/html5/admin/catalog/updateForm.jsp</result>
+		      <result name="addSecurityFilePage">/form/admin/security/importSecurityFile.jsp</result>
+		      <!-- 进入表单设计页面 -->
+		      <result name="addFormVersion">/form/admin/designer/designer.jsp</result> 
+		      <result name="updateFormVersion">/form/admin/designer/designer.jsp</result> 
+		      <result name="validateSuccess">/form.rform?mode=propertyedit&amp;componentType=FormValidateInfo&amp;command=list</result> 
+		      <result name="validateError">/form/admin/form/result.jsp</result> 
+		      
+		      <!-- 实施表单设计时表单版本列表 的维护-->
+		      <result name="loadFormVersionsList">/form/admin/form/h5FormVersionList.jsp</result>
+		 </action>
+	</package>
+	
+	<!-- 实体action配置 -->
+	<package name="com.matrix.form.admin.entity.action" extends="globalPackage" namespace="/entity">
+		<action name="entityInfo_*" class="entityInfoAction" method="{1}" >
+		      <result name="entityObjectMain">/form/admin/entity/mainEntity.jsp</result>
+		      <result name="queryObjectMain">/form/admin/entity/mainQueryObject.jsp</result>
+		      <result name="entityBasicMsg">/form/admin/entity/updateEntity.jsp</result>
+		      <result name="queryObjBasicMsg">/form/admin/entity/updateQueryObject.jsp</result>
+		</action>
+		
+		<action name="entityProperty_*" class="entityPropertyAction" method="{1}">
+		   <result name="loadEntityProLabel">/form/admin/entity/listEntityProperty.jsp</result>
+		   <result name="loadQueryObjProLabel">/form/admin/entity/listQueryObjectProperty.jsp</result>
+		   <result name="loadUploadEntityXmlPage">/form/admin/foundation/importEntityFile.jsp</result>
+		    
+		</action>
+		
+		<action name="entityContent_*" class="entityContentAction" method="{1}">
+			<result name="loadQueryObjectContent">/form/admin/entity/updateQueryObjectContent.jsp</result>
+		</action>
+		
+		<action name="importEntity_*" class="importEntityInfoAction" method="{1}">
+			<result name="selectDsList">/form/admin/entity/import/selectDsAndSchema.jsp</result>
+			<result name="queryTableList">/form/admin/entity/import/selectTables.jsp</result>
+			<result name="importBlank">/form/admin/entity/import/importBlank.jsp</result>
+			<result name="html5ImportBlank">/form/html5/admin/catalog/addSuccess1.jsp</result>
+			<result name="loadTableColumns">/form/admin/entity/listLoadColumn.jsp</result>
+		
+		</action>
+		
+		
+	</package>
+	
+	
+	 
+</struts>

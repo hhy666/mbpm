@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	 <package name="com.matrix.statistic.admin.action"  extends="globalPackage" namespace="/statistic">
+	     	<action name="statisticAction_*" class="statisticAction" method="{1}">
+	     		  <result name="statisticMain">/statistic/statisticMain.jsp</result>
+	     		  <result name="statisticContent">/statistic/statisticContent.jsp</result>
+	     		  <result name="toAddMeasure">/statistic/editMeasure.jsp</result>
+	     		  <result name="toEditMeasure">/statistic/editMeasure.jsp</result>
+	     		  <result name="toAddDimension">/statistic/editDimension.jsp</result>
+	     		  <result name="toEditDimension">/statistic/editDimension.jsp</result>
+	     		  <result name="toAddDimensionItem">/statistic/editDimensionItem.jsp</result>
+	     		  <result name="toEditDimensionItem">/statistic/editDimensionItem.jsp</result>
+	     		  <result name="toAddDimensionSubitem">/statistic/editDimensionSubitem.jsp</result>
+	     		  <result name="toEditDimensionSubitem">/statistic/editDimensionSubitem.jsp</result>
+	 		</action>
+	 </package>
+</struts>

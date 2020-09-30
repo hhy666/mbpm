@@ -1,0 +1,84 @@
+<WORKFLOW>
+       <APPSERVER>
+	  		<APPSERVER>Tomcat</APPSERVER> 
+			<IS_CLUSTERED>false</IS_CLUSTERED>
+        </APPSERVER>
+
+        <JDBC>
+		  	<JDBC_RDBMS_TYPE>Mysql</JDBC_RDBMS_TYPE> 
+		  	<JDBC_SCHEMA></JDBC_SCHEMA>
+		  	<JDBC_DS_NAMING>java:comp/env/workflowDS</JDBC_DS_NAMING>
+        </JDBC>
+        
+        <MODE>
+			<TYPE>DEVELOPMENT</TYPE>
+		</MODE>
+
+        <SEQUENCE>
+			<SEQUENCE_TYPE>ByDB</SEQUENCE_TYPE>
+        </SEQUENCE>
+
+        <AUDIT>
+			<AUDIT_ENABLE>false</AUDIT_ENABLE>
+			<KEEP_RELEVANT_WORKITEMS>false</KEEP_RELEVANT_WORKITEMS>
+			<MOVETOHISTORY_ENABLE>false</MOVETOHISTORY_ENABLE>
+        </AUDIT>
+
+        <SESSION>
+			<SESSION_EXPIRY_TIME>1440</SESSION_EXPIRY_TIME>
+			<SESSION_MONITOR_TIME>5</SESSION_MONITOR_TIME>
+        </SESSION>
+
+        <CLEANUP>
+	  		<MONITOR_INSTANCE_HOUR>24</MONITOR_INSTANCE_HOUR> 
+		  	<REMAIN_INSTANCE_DAY>364</REMAIN_INSTANCE_DAY> 
+		  	<MONITOR_TEMPLATE_DAY>24</MONITOR_TEMPLATE_DAY> 
+        </CLEANUP>
+
+        <ORGANIZATION>
+	  		<STORAGE_TYPE>RDBMS</STORAGE_TYPE> 
+		  	<STORAGE_IMPL></STORAGE_IMPL> 
+		  	<JDBC_DS_NAMING>java:comp/env/workflowDS</JDBC_DS_NAMING>
+        </ORGANIZATION>
+        
+        <EXTERNAL_SECURITY>
+	  		<SECURITY_IMPL>com.demo.ExternalSecurity</SECURITY_IMPL> 
+        </EXTERNAL_SECURITY>
+
+        <AUTHENTICATION>
+		  	<LOGIN_MODULE>RDBMS</LOGIN_MODULE> 
+		  	<IS_EXTERNAL>false</IS_EXTERNAL> 
+	  		<PASSWORD_CRYPTO_IMPL>com.matrix.engine.foundation.domain.CryptoBase64Impl</PASSWORD_CRYPTO_IMPL>
+        </AUTHENTICATION>
+        
+			<EMAIL>
+				<DEFAULT_NAME>Matrix BPM</DEFAULT_NAME>
+				<DEFAULT_EMAIL>matrix@sina.com</DEFAULT_EMAIL>
+				<SMTP_HOST>smtp.sina.com.cn</SMTP_HOST>
+				<SMTP_AUTH>true</SMTP_AUTH>
+				<AUTH_USER>matrix</AUTH_USER>
+				<AUTH_PASSWORD>matrix</AUTH_PASSWORD>
+				<DEBUG>true</DEBUG>
+			</EMAIL>
+			
+			<SMS>
+					<SMS_VENDOR_IMPL>com.thtf.bjstat.common.common.util.SendCellNoteImpl</SMS_VENDOR_IMPL>
+			</SMS>
+			<RTX>
+					<RTX_VENDOR_IMPL>com.thtf.bjstat.common.common.util.SendCellNoteImpl</RTX_VENDOR_IMPL>
+			</RTX>
+			<MESSAGE>
+					<MESSAGE_VENDOR_IMPL>com.matrix.engine.foundation.channel.client.MessageSenderClient</MESSAGE_VENDOR_IMPL>
+			</MESSAGE>
+        
+        <EVENT>
+            <IS_ENABLE>false</IS_ENABLE>
+        	<THREAD_POOL_SIZE>5</THREAD_POOL_SIZE>
+        </EVENT>
+
+        <SYSTEM>
+        	<ADMIN_ROLE>SysAdmin</ADMIN_ROLE>
+			<DESIGNER_ROLE>designer</DESIGNER_ROLE>
+        </SYSTEM>
+
+</WORKFLOW>
